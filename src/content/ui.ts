@@ -10,9 +10,13 @@ export const nav: Record<Lang, NavItem[]> = {
   en: [
     { label: 'Products', children: [
       { label: 'VOOL Charger', href: '/products/vool-charger/', note: '22 kW smart charger' },
-      { label: 'VOOL LMC', href: '/products/vool-lmc/', note: 'Load management controller' },
+      { label: 'VOOL LMC Pro', href: '/products/vool-lmc/', note: 'Load management for buildings' },
+      { label: 'VOOL LMC S', href: '/products/vool-lmc-s/', note: 'New: for homes and small sites' },
+      { label: 'VOOL Commercial Pole', href: '/products/commercial-pole/', note: 'New: 2 × 22 kW with MID' },
       { label: 'VOOL App', href: '/products/vool-app/', note: 'Smart charging on your phone' },
       { label: 'VOOL Portal', href: '/products/vool-portal/', note: 'Manage sites, users and billing' },
+      { label: 'Software features', href: '/software/', note: 'Everything the platform does' },
+      { label: 'Billing and payments', href: '/software/billing-and-payments/', note: 'How drivers pay and you get paid' },
     ] },
     { label: 'Solutions', children: [
       { label: 'Apartments & offices', href: '/solutions/apartment-blocks/' },
@@ -27,6 +31,7 @@ export const nav: Record<Lang, NavItem[]> = {
       { label: 'Case studies', href: '/case-studies/', note: 'Real sites with numbers' },
       { label: 'Live demo', href: '/live-demo/', note: 'Load management simulator' },
       { label: 'Compare', href: '/compare/', note: 'VOOL vs ordinary load balancing' },
+      { label: 'AFIR and ISO 15118', href: '/afir/', note: 'What changes on 1 January 2027' },
     ] },
     { label: 'Where to buy', href: '/where-to-buy/' },
     { label: 'Partners', href: '/resources/resellers/' },

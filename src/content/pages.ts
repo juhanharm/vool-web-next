@@ -5,6 +5,7 @@
  */
 import { company, RESELLER_URL } from './ui';
 import { morePages, nightEn, costLabels, demoLabels } from './knowledge';
+import { productPages } from './products2';
 
 const consent = 'I agree that VOOL processes my data to answer this enquiry (privacy policy).';
 const error = 'Something went wrong. Please try again or write to info@vool.com.';
@@ -29,7 +30,7 @@ export const pages: Record<string, Page> = {
         { value: '20,000+', label: 'devices sold' }, { value: '100+', label: 'chargers managed by one LMC Pro' },
         { value: '45', label: 'chargers on one 125 A connection' }, { value: '14', label: 'countries with VOOL partners' } ] },
       { type: 'logos', title: 'Used by', items: [
-        { name: 'Omniva', src: '/img/logos/omniva.webp' }, { name: 'Hansabuss', src: '/img/logos/hansabuss.webp' }, { name: 'Europcar', src: '/img/logos/europcar.webp' } ] },
+        { name: 'Omniva', src: '/img/logos/omniva.webp' }, { name: 'Hansabuss', src: '/img/logos/hansabuss.webp' }, { name: 'Europcar', src: '/img/logos/europcar.webp' }, { name: 'Alexela', src: '/img/logos/alexela.svg' } ] },
       { type: 'cards', id: 'solutions', eyebrow: 'Solutions', title: 'Where do you need charging?', cols: 4, items: [
         { title: 'Apartments & offices', image: '/img/apartments.webp', text: 'Shared charging with load management and fair billing per user.', href: '/solutions/apartment-blocks/' },
         { title: 'Homes', image: '/img/home.webp', text: 'Charge when electricity is cheapest, controlled from your phone.', href: '/solutions/ev-charger-for-home/' },
@@ -46,7 +47,12 @@ export const pages: Record<string, Page> = {
         { title: 'VOOL App', image: '/img/app-hand.webp', text: 'Charges when prices are lowest. Free.', href: '/products/vool-app/' },
         { title: 'VOOL Portal', image: '/img/portal-screen.webp', text: 'Users, billing and reports for every site in one place.', href: '/products/vool-portal/' },
       ] },
-      { type: 'split', soft: true, image: '/img/garage.webp', alt: 'Underground car park with VOOL chargers',
+      { type: 'cards', soft: true, eyebrow: 'New', title: 'Ready for 2027', cols: 3, items: [
+        { title: 'VOOL Charger with ISO 15118-20', text: 'Meets the AFIR rule for chargers installed from 1 January 2027. Plug & Charge now, V2G by update.', href: '/afir/', more: 'AFIR and the new charger' },
+        { title: 'VOOL LMC S', text: 'Load management for houses and small sites with up to four chargers. From January 2027.', href: '/products/vool-lmc-s/', more: 'LMC S' },
+        { title: 'VOOL Commercial Pole', text: 'Two 22 kW charging points with display, QR payment and an optional MID meter.', href: '/products/commercial-pole/', more: 'Commercial Pole' },
+      ] },
+      { type: 'split', image: '/img/garage.webp', alt: 'Underground car park with VOOL chargers',
         eyebrow: 'Why VOOL', title: 'The expensive part of charging is the grid. We make it go further.',
         text: 'Most buildings have more capacity than they use. VOOL measures the load in real time and gives the spare capacity to the cars, moving each one to the least loaded phase.',
         points: ['On one campus, 45 chargers run on a single 125 A connection', 'Fuses stay safe while the building runs as usual', 'Add chargers later: mount the casing now, click in the controller when needed'],
@@ -81,12 +87,16 @@ export const pages: Record<string, Page> = {
         title: 'Prepare every parking space now, finish later',
         text: 'The casing and the charging controller are separate. Install casings for all spaces during building work and add controllers as drivers switch to electric.',
         points: ['Lower cost on day one', 'No second round of cabling', 'Chargers talk to each other and share the available power'] },
+      { type: 'cards', soft: true, eyebrow: 'New from mid-December 2026', title: 'Now with ISO 15118-20', cols: 1, items: [
+        { title: 'Ready for the AFIR rule that starts on 1 January 2027', text: 'The new VOOL Charger supports ISO 15118-2, ISO 15118-20 and Plug & Charge. V2G follows by firmware update in Q1 2027. Existing chargers can be upgraded by swapping the controller.', href: '/afir/', more: 'AFIR and ISO 15118' },
+      ] },
       { type: 'specs', title: 'Specifications', rows: [
         ['Charging power', 'Up to 22 kW (3 × 32 A)'],
         ['Cable', '6.5 m, Type 2 plug'],
         ['Protection', 'IP55 weather resistance, IK10 impact protection'],
         ['Operating temperature', '−30 °C to +55 °C'],
         ['Connectivity', 'Mobile internet, WiFi, Ethernet, Bluetooth'],
+        ['Vehicle communication', 'ISO 15118-2 and -20, Plug & Charge (chargers produced from December 2026)'],
         ['Phase use', 'Dynamic phase switching with VOOL LMC'],
         ['Installation', 'Wall or VOOL pole; modular casing and controller'],
         ['Front panels', 'Black, aluminium, wood'],
@@ -116,7 +126,7 @@ export const pages: Record<string, Page> = {
         points: ['Dynamic load management', 'Automatic phase switching', 'Mobile internet, WiFi, Ethernet and Bluetooth'] },
       { type: 'cards', title: 'Two models', cols: 2, items: [
         { title: 'LMC Pro', text: 'For apartment buildings, offices and car parks. Manages 100+ chargers. Available now.' },
-        { title: 'LMC S', text: 'For houses and small sites. Current clamps are included in the box and setup is done over Bluetooth in the VOOL App. Available from January 2027.' },
+        { title: 'LMC S', text: 'For houses and small sites with up to four chargers. Current clamps are included in the box and setup is done over Bluetooth in the VOOL App. Available from January 2027.', href: '/products/vool-lmc-s/', more: 'VOOL LMC S' },
       ] },
       { type: 'demo', soft: true, title: 'Try it: how many cars fit on your connection?', labels: demoLabels.en },
       { type: 'cta', title: 'Planning a larger installation?', lead: 'Send us the number of parking spaces and the size of the main fuse. We will tell you what fits.', buttons: [contact, buy] },
@@ -169,6 +179,10 @@ export const pages: Record<string, Page> = {
         title: 'Earn from chargers that stand idle',
         text: 'Open a charger for public use, set your own price and availability, and track usage in real time. Payments are collected automatically.',
         cta: [{ label: 'Public charging', href: '/solutions/public-charging/' }] },
+      { type: 'cards', soft: true, title: 'More about the software', cols: 2, items: [
+        { title: 'All software features', text: 'App, Portal, roaming, integrations and connectivity on one page.', href: '/software/', more: 'VOOL software' },
+        { title: 'Billing and payments', text: 'How drivers pay, how you are paid and what it costs.', href: '/software/billing-and-payments/', more: 'Billing and payments' },
+      ] },
       { type: 'cta', title: 'Want to see the Portal with your own site?', buttons: [contact, { label: 'Log in', href: 'https://app.vool.com' }] },
     ],
   },
@@ -414,7 +428,7 @@ export const pages: Record<string, Page> = {
   },
 };
 
-Object.assign(pages, morePages);
+Object.assign(pages, morePages, productPages);
 
 /** Old URLs that now point to a merged page (also written to public/_redirects). */
 export const redirects: Record<string, string> = {
