@@ -6,6 +6,7 @@
 import Steps from './Steps.astro';
 import Faq from './Faq.astro';
 import Configurator from './Configurator.astro';
+import { tr } from '../content/pagesStore';
 import LeadForm from './LeadForm.astro';
 import NightCharge from './NightCharge.astro';
 import CostCompare from './CostCompare.astro';
@@ -44,7 +45,7 @@ const { sections, lang } = Astro.props;
                 <h3>{c.title}</h3>
                 {c.text && <p class="muted">{c.text}</p>}
                 {c.points && <ul>{c.points.map((p: string) => <li>{p}</li>)}</ul>}
-                {c.href && <a class="more" href={c.href}>{c.more ?? 'Learn more'} →</a>}
+                {c.href && <a class="more" href={c.href}>{c.more ?? tr(lang, 'Learn more')} →</a>}
               </div>
             ))}
           </div>

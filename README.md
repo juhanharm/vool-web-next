@@ -50,3 +50,12 @@ The site has an editor at `/admin/` ([Sveltia CMS](https://github.com/sveltia/sv
 After adding a new kind of section or field in code, run `python3 scripts/make_editor_config.py`.
 
 Analytics: set `PUBLIC_PLAUSIBLE_DOMAIN` (for example `vool.com`) at build time to load Plausible. Form submissions are sent as the event `Lead` with the form name.
+
+## Translations
+
+The site has 15 languages (`src/content/ui.ts` → `langNames`). English pages are the source.
+
+- `src/content/i18n/strings.json` is the ordered list of English strings; `src/content/i18n/<lang>.json` holds the same list translated.
+- A page gets a `/<lang>/…` version automatically once **every** string on it has a translation; until then links in that language point to the English page. The menu, footer, language switcher and `hreflang` tags follow automatically.
+- Translations are written in `scripts/i18n/batch_*.py` (14 segments of 10 strings per language) and compiled with `python3 scripts/i18n/build.py`.
+- To translate more pages: add their strings to `strings.json` (append only, never reorder), add the translations, rebuild.

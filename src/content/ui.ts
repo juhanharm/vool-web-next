@@ -1,5 +1,5 @@
-export type Lang = 'en' | 'et' | 'lt' | 'fi' | 'sv';
-export const langNames: Record<Lang, string> = { en: 'EN', et: 'ET', lt: 'LT', fi: 'FI', sv: 'SV' };
+export type Lang = 'en' | 'et' | 'lt' | 'lv' | 'fi' | 'sv' | 'no' | 'pl' | 'pt' | 'de' | 'fr' | 'it' | 'sk' | 'es' | 'ru';
+export const langNames: Record<Lang, string> = { en: 'English', et: 'Eesti', lt: 'Lietuvių', lv: 'Latviešu', fi: 'Suomi', sv: 'Svenska', no: 'Norsk', pl: 'Polski', pt: 'Português', de: 'Deutsch', fr: 'Français', it: 'Italiano', sk: 'Slovenčina', es: 'Español', ru: 'Русский' };
 /** Languages planned next (pages not translated yet): pl, de, pt. */
 
 export interface NavItem { label: string; href?: string; children?: { label: string; href: string; note?: string }[] }
@@ -7,7 +7,7 @@ export interface NavItem { label: string; href?: string; children?: { label: str
 export const homeOf = (l: Lang) => (l === 'en' ? '/' : `/${l}/`);
 
 export const RESELLER_URL = 'https://shop.vool.com/';
-export const nav: Record<Lang, NavItem[]> = {
+export const nav: Partial<Record<Lang, NavItem[]>> = {
   en: [
     { label: 'Products', children: [
       { label: 'VOOL Charger', href: '/products/vool-charger/', note: '22 kW smart charger' },
@@ -83,7 +83,7 @@ export const nav: Record<Lang, NavItem[]> = {
   ],
 };
 
-export const ui: Record<Lang, { login: string; reseller: string; blog: string; tagline: string; legal: string; readMore: string; allPosts: string }> = {
+export const ui: Partial<Record<Lang, { login: string; reseller: string; blog: string; tagline: string; legal: string; readMore: string; allPosts: string }>> = {
   en: { login: 'Log in', reseller: 'Reseller login', blog: 'Blog', tagline: 'Smart EV charging, designed and made in Estonia.', legal: 'Terms', readMore: 'Read more', allPosts: 'All articles' },
   et: { login: 'Logi sisse', reseller: 'Edasimüüja login', blog: 'Blogi', tagline: 'Nutikas elektriauto laadimine, arendatud ja toodetud Eestis.', legal: 'Tingimused', readMore: 'Loe edasi', allPosts: 'Kõik artiklid' },
   lt: { login: 'Prisijungti', reseller: 'Partnerių prisijungimas', blog: 'Tinklaraštis', tagline: 'Išmanus elektromobilių įkrovimas, sukurtas ir pagamintas Estijoje.', legal: 'Sąlygos', readMore: 'Skaityti', allPosts: 'Visi straipsniai' },

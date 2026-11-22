@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
-import { ui, nav, langNames, homeOf, company, RESELLER_URL, type Lang } from '../content/ui';
+import { langNames, homeOf, company, RESELLER_URL, type Lang } from '../content/ui';
+import { navFor, uiFor } from '../content/i18n';
+import { hasHome, localize } from '../content/pagesStore';
 import { blogIndex, legal } from '../content/site';
 
 interface Props {
@@ -12,11 +14,11 @@ interface Props {
   image?: string;
 }
 const { lang, title, description, alternates = {}, image } = Astro.props;
-const t = ui[lang];
-const items = [...nav[lang]];
+const t = uiFor(lang);
+const items = [...navFor(lang)];
 const blog = blogIndex(lang);
 if (lang !== 'en' && blog) items.push({ label: t.blog, href: blog });
-const langs = (Object.keys(langNames) as Lang[]).map((l) => ({ code: l, href: alternates[l] ?? homeOf(l) }));
+const langs = (Object.keys(langNames) as Lang[]).filter((l) => alternates[l] || hasHome(l)).map((l) => ({ code: l, href: alternates[l] ?? homeOf(l) }));
 const legalPages = legal(lang);
 ---
 <!doctype html>
@@ -36,7 +38,7 @@ const legalPages = legal(lang);
     {import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN && <script defer data-domain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN} src="https://plausible.io/js/script.js"></script>}
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">{t.skip}</a>
     <header class="top">
       <div class="wrap bar">
         <a class="logo" href={homeOf(lang)} aria-label="VOOL"><img src="/logo.svg" alt="VOOL" width="76" height="20" /></a>
@@ -52,17 +54,18 @@ const legalPages = legal(lang);
             </div>
           ) : <a class="link" href={n.href}>{n.label}</a>)}
           <div class="right">
-            <div class="langs">
-              {langs.map((l) => <a href={l.href} class={l.code === lang ? 'on' : ''} hreflang={l.code}>{langNames[l.code]}</a>)}
-            </div>
+            <details class="langs">
+              <summary aria-label="Language">{lang.toUpperCase()}</summary>
+              <div class="lang-list">{langs.map((l) => <a href={l.href} class={l.code === lang ? 'on' : ''} hreflang={l.code} lang={l.code}>{langNames[l.code]}</a>)}</div>
+            </details>
             <a class="btn ghost small-btn" href="https://app.vool.com">{t.login}</a>
-            {lang === 'en' ? <a class="btn small-btn" href="/get-a-quote/">Get a quote</a> : <a class="btn small-btn" href={RESELLER_URL}>{t.reseller}</a>}
+            <a class="btn small-btn" href={localize(lang, '/get-a-quote/')}>{t.quote}</a>
           </div>
         </nav>
       </div>
     </header>
     <main id="main"><slot /></main>
-    {lang === 'en' && <a class="sticky-cta btn" href="/get-a-quote/" data-sticky hidden>Get a quote</a>}
+    <a class="sticky-cta btn" href={localize(lang, '/get-a-quote/')} data-sticky hidden>{t.quote}</a>
     <footer class="foot">
       <div class="wrap foot-in">
         <div class="about">
@@ -95,7 +98,7 @@ const legalPages = legal(lang);
   .bar { display: flex; align-items: center; gap: 18px; height: 72px; }
   .logo img { height: 20px; width: auto; }
   .nav { display: flex; align-items: center; gap: 0; flex: 1; }
-  .nav .link, .drop > button { font: inherit; font-weight: 400; background: none; border: 0; cursor: pointer; text-decoration: none; color: var(--ink); font-size: .9rem; padding: 10px 9px; border-radius: 8px; white-space: nowrap; }
+  .nav .link, .drop > button { font: inherit; font-weight: 400; background: none; border: 0; cursor: pointer; text-decoration: none; color: var(--ink); font-size: .88rem; padding: 10px 7px; border-radius: 8px; white-space: nowrap; }
   .nav .link:hover, .drop:hover > button { background: var(--soft); }
   .drop { position: relative; }
   .panel { display: none; position: absolute; top: 100%; left: 0; min-width: 280px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.1); }
@@ -104,12 +107,17 @@ const legalPages = legal(lang);
   .panel a:hover { background: var(--soft); }
   .panel span { font-size: .82rem; color: var(--grey); }
   .right { display: flex; align-items: center; gap: 10px; margin-left: auto; }
-  .langs { display: flex; gap: 2px; margin-right: 6px; }
-  .langs a { text-decoration: none; font-size: .78rem; font-weight: 500; color: var(--grey); padding: 4px 6px; border-radius: 6px; }
-  .langs a.on { color: var(--ink); background: var(--soft); }
+  .langs { position: relative; margin-right: 4px; }
+  .langs summary { list-style: none; cursor: pointer; font-size: .82rem; font-weight: 500; padding: 8px 10px; border-radius: 8px; color: var(--grey); }
+  .langs summary::-webkit-details-marker { display: none; }
+  .langs summary::after { content: ' ▾'; }
+  .langs summary:hover, .langs[open] summary { background: var(--soft); color: var(--ink); }
+  .lang-list { position: absolute; right: 0; top: 100%; margin-top: 6px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; min-width: 250px; box-shadow: 0 16px 40px rgba(0,0,0,.12); z-index: 80; }
+  .lang-list a { text-decoration: none; font-size: .9rem; color: var(--ink); padding: 7px 10px; border-radius: 8px; }
+  .lang-list a:hover, .lang-list a.on { background: var(--soft); }
   .small-btn { padding: .55em 1.1em; font-size: .88rem; white-space: nowrap; }
   .menu-toggle, .burger { display: none; }
-  @media (max-width: 1220px) {
+  @media (max-width: 1300px) {
     .burger { display: flex; flex-direction: column; gap: 5px; margin-left: auto; cursor: pointer; padding: 10px; }
     .burger span { width: 24px; height: 2px; background: var(--ink); }
     .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; padding: 16px 24px 28px; border-bottom: 1px solid var(--line); max-height: calc(100vh - 72px); overflow: auto; }
