@@ -125,3 +125,8 @@ strong, b { font-weight: 500; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 .sticky-cta[hidden] { display: none !important; }
+
+/* product renders: never crop, same grey as the render background */
+.photo:has(img[src*="/product-"]) { background: #f4f4f4; }
+.photo img[src*="/product-"] { object-fit: contain; }
+.hero.dark .photo:has(img[src*="/product-"]) { box-shadow: none; }

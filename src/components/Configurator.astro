@@ -14,6 +14,7 @@ const groups = [
     <div>
       <h2>{title}</h2>
       {lead && <p class="lead">{lead}</p>}
+      <div class="photo cfg-photo"><img data-cfg-img src="/img/product-charger-black.webp" alt="Your VOOL Charger" /></div>
       <ul class="summary" data-summary></ul>
     </div>
     <form method="post" action="/api/lead" data-lead-form class="card">
@@ -57,7 +58,10 @@ const groups = [
         String(d.get('load_management')).startsWith('Yes') ? 'VOOL LMC load management' : '', '5-year warranty, VOOL App included']
         .filter(Boolean).map((t) => `<li>${t}</li>`).join('');
     };
-    form.addEventListener('change', draw); draw();
+    const pic = root.querySelector<HTMLImageElement>('[data-cfg-img]')!;
+    const show = () => { const d = new FormData(form); const panel = String(d.get('front_panel')); const pole = String(d.get('mounting')).includes('pole');
+      pic.src = '/img/product-charger-' + (panel === 'Wood' ? (pole ? 'wood-pole' : 'wood') : panel === 'Aluminium' ? 'alu' : (pole ? 'black-pole' : 'black')) + '.webp'; };
+    form.addEventListener('change', () => { draw(); show(); }); draw(); show();
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button')!; const ok = form.querySelector<HTMLElement>('.ok')!; const err = form.querySelector<HTMLElement>('.err')!;
@@ -74,6 +78,8 @@ const groups = [
 
 <style>
   .cfg { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+  .cfg-photo { aspect-ratio: 1; max-width: 360px; margin-top: 24px; background: #f4f4f4; }
+  .soft .cfg-photo { background: #fff; }
   .summary { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 10px; }
   .summary li { padding-left: 26px; position: relative; }
   .summary li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); }

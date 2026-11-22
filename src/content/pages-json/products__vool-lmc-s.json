@@ -9,8 +9,6 @@
       "eyebrow": "New · VOOL LMC S",
       "title": "Load management for the house, sized for the house",
       "lead": "The LMC S protects the main fuse and lets the car use whatever the home leaves free. For sites with up to four chargers. Available from January 2027.",
-      "image": "/img/lmc-cabinet.webp",
-      "alt": "Load management controller in an electrical cabinet",
       "cta": [
         {
           "label": "Where to buy",
@@ -19,6 +17,10 @@
         {
           "label": "Compare with LMC Pro",
           "href": "#compare"
+        },
+        {
+          "label": "Datasheet (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-s-datasheet-en.pdf"
         }
       ],
       "facts": [

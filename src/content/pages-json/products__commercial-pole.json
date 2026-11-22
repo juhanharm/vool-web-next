@@ -17,13 +17,19 @@
         {
           "label": "Billing and payments",
           "href": "/software/billing-and-payments/"
+        },
+        {
+          "label": "Datasheet (PDF)",
+          "href": "/downloads/datasheets/vool-commercial-pole-datasheet-en.pdf"
         }
       ],
       "facts": [
         "2 × 22 kW",
         "MID meter option",
         "Display + QR payment"
-      ]
+      ],
+      "image": "/img/product-commercial-pole.webp",
+      "alt": "VOOL Commercial Pole with the service hatches open"
     },
     {
       "type": "cards",
@@ -66,53 +72,71 @@
         {
           "cells": [
             "Charging points",
-            "2, independent, up to 22 kW each"
+            "2 independent chargers, up to 22 kW (32 A) each"
           ]
         },
         {
           "cells": [
             "Connectors",
-            "Type 2 sockets"
+            "Type 2 sockets; tethered cables optional"
           ]
         },
         {
           "cells": [
             "Metering",
-            "Integrated; MID-certified meter as an option"
+            "Integrated; MID compliant as an option"
           ]
         },
         {
           "cells": [
             "User interface",
-            "Display with QR code, RFID/NFC reader"
+            "4\" sunlight-readable displays with QR code, NFC readers"
           ]
         },
         {
           "cells": [
             "Load management",
-            "VOOL LMC Pro or LMC S; OCPP or Modbus"
+            "VOOL LMC Pro or LMC S; OCPP or Modbus TCP"
           ]
         },
         {
           "cells": [
             "Connectivity",
-            "Mobile network"
+            "CAN, Ethernet, Wi-Fi, cellular"
           ]
         },
         {
           "cells": [
             "Protection",
-            "IK10, IP54"
+            "IK10, IP54 (IP44 with a cable connected)"
+          ]
+        },
+        {
+          "cells": [
+            "Residual current protection",
+            "Integrated type A and type B"
+          ]
+        },
+        {
+          "cells": [
+            "Operating temperature",
+            "−30 to +50 °C (−25 to +50 °C with MID)"
           ]
         },
         {
           "cells": [
             "Pole",
-            "Aluminium, 1.5 m"
+            "Aluminium, powder-coated black, 1500 × 230 × 130 mm, 16 kg"
+          ]
+        },
+        {
+          "cells": [
+            "Warranty",
+            "5 years"
           ]
         }
       ],
-      "note": "Specifications can change before deliveries start. Ask us for the current datasheet."
+      "note": "From the product datasheet of 23.11.2026."
     },
     {
       "type": "cards",

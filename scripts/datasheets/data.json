@@ -1,0 +1,583 @@
+[
+ {
+  "file": "vool-commercial-pole-datasheet-en.pdf",
+  "name": "Commercial Pole",
+  "tables": [
+   {
+    "title": "Features",
+    "rows": [
+     [
+      "Chargers",
+      "2 independent chargers"
+     ],
+     [
+      "Load management",
+      [
+       "VOOL LMC Pro",
+       "VOOL LMC S",
+       "custom (OCPP, Modbus TCP)"
+      ]
+     ],
+     [
+      "Remote management",
+      [
+       "VOOL Web Interface",
+       "VOOL App",
+       "OCPP 1.6J; WSS, WS"
+      ]
+     ],
+     [
+      "Authentication",
+      "NFC; VOOL App; QR code on display"
+     ],
+     [
+      "Connectivity",
+      "CAN, Ethernet, Wi-Fi, cellular"
+     ],
+     [
+      "Energy metering",
+      [
+       "Integrated",
+       "MID compliant (optional)"
+      ]
+     ],
+     [
+      "Firmware update",
+      [
+       "Manual and automatic",
+       "(Ethernet, Wi-Fi, cellular, CAN)"
+      ]
+     ],
+     [
+      "Power-loss unlocking",
+      "Internal power backup for socket unlocking"
+     ]
+    ]
+   },
+   {
+    "title": "General",
+    "rows": [
+     [
+      "Dimensions (H x W x D)",
+      [
+       "Pole: 1500 x 230 x 130 mm",
+       "Mounting flange: 300 x 200 mm"
+      ]
+     ],
+     [
+      "Weight",
+      "16 kg"
+     ],
+     [
+      "Operating temperature",
+      [
+       "-30...+50 °C",
+       "-25...+50 °C (MID option)"
+      ]
+     ],
+     [
+      "Material",
+      "Aluminium"
+     ],
+     [
+      "Surface finish",
+      "Powder coated, black"
+     ],
+     [
+      "IP rating",
+      [
+       "IP54",
+       "with cable connected to socket: IP44"
+      ]
+     ],
+     [
+      "Impact resistance",
+      "IK10"
+     ],
+     [
+      "Grid standard",
+      "TN"
+     ],
+     [
+      "Grid voltage",
+      "230/400 VAC (±15%)"
+     ],
+     [
+      "Rated power",
+      "22 kW / 32 A (11 kW / 16 A)^1 per charger"
+     ],
+     [
+      "Self-consumption (per charger)",
+      [
+       "idle: 3...7 W",
+       "charging: 10...15 W"
+      ]
+     ],
+     [
+      "Charging modes",
+      "1 phase, 2 phase^2, 3 phase"
+     ],
+     [
+      "Warranty",
+      "5 years"
+     ],
+     [
+      "Standards",
+      [
+       "EMCD 2014/30/EU, IEC 61851-1:2017,",
+       "IEC 61851-21-2:2018, IEC 62955:2018"
+      ]
+     ]
+    ]
+   },
+   {
+    "title": "Interfaces",
+    "rows": [
+     [
+      "Ethernet",
+      "10/100M"
+     ],
+     [
+      "Wi-Fi",
+      [
+       "IEEE 802.11 b/g/n, 2.4 GHz only",
+       "integrated antenna"
+      ]
+     ],
+     [
+      "Bluetooth",
+      "Local management (VOOL App)"
+     ],
+     [
+      "CAN",
+      [
+       "Local network",
+       "LMC internet proxy"
+      ]
+     ],
+     [
+      "Displays",
+      "4\" LCD, sunlight readable"
+     ],
+     [
+      "RFID readers",
+      "NFC, ISO 14443A"
+     ],
+     [
+      "Visual indicators",
+      "RGB LED indicators on each socket"
+     ],
+     [
+      "Audible indicators",
+      "Internal buzzer"
+     ],
+     [
+      "EV connection",
+      [
+       "Type 2 socket",
+       "Tethered cable (optional)"
+      ]
+     ]
+    ]
+   },
+   {
+    "title": "Safety",
+    "rows": [
+     [
+      "Residual current detection",
+      "Integrated type A and type B RCD"
+     ],
+     [
+      "Compliance",
+      "LVD, RoHS"
+     ],
+     [
+      "Short-circuit protection",
+      [
+       "MCB, B32A",
+       "B16A (optional)"
+      ]
+     ],
+     [
+      "Electrical protection",
+      "Class I"
+     ],
+     [
+      "Overvoltage category",
+      "Cat III"
+     ],
+     [
+      "Extra features",
+      [
+       "Self-tests",
+       "Relay diagnostics",
+       "Thermal throttling",
+       "Overload protection"
+      ]
+     ]
+    ]
+   }
+  ],
+  "notes": [
+   "^1 Configured to 16 A by default from the factory; can be reconfigured.",
+   "^2 2-phase charging only available with compatible EV models; 3-phase grid connection required."
+  ]
+ },
+ {
+  "file": "vool-lmc-s-datasheet-en.pdf",
+  "name": "LMC S",
+  "tables": [
+   {
+    "title": "Standard licence",
+    "head": [
+     "LMC S CT",
+     "LMC S P"
+    ],
+    "rows": [
+     [
+      "Load management",
+      [
+       "Offline load management (no internet needed)",
+       "Dynamic Load Management (DLM)"
+      ],
+      [
+       "Offline load management (no internet needed)",
+       "Dynamic Load Management (DLM)"
+      ]
+     ],
+     [
+      "Priority management",
+      "Equal sharing",
+      "Equal sharing"
+     ],
+     [
+      "Solar support^1",
+      "Cloud-based solar algorithm",
+      "Cloud-based solar algorithm"
+     ],
+     [
+      "Number of chargers",
+      "Up to 4",
+      "Up to 4"
+     ],
+     [
+      "Remote management",
+      [
+       "VOOL Web Interface",
+       "VOOL App"
+      ],
+      [
+       "VOOL Web Interface",
+       "VOOL App"
+      ]
+     ],
+     [
+      "Firmware update",
+      [
+       "Manual and automatic, over internet",
+       "(Ethernet, Wi-Fi)"
+      ],
+      [
+       "Manual and automatic, over internet",
+       "(Ethernet, Wi-Fi)"
+      ]
+     ],
+     [
+      "Power backup",
+      "Internal, 1 s",
+      "Internal, > 5 s"
+     ]
+    ]
+   },
+   {
+    "title": "Interfaces",
+    "head": [
+     "LMC S CT",
+     "LMC S P"
+    ],
+    "rows": [
+     [
+      "Ethernet",
+      "10/100M",
+      "10/100M"
+     ],
+     [
+      "Wi-Fi",
+      [
+       "IEEE 802.11 b/g/n, 2.4 GHz only",
+       "integrated antenna"
+      ],
+      [
+       "IEEE 802.11 b/g/n, 2.4 GHz only",
+       "integrated antenna"
+      ]
+     ],
+     [
+      "Bluetooth",
+      "Local configuration (VOOL App)",
+      "Local configuration (VOOL App)"
+     ],
+     [
+      "Power meter interface",
+      "RS-485 (Modbus RTU)",
+      "P1"
+     ],
+     [
+      "Current transformer inputs",
+      [
+       "3 phases; 0-100 mA input",
+       "5 A input with adapter"
+      ],
+      "–"
+     ],
+     [
+      "Digital input (\"ripple control\")",
+      "1 input (0-30 V)",
+      "1 input (0-30 V)"
+     ],
+     [
+      "Indicators",
+      "3 LED indicators on front face",
+      "3 LED indicators on front face"
+     ],
+     [
+      "Button",
+      "1 function button on front face",
+      "1 function button on front face"
+     ]
+    ]
+   },
+   {
+    "title": "General",
+    "head": [
+     "LMC S CT",
+     "LMC S P"
+    ],
+    "rows": [
+     [
+      "Power supply",
+      "230 VAC",
+      "P1; PoE (passive, max 36 V)"
+     ],
+     [
+      "Power consumption",
+      "< 2 W",
+      "< 2 W"
+     ],
+     [
+      "Dimensions (H x W x D)",
+      "87 x 22 x 77 mm",
+      "87 x 22 x 77 mm"
+     ],
+     [
+      "Weight",
+      "100 g",
+      "100 g"
+     ],
+     [
+      "Operating temperature",
+      "-20...+50 °C",
+      "-20...+50 °C"
+     ],
+     [
+      "IP rating",
+      "IP30",
+      "IP30"
+     ],
+     [
+      "Mounting",
+      "DIN rail",
+      "DIN rail"
+     ]
+    ]
+   }
+  ],
+  "notes": [
+   "^1 Coming soon."
+  ]
+ },
+ {
+  "file": "vool-charger-iso15118-datasheet-en.pdf",
+  "name": "Charger 22k3x ISO 15118",
+  "tables": [
+   {
+    "title": "Features",
+    "rows": [
+     [
+      "Load management",
+      [
+       "Dynamic Load Management (DLM)",
+       "Dynamic Phase Management (DPM)",
+       "via OCPP, CAN and Modbus"
+      ]
+     ],
+     [
+      "Metering",
+      [
+       "Input and output",
+       "phase voltages",
+       "phase currents",
+       "energy metering"
+      ]
+     ],
+     [
+      "Remote management",
+      [
+       "VOOL Web Interface",
+       "VOOL App"
+      ]
+     ],
+     [
+      "Control protocols",
+      "OCPP 1.6J, OCPP 2.0.1 (via LMC), Modbus TCP/UDP"
+     ],
+     [
+      "Firmware update",
+      [
+       "Manual and automatic, signed",
+       "(Ethernet, Wi-Fi, CAN)"
+      ]
+     ],
+     [
+      "Authorization",
+      "Plug & Charge (ISO 15118), RFID, VOOL App"
+     ],
+     [
+      "ISO 15118",
+      "-2 and -20 (AC), TLS; IEC 61851-1 fallback"
+     ],
+     [
+      "Bidirectional charging",
+      "V2H / V2G via firmware (planned Q1 2027)"
+     ],
+     [
+      "Residual current detection",
+      "Integrated type A and type B RCD"
+     ],
+     [
+      "Safety features",
+      [
+       "thermal throttling, over temperature",
+       "CP signal diagnostics",
+       "relay diagnostics"
+      ]
+     ]
+    ]
+   },
+   {
+    "title": "Interfaces",
+    "rows": [
+     [
+      "Ethernet",
+      "10/100M"
+     ],
+     [
+      "Wi-Fi",
+      "IEEE 802.11 b/g/n, 2.4 GHz only"
+     ],
+     [
+      "Mobile",
+      "LTE-M1, EDGE"
+     ],
+     [
+      "Bluetooth",
+      "Local configuration (VOOL App)"
+     ],
+     [
+      "CAN",
+      "Local network for LMC"
+     ],
+     [
+      "Expansion port",
+      "optional modules"
+     ],
+     [
+      "Power meter interface^1",
+      "RS-485 (Modbus RTU)"
+     ],
+     [
+      "Digital inputs^1",
+      [
+       "Pause, emergency stop",
+       "(2 inputs, 0-30 V)"
+      ]
+     ],
+     [
+      "Indicators",
+      [
+       "status LED on controller",
+       "front panel LED bar",
+       "buzzer inside controller"
+      ]
+     ]
+    ]
+   },
+   {
+    "title": "General",
+    "rows": [
+     [
+      "EV connection",
+      "Type 2 tethered cable (6.5 m)"
+     ],
+     [
+      "Power supply",
+      "230 VAC / 400 VAC (±10%)"
+     ],
+     [
+      "Grid connection",
+      "1 phase, 2 phase^2, 3 phase; TN"
+     ],
+     [
+      "Rated power",
+      "22 kW / 32 A (11 kW / 16 A)^3"
+     ],
+     [
+      "Idle power consumption",
+      "< 7 W (with default settings)"
+     ],
+     [
+      "Dimensions (H x W x D)",
+      "335 x 198 x 112 mm"
+     ],
+     [
+      "Weight",
+      "5.5 kg"
+     ],
+     [
+      "Operating temperature",
+      "-30...+45 °C"
+     ],
+     [
+      "IP rating",
+      "IP55"
+     ],
+     [
+      "Impact resistance",
+      "IK10"
+     ],
+     [
+      "Standards",
+      [
+       "EMCD 2014/30/EU, IEC 61851-1:2017,",
+       "IEC 61851-21-2:2018, IEC 62955:2018,",
+       "ISO 15118-2, ISO 15118-20"
+      ]
+     ],
+     [
+      "Compliance",
+      "LVD; designed for AFIR (EU 2023/1804, 2025/656)"
+     ],
+     [
+      "Electrical protection",
+      "Protection Class I, Overvoltage Category III"
+     ]
+    ]
+   }
+  ],
+  "notes": [
+   "^1 Optional module.",
+   "^2 2-phase charging only available with compatible EV models; 3-phase grid connection required.",
+   "^3 Configured to 11 kW by default; can be reconfigured."
+  ]
+ }
+]

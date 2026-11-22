@@ -9,8 +9,8 @@
       "eyebrow": "Accessories",
       "title": "Poles, panels and parts",
       "lead": "Everything that goes around the charger. Order through your reseller.",
-      "image": "/img/charger-finishes.webp",
-      "alt": "VOOL charger front panels",
+      "image": "/img/product-charger-black-pole.webp",
+      "alt": "VOOL Charger on a VOOL pole with cable holder",
       "cta": [
         {
           "label": "Where to buy",
@@ -26,50 +26,56 @@
       "items": [
         {
           "title": "VOOL pole",
-          "text": "For parking spaces without a wall."
+          "text": "For parking spaces without a wall.",
+          "image": "/img/product-pole.webp"
         },
         {
           "title": "Cable holder",
-          "text": "A metal holder with a plastic insert that keeps the cable and plug off the ground."
+          "text": "A metal holder with a plastic insert that keeps the cable and plug off the ground.",
+          "image": "/img/product-hook.webp"
         },
         {
           "title": "Front panels",
-          "text": "Black, aluminium or wood."
+          "text": "Black, aluminium or wood.",
+          "image": "/img/product-charger-alu.webp"
         },
         {
           "title": "Charge controller",
           "text": "The orange controller is the same in every VOOL charger. Sold separately as a spare or as the ISO 15118 upgrade.",
           "href": "/afir/",
-          "more": "ISO 15118 upgrade"
+          "more": "ISO 15118 upgrade",
+          "image": "/img/product-controller.webp"
         },
         {
           "title": "MID metering",
           "text": "A certified meter for billing by the kWh, on the Commercial Pole and on the MID wall charger.",
           "href": "/products/commercial-pole/",
-          "more": "Commercial Pole"
+          "more": "Commercial Pole",
+          "image": "/img/product-commercial-pole.webp"
+        },
+        {
+          "title": "Chargers on a pole",
+          "text": "One charger per pole, in black or wood, with the cable holder.",
+          "image": "/img/product-charger-wood-pole.webp"
         }
       ]
     },
     {
       "type": "cards",
       "title": "For load management",
-      "cols": 3,
+      "cols": 2,
       "items": [
         {
           "title": "Current clamps",
-          "text": "For measuring the main connection and sub-boards with VOOL LMC."
+          "text": "For measuring the main connection and sub-boards with VOOL LMC.",
+          "image": "/img/product-lmc-clamps.webp"
         },
         {
           "title": "LMC Pro with 4G",
           "text": "For sites where no network cable reaches the switchboard.",
           "href": "/products/vool-lmc/",
-          "more": "VOOL LMC"
-        },
-        {
-          "title": "LMC S",
-          "text": "For houses and small sites, from January 2027.",
-          "href": "/products/vool-lmc-s/",
-          "more": "VOOL LMC S"
+          "more": "VOOL LMC",
+          "image": "/img/product-lmc.webp"
         }
       ]
     },

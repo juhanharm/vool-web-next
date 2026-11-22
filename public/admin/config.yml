@@ -271,7 +271,7 @@ collections:
       - name: note
         label: Note
         required: false
-        widget: text
+        widget: string
       - name: links
         label: Links
         required: false

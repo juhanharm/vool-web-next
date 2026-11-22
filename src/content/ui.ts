@@ -56,8 +56,8 @@ export const nav: Record<Lang, NavItem[]> = {
       { label: 'FAQ', href: '/faq/' },
       { label: 'Blog', href: '/resources/blog/' },
       { label: 'Contact', href: '/resources/contact/' },
+      { label: 'About VOOL', href: '/about-us/our-story-new/' },
     ] },
-    { label: 'About', href: '/about-us/our-story-new/' },
   ],
   et: [
     { label: 'Kortermajad ja KIK toetus', href: '/et/kortermajad/' },

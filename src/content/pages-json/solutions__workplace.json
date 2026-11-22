@@ -64,8 +64,8 @@
     },
     {
       "type": "split",
-      "image": "/img/office2.webp",
-      "alt": "VOOL chargers at an office",
+      "image": "/img/site-street.webp",
+      "alt": "VOOL charger beside an office entrance",
       "title": "Start with a few chargers, add more when cars arrive",
       "text": "Build the cabling and load management once. Each new charger then takes minutes to add, and the LMC shares the capacity again.",
       "points": [

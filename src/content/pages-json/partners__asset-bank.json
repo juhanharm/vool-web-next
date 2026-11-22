@@ -31,6 +31,58 @@
       "title": "Product and site photos",
       "items": [
         {
+          "label": "Charger, black",
+          "href": "/img/product-charger-black.webp"
+        },
+        {
+          "label": "Charger, wood",
+          "href": "/img/product-charger-wood.webp"
+        },
+        {
+          "label": "Charger, aluminium",
+          "href": "/img/product-charger-alu.webp"
+        },
+        {
+          "label": "Charger, light",
+          "href": "/img/product-charger-light.webp"
+        },
+        {
+          "label": "Charger on a pole, black",
+          "href": "/img/product-charger-black-pole.webp"
+        },
+        {
+          "label": "Charger on a pole, wood",
+          "href": "/img/product-charger-wood-pole.webp"
+        },
+        {
+          "label": "Charger opened (modular)",
+          "href": "/img/product-modular.webp"
+        },
+        {
+          "label": "Charge controller",
+          "href": "/img/product-controller.webp"
+        },
+        {
+          "label": "Cable holder",
+          "href": "/img/product-hook.webp"
+        },
+        {
+          "label": "Pole",
+          "href": "/img/product-pole.webp"
+        },
+        {
+          "label": "LMC Pro",
+          "href": "/img/product-lmc.webp"
+        },
+        {
+          "label": "LMC Pro with clamps",
+          "href": "/img/product-lmc-clamps.webp"
+        },
+        {
+          "label": "Commercial Pole",
+          "href": "/img/product-commercial-pole.webp"
+        },
+        {
           "label": "VOOL Charger on a pole",
           "href": "/img/charger-pole.webp"
         },

@@ -89,6 +89,25 @@
     {
       "type": "links",
       "soft": true,
+      "title": "Datasheets: new products",
+      "items": [
+        {
+          "label": "VOOL Charger with ISO 15118 (PDF)",
+          "href": "/downloads/datasheets/vool-charger-iso15118-datasheet-en.pdf"
+        },
+        {
+          "label": "VOOL LMC S (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-s-datasheet-en.pdf"
+        },
+        {
+          "label": "VOOL Commercial Pole (PDF)",
+          "href": "/downloads/datasheets/vool-commercial-pole-datasheet-en.pdf"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
       "title": "Charger & LMC manuals",
       "items": [
         {

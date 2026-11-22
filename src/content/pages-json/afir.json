@@ -20,6 +20,10 @@
         {
           "label": "Where to buy",
           "href": "/where-to-buy/"
+        },
+        {
+          "label": "Datasheet (PDF)",
+          "href": "/downloads/datasheets/vool-charger-iso15118-datasheet-en.pdf"
         }
       ],
       "facts": [
@@ -93,8 +97,8 @@
     },
     {
       "type": "split",
-      "image": "/img/charger-two.webp",
-      "alt": "Two VOOL chargers on a wall",
+      "image": "/img/product-controller.webp",
+      "alt": "The orange VOOL charge controller inside the charger casing",
       "title": "Already have VOOL chargers? Upgrade the controller.",
       "text": "Current VOOL chargers do not support ISO 15118, and they do not have to: they were installed before the deadline. If you want Plug & Charge or V2G, the charge controller can be swapped for the new one. The casing, cabling and cable stay.",
       "points": [
