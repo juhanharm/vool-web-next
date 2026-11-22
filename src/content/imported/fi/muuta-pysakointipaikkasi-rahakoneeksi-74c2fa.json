@@ -1,0 +1,13 @@
+{
+ "kind": "usecase",
+ "title": "Tee pysäköintipaikastasi rahakone.",
+ "seoTitle": "Tee pysäköintipaikastasi rahakone.",
+ "description": "",
+ "date": "lokakuu 26, 2022",
+ "readTime": "3 minuutin lukuaika",
+ "image": "/media/635fdfffbf639f44a8062d41_Vool_Homepage_002.original.png",
+ "body": "<div ><div >\n  <h2>Miten VOOL-latausjärjestelmän saa tuottamaan tuloja</h2>\n</div></div>\n<div >\n<h2><br/>1.Asenna VOOL-latauslaite </h2><p>Meidän kehittämä moduulirakenne luo jokaiseen pysäköintipaikkaan latausvalmiuden jopa ilman varsinaisen latausmoduulin asentamista. Laita latausmoduuli paikoilleen ja olet valmiina aloittamaan. </p><p><br/>Latauslaitteet ovat yhteydessä muuhun maailmaan jokaiseen latauslaitteeseen asennetun ja maailmanlaajuisesti käytettävällä datapaketilla varustetun 4G moduulin kautta  </p><p><br/>OCPP 1.6 ja 2.0 yhteensopiva </p><h2><br/>2.Aseta lataushinta </h2><p>Ensimmäiseksi päätä, haluatko maksaa sähköstä kiinteän hinnan tai sähköpörssin vaihtelevan hintatason mukaan (Meidän suosituksena on käyttää automaattisen markkinahinnan seurannan toimintoa.)  </p><p><br/>Sen jälkeen aseta latauslaitteiden muille käyttäjille päättämäsi lataushinta. </p><p><br/>Meidän hallinta-alusta suo sinulle täyden yleiskuvan ja helpon kustannusten hallinnointimahdollisuuden. </p><h2><br/>3.Anna latauslaitteesi julkiseen käyttöön  </h2><p>Meidän julkisen lataamisen ominaisuus suo sinulle mahdollisuuden verkkoliitäntäsi jakamiseen – vain muutamalla painalluksella voi jokaisen VOOL-latauslaitteen antaa julkiseen käyttöön. Skaalautuvuus yhdestä tuhansiin latauspisteisiin. </p><h2><br/>4.Ansaitse tuloja</h2><p>Asiakkaittesi käytössä ovat monet erilaiset maksuratkaisut: Stripe, Google Pay, Apple Pay ja luottokorttimaksu. Maksu suoritetaan sovelluksen kautta. </p><p><br/>Ja bonuksena – koska latauslaitteesi kuvataan myös kaikissa lataussovelluksissa, liikkeesi saapuu lisää vieraita. Tässä on mahdollisuutesi.   </p></div>",
+ "lang": "fi",
+ "path": "/fi/ratkaisut/kayttotilanteet/muuta-pysakointipaikkasi-rahakoneeksi/",
+ "slug": "muuta-pysakointipaikkasi-rahakoneeksi"
+}

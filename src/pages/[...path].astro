@@ -1,0 +1,90 @@
+---
+/**
+ * One route for everything that keeps its original URL:
+ *  - English pages defined as data (src/content/pages.ts)
+ *  - blog posts, use cases and legal/FAQ pages imported as-is from the old site
+ *  - blog index per language
+ */
+import Base from '../layouts/Base.astro';
+import Sections from '../components/Sections.astro';
+import { pages } from '../content/pages';
+import { imported, posts, blogIndex, type Imported } from '../content/site';
+import { ui, langNames, type Lang } from '../content/ui';
+
+export function getStaticPaths() {
+  const toParam = (p: string) => p.replace(/^\/|\/$/g, '') || undefined;
+  const out: any[] = [];
+  for (const [path, page] of Object.entries(pages)) out.push({ params: { path: toParam(path) }, props: { kind: 'page', page } });
+  for (const item of imported) if (!(item.path in pages)) out.push({ params: { path: toParam(decodeURIComponent(item.path)) }, props: { kind: 'item', item } });
+  for (const lang of Object.keys(langNames) as Lang[]) {
+    const idx = blogIndex(lang);
+    if (idx) out.push({ params: { path: toParam(decodeURIComponent(idx)) }, props: { kind: 'blog', lang } });
+  }
+  return out;
+}
+
+const { kind, page, item, lang: blogLang } = Astro.props as { kind: string; page?: any; item?: Imported; lang?: Lang };
+const lang: Lang = kind === 'page' ? 'en' : kind === 'item' ? item!.lang : blogLang!;
+const list = kind === 'blog' ? posts(lang) : [];
+const idx = blogIndex(lang);
+---
+{kind === 'page' && (
+  <Base lang="en" title={page.title} description={page.description} image={page.image}>
+    <Sections sections={page.sections} lang="en" />
+  </Base>
+)}
+
+{kind === 'item' && (
+  <Base lang={lang} title={item!.seoTitle || item!.title} description={item!.description} image={item!.image}>
+    {item!.kind === 'generic' ? (
+      <section class="section"><div class="wrap prose"><h1>{item!.title}</h1><Fragment set:html={item!.body} /></div></section>
+    ) : (
+      <article>
+        <div class="wrap">
+          <div class="post-hero" style={item!.image ? `background-image:url('${item!.image}')` : ''}>
+            <div class="post-hero-in">
+              <h1>{item!.title}</h1>
+              <p>{item!.date}{item!.readTime && <i> · {item!.readTime}</i>}</p>
+            </div>
+          </div>
+        </div>
+        <div class="wrap prose post-body"><Fragment set:html={item!.body} /></div>
+        {item!.kind === 'blog' && idx && <div class="wrap prose"><p><a href={idx}>← {ui[lang].allPosts}</a></p></div>}
+      </article>
+    )}
+  </Base>
+)}
+
+{kind === 'blog' && (
+  <Base lang={lang} title={`${ui[lang].blog} | VOOL`} description={ui[lang].tagline}>
+    <section class="section">
+      <div class="wrap">
+        <h1>{ui[lang].blog}</h1>
+        <div class="grid c3" style="margin-top:36px">
+          {list.map((p) => (
+            <a class="post-card" href={p.path}>
+              <div class="photo">{p.image && <img src={p.image} alt="" loading="lazy" />}</div>
+              <p class="small muted">{p.date}{p.readTime && ` · ${p.readTime}`}</p>
+              <h3>{p.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </Base>
+)}
+
+<style>
+  .post-hero { margin-top: 32px; border-radius: var(--radius); background: var(--ink) center / cover; min-height: 420px; display: flex; align-items: flex-end; overflow: hidden; }
+  .post-hero-in { width: 100%; padding: 120px 40px 28px; color: #fff; background: linear-gradient(180deg, transparent, #282828); }
+  .post-hero-in h1 { max-width: 20ch; font-size: clamp(1.9rem, 4vw, 3rem); }
+  .post-hero-in p { margin: 0; }
+  .post-body { margin: 48px auto 32px; }
+  article .prose { margin-left: auto; margin-right: auto; }
+  article { padding-bottom: 64px; }
+  .post-card { text-decoration: none; display: block; }
+  .post-card .photo { aspect-ratio: 16 / 10; margin-bottom: 12px; }
+  .post-card h3 { font-size: 1.25rem; }
+  .post-card:hover h3 { color: var(--orange); }
+  @media (max-width: 640px) { .post-hero-in { padding: 100px 20px 20px; } .post-hero { min-height: 340px; } }
+</style>

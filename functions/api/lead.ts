@@ -23,7 +23,7 @@ interface Env {
   LEAD_WEBHOOK?: string;
 }
 
-type FormKind = 'apartment' | 'daei';
+type FormKind = 'apartment' | 'daei' | 'contact' | 'reseller';
 
 const ROUTING: Record<FormKind, { notify: string[]; tag: string; title: (d: Record<string, string>) => string }> = {
   apartment: {
@@ -36,11 +36,23 @@ const ROUTING: Record<FormKind, { notify: string[]; tag: string; title: (d: Reco
     tag: 'DAEI waitlist',
     title: (d) => `DAEI waitlist: ${d.name || d.email}`,
   },
+  contact: {
+    notify: ['info@vool.com'],
+    tag: 'Website contact form',
+    title: (d) => `Website: ${d.topic || 'enquiry'} – ${d.company || d.name || d.email}`,
+  },
+  reseller: {
+    notify: ['info@vool.com'],
+    tag: 'Partner application',
+    title: (d) => `New partner: ${d.company || d.name} (${d.country || '?'})`,
+  },
 };
 
 const REQUIRED: Record<FormKind, string[]> = {
   apartment: ['association', 'address', 'city', 'name', 'email', 'consent'],
   daei: ['email', 'charger_brand', 'consent'],
+  contact: ['name', 'email', 'message', 'consent'],
+  reseller: ['company', 'country', 'name', 'email', 'consent'],
 };
 
 const json = (body: unknown, status = 200) =>
@@ -69,7 +81,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const lead = {
     name: route.title(data),
     contact_name: data.name || '',
-    partner_name: data.association || '',
+    partner_name: data.association || data.company || '',
     email_from: data.email,
     phone: data.phone || '',
     street: data.address || '',

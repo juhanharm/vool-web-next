@@ -1,0 +1,54 @@
+---
+/** Interim homepage for languages whose marketing pages are not translated yet. */
+import Base from '../layouts/Base.astro';
+import { ui, type Lang } from '../content/ui';
+import { posts, blogIndex } from '../content/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t: Record<string, any> = {
+  et: { title: 'Lae rohkem autosid olemasoleva liitumisega', lead: 'VOOL on üks süsteem: nutikas laadija, koormusjuhtimise kontroller ja tarkvara, mis töötavad koos.', promo: { text: 'Korteriühistu: 10 laadimispunkti puhul 14 090 € KIK toetust.', cta: 'Vaata lähemalt', href: '/et/kortermajad/' }, products: 'Tooted ja lahendused (inglise keeles)', latest: 'Värskest blogist', buy: 'Kust osta' },
+  lt: { title: 'Įkraukite daugiau automobilių su esamu elektros įvadu', lead: 'VOOL – viena sistema: išmani įkrovimo stotelė, apkrovos valdiklis ir programinė įranga, veikiantys kartu.', promo: { text: 'Gaukite 3,9 ct už kiekvieną namuose įkrautą kWh.', cta: 'Registruotis', href: '/lt/daei/' }, products: 'Produktai ir sprendimai (anglų k.)', latest: 'Naujausi straipsniai', buy: 'Kur įsigyti' },
+  fi: { title: 'Lataa useampi auto nykyisellä sähköliittymällä', lead: 'VOOL on yksi järjestelmä: älykäs latauslaite, kuormanhallintaohjain ja ohjelmisto, jotka toimivat yhdessä.', products: 'Tuotteet ja ratkaisut (englanniksi)', latest: 'Uusimmat artikkelit', buy: 'Jälleenmyyjät' },
+  sv: { title: 'Ladda fler bilar med den elanslutning du redan har', lead: 'VOOL är ett system: en smart laddbox, en lastbalanserare och mjukvara som arbetar tillsammans.', products: 'Produkter och lösningar (på engelska)', latest: 'Senaste artiklarna', buy: 'Återförsäljare' },
+}[lang];
+const latest = posts(lang).slice(0, 3);
+const idx = blogIndex(lang);
+---
+<Base lang={lang} title={`VOOL – ${t.title}`} description={t.lead} alternates={{ en: '/', et: '/et/', lt: '/lt/', fi: '/fi/', sv: '/sv/' }} image="/img/hero-home.webp">
+  <section class="section">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>{t.title}</h1>
+        <p class="lead">{t.lead}</p>
+        {t.promo && <p class="promo"><span>{t.promo.text}</span> <a href={t.promo.href}>{t.promo.cta} →</a></p>}
+        <div class="btn-row">
+          <a class="btn" href="/products/vool-charger/">{t.products}</a>
+          <a class="btn ghost" href="/where-to-buy/">{t.buy}</a>
+        </div>
+      </div>
+      <div class="photo"><img src="/img/hero-home.webp" alt="VOOL" /></div>
+    </div>
+  </section>
+  {latest.length > 0 && (
+    <section class="section soft">
+      <div class="wrap">
+        <h2>{t.latest}</h2>
+        <div class="grid c3" style="margin-top:28px">
+          {latest.map((p) => (
+            <a class="card" href={p.path} style="text-decoration:none">
+              <p class="small muted">{p.date}</p><h3>{p.title}</h3>
+            </a>
+          ))}
+        </div>
+        {idx && <p style="margin-top:24px"><a href={idx}>{ui[lang].allPosts} →</a></p>}
+      </div>
+    </section>
+  )}
+</Base>
+<style>
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .hero-grid .photo { aspect-ratio: 4 / 3; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+  .promo { background: var(--soft); border-radius: 14px; padding: 16px 20px; margin-top: 20px; }
+  .promo a { color: var(--orange); font-weight: 500; text-decoration: none; }
+</style>

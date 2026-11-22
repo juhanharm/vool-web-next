@@ -1,0 +1,648 @@
+[
+ {
+  "country": "Austria",
+  "partners": [
+   {
+    "name": "Partino Mobile Energie AG",
+    "website": "https://www.partino.ch",
+    "phone": "+41 62 832 42 40",
+    "email": "e-mobility@partino.ch",
+    "installer": false,
+    "wholesaler": true
+   }
+  ]
+ },
+ {
+  "country": "Estonia",
+  "partners": [
+   {
+    "name": "Akukeskus Tallinn, Lasnamäe",
+    "website": "http://www.akukeskus.eu",
+    "phone": "+372 580 91130",
+    "email": "lasna@akukeskus.eu",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Akukeskus Tallinn, Mustamäe",
+    "website": "http://www.akukeskus.eu",
+    "phone": "+372 6 556 321",
+    "email": "tallinn@akukeskus.eu",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Akukeskus Tartu",
+    "website": "https://akukeskus.eu/",
+    "phone": "+372 5546464",
+    "email": "tartu@akukeskus.eu",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Alexela",
+    "website": "https://www.alexela.ee/et/e-mobiilsus-laadimislahendused",
+    "phone": "+372 629 0000",
+    "email": "alexela@alexela.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Diotech",
+    "website": "https://www.diotech.ee/elektriautode-laadimislahendused/",
+    "phone": "+372 5159938",
+    "email": "info@diotech.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Eleväli",
+    "website": "https://elevali.ee/pood/",
+    "phone": "+372 5620 2992",
+    "email": "taavi@elevali.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Energiakaubamaja",
+    "website": "https://energiakaubamaja.ee/tootekategooria/taastuvenergia/elektriauto-laadijad/",
+    "phone": "+372 5332 0533",
+    "email": "info@energiakaubamaja.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Erlin",
+    "website": "http://erlin.ee/",
+    "phone": "+372 51 79 291",
+    "email": "info@erlin.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "E-Service",
+    "website": "https://eservice.ee/autolaadijad/",
+    "phone": "+372 670 1066",
+    "email": "info@eservice.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "EV Power",
+    "website": "https://shop.evpower.ee/et/b/vool",
+    "phone": "+372 5460 0580",
+    "email": "evpower@evpower.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "FirstEV",
+    "website": "https://firstev.ee/pages/vool-x-firstev",
+    "phone": "+372 69 91620",
+    "email": "info@firstev.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Hepa Elekter OÜ",
+    "website": "https://hepaelekter.ee/",
+    "phone": "+372 5666 2359",
+    "email": "hepaelekter@gmail.com",
+    "installer": true,
+    "wholesaler": true
+   },
+   {
+    "name": "Kadakas OÜ",
+    "website": "https://kadakas.ee/uus/",
+    "phone": "+372 5620 3831",
+    "email": "tarmo@kadakas.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Kodulaadija.ee",
+    "website": "https://kodulaadija.ee/toode/vool-laadija-22kw-3-x-32a-tuup-2-otsikuga/",
+    "phone": "+372 5623 6556",
+    "email": "",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Onninen",
+    "website": "https://www.onninen.ee/kaubamargid/vool",
+    "phone": "+372 610 5550",
+    "email": "klienditugi@onninen.com",
+    "installer": false,
+    "wholesaler": true
+   },
+   {
+    "name": "Places & Phases OÜ",
+    "website": "http://placenphase.lv",
+    "phone": "+371 2774 4375",
+    "email": "martins@placenphase.lv",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Revolta.ee",
+    "website": "https://revolta.ee/ee/brand-vool",
+    "phone": "+372 5323 2362",
+    "email": "revolta.ee@gmail.com",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Solarlink",
+    "website": "https://solarlink.ee/",
+    "phone": "+372 5555 0788",
+    "email": "teet.solarlink@gmail.com",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "TT Elekter",
+    "website": "https://evlaadijad.ee/tooted/?brand=Vool",
+    "phone": "+372 5359 5116",
+    "email": "raido.teekel@tt-elekter.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Tulipunane",
+    "website": "https://www.saarevool.ee/",
+    "phone": "+372 5346 0035",
+    "email": "info@saarevool.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Viru Energo",
+    "website": "https://viruev.ee/autolaadijad/",
+    "phone": "+372 5626 6622",
+    "email": "andres.meesak@viruev.ee",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "W.EG. EESTI",
+    "website": "https://www.weg.ee/",
+    "phone": "",
+    "email": "",
+    "installer": false,
+    "wholesaler": true
+   }
+  ]
+ },
+ {
+  "country": "Finland",
+  "partners": [
+   {
+    "name": "Ahlsell Oy",
+    "website": "https://www.ahlsell.fi/search?parameters.SearchPhrase=vool",
+    "phone": "+358 20 584 5365",
+    "email": "sami.menyhart@ahlsell.fi",
+    "installer": false,
+    "wholesaler": true
+   },
+   {
+    "name": "EV Lataus",
+    "website": "https://www.evlataus.fi/collections/latausasemat/products/vool-latausasema-type-2-6-5m",
+    "phone": "041 318 3836",
+    "email": "ville@evlataus.fi",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Kotilaturi Finland Oy",
+    "website": "https://www.kotilaturi.fi/tuote/sahkoauton-latausasema-vool-22kw-kuormanhallinta-porssisahko/",
+    "phone": "+358453325576",
+    "email": "info@kotilaturi.fi",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Laturiin",
+    "website": "https://www.laturiin.fi/tuote/vool/",
+    "phone": "010 200 1830",
+    "email": "info@laturiin.fi",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "LaturiX",
+    "website": "http://www.laturix.fi",
+    "phone": "",
+    "email": "",
+    "installer": false,
+    "wholesaler": false
+   },
+   {
+    "name": "Onninen Oy",
+    "website": "https://www.onninen.fi/search?term=vool",
+    "phone": "",
+    "email": "",
+    "installer": false,
+    "wholesaler": true
+   },
+   {
+    "name": "Sähköasennus Ranta-Virta Oy",
+    "website": "",
+    "phone": "040 734 2724",
+    "email": "Jarkko.rantala@rantavirta.fi",
+    "installer": true,
+    "wholesaler": false
+   }
+  ]
+ },
+ {
+  "country": "Germany",
+  "partners": [
+   {
+    "name": "Partino Mobile Energie AG",
+    "website": "https://www.partino.ch",
+    "phone": "+41 62 832 42 40",
+    "email": "e-mobility@partino.ch",
+    "installer": false,
+    "wholesaler": true
+   }
+  ]
+ },
+ {
+  "country": "Latvia",
+  "partners": [
+   {
+    "name": "ACC Distribution",
+    "website": "https://accdistribution.eu/",
+    "phone": "+37060486024",
+    "email": "mindaugas.karpauskas@accdistribution.eu",
+    "installer": false,
+    "wholesaler": true
+   },
+   {
+    "name": "Alexela",
+    "website": "https://www.alexela.lv/lv/privatpersonam-e-mobilitate/elektriska-uzlade-automasinam",
+    "phone": "+371 27 33 77 22",
+    "email": "alexela@alexela.lv",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "KVIC",
+    "website": "https://kvic.lv/veikals/",
+    "phone": "+371 20002724",
+    "email": "info@kvic.lv",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "MMX Energy",
+    "website": "https://www.mmxenergy.eu/en/",
+    "phone": "+37126427797",
+    "email": "info@mmxenergy.lv",
+    "installer": true,
+    "wholesaler": true
+   },
+   {
+    "name": "Places & Phases",
+    "website": "https://placenphase.lv/",
+    "phone": "+371 2774 4375",
+    "email": "martins@placenphase.lv",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "ProSun Saules paneļi",
+    "website": "https://prosun.lv/",
+    "phone": "+37122336760",
+    "email": "",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "SIA KVIC GROUP",
+    "website": "https://kvic.lv/veikals/",
+    "phone": "+371 20002724",
+    "email": "info@kvic.lv",
+    "installer": true,
+    "wholesaler": false
+   }
+  ]
+ },
+ {
+  "country": "Lithuania",
+  "partners": [
+   {
+    "name": "ACC Distribution",
+    "website": "https://accdistribution.eu/",
+    "phone": "+37060486024",
+    "email": "mindaugas.karpauskas@accdistribution.eu",
+    "installer": false,
+    "wholesaler": true
+   },
+   {
+    "name": "Chargein UAB",
+    "website": "https://chargein.lt",
+    "phone": "+370 (655) 99998",
+    "email": "info@chargein.lt",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Domanai, MB",
+    "website": "https://domanai.lt/produktas/v22tmabgp/",
+    "phone": "+370 660 11055",
+    "email": "sun@domanai.lt",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Evioni UAB",
+    "website": "http://www.evioni.lt",
+    "phone": "+370 (647) 70380",
+    "email": "info@evioni.com",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Ikrautas",
+    "website": "https://ikrautas.lt/",
+    "phone": "+370 647 00009",
+    "email": "info@ikrautas.lt",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "MB „Kontaktus“",
+    "website": "",
+    "phone": "+370 640 60411",
+    "email": "info@kontaktus.lt",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Places & Phases",
+    "website": "https://placenphase.lt/",
+    "phone": "+370 69931727",
+    "email": "martynas@phases.lt",
+    "installer": true,
+    "wholesaler": false
+   }
+  ]
+ },
+ {
+  "country": "Luxembourg",
+  "partners": [
+   {
+    "name": "AMP X VOLT",
+    "website": "https://www.ampxvolt.eu/",
+    "phone": "+352 661 990 660",
+    "email": "charge@ampxvolt.eu",
+    "installer": true,
+    "wholesaler": true
+   }
+  ]
+ },
+ {
+  "country": "Malta",
+  "partners": [
+   {
+    "name": "EVPoint",
+    "website": "http://evpoint.mt",
+    "phone": "",
+    "email": "",
+    "installer": true,
+    "wholesaler": true
+   }
+  ]
+ },
+ {
+  "country": "Norway",
+  "partners": [
+   {
+    "name": "Enøkgrossisten AS",
+    "website": "https://www.enokgrossisten.no/elbillader-vool",
+    "phone": "+47 95 04 02 27",
+    "email": "post@enokgrossisten.no",
+    "installer": false,
+    "wholesaler": true
+   },
+   {
+    "name": "Pay N Charge Norge AS",
+    "website": "http://www.payncharge.se/no",
+    "phone": "+4792091926",
+    "email": "Victor@payncharge.as",
+    "installer": true,
+    "wholesaler": true
+   }
+  ]
+ },
+ {
+  "country": "Poland",
+  "partners": [
+   {
+    "name": "ACEV Jakub Banasiak",
+    "website": "http://www.acev.pl",
+    "phone": "+48 503 941 872",
+    "email": "biuro@acev.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Elektryka Od A do Z Michał Bąk",
+    "website": "https://sklep.ladujev.pl/",
+    "phone": "+48 508 325 834",
+    "email": "kontakt@ladujEV.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "eSparks.pl",
+    "website": "https://esparks.pl/kontakt",
+    "phone": "48 453 402 222",
+    "email": "info@esparks.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Evelutions",
+    "website": "http://Evelutions.com.pl",
+    "phone": "+48 666 310 796",
+    "email": "Biuro@evelutions.com.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "EVLOP Sp. z o.o.",
+    "website": "",
+    "phone": "",
+    "email": "kontakt@evlop.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Firma Handlowo - Usługowa \"BATLAMP 2\" Michał SZUBARTOWSKI",
+    "website": "",
+    "phone": "",
+    "email": "",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "GreenKick Sp. z o.o.",
+    "website": "",
+    "phone": "",
+    "email": "kontakt@greenkick.com.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Greto Polska Sp. z o.o.",
+    "website": "https://greto.com.pl",
+    "phone": "+48 882 557 266",
+    "email": "a.bochan@greto.com.pl",
+    "installer": false,
+    "wholesaler": true
+   },
+   {
+    "name": "GRUPA INSTA sp. z o.o.",
+    "website": "",
+    "phone": "667447800",
+    "email": "biuro@grupainsta.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "INFUSE ENERGY SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+    "website": "",
+    "phone": "786270344",
+    "email": "infuse.energy@op.pl",
+    "installer": false,
+    "wholesaler": false
+   },
+   {
+    "name": "INFUSE ENERGY Sp. z o.o.",
+    "website": "",
+    "phone": "+48 786 270 344",
+    "email": "infuse.energy@op.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "PowerPlug",
+    "website": "http://powerplug.pl",
+    "phone": "+48730882967",
+    "email": "kontakt@powerplug.pl",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Rayhold Energia Sp. Z o.o",
+    "website": "https://rayhold.pl/kontakt/",
+    "phone": "",
+    "email": "",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "REVON ENERGY Sp. z o.o",
+    "website": "",
+    "phone": "",
+    "email": "",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Solutions 30 Telecom Sp. z o.o.",
+    "website": "https://solutions30.com/",
+    "phone": "",
+    "email": "",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "Stan Energia Polska",
+    "website": "http://www.stanenergiapolska.pl",
+    "phone": "",
+    "email": "info@stanenergiapolska.pl",
+    "installer": true,
+    "wholesaler": false
+   }
+  ]
+ },
+ {
+  "country": "Portugal",
+  "partners": [
+   {
+    "name": "IBCharge",
+    "website": "https://www.ibcharge.pt/",
+    "phone": "+351 244 870 700",
+    "email": "info@ibcharge.pt",
+    "installer": true,
+    "wholesaler": true
+   },
+   {
+    "name": "Socilux",
+    "website": "",
+    "phone": "+351 911 752 651",
+    "email": "geral@socilux.pt",
+    "installer": false,
+    "wholesaler": true
+   }
+  ]
+ },
+ {
+  "country": "Slovakia",
+  "partners": [
+   {
+    "name": "Chargium",
+    "website": "http://www.chargium.eu",
+    "phone": "",
+    "email": "",
+    "installer": true,
+    "wholesaler": true
+   },
+   {
+    "name": "Voltarea",
+    "website": "https://voltarea.sk",
+    "phone": "+421 951 966 081",
+    "email": "info@voltarea.sk",
+    "installer": true,
+    "wholesaler": true
+   }
+  ]
+ },
+ {
+  "country": "Sweden",
+  "partners": [
+   {
+    "name": "Laddexperten",
+    "website": "https://www.laddexperten.se/",
+    "phone": "",
+    "email": "",
+    "installer": true,
+    "wholesaler": false
+   },
+   {
+    "name": "PayNCharge",
+    "website": "https://www.payncharge.se/",
+    "phone": "010-585 84 00",
+    "email": "info@payncharge.se",
+    "installer": true,
+    "wholesaler": false
+   }
+  ]
+ },
+ {
+  "country": "Switzerland",
+  "partners": [
+   {
+    "name": "Partino Mobile Energie AG",
+    "website": "https://www.partino.ch",
+    "phone": "+41 62 832 42 40",
+    "email": "e-mobility@partino.ch",
+    "installer": false,
+    "wholesaler": true
+   }
+  ]
+ }
+]

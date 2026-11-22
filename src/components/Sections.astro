@@ -1,0 +1,144 @@
+---
+/**
+ * Renders a page from a list of section blocks (see src/content/pages.ts).
+ * Translating a page = translating its data; the layout stays the same.
+ */
+import Steps from './Steps.astro';
+import Faq from './Faq.astro';
+import LeadForm from './LeadForm.astro';
+
+interface Props { sections: any[]; lang: string }
+const { sections, lang } = Astro.props;
+---
+{sections.map((s, i) => (
+  <>
+    {s.type === 'hero' && (
+      <section class:list={['hero', { dark: s.dark }]}>
+        <div class="wrap hero-grid">
+          <div class="hero-text">
+            {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
+            <h1>{s.title}</h1>
+            <p class="lead">{s.lead}</p>
+            {s.cta && <div class="btn-row">{s.cta.map((b: any, j: number) => <a class:list={['btn', { ghost: j > 0 }]} href={b.href}>{b.label}</a>)}</div>}
+            {s.facts && <ul class="facts">{s.facts.map((f: string) => <li>{f}</li>)}</ul>}
+          </div>
+          {s.image && <div class="photo hero-photo"><img src={s.image} alt={s.alt ?? ''} loading="eager" /></div>}
+        </div>
+      </section>
+    )}
+
+    {s.type === 'cards' && (
+      <section class:list={['section', { soft: s.soft }]} id={s.id}>
+        <div class="wrap">
+          {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
+          <h2>{s.title}</h2>
+          {s.lead && <p class="lead">{s.lead}</p>}
+          <div class={`grid c${s.cols ?? 3}`} style="margin-top:32px">
+            {s.items.map((c: any) => (
+              <div class:list={['card', { 'has-img': c.image }]}>
+                {c.image && <div class="photo card-photo"><img src={c.image} alt="" loading="lazy" /></div>}
+                <h3>{c.title}</h3>
+                {c.text && <p class="muted">{c.text}</p>}
+                {c.points && <ul>{c.points.map((p: string) => <li>{p}</li>)}</ul>}
+                {c.href && <a class="more" href={c.href}>{c.more ?? 'Learn more'} →</a>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'split' && (
+      <section class:list={['section', { soft: s.soft }]} id={s.id}>
+        <div class:list={['wrap', 'split', { flip: s.flip }]}>
+          <div class="photo"><img src={s.image} alt={s.alt ?? ''} loading="lazy" /></div>
+          <div>
+            {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
+            <h2>{s.title}</h2>
+            {s.text && <p class="muted">{s.text}</p>}
+            {s.points && <ul class="checks">{s.points.map((p: string) => <li>{p}</li>)}</ul>}
+            {s.cta && <div class="btn-row">{s.cta.map((b: any, j: number) => <a class:list={['btn', { ghost: j > 0 }]} href={b.href}>{b.label}</a>)}</div>}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'steps' && <Steps title={s.title} steps={s.items} soft={s.soft} />}
+
+    {s.type === 'specs' && (
+      <section class:list={['section', { soft: s.soft }]}>
+        <div class="wrap specs">
+          <h2>{s.title}</h2>
+          <table>{s.rows.map(([k, v]: string[]) => <tr><th>{k}</th><td>{v}</td></tr>)}</table>
+          {s.note && <p class="small muted">{s.note}</p>}
+          {s.links && <div class="btn-row">{s.links.map((b: any) => <a class="btn ghost" href={b.href}>{b.label}</a>)}</div>}
+        </div>
+      </section>
+    )}
+
+    {s.type === 'links' && (
+      <section class:list={['section', { soft: s.soft }]}>
+        <div class="wrap">
+          <h2>{s.title}</h2>
+          {s.lead && <p class="lead">{s.lead}</p>}
+          <ul class="linklist">{s.items.map((l: any) => <li><a href={l.href} rel="noopener">{l.label}<span>↗</span></a></li>)}</ul>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'faq' && <Faq title={s.title} items={s.items} />}
+
+    {s.type === 'cta' && (
+      <section class="section dark">
+        <div class="wrap cta">
+          <div><h2>{s.title}</h2>{s.lead && <p class="lead">{s.lead}</p>}</div>
+          <div class="btn-row">{s.buttons.map((b: any, j: number) => <a class:list={['btn', { ghost: j > 0 }]} href={b.href}>{b.label}</a>)}</div>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'form' && (
+      <section class="section dark">
+        <div class="wrap" style="max-width:760px">
+          <LeadForm id="form" form={s.form} lang={lang} title={s.title} intro={s.intro} fields={s.fields}
+            submit={s.submit} thanks={s.thanks} error={s.error} consent={s.consent} />
+        </div>
+      </section>
+    )}
+  </>
+))}
+
+<style>
+  .hero { padding: 72px 0 80px; }
+  .hero.dark { background: var(--ink); color: #fff; }
+  .hero.dark .lead { color: #cfcfcf; }
+  .hero.dark .btn.ghost { color: #fff; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .hero-photo { aspect-ratio: 4 / 3; }
+  .facts { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .facts li { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: .86rem; }
+  .hero.dark .facts li { border-color: #4a4a4a; color: #e6e6e6; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .split .photo { aspect-ratio: 4 / 3; }
+  .split.flip .photo { order: 2; }
+  @media (max-width: 860px) { .hero-grid, .split { grid-template-columns: 1fr; gap: 32px; } .split.flip .photo { order: 0; } .hero { padding: 48px 0 56px; } }
+  .checks { list-style: none; padding: 0; margin: 18px 0 0; }
+  .checks li { padding: 7px 0 7px 30px; position: relative; }
+  .checks li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .card.has-img { padding: 0 0 24px; overflow: hidden; }
+  .card.has-img > :not(.photo) { margin-left: 24px; margin-right: 24px; }
+  .card-photo { aspect-ratio: 16 / 10; border-radius: 0; margin-bottom: 20px; }
+  .specs { max-width: 820px; }
+  .specs table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .specs th, .specs td { text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); font-weight: 300; vertical-align: top; }
+  .specs th { width: 42%; color: var(--grey); }
+  .specs td { font-weight: 400; }
+  .linklist { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .linklist a { display: flex; justify-content: space-between; gap: 12px; padding: 16px 20px; background: #fff; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; }
+  .linklist a:hover { border-color: var(--orange); }
+  .linklist span { color: var(--orange); }
+  .cta { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; }
+  .cta .btn.ghost { color: #fff; }
+  .cta .btn-row { margin-top: 0; }
+  @media (max-width: 860px) { .cta { grid-template-columns: 1fr; } }
+</style>

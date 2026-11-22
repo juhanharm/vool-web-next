@@ -1,65 +1,74 @@
-export type Lang = 'en' | 'et' | 'lt';
+export type Lang = 'en' | 'et' | 'lt' | 'fi' | 'sv';
+export const langNames: Record<Lang, string> = { en: 'EN', et: 'ET', lt: 'LT', fi: 'FI', sv: 'SV' };
+/** Languages planned next (pages not translated yet): pl, de, pt. */
 
-export const langNames: Record<Lang, string> = { en: 'EN', et: 'ET', lt: 'LT' };
+export interface NavItem { label: string; href?: string; children?: { label: string; href: string; note?: string }[] }
 
-/** Shared navigation and footer strings per language. */
-export const ui = {
-  en: {
-    nav: [
-      { label: 'Products', href: '/#products' },
-      { label: 'Apartment buildings', href: '/apartment-buildings/' },
-      { label: 'DAEI (Lithuania)', href: '/daei/' },
-      { label: 'Where to buy', href: '/#buy' },
-    ],
-    login: 'Log in',
-    reseller: 'Reseller login',
-    footer: {
-      tagline: 'Smart EV charging, designed and made in Estonia.',
-      company: 'MultiCharge OÜ · Veerenni 38, 10138 Tallinn, Estonia',
-      links: [
-        { label: 'Help Center', href: 'https://help.vool.com' },
-        { label: 'VOOL Portal', href: 'https://app.vool.com' },
-        { label: 'Privacy policy', href: '/privacy-policy/' },
-      ],
-    },
-  },
-  et: {
-    nav: [
-      { label: 'Tooted', href: '/et/#products' },
-      { label: 'Kortermajad', href: '/et/kortermajad/' },
-      { label: 'Kust osta', href: '/et/#buy' },
-    ],
-    login: 'Logi sisse',
-    reseller: 'Edasimüüja login',
-    footer: {
-      tagline: 'Nutikas elektriauto laadimine, arendatud ja toodetud Eestis.',
-      company: 'MultiCharge OÜ · Veerenni 38, 10138 Tallinn',
-      links: [
-        { label: 'Abikeskus', href: 'https://help.vool.com' },
-        { label: 'VOOL portaal', href: 'https://app.vool.com' },
-        { label: 'Privaatsuspoliitika', href: '/et/cookie-policy/' },
-      ],
-    },
-  },
-  lt: {
-    nav: [
-      { label: 'Produktai', href: '/lt/#products' },
-      { label: 'DAEI', href: '/lt/daei/' },
-      { label: 'Kur įsigyti', href: '/lt/#buy' },
-    ],
-    login: 'Prisijungti',
-    reseller: 'Partnerių prisijungimas',
-    footer: {
-      tagline: 'Išmanus elektromobilių įkrovimas, sukurtas ir pagamintas Estijoje.',
-      company: 'MultiCharge OÜ · Veerenni 38, 10138 Talinas, Estija',
-      links: [
-        { label: 'Pagalbos centras', href: 'https://help.vool.com' },
-        { label: 'VOOL portalas', href: 'https://app.vool.com' },
-        { label: 'Privatumo politika', href: '/lt/privacy-policy/' },
-      ],
-    },
-  },
-} as const;
+export const homeOf = (l: Lang) => (l === 'en' ? '/' : `/${l}/`);
 
-/** Reseller shop in Odoo (planned). */
+export const nav: Record<Lang, NavItem[]> = {
+  en: [
+    { label: 'Products', children: [
+      { label: 'VOOL Charger', href: '/products/vool-charger/', note: '22 kW smart charger' },
+      { label: 'VOOL LMC', href: '/products/vool-lmc/', note: 'Load management controller' },
+      { label: 'VOOL App', href: '/products/vool-app/', note: 'Smart charging on your phone' },
+      { label: 'VOOL Portal', href: '/products/vool-portal/', note: 'Manage sites, users and billing' },
+    ] },
+    { label: 'Solutions', children: [
+      { label: 'Apartments & offices', href: '/solutions/apartment-blocks/' },
+      { label: 'KIK grant (Estonia)', href: '/apartment-buildings/' },
+      { label: 'Homes', href: '/solutions/ev-charger-for-home/' },
+      { label: 'Fleets', href: '/solutions/electrical-fleet-owners/' },
+      { label: 'Public charging', href: '/solutions/public-charging/' },
+      { label: 'DAEI income (Lithuania)', href: '/daei/' },
+    ] },
+    { label: 'Where to buy', href: '/where-to-buy/' },
+    { label: 'Partners', href: '/resources/resellers/' },
+    { label: 'Support', children: [
+      { label: 'Help Center', href: '/resources/help-center/' },
+      { label: 'Product manuals', href: '/resources/product-manuals/' },
+      { label: 'FAQ', href: '/faq/' },
+      { label: 'Blog', href: '/resources/blog/' },
+      { label: 'Contact', href: '/resources/contact/' },
+    ] },
+    { label: 'About', href: '/about-us/our-story-new/' },
+  ],
+  et: [
+    { label: 'Kortermajad ja KIK toetus', href: '/et/kortermajad/' },
+    { label: 'Tooted', href: '/products/vool-charger/' },
+    { label: 'Kust osta', href: '/where-to-buy/' },
+  ],
+  lt: [
+    { label: 'DAEI', href: '/lt/daei/' },
+    { label: 'Produktai', href: '/products/vool-charger/' },
+    { label: 'Kur įsigyti', href: '/where-to-buy/' },
+  ],
+  fi: [
+    { label: 'Tuotteet', href: '/products/vool-charger/' },
+    { label: 'Jälleenmyyjät', href: '/where-to-buy/' },
+  ],
+  sv: [
+    { label: 'Produkter', href: '/products/vool-charger/' },
+    { label: 'Återförsäljare', href: '/where-to-buy/' },
+  ],
+};
+
+export const ui: Record<Lang, { login: string; reseller: string; blog: string; tagline: string; legal: string; readMore: string; allPosts: string }> = {
+  en: { login: 'Log in', reseller: 'Reseller login', blog: 'Blog', tagline: 'Smart EV charging, designed and made in Estonia.', legal: 'Terms', readMore: 'Read more', allPosts: 'All articles' },
+  et: { login: 'Logi sisse', reseller: 'Edasimüüja login', blog: 'Blogi', tagline: 'Nutikas elektriauto laadimine, arendatud ja toodetud Eestis.', legal: 'Tingimused', readMore: 'Loe edasi', allPosts: 'Kõik artiklid' },
+  lt: { login: 'Prisijungti', reseller: 'Partnerių prisijungimas', blog: 'Tinklaraštis', tagline: 'Išmanus elektromobilių įkrovimas, sukurtas ir pagamintas Estijoje.', legal: 'Sąlygos', readMore: 'Skaityti', allPosts: 'Visi straipsniai' },
+  fi: { login: 'Kirjaudu', reseller: 'Jälleenmyyjän kirjautuminen', blog: 'Blogi', tagline: 'Älykästä sähköauton latausta, suunniteltu ja valmistettu Virossa.', legal: 'Ehdot', readMore: 'Lue lisää', allPosts: 'Kaikki artikkelit' },
+  sv: { login: 'Logga in', reseller: 'Återförsäljarinloggning', blog: 'Blogg', tagline: 'Smart elbilsladdning, utvecklad och tillverkad i Estland.', legal: 'Villkor', readMore: 'Läs mer', allPosts: 'Alla artiklar' },
+};
+
+export const company = {
+  name: 'MultiCharge OÜ', reg: '14627725', address: 'Veerenni 38, 10138 Tallinn, Estonia',
+  phone: '+372 5656 7172', email: 'info@vool.com',
+  linkedin: 'https://linkedin.com/company/wearevool', instagram: 'https://instagram.com/vool.hq',
+  appStore: 'https://apps.apple.com/us/app/vool-smart-ev-charging/id1669222009',
+  playStore: 'https://play.google.com/store/apps/details?id=com.vool.app',
+  help: 'https://support.vool.com/en/',
+};
+
+/** Reseller shop in Odoo (planned – address to be confirmed). */
 export const RESELLER_URL = 'https://shop.vool.com/';

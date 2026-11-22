@@ -1,6 +1,10 @@
+@import '@fontsource/poppins/300.css';
 @import '@fontsource/poppins/400.css';
 @import '@fontsource/poppins/500.css';
-@import '@fontsource/poppins/600.css';
+
+/* Same fonts as the current www.vool.com: TWK Everett for headings, Poppins for text. */
+@font-face { font-family: 'TWK Everett'; src: url('/fonts/TWKEverett-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'TWK Everett'; src: url('/fonts/TWKEverett-Bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 
 :root {
   --orange: #eb4e20;
@@ -23,11 +27,12 @@ body {
   color: var(--ink);
   background: var(--white);
   line-height: 1.6;
-  font-size: 17px;
+  font-size: 16.5px;
+  font-weight: 300;
 }
 img, svg { max-width: 100%; display: block; }
 a { color: inherit; }
-h1, h2, h3 { line-height: 1.15; margin: 0 0 .5em; font-weight: 600; letter-spacing: -0.02em; }
+h1, h2, h3, h4 { font-family: 'TWK Everett', 'Poppins', sans-serif; line-height: 1.12; margin: 0 0 .5em; font-weight: 400; letter-spacing: -0.015em; }
 h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
 h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
 h3 { font-size: 1.2rem; }
@@ -69,4 +74,19 @@ p { margin: 0 0 1em; }
 .card a.more { font-weight: 500; color: var(--orange); text-decoration: none; }
 
 .badge { display: inline-block; background: rgba(235,78,32,.1); color: var(--orange); padding: .25em .8em; border-radius: 999px; font-size: .8rem; font-weight: 600; }
-.big-number { font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 600; color: var(--orange); line-height: 1; letter-spacing: -0.03em; }
+.big-number { font-family: 'TWK Everett', sans-serif; font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 400; color: var(--orange); line-height: 1; letter-spacing: -0.03em; }
+
+strong, b { font-weight: 500; }
+.photo { border-radius: var(--radius); overflow: hidden; background: var(--soft); }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.prose { max-width: 780px; }
+.prose h2 { margin-top: 1.6em; font-size: 1.7rem; }
+.prose h3 { margin-top: 1.4em; font-size: 1.3rem; }
+.prose img { border-radius: 14px; margin: 1.4em 0; height: auto; }
+.prose a { color: var(--orange); }
+.prose blockquote { margin: 1.6em 0; padding: 28px 32px; background: var(--soft); border-radius: 14px; color: var(--green); }
+.prose iframe { max-width: 100%; }
+.prose table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+.prose td, .prose th { border: 1px solid var(--line); padding: 8px 10px; text-align: left; }
+.prose details { background: var(--soft); border-radius: 14px; padding: 18px 24px; margin: 0 0 12px; }
+.prose summary { cursor: pointer; font-weight: 500; }

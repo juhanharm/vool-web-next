@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import countries from '../content/partners.json';
+import { RESELLER_URL } from '../content/ui';
+const total = countries.reduce((n, c) => n + c.partners.length, 0);
+---
+<Base lang="en" title="Where to buy VOOL – resellers and installers" description="Find a VOOL reseller, energy company or installer near you.">
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Where to buy</span>
+      <h1>Find a partner near you</h1>
+      <p class="lead">VOOL is sold and installed by retailers, energy companies and installers in {countries.length} countries.</p>
+      <div class="filters" role="group" aria-label="Filter partners">
+        <button class="on" data-filter="all">All</button>
+        <button data-filter="installer">Installers</button>
+        <button data-filter="wholesaler">Wholesalers</button>
+        <select aria-label="Country" data-country>
+          <option value="">All countries</option>
+          {countries.map((c) => <option value={c.country}>{c.country}</option>)}
+        </select>
+      </div>
+      {countries.map((c) => (
+        <div class="country" data-name={c.country}>
+          <h2>{c.country}</h2>
+          <div class="grid c3">
+            {c.partners.map((p) => (
+              <div class="card partner" data-installer={String(p.installer)} data-wholesaler={String(p.wholesaler)}>
+                <h3>{p.name}</h3>
+                <p class="tags">{p.installer && <span class="badge">Installer</span>} {p.wholesaler && <span class="badge">Wholesaler</span>}</p>
+                {p.website && <a href={p.website} rel="noopener">{p.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')} ↗</a>}
+                {p.phone && <a href={`tel:${p.phone.replace(/\s/g, '')}`}>{p.phone}</a>}
+                {p.email && <a href={`mailto:${p.email}`}>{p.email}</a>}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section class="section dark">
+    <div class="wrap" style="display:flex;gap:24px;justify-content:space-between;align-items:center;flex-wrap:wrap">
+      <div><h2>Do you sell or install chargers?</h2><p class="lead">Partners see stock and their own prices and order online.</p></div>
+      <div class="btn-row" style="margin:0"><a class="btn" href="/resources/resellers/">Become a partner</a><a class="btn ghost" style="color:#fff" href={RESELLER_URL}>Reseller login</a></div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const state = { filter: 'all', country: '' };
+  const apply = () => {
+    document.querySelectorAll<HTMLElement>('.country').forEach((c) => {
+      let shown = 0;
+      c.querySelectorAll<HTMLElement>('.partner').forEach((p) => {
+        const ok = state.filter === 'all' || p.dataset[state.filter] === 'true';
+        p.hidden = !ok; if (ok) shown++;
+      });
+      c.hidden = shown === 0 || (state.country !== '' && c.dataset.name !== state.country);
+    });
+  };
+  document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((b) => b.addEventListener('click', () => {
+    state.filter = b.dataset.filter!;
+    document.querySelectorAll('[data-filter]').forEach((x) => x.classList.toggle('on', x === b));
+    apply();
+  }));
+  document.querySelector<HTMLSelectElement>('[data-country]')?.addEventListener('change', (e) => {
+    state.country = (e.target as HTMLSelectElement).value; apply();
+  });
+</script>
+
+<style>
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 28px 0 8px; }
+  .filters button, .filters select { font: inherit; padding: .55em 1.1em; border-radius: 999px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
+  .filters button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .country { margin-top: 44px; }
+  .country[hidden], .partner[hidden] { display: none; }
+  .country h2 { font-size: 1.5rem; margin-bottom: 16px; }
+  .partner { display: flex; flex-direction: column; gap: 4px; padding: 22px; }
+  .partner h3 { font-size: 1.1rem; margin: 0; }
+  .partner a { color: var(--grey); text-decoration: none; font-size: .9rem; word-break: break-word; }
+  .partner a:hover { color: var(--orange); }
+  .tags { margin: 2px 0 6px; min-height: 1.4em; }
+</style>
