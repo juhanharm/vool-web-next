@@ -11,7 +11,7 @@ const { title, lead, locale = 'en-IE', note, labels } = Astro.props;
       {lead && <p class="muted">{lead}</p>}
       <label>{labels.km}<input type="number" data-km value="15000" min="1000" step="1000" /></label>
       <label>{labels.elec}<input type="number" data-elec value="18" min="1" step="0.5" /></label>
-      <label>{labels.diesel}<input type="number" data-diesel value="1.50" min="0.5" step="0.05" /></label>
+      <label>{labels.diesel}<input type="number" data-diesel value="2.00" min="0.5" step="0.05" /></label>
       <p class="small muted">{note}</p>
     </div>
     <div class="out">
