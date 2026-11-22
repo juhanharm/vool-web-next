@@ -92,3 +92,36 @@ strong, b { font-weight: 500; }
 .prose summary { cursor: pointer; font-weight: 500; }
 
 @media print { header.top, footer.foot, .section.dark, .btn-row, .btn { display: none !important; } .section { padding: 18px 0 !important; } body { font-size: 11pt; } }
+
+/* --- UI review, Nov 2026 --- */
+:root { --orange-text: #c53d14; }
+.card a.more, .prose a, .linklist span, .eyebrow, .badge { color: var(--orange-text); }
+.dark .eyebrow, .hero.dark .eyebrow { color: #ff7a52; }
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 4px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; z-index: 1000; }
+.skip:focus { left: 8px; }
+/* whole card is the link */
+.card { position: relative; transition: transform .15s, box-shadow .15s, border-color .15s; }
+.card:has(> a.more):hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,.08); border-color: transparent; }
+.card > a.more::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+.card > a.more { display: inline-block; margin-top: .4em; }
+.card.has-img .card-photo img { transition: transform .4s; }
+.card.has-img:hover .card-photo img { transform: scale(1.04); }
+.btn { font-weight: 500; }
+.sticky-cta { display: none; }
+@media (max-width: 760px) {
+  .sticky-cta { display: block; position: fixed; left: 16px; right: 16px; bottom: 14px; z-index: 60; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+  footer.foot { padding-bottom: 96px; }
+  /* compact rows instead of tall stacked image cards */
+  .card.has-img { display: grid; grid-template-columns: 104px 1fr; column-gap: 16px; padding: 14px; align-items: start; }
+  .card.has-img > :not(.photo) { margin-left: 0; margin-right: 0; grid-column: 2; }
+  .card.has-img .card-photo { grid-row: 1 / span 4; aspect-ratio: 1; border-radius: 12px; margin: 0; }
+  .card.has-img h3 { margin: 0 0 .2em; font-size: 1.1rem; }
+  .card.has-img p { margin: 0; font-size: .92rem; }
+  .card { padding: 22px; }
+  .section { padding: 52px 0; }
+  h2 { font-size: clamp(1.6rem, 6vw, 2rem); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+.sticky-cta[hidden] { display: none !important; }

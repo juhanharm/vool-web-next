@@ -20,6 +20,10 @@
         {
           "label": "Get a quote",
           "href": "/get-a-quote/"
+        },
+        {
+          "label": "Datasheet (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-pro-datasheet-en.pdf"
         }
       ]
     },
@@ -105,8 +109,8 @@
           "href": "/where-to-buy/"
         },
         {
-          "label": "Manuals and datasheets",
-          "href": "/resources/product-manuals/"
+          "label": "Datasheet (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-pro-datasheet-en.pdf"
         }
       ]
     }

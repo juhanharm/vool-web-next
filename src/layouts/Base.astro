@@ -36,6 +36,7 @@ const legalPages = legal(lang);
     {import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN && <script defer data-domain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN} src="https://plausible.io/js/script.js"></script>}
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <header class="top">
       <div class="wrap bar">
         <a class="logo" href={homeOf(lang)} aria-label="VOOL"><img src="/logo.svg" alt="VOOL" width="76" height="20" /></a>
@@ -54,13 +55,14 @@ const legalPages = legal(lang);
             <div class="langs">
               {langs.map((l) => <a href={l.href} class={l.code === lang ? 'on' : ''} hreflang={l.code}>{langNames[l.code]}</a>)}
             </div>
-            <a class="btn ghost small-btn" href={RESELLER_URL}>{t.reseller}</a>
-            <a class="btn small-btn" href="https://app.vool.com">{t.login}</a>
+            <a class="btn ghost small-btn" href="https://app.vool.com">{t.login}</a>
+            {lang === 'en' ? <a class="btn small-btn" href="/get-a-quote/">Get a quote</a> : <a class="btn small-btn" href={RESELLER_URL}>{t.reseller}</a>}
           </div>
         </nav>
       </div>
     </header>
-    <main><slot /></main>
+    <main id="main"><slot /></main>
+    {lang === 'en' && <a class="sticky-cta btn" href="/get-a-quote/" data-sticky hidden>Get a quote</a>}
     <footer class="foot">
       <div class="wrap foot-in">
         <div class="about">
@@ -84,6 +86,7 @@ const legalPages = legal(lang);
         )}
       </div>
     </footer>
+    <script is:inline>(()=>{const c=document.querySelector("[data-sticky]");if(!c||location.pathname.startsWith("/get-a-quote"))return;const f=()=>{c.hidden=scrollY<600||innerHeight+scrollY>document.body.scrollHeight-500};addEventListener("scroll",f,{passive:true});f()})()</script>
   </body>
 </html>
 

@@ -19,6 +19,10 @@
         {
           "label": "See the specifications",
           "href": "#specs"
+        },
+        {
+          "label": "Datasheet (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-en.pdf"
         }
       ],
       "facts": [
@@ -204,8 +208,8 @@
           "href": "/get-a-quote/"
         },
         {
-          "label": "Manuals and datasheets",
-          "href": "/resources/product-manuals/"
+          "label": "Datasheet (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-en.pdf"
         }
       ]
     }

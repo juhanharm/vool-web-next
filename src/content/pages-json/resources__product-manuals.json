@@ -12,6 +12,83 @@
     {
       "type": "links",
       "soft": true,
+      "title": "Datasheets: VOOL Charger",
+      "items": [
+        {
+          "label": "English (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-en.pdf"
+        },
+        {
+          "label": "Estonian (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-et.pdf"
+        },
+        {
+          "label": "Finnish (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-fi.pdf"
+        },
+        {
+          "label": "Lithuanian (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-lt.pdf"
+        },
+        {
+          "label": "Latvian (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-lv.pdf"
+        },
+        {
+          "label": "German (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-de.pdf"
+        },
+        {
+          "label": "French (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-fr.pdf"
+        },
+        {
+          "label": "Portuguese (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-pt.pdf"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Datasheets: VOOL LMC Pro",
+      "items": [
+        {
+          "label": "English (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-pro-datasheet-en.pdf"
+        },
+        {
+          "label": "Estonian (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-et.pdf"
+        },
+        {
+          "label": "Finnish (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-fi.pdf"
+        },
+        {
+          "label": "Lithuanian (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-lt.pdf"
+        },
+        {
+          "label": "Latvian (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-lv.pdf"
+        },
+        {
+          "label": "German (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-de.pdf"
+        },
+        {
+          "label": "French (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-fr.pdf"
+        },
+        {
+          "label": "Portuguese (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-pt.pdf"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
       "title": "Charger & LMC manuals",
       "items": [
         {

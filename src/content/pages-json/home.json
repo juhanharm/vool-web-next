@@ -13,11 +13,11 @@
       "alt": "VOOL charger on a pole next to a parked car",
       "cta": [
         {
-          "label": "Find your solution",
-          "href": "#solutions"
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
         },
         {
-          "label": "Where to buy",
+          "label": "Find an installer",
           "href": "/where-to-buy/"
         }
       ],
@@ -107,8 +107,8 @@
       "type": "cards",
       "soft": true,
       "eyebrow": "New",
-      "title": "Money for charging",
-      "cols": 2,
+      "title": "What’s new",
+      "cols": 3,
       "items": [
         {
           "title": "Estonia: KIK grant for apartment associations",
@@ -121,6 +121,30 @@
           "text": "VOOL pays you 3.9 ct for every kWh you charge, through the DAEI system. Launching December 2026.",
           "href": "/daei/",
           "more": "Join the waiting list"
+        },
+        {
+          "title": "VOOL Charger with ISO 15118-20",
+          "text": "Meets the AFIR rule for chargers installed from 1 January 2027. Plug & Charge now, V2G by update.",
+          "href": "/afir/",
+          "more": "AFIR and the new charger"
+        },
+        {
+          "title": "VOOL LMC S",
+          "text": "Load management for houses and small sites with up to four chargers. From January 2027.",
+          "href": "/products/vool-lmc-s/",
+          "more": "LMC S"
+        },
+        {
+          "title": "VOOL Commercial Pole",
+          "text": "Two 22 kW charging points with display, QR payment and an optional MID meter.",
+          "href": "/products/commercial-pole/",
+          "more": "Commercial Pole"
+        },
+        {
+          "title": "Billing and payments",
+          "text": "Drivers pay, you get paid monthly. No fixed fee and no fee per charger.",
+          "href": "/software/billing-and-payments/",
+          "more": "How it works"
         }
       ]
     },
@@ -154,33 +178,6 @@
           "image": "/img/portal-screen.webp",
           "text": "Users, billing and reports for every site in one place.",
           "href": "/products/vool-portal/"
-        }
-      ]
-    },
-    {
-      "type": "cards",
-      "soft": true,
-      "eyebrow": "New",
-      "title": "Ready for 2027",
-      "cols": 3,
-      "items": [
-        {
-          "title": "VOOL Charger with ISO 15118-20",
-          "text": "Meets the AFIR rule for chargers installed from 1 January 2027. Plug & Charge now, V2G by update.",
-          "href": "/afir/",
-          "more": "AFIR and the new charger"
-        },
-        {
-          "title": "VOOL LMC S",
-          "text": "Load management for houses and small sites with up to four chargers. From January 2027.",
-          "href": "/products/vool-lmc-s/",
-          "more": "LMC S"
-        },
-        {
-          "title": "VOOL Commercial Pole",
-          "text": "Two 22 kW charging points with display, QR payment and an optional MID meter.",
-          "href": "/products/commercial-pole/",
-          "more": "Commercial Pole"
         }
       ]
     },
@@ -243,12 +240,8 @@
           "href": "/get-a-quote/"
         },
         {
-          "label": "Where to buy",
+          "label": "Find an installer",
           "href": "/where-to-buy/"
-        },
-        {
-          "label": "Reseller login",
-          "href": "https://shop.vool.com/"
         }
       ]
     }
