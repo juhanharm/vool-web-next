@@ -1,0 +1,105 @@
+{
+  "path": "/products/vool-portal/",
+  "title": "VOOL Portal – manage EV chargers, users and billing",
+  "description": "One place to manage charging sites, users, prices and invoices. Works with any OCPP 1.6 or 2.0 charger.",
+  "image": "/img/portal-screen.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "VOOL Portal",
+      "title": "Run your charging without the paperwork",
+      "lead": "Sites, users, prices, invoices and reports in one place. For one building or a network of sites.",
+      "image": "/img/portal-screen.webp",
+      "alt": "VOOL Portal on a laptop",
+      "cta": [
+        {
+          "label": "Open VOOL Portal",
+          "href": "https://app.vool.com"
+        },
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What you can do",
+      "cols": 3,
+      "items": [
+        {
+          "title": "See everything live",
+          "text": "Sessions, energy use and costs for every charger and every site."
+        },
+        {
+          "title": "Decide who charges",
+          "text": "Access levels and users, with RFID cards where needed."
+        },
+        {
+          "title": "Bill automatically",
+          "text": "Prices, invoices and payments are handled for you, with reports per user or apartment."
+        },
+        {
+          "title": "Use any charger",
+          "text": "Works with all OCPP 1.6 and 2.0 chargers, including other brands."
+        },
+        {
+          "title": "Open to the public",
+          "text": "Make chargers visible on Google Maps, Waze and other maps in a few clicks."
+        },
+        {
+          "title": "Less admin",
+          "text": "Automatic reports, a link to your bookkeeping system and alerts when something needs attention."
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "image": "/img/portal-laptop.webp",
+      "alt": "VOOL Portal and app",
+      "title": "Earn from chargers that stand idle",
+      "text": "Open a charger for public use, set your own price and availability, and track usage in real time. Payments are collected automatically.",
+      "cta": [
+        {
+          "label": "Public charging",
+          "href": "/solutions/public-charging/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "More about the software",
+      "cols": 2,
+      "items": [
+        {
+          "title": "All software features",
+          "text": "App, Portal, roaming, integrations and connectivity on one page.",
+          "href": "/software/",
+          "more": "VOOL software"
+        },
+        {
+          "title": "Billing and payments",
+          "text": "How drivers pay, how you are paid and what it costs.",
+          "href": "/software/billing-and-payments/",
+          "more": "Billing and payments"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Want to see the Portal with your own site?",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Log in",
+          "href": "https://app.vool.com"
+        }
+      ]
+    }
+  ]
+}

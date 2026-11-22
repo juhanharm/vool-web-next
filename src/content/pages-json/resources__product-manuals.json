@@ -1,0 +1,78 @@
+{
+  "path": "/resources/product-manuals/",
+  "title": "VOOL product manuals and installation guides",
+  "description": "Manuals and installation guides for the VOOL Charger and LMC in nine languages, plus the EU declaration of conformity.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Support",
+      "title": "Manuals and installation guides",
+      "lead": "For the VOOL Charger, LMC and Pro Pole. Kept up to date in the Help Center."
+    },
+    {
+      "type": "links",
+      "soft": true,
+      "title": "Charger & LMC manuals",
+      "items": [
+        {
+          "label": "English",
+          "href": "https://support.vool.com/en/articles/9527387-english-manuals-installation-guide"
+        },
+        {
+          "label": "Estonian",
+          "href": "https://support.vool.com/en/articles/9527511-estonian-manuals-installation-guide"
+        },
+        {
+          "label": "Finnish",
+          "href": "https://support.vool.com/en/articles/10256775-finnish-manuals-installation-guide"
+        },
+        {
+          "label": "German",
+          "href": "https://support.vool.com/en/articles/10256958-german-manuals-installation-guide"
+        },
+        {
+          "label": "French",
+          "href": "https://support.vool.com/en/articles/10256964-french-manuals-installation-guide"
+        },
+        {
+          "label": "Portuguese",
+          "href": "https://support.vool.com/en/articles/10256973-portuguese-manuals-installation-guide"
+        },
+        {
+          "label": "Latvian",
+          "href": "https://support.vool.com/en/articles/10256977-latvian-manuals-installation-guide"
+        },
+        {
+          "label": "Lithuanian",
+          "href": "https://support.vool.com/en/articles/10256983-lithuanian-manuals-installation-guide"
+        },
+        {
+          "label": "Swedish",
+          "href": "https://support.vool.com/en/articles/10542256-swedish-manuals-installation-guide"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Other documents",
+      "items": [
+        {
+          "label": "VOOL Pro Pole – installation manual",
+          "href": "https://support.vool.com/en/articles/17144884-vool-pro-pole-installation-manual"
+        },
+        {
+          "label": "EU Declaration of Conformity",
+          "href": "https://support.vool.com/en/articles/10546583-eu-declaration-of-conformity-doc"
+        },
+        {
+          "label": "Charger Modbus manual",
+          "href": "https://support.vool.com/en/articles/12959952-charger-modbus-manual"
+        },
+        {
+          "label": "Charger user manual (PDF)",
+          "href": "/media/VOOL_user_manual_complete.pdf"
+        }
+      ]
+    }
+  ]
+}

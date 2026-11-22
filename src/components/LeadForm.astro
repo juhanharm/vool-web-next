@@ -13,7 +13,8 @@ export interface Field {
 }
 interface Props {
   id?: string;
-  form: 'apartment' | 'daei' | 'contact' | 'reseller';
+  form: 'apartment' | 'daei' | 'contact' | 'reseller' | 'quote' | 'guide';
+  download?: { label: string; href: string };
   lang: string;
   title: string;
   intro?: string;
@@ -23,7 +24,7 @@ interface Props {
   error: string;
   consent: string;
 }
-const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, consent } = Astro.props;
+const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, consent, download } = Astro.props;
 ---
 <div class="form-card" id={id}>
   <h2>{title}</h2>
@@ -55,7 +56,7 @@ const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, co
       <label class="check full"><input type="checkbox" name="consent" value="yes" required /> <span>{consent}</span></label>
     </div>
     <button class="btn" type="submit">{submit}</button>
-    <p class="status ok" hidden>{thanks}</p>
+    <p class="status ok" hidden>{thanks} {download && <a href={download.href} download>{download.label}</a>}</p>
     <p class="status err" hidden>{error}</p>
   </form>
 </div>
@@ -79,6 +80,7 @@ const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, co
         form.querySelector('.fields')!.setAttribute('hidden', '');
         btn?.setAttribute('hidden', '');
         ok.hidden = false;
+        (window as any).plausible?.('Lead', { props: { form: (form.elements.namedItem('form') as HTMLInputElement)?.value } });
       } catch {
         err.hidden = false;
         if (btn) btn.disabled = false;

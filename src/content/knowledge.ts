@@ -3,7 +3,7 @@
  * Partner case figures are published by AMP X VOLT (ampxvolt.eu), a VOOL reseller in Luxembourg.
  * Legal notes are general information with sources linked on the page; they are not legal advice.
  */
-const contact = { label: 'Talk to us', href: '/resources/contact/' };
+const contact = { label: 'Get a quote', href: '/get-a-quote/' };
 const AMPX = 'https://ampxvolt.eu/case-studies/';
 
 export const demoLabels = {
@@ -136,6 +136,11 @@ export const morePages: Record<string, any> = {
         { label: 'Transport & Environment: Right to Plug briefing', href: 'https://transportenvironment.org/uploads/files/2025_01_TE_briefing_Right_to_Plug.pdf' },
         { label: 'AVERE recommendation', href: 'https://avere.org/blogpages/policy-details/2024/07/09/joint-recommendation-how-to-impactfully-implement-right-to-plug-in-the-eu-3' } ] },
       { type: 'prose', soft: true, title: 'Please note', paragraphs: ['This page is general information, not legal advice. Laws and grant terms change; the sources are linked above.'] },
+      { type: 'form', form: 'guide', title: 'Get the guide as a PDF', intro: 'To print for the board or send to owners before the meeting.',
+        fields: [ { name: 'email', label: 'Email', type: 'email', required: true, half: true }, { name: 'organisation', label: 'Association or company', half: true },
+          { name: 'newsletter', label: 'Send me VOOL news about grants and new products (a few times a year)', type: 'checkbox' } ],
+        submit: 'Send me the PDF', thanks: 'Thank you! Your guide:', download: { label: 'Download the guide (PDF)', href: '/downloads/vool-general-meeting-guide-en.pdf' },
+        error: 'Something went wrong. Please try again or write to info@vool.com.', consent: 'I agree that VOOL processes my data to send this guide (privacy policy).' },
       { type: 'cta', title: 'Need figures for your meeting?', lead: 'We prepare the quote and the grant estimate with an installation partner.', buttons: [{ label: 'Get a quote', href: '/apartment-buildings/#form' }, { label: 'Case studies', href: '/case-studies/' }] },
     ],
   },
@@ -177,6 +182,11 @@ export const morePages: Record<string, any> = {
         { label: 'KIK', href: 'https://kik.ee/et/toetatavad-tegevused/elektriauto-laadimistaristu-toetus' },
         { label: 'EUR-Lex', href: 'https://eur-lex.europa.eu/EN/legal-content/summary/energy-performance-of-buildings.html' } ] },
       { type: 'prose', title: 'Pane tähele', paragraphs: ['See leht on üldine info, mitte õigusnõu. Seadused ja toetuse tingimused muutuvad; allikad on eespool lingitud.'] },
+      { type: 'form', form: 'guide', title: 'Saa juhend PDF-ina', intro: 'Juhatusele välja printimiseks või omanikele enne koosolekut saatmiseks.',
+        fields: [ { name: 'email', label: 'E-post', type: 'email', required: true, half: true }, { name: 'organisation', label: 'Ühistu või ettevõte', half: true },
+          { name: 'newsletter', label: 'Saatke mulle VOOLi uudiseid toetuste ja uute toodete kohta (mõni kord aastas)', type: 'checkbox' } ],
+        submit: 'Saada PDF', thanks: 'Aitäh! Sinu juhend:', download: { label: 'Laadi juhend alla (PDF)', href: '/downloads/vool-uldkoosoleku-juhend.pdf' },
+        error: 'Midagi läks valesti. Proovi uuesti või kirjuta info@vool.com.', consent: 'Olen nõus, et VOOL töötleb minu andmeid juhendi saatmiseks (privaatsuspoliitika).' },
       { type: 'cta', title: 'Vajad koosolekuks arve?', lead: 'Koostame pakkumise ja toetuse arvestuse koos paigalduspartneriga.', buttons: [{ label: 'Küsi pakkumist', href: '/et/kortermajad/#form' }] },
     ],
   },

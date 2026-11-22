@@ -1,0 +1,124 @@
+{
+  "path": "/compare/",
+  "title": "Compare – VOOL load management vs ordinary load balancing",
+  "description": "What changes when a charging system measures the building in real time and moves cars between phases.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Compare",
+      "title": "Not all load management is the same",
+      "lead": "Most systems limit charging so the fuse holds. VOOL also moves each car to the least loaded phase, so the capacity you already pay for is used."
+    },
+    {
+      "type": "table",
+      "soft": true,
+      "title": "Four ways to connect chargers",
+      "head": [
+        "",
+        "No load management",
+        "Static limit",
+        "Typical dynamic load balancing",
+        "VOOL: dynamic + phase switching"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "How it works",
+            "Each charger gets a fixed reserved current",
+            "All chargers share one fixed limit",
+            "Chargers share what the building leaves free",
+            "Chargers share what each phase leaves free, and cars are moved between phases"
+          ]
+        },
+        {
+          "cells": [
+            "Measures the building’s load",
+            "No",
+            "No",
+            "Yes",
+            "Yes, per phase"
+          ]
+        },
+        {
+          "cells": [
+            "Uses spare capacity at night",
+            "No",
+            "No",
+            "Yes",
+            "Yes"
+          ]
+        },
+        {
+          "cells": [
+            "Balances uneven phases",
+            "No",
+            "No",
+            "Depends on the product",
+            "Yes, automatic phase switching"
+          ]
+        },
+        {
+          "cells": [
+            "Several fuse levels (building, riser, sub-board)",
+            "No",
+            "Depends on the product",
+            "Depends on the product",
+            "Yes"
+          ]
+        },
+        {
+          "cells": [
+            "Chargers on one controller",
+            "–",
+            "Depends on the product",
+            "Depends on the product",
+            "100+ with LMC Pro"
+          ]
+        },
+        {
+          "cells": [
+            "Typical result",
+            "A few chargers, then a grid upgrade",
+            "More chargers, slow charging",
+            "More chargers, one full phase limits all",
+            "Most chargers on the same connection"
+          ]
+        }
+      ],
+      "note": "The middle columns describe common approaches, not a specific product. Compare with the datasheet of the system you are considering."
+    },
+    {
+      "type": "demo",
+      "title": "Try it with your own fuse size",
+      "labels": {
+        "fuse": "Main fuse",
+        "cars": "Cars plugged in",
+        "time": "Time of day",
+        "play": "Play 24 hours",
+        "building": "Building",
+        "charging": "Charging",
+        "limit": "Fuse limit →",
+        "without": "Without load management, this connection fits",
+        "chargers": "chargers at 11 kW",
+        "with": "With VOOL, cars charging right now",
+        "each": "about {kw} kW per car now, or roughly {km} km of range in 8 hours",
+        "note": "Simplified simulation with an example load curve. Without load management, 16 A per phase is reserved for each charger at the building’s peak. With VOOL, the spare current on each phase is shared and each car is moved to the freest phase (minimum 6 A)."
+      }
+    },
+    {
+      "type": "cta",
+      "title": "Comparing offers for your building?",
+      "lead": "Send us the other quote. We will show what VOOL does differently on your connection.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Case studies",
+          "href": "/case-studies/"
+        }
+      ]
+    }
+  ]
+}

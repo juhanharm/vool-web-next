@@ -1,0 +1,209 @@
+{
+  "path": "/products/vool-charger/",
+  "title": "VOOL Charger – 22 kW smart EV charger with a 5-year warranty",
+  "description": "Up to 22 kW, 6.5 m Type 2 cable, IP55 and IK10, works from −30 °C to +55 °C. Modular installation on a wall or pole.",
+  "image": "/img/charger-pole.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "VOOL Charger",
+      "title": "Reliable charging, built for northern weather",
+      "lead": "Up to 22 kW for any electric car, at home, at work or in a shared car park. Backed by a 5-year warranty.",
+      "image": "/img/charger-pole.webp",
+      "alt": "VOOL charger with wooden front panel on a pole",
+      "cta": [
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        },
+        {
+          "label": "See the specifications",
+          "href": "#specs"
+        }
+      ],
+      "facts": [
+        "Up to 22 kW",
+        "IP55 · IK10",
+        "−30 °C to +55 °C"
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What you get",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Works with every EV",
+          "text": "A fixed 6.5 m cable with a Type 2 plug. Nothing to carry, nothing to forget."
+        },
+        {
+          "title": "Lower charging costs",
+          "text": "With the VOOL App the car charges when electricity is cheapest. Users save up to 30%."
+        },
+        {
+          "title": "Quick to install",
+          "text": "Mount the casing on a wall or a VOOL pole, click in the controller, attach the front panel."
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "image": "/img/charger-finishes.webp",
+      "alt": "VOOL chargers in black, aluminium and wood",
+      "title": "Three finishes, one clean design",
+      "text": "Choose the front panel that suits the building: black, aluminium or wood. The charger looks at home on a house wall and in a company car park."
+    },
+    {
+      "type": "split",
+      "flip": true,
+      "soft": true,
+      "image": "/img/charger-two.webp",
+      "alt": "Two VOOL chargers on a wall",
+      "title": "Prepare every parking space now, finish later",
+      "text": "The casing and the charging controller are separate. Install casings for all spaces during building work and add controllers as drivers switch to electric.",
+      "points": [
+        "Lower cost on day one",
+        "No second round of cabling",
+        "Chargers talk to each other and share the available power"
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "eyebrow": "New from mid-December 2026",
+      "title": "Now with ISO 15118-20",
+      "cols": 1,
+      "items": [
+        {
+          "title": "Ready for the AFIR rule that starts on 1 January 2027",
+          "text": "The new VOOL Charger supports ISO 15118-2, ISO 15118-20 and Plug & Charge. V2G follows by firmware update in Q1 2027. Existing chargers can be upgraded by swapping the controller.",
+          "href": "/afir/",
+          "more": "AFIR and ISO 15118"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Specifications",
+      "rows": [
+        {
+          "cells": [
+            "Charging power",
+            "Up to 22 kW (3 × 32 A)"
+          ]
+        },
+        {
+          "cells": [
+            "Cable",
+            "6.5 m, Type 2 plug"
+          ]
+        },
+        {
+          "cells": [
+            "Protection",
+            "IP55 weather resistance, IK10 impact protection"
+          ]
+        },
+        {
+          "cells": [
+            "Operating temperature",
+            "−30 °C to +55 °C"
+          ]
+        },
+        {
+          "cells": [
+            "Connectivity",
+            "Mobile internet, WiFi, Ethernet, Bluetooth"
+          ]
+        },
+        {
+          "cells": [
+            "Vehicle communication",
+            "ISO 15118-2 and -20, Plug & Charge (chargers produced from December 2026)"
+          ]
+        },
+        {
+          "cells": [
+            "Phase use",
+            "Dynamic phase switching with VOOL LMC"
+          ]
+        },
+        {
+          "cells": [
+            "Installation",
+            "Wall or VOOL pole; modular casing and controller"
+          ]
+        },
+        {
+          "cells": [
+            "Front panels",
+            "Black, aluminium, wood"
+          ]
+        },
+        {
+          "cells": [
+            "Warranty",
+            "5 years"
+          ]
+        },
+        {
+          "cells": [
+            "Made in",
+            "Estonia"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "label": "User manual (PDF)",
+          "href": "/media/VOOL_user_manual_complete.pdf"
+        },
+        {
+          "label": "All manuals",
+          "href": "/resources/product-manuals/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "Versions and accessories",
+      "cols": 3,
+      "items": [
+        {
+          "title": "MID wall charger",
+          "text": "With a certified meter for billing by the kWh. Coming in 2027.",
+          "href": "/get-a-quote/",
+          "more": "Ask about MID"
+        },
+        {
+          "title": "Commercial Pole",
+          "text": "Two 22 kW charging points with display and QR payment for public sites.",
+          "href": "/products/commercial-pole/",
+          "more": "Commercial Pole"
+        },
+        {
+          "title": "Accessories",
+          "text": "Poles, cable holder, front panels and spare parts.",
+          "href": "/products/accessories/",
+          "more": "Accessories"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Get a VOOL Charger",
+      "lead": "Our partners sell and install VOOL across Europe.",
+      "buttons": [
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        },
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

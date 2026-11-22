@@ -1,0 +1,148 @@
+{
+  "path": "/integrations/",
+  "title": "Integrations: OCPP, Modbus, OCPI, roaming | VOOL",
+  "description": "Connect VOOL to building management, energy management, other charging platforms and roaming networks.",
+  "image": "/img/lmc.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Integrations",
+      "title": "Open protocols, so the site is never locked in",
+      "lead": "VOOL chargers and LMCs speak the standard protocols of the industry. Use our software, someone else’s, or both.",
+      "image": "/img/lmc.webp",
+      "alt": "VOOL LMC",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Product manuals",
+          "href": "/resources/product-manuals/"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "soft": true,
+      "title": "What connects to what",
+      "head": [
+        "Protocol",
+        "What you can do",
+        "Typical use"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "OCPP 1.6 and 2.0",
+            "Connect VOOL chargers to another back end, or other makers’ chargers to the VOOL Portal",
+            "Mixed sites, operators with their own platform"
+          ]
+        },
+        {
+          "cells": [
+            "Modbus TCP",
+            "Read measurements and set current limits on the VOOL LMC",
+            "Building management, energy management, batteries and solar"
+          ]
+        },
+        {
+          "cells": [
+            "OCPI",
+            "Exchange locations, sessions and prices with partner platforms",
+            "Operators and service providers"
+          ]
+        },
+        {
+          "cells": [
+            "Hubject",
+            "Roaming: drivers use other providers’ apps and cards at your public chargers",
+            "Public and semi-public sites"
+          ]
+        },
+        {
+          "cells": [
+            "ISO 15118-2 and -20",
+            "Plug & Charge; bidirectional charging by firmware update in Q1 2027",
+            "Chargers produced from December 2026"
+          ]
+        },
+        {
+          "cells": [
+            "Nord Pool prices",
+            "Charging in the cheapest hours",
+            "Homes and apartment buildings"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "Common setups",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Chargers from several makers",
+          "text": "Keep the chargers you have. Add them to the VOOL Portal over OCPP and manage users and billing in one place."
+        },
+        {
+          "title": "Building management system",
+          "text": "The BMS reads charging load from the LMC and can lower the limit during peaks."
+        },
+        {
+          "title": "Home Assistant",
+          "text": "A community integration reads VOOL devices over Modbus. Useful for home automation with solar or a battery."
+        },
+        {
+          "title": "Your own operator",
+          "text": "Point the chargers to the operator’s OCPP back end. Load management keeps running locally on the LMC."
+        },
+        {
+          "title": "Roaming",
+          "text": "Through Hubject, public VOOL chargers accept the charging apps and cards drivers already have. Providers are being added now.",
+          "href": "/solutions/public-charging/",
+          "more": "Public charging"
+        },
+        {
+          "title": "Lithuania: DAEI",
+          "text": "Charging data is reported for DAEI units, and you are paid for the electricity you charge.",
+          "href": "/daei/",
+          "more": "DAEI"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Good to know",
+      "items": [
+        {
+          "q": "Does load management need the internet?",
+          "a": "No. The LMC and the chargers talk locally. The internet is needed for the app, billing and remote support."
+        },
+        {
+          "q": "Which earthing systems does the LMC support?",
+          "a": "IT earthing systems, common in parts of Norway, are not supported for load management. Charging itself works normally."
+        },
+        {
+          "q": "How are chargers connected to the LMC?",
+          "a": "Over CAN in a daisy chain, or over the local network."
+        },
+        {
+          "q": "Is Modbus write access on by default?",
+          "a": "No. It is enabled on the LMC when you need it."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Planning an integration?",
+      "lead": "Tell us what the other system is. We send the register map or the OCPP details.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

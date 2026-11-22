@@ -1,0 +1,140 @@
+{
+  "path": "/solutions/workplace/",
+  "title": "EV charging for offices and workplaces | VOOL",
+  "description": "Charging for employees, company cars and visitors on the connection you have. Private charging is paid by the employee, company cars are reported separately.",
+  "image": "/img/office.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Workplace charging",
+      "title": "Charging at work, without the company paying for private kilometres",
+      "lead": "Employees pay for their own charging. Company cars are reported separately. The building’s connection stays as it is.",
+      "image": "/img/office.webp",
+      "alt": "Office car park with VOOL chargers",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Billing and payments",
+          "href": "/software/billing-and-payments/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What the employer gets",
+      "cols": 3,
+      "items": [
+        {
+          "title": "No grid upgrade",
+          "text": "VOOL LMC shares the spare capacity of the building between the cars, so more chargers fit on the same main fuse.",
+          "href": "/products/vool-lmc/",
+          "more": "VOOL LMC"
+        },
+        {
+          "title": "Three groups, three prices",
+          "text": "Company cars, employees and visitors each get their own price and access rights."
+        },
+        {
+          "title": "No invoicing work",
+          "text": "VOOL charges employees for private charging and pays the company monthly.",
+          "href": "/software/billing-and-payments/",
+          "more": "How it works"
+        },
+        {
+          "title": "Reports for accounting",
+          "text": "Energy and cost per car and per user, sent on a schedule."
+        },
+        {
+          "title": "Open to visitors",
+          "text": "Make some chargers public in office hours or after them, with payment by QR code.",
+          "href": "/solutions/public-charging/",
+          "more": "Public charging"
+        },
+        {
+          "title": "Company cars at home",
+          "text": "Drivers who charge a company car at home can report the energy from their own VOOL charger.",
+          "href": "/solutions/electrical-fleet-owners/",
+          "more": "Fleets"
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "image": "/img/office2.webp",
+      "alt": "VOOL chargers at an office",
+      "title": "Start with a few chargers, add more when cars arrive",
+      "text": "Build the cabling and load management once. Each new charger then takes minutes to add, and the LMC shares the capacity again.",
+      "points": [
+        "One LMC Pro manages more than 100 chargers",
+        "Load management at several fuse levels",
+        "Works with other makers’ chargers over OCPP"
+      ],
+      "cta": [
+        {
+          "label": "Try the live demo",
+          "href": "/live-demo/"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "How a project runs",
+      "items": [
+        {
+          "title": "You send the basics",
+          "text": "Parking spaces, main fuse size and how many chargers you need now. A photo of the switchboard helps."
+        },
+        {
+          "title": "We size the system",
+          "text": "VOOL works out how many chargers your connection carries with load management, and what to prepare for later."
+        },
+        {
+          "title": "A partner quotes and installs",
+          "text": "VOOL does not install. A certified installation partner visits the site, quotes the work and builds it."
+        },
+        {
+          "title": "We set up the software",
+          "text": "Users, prices and billing are set up in the VOOL Portal. Drivers charge with the VOOL App or an RFID card."
+        },
+        {
+          "title": "Support for the life of the system",
+          "text": "Remote diagnostics, software updates and a 5-year warranty on the chargers."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Can employees pay for private charging themselves?",
+          "a": "Yes. They pay by card in the VOOL App, VOOL invoices them and transfers the money to the company monthly."
+        },
+        {
+          "q": "We rent our office. Who should own the chargers?",
+          "a": "Either the landlord or the tenant can. Access groups let one installation serve several companies in the same building."
+        },
+        {
+          "q": "We already have chargers from another maker.",
+          "a": "Chargers that support OCPP 1.6 or 2.0 can be added to the VOOL Portal."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "How many chargers fit on your office’s connection?",
+      "lead": "Send us the parking spaces and the main fuse size.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

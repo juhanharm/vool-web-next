@@ -1,0 +1,171 @@
+{
+  "path": "/solutions/developers/",
+  "title": "EV charging for new buildings: developers and designers | VOOL",
+  "description": "What EU rules require for charging in new and renovated buildings, how to size the connection, and specification text for tenders.",
+  "image": "/img/garage.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "dark": true,
+      "eyebrow": "Developers and electrical designers",
+      "title": "Design charging into the building once, and size the connection smaller",
+      "lead": "New buildings must be prepared for charging. With load management at several fuse levels, the charging load fits a connection sized for the building.",
+      "image": "/img/garage.webp",
+      "alt": "Underground car park with VOOL chargers",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Specification text",
+          "href": "#spec"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "What the EU rules require",
+      "paragraphs": [
+        "The recast Energy Performance of Buildings Directive sets minimum requirements for new buildings and major renovations. Member states apply them through national law and may go further, so check the local rules."
+      ],
+      "points": [
+        "<strong>New residential buildings with more than three parking spaces:</strong> pre-cabling for at least half of the spaces, ducting for the rest, and at least one charging point.",
+        "<strong>New non-residential buildings with more than five parking spaces:</strong> at least one charging point for every five spaces, pre-cabling for at least half and ducting for the rest.",
+        "<strong>Charging points must be capable of smart charging.</strong>",
+        "<strong>Chargers installed from 1 January 2027</strong> must also support ISO 15118-20. <a href=\"/afir/\">See AFIR and ISO 15118</a>."
+      ],
+      "sources": [
+        {
+          "label": "Directive (EU) 2024/1275, Article 14",
+          "href": "https://eur-lex.europa.eu/eli/dir/2024/1275/oj"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Why designers specify VOOL",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Smaller connection",
+          "text": "The LMC measures the building’s real load and gives the rest to the cars. One site runs 45 chargers on a 125 A connection.",
+          "href": "/case-studies/",
+          "more": "Case studies"
+        },
+        {
+          "title": "Several fuse levels",
+          "text": "Limits are respected at the main fuse, at sub-distribution boards and on each charger line."
+        },
+        {
+          "title": "Phase switching",
+          "text": "Chargers move single-phase cars to the least loaded phase, so the three phases stay balanced."
+        },
+        {
+          "title": "Build in stages",
+          "text": "Install cabling and the LMC with the building. Owners add chargers later, each one in minutes."
+        },
+        {
+          "title": "Ready for billing",
+          "text": "Each owner or tenant pays for their own charging. The association or operator issues no invoices.",
+          "href": "/software/billing-and-payments/",
+          "more": "Billing"
+        },
+        {
+          "title": "Open protocols",
+          "text": "OCPP, Modbus TCP and OCPI, so the building is not locked to one operator.",
+          "href": "/integrations/",
+          "more": "Integrations"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "id": "spec",
+      "title": "Specification text for tenders",
+      "paragraphs": [
+        "Copy and adapt this text. It describes functions, so it does not exclude other makers who can deliver the same."
+      ],
+      "points": [
+        "AC charging points up to 22 kW (3 × 32 A) with Type 2 connector, IP54 or better and IK10.",
+        "Dynamic load management that measures the building’s total consumption in real time and limits charging so that the main fuse and every sub-distribution fuse stay within their rating.",
+        "Load management at a minimum of two levels of the electrical installation, for at least 100 charging points per controller.",
+        "Automatic phase switching or phase balancing between charging points.",
+        "Load management continues to work when the internet connection is down.",
+        "Communication: OCPP 1.6 or later. Chargers installed from 1 January 2027: ISO 15118-2 and ISO 15118-20.",
+        "Software for user management, RFID or app authorisation, pricing per user group and billing per user, with consumption reports for the building owner.",
+        "Interface to the building management system over Modbus TCP.",
+        "Manufacturer’s warranty of at least five years on charging points."
+      ]
+    },
+    {
+      "type": "table",
+      "soft": true,
+      "title": "A sizing example",
+      "lead": "A residential building with 60 parking spaces, prepared for 30 chargers.",
+      "head": [
+        "",
+        "Without load management",
+        "With VOOL LMC"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Capacity reserved for charging",
+            "30 × 11 kW = 330 kW",
+            "The building’s spare capacity, shared"
+          ]
+        },
+        {
+          "cells": [
+            "Extra connection capacity",
+            "About 480 A",
+            "Often none"
+          ]
+        },
+        {
+          "cells": [
+            "When all 30 cars are plugged in",
+            "Every car gets 11 kW",
+            "Cars share what is free, most at night"
+          ]
+        }
+      ],
+      "note": "An illustration. Send us the load profile or the planned main fuse and we calculate it for your building."
+    },
+    {
+      "type": "links",
+      "title": "For your project file",
+      "items": [
+        {
+          "href": "/resources/product-manuals/",
+          "label": "Product manuals and datasheets"
+        },
+        {
+          "href": "/live-demo/",
+          "label": "Live demo: cars on one connection"
+        },
+        {
+          "href": "/compare/",
+          "label": "VOOL vs ordinary load balancing"
+        },
+        {
+          "href": "/knowledge/general-meeting/",
+          "label": "Guide for the general meeting"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Send us the drawings",
+      "lead": "We return a charging layout, a load calculation and a bill of materials.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "path": "/software/",
+  "title": "VOOL software – app, portal, billing and roaming",
+  "description": "What the VOOL platform does: smart charging, load management, users and access, pricing, billing, payouts, public charging and roaming.",
+  "image": "/img/portal-laptop.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Software",
+      "title": "The charger is half of it. The software does the rest.",
+      "lead": "One platform for drivers, site owners and installers. Most of it is free. You pay only when VOOL collects money for you.",
+      "image": "/img/portal-laptop.webp",
+      "alt": "VOOL Portal and App",
+      "cta": [
+        {
+          "label": "Open VOOL Portal",
+          "href": "https://app.vool.com"
+        },
+        {
+          "label": "Billing and payments",
+          "href": "/software/billing-and-payments/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "eyebrow": "For drivers",
+      "title": "VOOL App",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Smart charging",
+          "text": "Charges in the cheapest hours, following Nord Pool prices."
+        },
+        {
+          "title": "Schedules",
+          "text": "Recurring charging times that match your week."
+        },
+        {
+          "title": "Costs and history",
+          "text": "Energy and cost for every session."
+        },
+        {
+          "title": "Public charging",
+          "text": "Find VOOL public chargers, see the price and pay in the app."
+        },
+        {
+          "title": "Setup for installers",
+          "text": "Commission chargers and LMCs over Bluetooth and hand the site to the owner."
+        },
+        {
+          "title": "Free",
+          "text": "For iPhone and Android.",
+          "href": "/products/vool-app/",
+          "more": "VOOL App"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "eyebrow": "For site owners · included",
+      "title": "VOOL Portal",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Sites and devices",
+          "text": "Live status, sessions and energy for every charger and LMC."
+        },
+        {
+          "title": "Users and access groups",
+          "text": "Decide who may charge where, with roles for managers."
+        },
+        {
+          "title": "RFID cards",
+          "text": "Give residents, employees or drivers a card to start charging."
+        },
+        {
+          "title": "Pricing rules",
+          "text": "Different prices for different groups: residents, staff, guests."
+        },
+        {
+          "title": "Scheduled reports",
+          "text": "Consumption and cost reports sent to you automatically."
+        },
+        {
+          "title": "Any OCPP charger",
+          "text": "Add chargers from other makers over OCPP 1.6 or 2.0."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "eyebrow": "For sites that charge money · revenue share",
+      "title": "Billing, public charging and roaming",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Managed billing",
+          "text": "VOOL charges the drivers, issues the invoices and pays you.",
+          "href": "/software/billing-and-payments/",
+          "more": "How it works"
+        },
+        {
+          "title": "Public charging",
+          "text": "Your charger appears on Google Maps, Waze, Apple Maps and other maps, with ad hoc payment.",
+          "href": "/solutions/public-charging/",
+          "more": "Public charging"
+        },
+        {
+          "title": "Roaming",
+          "text": "Through Hubject, drivers can use the charging apps and cards of other providers at your public chargers. We are adding providers now."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "eyebrow": "Connectivity and integrations",
+      "title": "Works with what you have",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Load management",
+          "text": "Dynamic load management and automatic phase switching with VOOL LMC.",
+          "href": "/products/vool-lmc/",
+          "more": "VOOL LMC"
+        },
+        {
+          "title": "Modbus TCP",
+          "text": "Read values and set limits from a building or energy management system."
+        },
+        {
+          "title": "OCPP and OCPI",
+          "text": "Connect chargers to another back end, or connect partner platforms to VOOL."
+        },
+        {
+          "title": "4G connectivity",
+          "text": "Built into chargers and LMCs. From 1 January 2027: €2.50 per month or €24 per year per device, VAT included. New chargers get 30 days free."
+        },
+        {
+          "title": "ISO 15118",
+          "text": "Plug & Charge with the new VOOL Charger, V2G by firmware update in Q1 2027.",
+          "href": "/afir/",
+          "more": "AFIR and ISO 15118"
+        },
+        {
+          "title": "DAEI in Lithuania",
+          "text": "Get paid for the electricity you charge.",
+          "href": "/daei/",
+          "more": "DAEI"
+        },
+        {
+          "title": "Solar and vehicle data",
+          "text": "Charging on your own solar power and reading the car’s battery level. Returning at the end of 2026."
+        },
+        {
+          "title": "All integrations",
+          "text": "Protocols, typical setups and technical limits.",
+          "href": "/integrations/",
+          "more": "Integrations"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "See it with your own site",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Log in",
+          "href": "https://app.vool.com"
+        }
+      ]
+    }
+  ]
+}

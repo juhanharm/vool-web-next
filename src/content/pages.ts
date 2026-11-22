@@ -6,11 +6,12 @@
 import { company, RESELLER_URL } from './ui';
 import { morePages, nightEn, costLabels, demoLabels } from './knowledge';
 import { productPages } from './products2';
+import { commercialPages, projectSteps, installers } from './commercial';
 
 const consent = 'I agree that VOOL processes my data to answer this enquiry (privacy policy).';
 const error = 'Something went wrong. Please try again or write to info@vool.com.';
 const buy = { label: 'Where to buy', href: '/where-to-buy/' };
-const contact = { label: 'Talk to us', href: '/resources/contact/' };
+const contact = { label: 'Get a quote', href: '/get-a-quote/' };
 
 export interface Page { title: string; description: string; image?: string; lang?: string; alternates?: Record<string, string>; sections: any[] }
 
@@ -32,7 +33,7 @@ export const pages: Record<string, Page> = {
       { type: 'logos', title: 'Used by', items: [
         { name: 'Omniva', src: '/img/logos/omniva.webp' }, { name: 'Hansabuss', src: '/img/logos/hansabuss.webp' }, { name: 'Europcar', src: '/img/logos/europcar.webp' }, { name: 'Alexela', src: '/img/logos/alexela.svg' } ] },
       { type: 'cards', id: 'solutions', eyebrow: 'Solutions', title: 'Where do you need charging?', cols: 4, items: [
-        { title: 'Apartments & offices', image: '/img/apartments.webp', text: 'Shared charging with load management and fair billing per user.', href: '/solutions/apartment-blocks/' },
+        { title: 'Apartment buildings', image: '/img/apartments.webp', text: 'Shared charging with load management and fair billing per user.', href: '/solutions/apartment-blocks/' },
         { title: 'Homes', image: '/img/home.webp', text: 'Charge when electricity is cheapest, controlled from your phone.', href: '/solutions/ev-charger-for-home/' },
         { title: 'Fleets', image: '/img/garage.webp', text: 'Costs and status per vehicle, for five cars or thousands.', href: '/solutions/electrical-fleet-owners/' },
         { title: 'Public charging', image: '/img/public.webp', text: 'Open your chargers to visitors and get paid for every session.', href: '/solutions/public-charging/' },
@@ -103,6 +104,11 @@ export const pages: Record<string, Page> = {
         ['Warranty', '5 years'],
         ['Made in', 'Estonia'],
       ], links: [{ label: 'User manual (PDF)', href: '/media/VOOL_user_manual_complete.pdf' }, { label: 'All manuals', href: '/resources/product-manuals/' }] },
+      { type: 'cards', title: 'Versions and accessories', cols: 3, items: [
+        { title: 'MID wall charger', text: 'With a certified meter for billing by the kWh. Coming in 2027.', href: '/get-a-quote/', more: 'Ask about MID' },
+        { title: 'Commercial Pole', text: 'Two 22 kW charging points with display and QR payment for public sites.', href: '/products/commercial-pole/', more: 'Commercial Pole' },
+        { title: 'Accessories', text: 'Poles, cable holder, front panels and spare parts.', href: '/products/accessories/', more: 'Accessories' },
+      ] },
       { type: 'cta', title: 'Get a VOOL Charger', lead: 'Our partners sell and install VOOL across Europe.', buttons: [buy, contact] },
     ],
   },
@@ -214,6 +220,13 @@ export const pages: Record<string, Page> = {
         { title: 'Getting it through the meeting', text: 'A draft resolution, answers to owners’ questions and what the law says.', href: '/knowledge/general-meeting/', more: 'Guide for boards' },
       ] },
       { type: 'cost', title: 'What charging at home costs a driver', lead: 'A number for the board to show owners.', note: 'Example values for Estonia; enter your own. The electricity price should include energy, network fees and taxes. Assumes 18 kWh/100 km and 6.5 l/100 km.', labels: costLabels.en },
+      { type: 'cards', soft: true, title: 'Who runs the charging? You choose.', cols: 3, items: [
+        { title: 'The association runs it', text: 'VOOL provides the platform, billing and support. The board sets the price and sees the reports. No separate operator is needed.', href: '/software/billing-and-payments/', more: 'Billing and payments' },
+        { title: 'An operator runs it', text: 'If the board wants no part in it, an operator partner owns or manages the chargers on VOOL.', href: '/get-a-quote/', more: 'Ask us for an operator' },
+        { title: 'Each owner buys a charger', text: 'The association builds the shared cabling and load management. Owners add their own charger when they need one.', href: '/knowledge/general-meeting/', more: 'Guide for the general meeting' },
+      ] },
+      projectSteps,
+      installers,
       { type: 'cards', title: 'Estonia: KIK pays part of the cost', cols: 1, items: [
         { title: '€14,090 in grant for 10 charging points', text: 'Apartment associations outside Tallinn and Tartu city can apply for KIK’s EV charging grant. Load management is required, and VOOL LMC covers it.', href: '/apartment-buildings/', more: 'Grant terms and example' },
       ] },
@@ -291,6 +304,11 @@ export const pages: Record<string, Page> = {
         { title: 'Payments handled', text: 'Drivers pay in the app. No invoices to chase.' },
         { title: 'Live overview', text: 'See status, sessions and income for every charger.' },
       ] },
+      { type: 'cards', title: 'More drivers, less work', cols: 3, items: [
+        { title: 'Roaming through Hubject', text: 'Drivers start charging with the apps and cards of other providers. You are paid the same way. Providers are being added now.', href: '/integrations/', more: 'Integrations' },
+        { title: 'Ready for AFIR', text: 'Ad hoc payment by QR code and the price shown before charging starts.', href: '/afir/', more: 'AFIR explained' },
+        { title: 'VOOL Commercial Pole', text: 'Two 22 kW charging points with display, QR payment and an optional MID meter.', href: '/products/commercial-pole/', more: 'Commercial Pole' },
+      ] },
       { type: 'cta', title: 'Open your chargers to the public', buttons: [contact] },
     ],
   },
@@ -314,6 +332,14 @@ export const pages: Record<string, Page> = {
         { title: 'Insert the controller', text: 'Now, or later if the customer only wants the space prepared.' },
         { title: 'Attach the front panel', text: 'It clicks on.' },
         { title: 'Add the LMC', text: 'For load management and automatic phase switching.' },
+      ] },
+      { type: 'cards', soft: true, title: 'Sales toolkit', cols: 3, items: [
+        { title: 'Datasheets and manuals', text: 'For chargers, LMCs and accessories, in several languages.', href: '/resources/product-manuals/', more: 'Product manuals' },
+        { title: 'Tender specification text', text: 'Ready text for designers and public tenders.', href: '/solutions/developers/#spec', more: 'Specification text' },
+        { title: 'Live demo for customer meetings', text: 'Show how many cars fit on a customer’s main fuse.', href: '/live-demo/', more: 'Live demo' },
+        { title: 'Comparison page', text: 'VOOL load management against ordinary load balancing, point by point.', href: '/compare/', more: 'Compare' },
+        { title: 'Guide for the general meeting', text: 'Hand it to apartment associations before they vote.', href: '/knowledge/general-meeting/', more: 'The guide' },
+        { title: 'Warranty that covers your demo units', text: 'Five years, counted from your sale to the end customer.', href: '/support/warranty/', more: 'Warranty and support' },
       ] },
       { type: 'cards', title: 'What partners get', cols: 3, items: [
         { title: 'Stock and prices online', text: 'Log in to see what is in stock and your own prices, and place orders.', href: RESELLER_URL, more: 'Reseller login' },
@@ -428,7 +454,7 @@ export const pages: Record<string, Page> = {
   },
 };
 
-Object.assign(pages, morePages, productPages);
+Object.assign(pages, morePages, productPages, commercialPages);
 
 /** Old URLs that now point to a merged page (also written to public/_redirects). */
 export const redirects: Record<string, string> = {

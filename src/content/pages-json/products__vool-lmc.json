@@ -1,0 +1,110 @@
+{
+  "path": "/products/vool-lmc/",
+  "title": "VOOL LMC – load management controller for EV charging",
+  "description": "Use the full capacity of your grid connection. VOOL LMC balances the load and switches phases automatically, so fuses stay safe.",
+  "image": "/img/lmc.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "dark": true,
+      "eyebrow": "VOOL LMC · Load Management Controller",
+      "title": "Use your full grid capacity. Keep every fuse safe.",
+      "lead": "The LMC sits in your electrical cabinet, measures the building’s load in real time and gives the spare capacity to the chargers. No grid upgrade needed.",
+      "image": "/img/lmc.webp",
+      "alt": "VOOL load management controller",
+      "cta": [
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        },
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "What it does",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Protects the main fuse",
+          "text": "If one phase fills up, charging moves to a less loaded phase or slows down. The load stays balanced."
+        },
+        {
+          "title": "Works on its own",
+          "text": "Nothing to configure day to day. The VOOL App shows electricity use and phase load in real time."
+        },
+        {
+          "title": "Nobody notices",
+          "text": "When it steps in, the car keeps charging, the lights stay on and the washing machine finishes its cycle."
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "soft": true,
+      "image": "/img/lmc-cabinet.webp",
+      "alt": "VOOL LMC mounted in an electrical cabinet",
+      "title": "One controller for the whole site",
+      "text": "One LMC Pro manages more than 100 chargers and supports load management at several levels of the electrical installation. On a business campus in Luxembourg, one tenant runs 45 VOOL chargers on a single 125 A connection.",
+      "points": [
+        "Dynamic load management",
+        "Automatic phase switching",
+        "Mobile internet, WiFi, Ethernet and Bluetooth"
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "Two models",
+      "cols": 2,
+      "items": [
+        {
+          "title": "LMC Pro",
+          "text": "For apartment buildings, offices and car parks. Manages 100+ chargers. Available now."
+        },
+        {
+          "title": "LMC S",
+          "text": "For houses and small sites with up to four chargers. Current clamps are included in the box and setup is done over Bluetooth in the VOOL App. Available from January 2027.",
+          "href": "/products/vool-lmc-s/",
+          "more": "VOOL LMC S"
+        }
+      ]
+    },
+    {
+      "type": "demo",
+      "soft": true,
+      "title": "Try it: how many cars fit on your connection?",
+      "labels": {
+        "fuse": "Main fuse",
+        "cars": "Cars plugged in",
+        "time": "Time of day",
+        "play": "Play 24 hours",
+        "building": "Building",
+        "charging": "Charging",
+        "limit": "Fuse limit →",
+        "without": "Without load management, this connection fits",
+        "chargers": "chargers at 11 kW",
+        "with": "With VOOL, cars charging right now",
+        "each": "about {kw} kW per car now, or roughly {km} km of range in 8 hours",
+        "note": "Simplified simulation with an example load curve. Without load management, 16 A per phase is reserved for each charger at the building’s peak. With VOOL, the spare current on each phase is shared and each car is moved to the freest phase (minimum 6 A)."
+      }
+    },
+    {
+      "type": "cta",
+      "title": "Planning a larger installation?",
+      "lead": "Send us the number of parking spaces and the size of the main fuse. We will tell you what fits.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

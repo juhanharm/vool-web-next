@@ -1,0 +1,70 @@
+{
+  "path": "/resources/help-center/",
+  "title": "VOOL Help Center and support",
+  "description": "Installation guides, troubleshooting, app and portal help for VOOL chargers and LMCs.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Support",
+      "title": "Help for installers and drivers",
+      "lead": "Step-by-step guides and answers, written by the team that builds VOOL. Chat with support from any article.",
+      "cta": [
+        {
+          "label": "Open the Help Center",
+          "href": "https://support.vool.com/en/"
+        },
+        {
+          "label": "Product manuals",
+          "href": "/resources/product-manuals/"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
+      "title": "Popular topics",
+      "items": [
+        {
+          "label": "Installation guide: VOOL Charger",
+          "href": "https://support.vool.com/en/collections/5757748-installation-guide-vool-charger"
+        },
+        {
+          "label": "Installation guide: VOOL LMC",
+          "href": "https://support.vool.com/en/collections/5913122-installation-guide-vool-lmc"
+        },
+        {
+          "label": "Load management explained",
+          "href": "https://support.vool.com/en/collections/12682971-load-management"
+        },
+        {
+          "label": "Troubleshooting charging issues",
+          "href": "https://support.vool.com/en/collections/9261202-troubleshooting-charging-issues"
+        },
+        {
+          "label": "Mobile app",
+          "href": "https://support.vool.com/en/collections/5671970-mobile-app"
+        },
+        {
+          "label": "VOOL Portal",
+          "href": "https://support.vool.com/en/collections/9472479-vool-portal"
+        },
+        {
+          "label": "Public charging",
+          "href": "https://support.vool.com/en/collections/5673080-public-charging"
+        },
+        {
+          "label": "Subscriptions",
+          "href": "https://support.vool.com/en/collections/10506185-subscriptions"
+        },
+        {
+          "label": "Product updates",
+          "href": "https://support.vool.com/en/collections/9505712-product-updates"
+        },
+        {
+          "label": "FAQ",
+          "href": "/faq/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "path": "/",
+  "title": "VOOL – charge more cars on the grid connection you already have",
+  "description": "Smart 22 kW EV charger, load management controller and software that work as one system. Designed and made in Estonia.",
+  "image": "/img/hero-home.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Designed and made in Estonia",
+      "title": "Charge more cars on the grid connection you already have",
+      "lead": "VOOL is one system: a smart charger, a load management controller and software that work together. No grid upgrade, no separate operator, lower charging costs.",
+      "image": "/img/hero-home.webp",
+      "alt": "VOOL charger on a pole next to a parked car",
+      "cta": [
+        {
+          "label": "Find your solution",
+          "href": "#solutions"
+        },
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        }
+      ],
+      "facts": [
+        "Up to 22 kW",
+        "5-year warranty",
+        "Up to 30% lower charging costs"
+      ]
+    },
+    {
+      "type": "stats",
+      "items": [
+        {
+          "value": "20,000+",
+          "label": "devices sold"
+        },
+        {
+          "value": "100+",
+          "label": "chargers managed by one LMC Pro"
+        },
+        {
+          "value": "45",
+          "label": "chargers on one 125 A connection"
+        },
+        {
+          "value": "14",
+          "label": "countries with VOOL partners"
+        }
+      ]
+    },
+    {
+      "type": "logos",
+      "title": "Used by",
+      "items": [
+        {
+          "name": "Omniva",
+          "src": "/img/logos/omniva.webp"
+        },
+        {
+          "name": "Hansabuss",
+          "src": "/img/logos/hansabuss.webp"
+        },
+        {
+          "name": "Europcar",
+          "src": "/img/logos/europcar.webp"
+        },
+        {
+          "name": "Alexela",
+          "src": "/img/logos/alexela.svg"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "solutions",
+      "eyebrow": "Solutions",
+      "title": "Where do you need charging?",
+      "cols": 4,
+      "items": [
+        {
+          "title": "Apartment buildings",
+          "image": "/img/apartments.webp",
+          "text": "Shared charging with load management and fair billing per user.",
+          "href": "/solutions/apartment-blocks/"
+        },
+        {
+          "title": "Homes",
+          "image": "/img/home.webp",
+          "text": "Charge when electricity is cheapest, controlled from your phone.",
+          "href": "/solutions/ev-charger-for-home/"
+        },
+        {
+          "title": "Fleets",
+          "image": "/img/garage.webp",
+          "text": "Costs and status per vehicle, for five cars or thousands.",
+          "href": "/solutions/electrical-fleet-owners/"
+        },
+        {
+          "title": "Public charging",
+          "image": "/img/public.webp",
+          "text": "Open your chargers to visitors and get paid for every session.",
+          "href": "/solutions/public-charging/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "eyebrow": "New",
+      "title": "Money for charging",
+      "cols": 2,
+      "items": [
+        {
+          "title": "Estonia: KIK grant for apartment associations",
+          "text": "A 10-point installation with VOOL chargers and load management gets €14,090 in grant. We help with the quote and the application.",
+          "href": "/apartment-buildings/",
+          "more": "See the grant"
+        },
+        {
+          "title": "Lithuania: get paid for charging at home",
+          "text": "VOOL pays you 3.9 ct for every kWh you charge, through the DAEI system. Launching December 2026.",
+          "href": "/daei/",
+          "more": "Join the waiting list"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "products",
+      "eyebrow": "Products",
+      "title": "One system, four parts",
+      "cols": 4,
+      "items": [
+        {
+          "title": "VOOL Charger",
+          "image": "/img/charger-finishes.webp",
+          "text": "Up to 22 kW with a 6.5 m cable. Black, aluminium or wood.",
+          "href": "/products/vool-charger/"
+        },
+        {
+          "title": "VOOL LMC",
+          "image": "/img/lmc-cabinet.webp",
+          "text": "Balances the load so fuses stay safe and every amp is used.",
+          "href": "/products/vool-lmc/"
+        },
+        {
+          "title": "VOOL App",
+          "image": "/img/app-hand.webp",
+          "text": "Charges when prices are lowest. Free.",
+          "href": "/products/vool-app/"
+        },
+        {
+          "title": "VOOL Portal",
+          "image": "/img/portal-screen.webp",
+          "text": "Users, billing and reports for every site in one place.",
+          "href": "/products/vool-portal/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "eyebrow": "New",
+      "title": "Ready for 2027",
+      "cols": 3,
+      "items": [
+        {
+          "title": "VOOL Charger with ISO 15118-20",
+          "text": "Meets the AFIR rule for chargers installed from 1 January 2027. Plug & Charge now, V2G by update.",
+          "href": "/afir/",
+          "more": "AFIR and the new charger"
+        },
+        {
+          "title": "VOOL LMC S",
+          "text": "Load management for houses and small sites with up to four chargers. From January 2027.",
+          "href": "/products/vool-lmc-s/",
+          "more": "LMC S"
+        },
+        {
+          "title": "VOOL Commercial Pole",
+          "text": "Two 22 kW charging points with display, QR payment and an optional MID meter.",
+          "href": "/products/commercial-pole/",
+          "more": "Commercial Pole"
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "image": "/img/garage.webp",
+      "alt": "Underground car park with VOOL chargers",
+      "eyebrow": "Why VOOL",
+      "title": "The expensive part of charging is the grid. We make it go further.",
+      "text": "Most buildings have more capacity than they use. VOOL measures the load in real time and gives the spare capacity to the cars, moving each one to the least loaded phase.",
+      "points": [
+        "On one campus, 45 chargers run on a single 125 A connection",
+        "Fuses stay safe while the building runs as usual",
+        "Add chargers later: mount the casing now, click in the controller when needed"
+      ],
+      "cta": [
+        {
+          "label": "Try the live demo",
+          "href": "/live-demo/"
+        },
+        {
+          "label": "Compare",
+          "href": "/compare/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "eyebrow": "Customers",
+      "title": "Used by companies that run charging every day",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Omniva: 300 chargers",
+          "text": "VOOL supplies chargers for Omniva’s courier fleet across Estonia over five years.",
+          "href": "/resources/blog/vool-joins-omniva-on-their-journey-towards-electrifying-transportation/",
+          "more": "Read the story"
+        },
+        {
+          "title": "Office building: 40 chargers, 100 users",
+          "text": "Eleven companies share the chargers. 75 MWh charged in 3,000 sessions within six months.",
+          "href": "/case-studies/",
+          "more": "All case studies"
+        },
+        {
+          "title": "Residence: 19 chargers in three weeks",
+          "text": "After the shared installation in a 74-space car park, owners ordered 19 chargers within three weeks.",
+          "href": "/case-studies/",
+          "more": "All case studies"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Ready to plan your charging?",
+      "lead": "Tell us about your site, or buy from a partner near you.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        },
+        {
+          "label": "Reseller login",
+          "href": "https://shop.vool.com/"
+        }
+      ]
+    }
+  ]
+}

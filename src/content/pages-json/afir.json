@@ -1,0 +1,173 @@
+{
+  "path": "/afir/",
+  "title": "AFIR and ISO 15118-20: what changes on 1 January 2027 | VOOL",
+  "description": "From 1 January 2027 newly installed AC charging points in the EU must support ISO 15118-20. The new VOOL Charger does, and existing VOOL chargers can be upgraded.",
+  "image": "/img/charger-pole.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "dark": true,
+      "eyebrow": "AFIR · ISO 15118-20",
+      "title": "Chargers installed from 1 January 2027 need ISO 15118-20. VOOL is ready.",
+      "lead": "The new VOOL Charger supports ISO 15118-2, ISO 15118-20 and Plug & Charge. It ships from mid-December 2026. Chargers you already have can be upgraded.",
+      "image": "/img/charger-pole.webp",
+      "alt": "VOOL charger on a pole",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        }
+      ],
+      "facts": [
+        "ISO 15118-2 and -20",
+        "Plug & Charge",
+        "V2G by firmware update, Q1 2027"
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "What the rules say",
+      "points": [
+        "<strong>Since 8 January 2026:</strong> newly installed or renovated publicly accessible AC charging points must support EN ISO 15118-2.",
+        "<strong>From 1 January 2027:</strong> newly installed or renovated AC (Mode 3) charging points must support EN ISO 15118-20. This covers public and private charging points.",
+        "<strong>Existing chargers stay as they are.</strong> The rule applies to new installations and renovations, not to chargers installed before the deadline.",
+        "<strong>Public charging points</strong> must also offer ad hoc payment without a contract and show the price before charging starts. For AC, a QR code payment page is enough."
+      ],
+      "paragraphs": [
+        "The rules come from the EU’s Alternative Fuels Infrastructure Regulation (AFIR) and its delegated regulation (EU) 2025/656. The Commission is still publishing guidance on the details, so check the current text before a tender."
+      ],
+      "sources": [
+        {
+          "label": "Delegated Regulation (EU) 2025/656",
+          "href": "https://eur-lex.europa.eu/eli/reg_del/2025/656/oj/eng"
+        },
+        {
+          "label": "AFIR (EU) 2023/1804",
+          "href": "https://eur-lex.europa.eu/eli/reg/2023/1804"
+        },
+        {
+          "label": "European Alternative Fuels Observatory",
+          "href": "https://alternative-fuels-observatory.ec.europa.eu/general-information/news/european-commission-publishes-delegated-acts-afir-open-consultation"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "The new VOOL Charger",
+      "cols": 3,
+      "items": [
+        {
+          "title": "ISO 15118-2 and -20",
+          "text": "Both versions from the first day, so the charger meets the 2026 and the 2027 requirements."
+        },
+        {
+          "title": "Plug & Charge",
+          "text": "The car identifies itself when it is plugged in. No app or card needed to start."
+        },
+        {
+          "title": "V2G later, without new hardware",
+          "text": "Bidirectional charging arrives as a firmware update in the first quarter of 2027."
+        },
+        {
+          "title": "Same charger otherwise",
+          "text": "Up to 22 kW, 6.5 m cable, load management with VOOL LMC and a 5-year warranty.",
+          "href": "/products/vool-charger/",
+          "more": "VOOL Charger"
+        },
+        {
+          "title": "Available from mid-December 2026",
+          "text": "Production has switched to the ISO 15118 charger. Ask your reseller about delivery dates.",
+          "href": "/where-to-buy/",
+          "more": "Where to buy"
+        },
+        {
+          "title": "Developed in-house",
+          "text": "The ISO 15118 software is VOOL’s own, built by the team that makes the charger."
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "image": "/img/charger-two.webp",
+      "alt": "Two VOOL chargers on a wall",
+      "title": "Already have VOOL chargers? Upgrade the controller.",
+      "text": "Current VOOL chargers do not support ISO 15118, and they do not have to: they were installed before the deadline. If you want Plug & Charge or V2G, the charge controller can be swapped for the new one. The casing, cabling and cable stay.",
+      "points": [
+        "The swap takes a few minutes and the tool ships with the controller",
+        "Price will be announced in December 2026"
+      ],
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Public and semi-public sites",
+      "cols": 2,
+      "items": [
+        {
+          "title": "VOOL Commercial Pole",
+          "text": "Two 22 kW charging points with a display, QR code payment and an optional MID meter.",
+          "href": "/products/commercial-pole/",
+          "more": "Commercial Pole"
+        },
+        {
+          "title": "Billing and payments",
+          "text": "Ad hoc payment, pricing and payouts are handled by the VOOL platform.",
+          "href": "/software/billing-and-payments/",
+          "more": "How it works"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Can I still install the current VOOL charger in December 2026?",
+          "a": "Yes. The ISO 15118-20 requirement applies to charging points installed or renovated from 1 January 2027."
+        },
+        {
+          "q": "Do I have to replace chargers that are already installed?",
+          "a": "No. Chargers installed before the deadline can stay. An upgrade is your choice."
+        },
+        {
+          "q": "Does the rule apply to a private home?",
+          "a": "From 1 January 2027 it covers newly installed private AC charging points too."
+        },
+        {
+          "q": "What is Plug & Charge?",
+          "a": "The car and the charger identify each other over the charging cable, so charging and billing start without an app or a card."
+        },
+        {
+          "q": "When does V2G work?",
+          "a": "The new charger gets bidirectional charging by firmware update in the first quarter of 2027. Your car and your grid operator’s rules also have to allow it."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Planning installations for 2027?",
+      "lead": "Tell us what you are building. We will confirm what you need to comply.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

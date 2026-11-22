@@ -1,0 +1,139 @@
+{
+  "path": "/resources/contact/",
+  "title": "Contact VOOL",
+  "description": "Ask for a quote, find a partner or get support. VOOL, Veerenni 38, Tallinn, Estonia.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Contact",
+      "title": "How can we help?",
+      "lead": "Write to info@vool.com or call +372 5656 7172. For help with a charger you already have, the Help Center is the fastest route.",
+      "cta": [
+        {
+          "label": "Send a message",
+          "href": "#form"
+        },
+        {
+          "label": "Help Center",
+          "href": "https://support.vool.com/en/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "The right door",
+      "cols": 3,
+      "items": [
+        {
+          "title": "I want to buy",
+          "text": "Partners across Europe sell and install VOOL.",
+          "href": "/where-to-buy/",
+          "more": "Where to buy"
+        },
+        {
+          "title": "I need support",
+          "text": "Guides, manuals and chat with our support team.",
+          "href": "https://support.vool.com/en/",
+          "more": "Help Center"
+        },
+        {
+          "title": "I want to sell VOOL",
+          "text": "Become a reseller or installer.",
+          "href": "/resources/resellers/",
+          "more": "Partners"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "form": "contact",
+      "title": "Send us a message",
+      "intro": "We reply within 1–2 working days.",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "company",
+          "label": "Company or association",
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "half": true
+        },
+        {
+          "name": "topic",
+          "label": "Topic",
+          "type": "select",
+          "options": [
+            "Apartment building or office",
+            "Home",
+            "Fleet",
+            "Public charging",
+            "Other"
+          ]
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea",
+          "required": true
+        }
+      ],
+      "submit": "Send",
+      "thanks": "Thank you! We received your message.",
+      "error": "Something went wrong. Please try again or write to info@vool.com.",
+      "consent": "I agree that VOOL processes my data to answer this enquiry (privacy policy)."
+    },
+    {
+      "type": "specs",
+      "title": "Company details",
+      "rows": [
+        {
+          "cells": [
+            "Company",
+            "MultiCharge OÜ"
+          ]
+        },
+        {
+          "cells": [
+            "Registration number",
+            "14627725"
+          ]
+        },
+        {
+          "cells": [
+            "Address",
+            "Veerenni 38, 10138 Tallinn, Estonia"
+          ]
+        },
+        {
+          "cells": [
+            "Phone",
+            "+372 5656 7172"
+          ]
+        },
+        {
+          "cells": [
+            "Email",
+            "info@vool.com"
+          ]
+        }
+      ]
+    }
+  ]
+}

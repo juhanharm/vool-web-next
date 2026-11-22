@@ -1,0 +1,99 @@
+{
+  "path": "/about-us/our-story-new/",
+  "title": "About VOOL – our story",
+  "description": "VOOL was founded by people from the electricity grid business who saw how much grid capacity goes unused.",
+  "image": "/img/dunes.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "About VOOL",
+      "title": "We come from the grid business. That is why VOOL starts with the grid.",
+      "lead": "VOOL means “flow” or “current” in Estonian. We build EV charging that uses the electricity connection a building already has.",
+      "image": "/img/dunes.webp",
+      "alt": "VOOL charger on a beach"
+    },
+    {
+      "type": "split",
+      "soft": true,
+      "image": "/img/office.webp",
+      "alt": "VOOL charger outside an office",
+      "title": "How it started",
+      "text": "While working in the energy sector, the founders kept seeing the same thing: electricity connections sized for a peak that rarely comes, with most of the capacity unused. At the same time electric cars were arriving, and charging them put pressure on those connections. So they built a charger and a controller that use the grid to its full potential."
+    },
+    {
+      "type": "cards",
+      "title": "What we stand for",
+      "cols": 4,
+      "items": [
+        {
+          "title": "Seamless",
+          "text": "Technology that works quietly in the background. Charging should just work."
+        },
+        {
+          "title": "Bold",
+          "text": "The energy world is changing fast. We challenge outdated systems."
+        },
+        {
+          "title": "Dynamic",
+          "text": "Energy moves and so do we. We build solutions that adapt."
+        },
+        {
+          "title": "Impactful",
+          "text": "What we build has a purpose: a better energy future."
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "soft": true,
+      "title": "Company",
+      "rows": [
+        {
+          "cells": [
+            "Company",
+            "MultiCharge OÜ"
+          ]
+        },
+        {
+          "cells": [
+            "Registration number",
+            "14627725"
+          ]
+        },
+        {
+          "cells": [
+            "Office",
+            "Veerenni 38, 10138 Tallinn, Estonia"
+          ]
+        },
+        {
+          "cells": [
+            "Hardware",
+            "Designed and made in Estonia"
+          ]
+        },
+        {
+          "cells": [
+            "Contact",
+            "info@vool.com · +372 5656 7172"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Work with us",
+      "lead": "Become a partner or talk to us about your project.",
+      "buttons": [
+        {
+          "label": "Partners",
+          "href": "/resources/resellers/"
+        },
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

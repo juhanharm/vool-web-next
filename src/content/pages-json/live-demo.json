@@ -1,0 +1,60 @@
+{
+  "path": "/live-demo/",
+  "title": "Live demo – how VOOL load management shares your grid connection",
+  "description": "Move the sliders: main fuse, number of cars and time of day. See how many cars charge with and without load management.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Live demo",
+      "title": "See how many cars your connection can charge",
+      "lead": "Set the main fuse, the number of cars and the time of day. The grey part is the building, the orange part is charging."
+    },
+    {
+      "type": "demo",
+      "soft": true,
+      "title": "Load management simulator",
+      "labels": {
+        "fuse": "Main fuse",
+        "cars": "Cars plugged in",
+        "time": "Time of day",
+        "play": "Play 24 hours",
+        "building": "Building",
+        "charging": "Charging",
+        "limit": "Fuse limit →",
+        "without": "Without load management, this connection fits",
+        "chargers": "chargers at 11 kW",
+        "with": "With VOOL, cars charging right now",
+        "each": "about {kw} kW per car now, or roughly {km} km of range in 8 hours",
+        "note": "Simplified simulation with an example load curve. Without load management, 16 A per phase is reserved for each charger at the building’s peak. With VOOL, the spare current on each phase is shared and each car is moved to the freest phase (minimum 6 A)."
+      }
+    },
+    {
+      "type": "split",
+      "image": "/img/lmc-cabinet.webp",
+      "alt": "VOOL LMC in an electrical cabinet",
+      "title": "On a real site: 45 chargers on 125 A",
+      "text": "At a business campus in Luxembourg built by our partner AMP X VOLT, one tenant runs 45 VOOL chargers on a single 125 A connection. The LMC measures each phase and gives the spare current to the cars.",
+      "cta": [
+        {
+          "label": "Case studies",
+          "href": "/case-studies/"
+        },
+        {
+          "label": "VOOL LMC",
+          "href": "/products/vool-lmc/"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Send us your real numbers",
+      "lead": "Main fuse size, parking spaces and how many chargers you need. We will tell you what fits.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

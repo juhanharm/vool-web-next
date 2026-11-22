@@ -1,0 +1,111 @@
+{
+  "path": "/solutions/public-charging/",
+  "title": "Public charging – earn from your VOOL charger",
+  "description": "Make your charger public in a few clicks. It appears on Google Maps, Waze and Apple Maps, and payments are collected for you.",
+  "image": "/img/public.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Public charging",
+      "title": "Your charger stands idle most of the day. Let it earn.",
+      "lead": "Open your VOOL charger to other drivers when it suits you. You set the price and keep the margin. For business customers.",
+      "image": "/img/public.webp",
+      "alt": "VOOL charger outside an office building",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "VOOL Portal",
+          "href": "/products/vool-portal/"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "Four steps",
+      "items": [
+        {
+          "title": "Add the charger",
+          "text": "Add your charger to the VOOL Portal."
+        },
+        {
+          "title": "Set the electricity price",
+          "text": "Enter what the electricity costs you."
+        },
+        {
+          "title": "Set your margin",
+          "text": "Decide what you earn on each kWh."
+        },
+        {
+          "title": "Make it public",
+          "text": "Drivers can now find it and pay for charging."
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "image": "/img/app-insights.webp",
+      "alt": "Public chargers in the VOOL App",
+      "title": "Drivers find you where they already look",
+      "text": "A public charger shows up on Google Maps, Waze, Apple Maps, Tesla, TomTom, HERE and Chargetrip, and in the VOOL App with live availability and price."
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "You stay in control",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Your price, your hours",
+          "text": "Change pricing and availability whenever you want."
+        },
+        {
+          "title": "Payments handled",
+          "text": "Drivers pay in the app. No invoices to chase."
+        },
+        {
+          "title": "Live overview",
+          "text": "See status, sessions and income for every charger."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "More drivers, less work",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Roaming through Hubject",
+          "text": "Drivers start charging with the apps and cards of other providers. You are paid the same way. Providers are being added now.",
+          "href": "/integrations/",
+          "more": "Integrations"
+        },
+        {
+          "title": "Ready for AFIR",
+          "text": "Ad hoc payment by QR code and the price shown before charging starts.",
+          "href": "/afir/",
+          "more": "AFIR explained"
+        },
+        {
+          "title": "VOOL Commercial Pole",
+          "text": "Two 22 kW charging points with display, QR payment and an optional MID meter.",
+          "href": "/products/commercial-pole/",
+          "more": "Commercial Pole"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Open your chargers to the public",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

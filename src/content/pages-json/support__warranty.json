@@ -1,0 +1,93 @@
+{
+  "path": "/support/warranty/",
+  "title": "Warranty and support | VOOL",
+  "description": "VOOL chargers have a 5-year warranty. What happens when something stops working, and how to reach support.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Warranty and support",
+      "title": "Five years of warranty, and people who answer",
+      "lead": "VOOL chargers are built in Estonia and carry a 5-year warranty. Most problems are solved remotely, without a site visit.",
+      "cta": [
+        {
+          "label": "Help Center",
+          "href": "/resources/help-center/"
+        },
+        {
+          "label": "Warranty terms",
+          "href": "/vool-ev-charger-warranty-termsconditions/"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "If something stops working",
+      "items": [
+        {
+          "title": "Contact support",
+          "text": "Write to us through the Help Center or at info@vool.com, or ask your installer."
+        },
+        {
+          "title": "We look at the device remotely",
+          "text": "Connected chargers and LMCs send diagnostics, so we usually see the cause without a visit."
+        },
+        {
+          "title": "Fixed by update or setting",
+          "text": "Many issues are solved with a software update or a configuration change."
+        },
+        {
+          "title": "Replacement part if needed",
+          "text": "The charger is modular. A faulty charge controller is swapped in minutes and the casing and cabling stay."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "What is included",
+      "cols": 3,
+      "items": [
+        {
+          "title": "5-year warranty",
+          "text": "On VOOL chargers, from the sale to the end customer.",
+          "href": "/vool-ev-charger-warranty-termsconditions/",
+          "more": "Warranty terms"
+        },
+        {
+          "title": "Software updates",
+          "text": "New features and fixes arrive over the air."
+        },
+        {
+          "title": "Remote diagnostics",
+          "text": "For connected devices, at no extra cost."
+        },
+        {
+          "title": "Help Center",
+          "text": "Installation guides, manuals and answers to common questions.",
+          "href": "/resources/help-center/",
+          "more": "Help Center"
+        },
+        {
+          "title": "Support for installers",
+          "text": "Installers keep remote access to the sites they set up.",
+          "href": "/resources/resellers/",
+          "more": "Partners"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Need help now?",
+      "buttons": [
+        {
+          "label": "Help Center",
+          "href": "/resources/help-center/"
+        },
+        {
+          "label": "Contact",
+          "href": "/resources/contact/"
+        }
+      ]
+    }
+  ]
+}

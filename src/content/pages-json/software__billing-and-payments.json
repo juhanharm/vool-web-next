@@ -1,0 +1,160 @@
+{
+  "path": "/software/billing-and-payments/",
+  "title": "Billing and payments for EV charging | VOOL",
+  "description": "VOOL charges the drivers, issues invoices and pays the site owner every month. No fixed fee and no fee per connector.",
+  "image": "/img/portal-screen.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Billing and payments",
+      "title": "Drivers pay. You get paid. VOOL does the paperwork.",
+      "lead": "For apartment associations, offices and public sites that want charging paid by the people who charge. No fixed fee and no fee per connector.",
+      "image": "/img/portal-screen.webp",
+      "alt": "Billing in the VOOL Portal",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Open VOOL Portal",
+          "href": "https://app.vool.com"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "How the money moves",
+      "items": [
+        {
+          "title": "You set the price",
+          "text": "Per kWh, with different prices for different groups if you want."
+        },
+        {
+          "title": "The driver charges and pays",
+          "text": "By card in the VOOL App, or by scanning a QR code at a public charger."
+        },
+        {
+          "title": "VOOL invoices the driver",
+          "text": "Every session gets an invoice. You do not issue anything."
+        },
+        {
+          "title": "You are paid monthly",
+          "text": "VOOL transfers what the drivers paid, less its fee, with a statement."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "What it costs",
+      "lead": "You pay only when VOOL collects money for you.",
+      "head": [
+        "Service",
+        "What it covers",
+        "VOOL fee"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Portal, users, RFID, pricing rules, reports",
+            "Managing your own chargers",
+            "Free"
+          ]
+        },
+        {
+          "cells": [
+            "Managed billing",
+            "VOOL bills your residents or employees and pays you",
+            "8% of billed sessions"
+          ]
+        },
+        {
+          "cells": [
+            "Public charging",
+            "Ad hoc payment, listing on maps, payouts",
+            "8% of billed sessions"
+          ]
+        },
+        {
+          "cells": [
+            "Roaming",
+            "Drivers using other providers’ apps and cards",
+            "12% of billed sessions"
+          ]
+        },
+        {
+          "cells": [
+            "4G connectivity (from 1 January 2027)",
+            "Mobile data for a charger or LMC",
+            "€2.50 / month or €24 / year per device, incl. VAT"
+          ]
+        }
+      ],
+      "note": "No fixed monthly fee and no fee per connector."
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Who uses it",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Apartment associations",
+          "text": "Each resident pays for their own charging. Owners without an electric car pay nothing, and the board issues no invoices.",
+          "href": "/solutions/apartment-blocks/",
+          "more": "Apartments & offices"
+        },
+        {
+          "title": "Offices and fleets",
+          "text": "Employees pay for private charging, company cars are reported separately.",
+          "href": "/solutions/electrical-fleet-owners/",
+          "more": "Fleets"
+        },
+        {
+          "title": "Public sites",
+          "text": "Visitors pay without an app or a contract, as AFIR requires.",
+          "href": "/solutions/public-charging/",
+          "more": "Public charging"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Do I need a payment terminal?",
+          "a": "No. Drivers pay in the VOOL App or through a QR code payment page."
+        },
+        {
+          "q": "Can residents and guests have different prices?",
+          "a": "Yes. Pricing rules are set per access group."
+        },
+        {
+          "q": "What do I need to enter?",
+          "a": "Your electricity cost and the price you want to charge. The Portal shows what you receive per kWh after fees."
+        },
+        {
+          "q": "Who handles VAT and invoices to drivers?",
+          "a": "VOOL issues the invoices to drivers. Ask us how VAT applies to your organisation."
+        },
+        {
+          "q": "Can I manage billing myself instead?",
+          "a": "Yes. The Portal’s reports show consumption per user, and you can invoice from those yourself at no cost."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Want to see what your site would earn?",
+      "lead": "Send us the number of chargers and your electricity price.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

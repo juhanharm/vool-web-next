@@ -1,0 +1,182 @@
+{
+  "path": "/get-a-quote/",
+  "title": "Get a quote for EV charging | VOOL",
+  "description": "Send us the number of parking spaces and your main fuse size. We size the system and connect you with an installation partner.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Get a quote",
+      "title": "Tell us about your site. We reply within one working day.",
+      "lead": "You get a sized proposal: how many chargers fit on your connection, what hardware you need and who can install it.",
+      "cta": [
+        {
+          "label": "Fill in the form",
+          "href": "#form"
+        },
+        {
+          "label": "Try the live demo",
+          "href": "/live-demo/"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "form": "quote",
+      "title": "Your site",
+      "intro": "Six questions about the site, then your contact details.",
+      "fields": [
+        {
+          "name": "you_are",
+          "label": "You are",
+          "type": "select",
+          "required": true,
+          "half": true,
+          "options": [
+            "Apartment association",
+            "Property manager",
+            "Developer or designer",
+            "Business or office",
+            "Fleet owner",
+            "Public charging site",
+            "Home owner",
+            "Installer or reseller"
+          ]
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "city",
+          "label": "City or town",
+          "half": true
+        },
+        {
+          "name": "parking_spaces",
+          "label": "Parking spaces",
+          "type": "number",
+          "half": true
+        },
+        {
+          "name": "chargers_now",
+          "label": "Chargers needed now",
+          "type": "number",
+          "half": true
+        },
+        {
+          "name": "main_fuse",
+          "label": "Main fuse (A), if you know it",
+          "half": true
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "organisation",
+          "label": "Company or association",
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "half": true
+        },
+        {
+          "name": "message",
+          "label": "Anything else we should know",
+          "type": "textarea"
+        },
+        {
+          "name": "has_installer",
+          "label": "I already have an installer",
+          "type": "checkbox"
+        }
+      ],
+      "submit": "Send",
+      "thanks": "Thank you! We will reply within one working day.",
+      "error": "Something went wrong. Please try again or write to info@vool.com.",
+      "consent": "I agree that VOOL processes my data to answer this enquiry (privacy policy)."
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "How a project runs",
+      "items": [
+        {
+          "title": "You send the basics",
+          "text": "Parking spaces, main fuse size and how many chargers you need now. A photo of the switchboard helps."
+        },
+        {
+          "title": "We size the system",
+          "text": "VOOL works out how many chargers your connection carries with load management, and what to prepare for later."
+        },
+        {
+          "title": "A partner quotes and installs",
+          "text": "VOOL does not install. A certified installation partner visits the site, quotes the work and builds it."
+        },
+        {
+          "title": "We set up the software",
+          "text": "Users, prices and billing are set up in the VOOL Portal. Drivers charge with the VOOL App or an RFID card."
+        },
+        {
+          "title": "Support for the life of the system",
+          "text": "Remote diagnostics, software updates and a 5-year warranty on the chargers."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Who installs",
+      "lead": "VOOL makes the chargers, the load management and the software. Installation is done by local partners.",
+      "head": [
+        "Country",
+        "Site",
+        "Installation partner"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Estonia",
+            "Apartment buildings and offices",
+            "Elemeks, Diotech"
+          ]
+        },
+        {
+          "cells": [
+            "Estonia",
+            "Private homes",
+            "Hepa Elekter"
+          ]
+        },
+        {
+          "cells": [
+            "Finland",
+            "All sites",
+            "EV Lataus"
+          ]
+        },
+        {
+          "cells": [
+            "Other countries",
+            "All sites",
+            "See the partner list on the where-to-buy page"
+          ]
+        }
+      ],
+      "note": "Already have an electrician? Any qualified installer can install VOOL. The manuals are on our product manuals page."
+    }
+  ]
+}

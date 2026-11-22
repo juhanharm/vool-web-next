@@ -1,0 +1,200 @@
+{
+  "path": "/et/uldkoosolek/",
+  "lang": "et",
+  "title": "Kuidas saada elektriautode laadimine üldkoosolekul heaks kiidetud | VOOL",
+  "description": "Juhend korteriühistu juhatusele: mida ette valmistada, otsuse eelnõu, vastused omanike küsimustele ja mida ütleb seadus.",
+  "image": "/img/apartments.webp",
+  "alternates": {
+    "en": "/knowledge/general-meeting/",
+    "et": "/et/uldkoosolek/"
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Juhend korteriühistule",
+      "title": "Kuidas saada laadimine üldkoosolekul heaks kiidetud",
+      "lead": "Üks naaber soovib laadijat. Juhatus vajab otsust, mis sobib kogu majale. Siin on, mida ette valmistada, mille üle hääletada ja mida ütleb seadus.",
+      "image": "/img/apartments.webp",
+      "alt": "VOOL laadija kortermaja juures",
+      "cta": [
+        {
+          "label": "Küsi pakkumist koosolekuks",
+          "href": "/et/kortermajad/#form"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "Enne koosolekut",
+      "items": [
+        {
+          "title": "Loe kokku",
+          "text": "Parkimiskohad, peakaitsme suurus ja kui paljud omanikud soovivad laadijat kohe või kolme aasta jooksul."
+        },
+        {
+          "title": "Võta üks pakkumine",
+          "text": "Palu ühine osa (kaabeldus, koormusjuhtimine) ja ühe laadija hind eraldi ridadena."
+        },
+        {
+          "title": "Lepi kokku kulude jaotus",
+          "text": "Tavaline jaotus: ühise osa eest maksab ühistu, oma laadija ja elektri eest iga laadija kasutaja."
+        },
+        {
+          "title": "Kontrolli toetust",
+          "text": "KIK katab osa kulust ühistutele väljaspool Tallinna ja Tartu linna."
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "Otsus, mille saab päevakorda panna",
+      "paragraphs": [
+        "Omanikel on lihtsam hääletada konkreetse ettepaneku üle, millel on kulude ülempiir. Kohanda tekst oma majale:"
+      ],
+      "box": {
+        "title": "Otsuse eelnõu",
+        "text": "Rajada maja parklasse dünaamilise koormusjuhtimisega elektriautode laadimistaristu kuni ___ parkimiskohale maksumusega kuni ___ €, mida rahastatakse ___ (toetus taotletud: ___). Iga omanik tasub oma parkimiskoha laadija ja tarbitud elektri eest ise. Volitada juhatust taotlema toetust ja sõlmima lepingud."
+      }
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Mida omanikud küsivad ja lühikesed vastused",
+      "cols": 2,
+      "items": [
+        {
+          "title": "„Mul ei ole elektriautot. Miks ma peaksin maksma?“",
+          "text": "Maksad ainult oma osa ühisest osast, kui koosolek nii otsustab. Laadijate ja elektri eest maksavad need, kes laevad; arveldus on kasutajapõhine."
+        },
+        {
+          "title": "„Kas meie liitumine peab vastu?“",
+          "text": "Koormusjuhtimine mõõdab maja tarbimist ja annab autodele ainult vaba võimsuse. Ühel objektil töötab 45 laadijat 125 A liitumisega."
+        },
+        {
+          "title": "„Mis siis, kui järgmisel aastal soovib veel kümme inimest?“",
+          "text": "Kohad saab ette valmistada kohe ja laadijad lisada ükshaaval. Midagi ei pea ümber ehitama."
+        },
+        {
+          "title": "„Kes seda haldab?“",
+          "text": "Ühistu saab kasutajaid ja arveldust hallata ise VOOL portaalis või anda selle operaatorile."
+        }
+      ]
+    },
+    {
+      "type": "demo",
+      "title": "Näita koosolekul, mida koormusjuhtimine teeb",
+      "labels": {
+        "fuse": "Peakaitse",
+        "cars": "Ühendatud autosid",
+        "time": "Kellaaeg",
+        "play": "Mängi 24 tundi",
+        "building": "Maja",
+        "charging": "Laadimine",
+        "limit": "Kaitsme piir →",
+        "without": "Ilma koormusjuhtimiseta mahub sellele liitumisele",
+        "chargers": "11 kW laadijat",
+        "with": "VOOLiga laeb praegu autosid",
+        "each": "umbes {kw} kW auto kohta ehk ligikaudu {km} km sõiduulatust 8 tunniga",
+        "note": "Lihtsustatud simulatsioon näidiskoormusega. Ilma koormusjuhtimiseta reserveeritakse igale laadijale maja tipukoormuse ajal 16 A faasi kohta. VOOLiga jagatakse iga faasi vaba vool autode vahel ja auto lülitatakse kõige vabamale faasile (vähemalt 6 A)."
+      }
+    },
+    {
+      "type": "cost",
+      "title": "Mida maksab kodus laadimine autojuhile",
+      "lead": "Arv, mida omanik saab võrrelda oma praeguse kütusekuluga.",
+      "note": "Näidisväärtused; sisesta enda omad. Elektri hind peaks sisaldama energiat, võrgutasu ja makse. Arvestatud 18 kWh/100 km ja 6,5 l/100 km.",
+      "labels": {
+        "km": "Läbisõit aastas, km",
+        "elec": "Elektri hind, s/kWh (kõik kokku)",
+        "diesel": "Diisli hind, €/l",
+        "ev": "Elektriauto, kodus laadides",
+        "ice": "Diiselauto",
+        "save": "Vahe",
+        "perYear": "aastas"
+      },
+      "locale": "et-EE"
+    },
+    {
+      "type": "prose",
+      "soft": true,
+      "title": "Mida ütleb seadus",
+      "sourcesLabel": "Allikad",
+      "points": [
+        "<strong>Vajalik häälteenamus.</strong> Korteriomandi- ja korteriühistuseaduse (KrtS) § 39 järgi saab kaasomandi eseme ajakohastamiseks vajaliku muudatuse otsustada üldkoosolekul, kui poolt on üle poole kõigist häältest ja neile omanikele kuulub üle poole kaasomandi osadest. Tavapärase valitsemise küsimused otsustatakse häälteenamusega (§ 35). Kumb kord kehtib, sõltub sellest, mida rajatakse – küsi nõu ühistu juristilt.",
+        "<strong>Uued ja oluliselt rekonstrueeritud majad.</strong> Kui ehitusloa taotlus või ehitusteatis on esitatud pärast 10.03.2021, on laadimistaristu rajamine kohustus, mis algab arendajast.",
+        "<strong>Toetus.</strong> KIK toetab laadimispunktide rajamist ühistutele, kelle kinnistul on vähemalt 10 parkimiskohta ja kelle ehitusluba on esitatud enne seda kuupäeva. <a href=\"/et/kortermajad/\">Tingimused ja näide</a>.",
+        "<strong>Euroopa Liit.</strong> Hoonete energiatõhususe direktiivi (EL) 2024/1275 artikkel 14 kohustab liikmesriike lihtsustama laadimispunktide paigaldamist, eriti korteriühistutes. Oma tarbeks mõeldud laadimispunkti taotlusest võib keelduda ainult tõsistel ja õigustatud põhjustel."
+      ],
+      "sources": [
+        {
+          "label": "Kliimaministeerium: renoveerimise õiguslikud takistused (2026)",
+          "href": "https://kliimaministeerium.ee/sites/default/files/documents/2026-06/renoveerimise%20%C3%B5iguslikud%20takistused.PDF"
+        },
+        {
+          "label": "Pallo & Partnerid KrtS § 39 kohta",
+          "href": "https://pallo.ee/energiatohususe-suurendamise-eesmargil-kuttesusteemi-vahetamine-ja-korteriuhistu-otsustamisprotsess/"
+        },
+        {
+          "label": "KIK",
+          "href": "https://kik.ee/et/toetatavad-tegevused/elektriauto-laadimistaristu-toetus"
+        },
+        {
+          "label": "EUR-Lex",
+          "href": "https://eur-lex.europa.eu/EN/legal-content/summary/energy-performance-of-buildings.html"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "Pane tähele",
+      "paragraphs": [
+        "See leht on üldine info, mitte õigusnõu. Seadused ja toetuse tingimused muutuvad; allikad on eespool lingitud."
+      ]
+    },
+    {
+      "type": "form",
+      "form": "guide",
+      "title": "Saa juhend PDF-ina",
+      "intro": "Juhatusele välja printimiseks või omanikele enne koosolekut saatmiseks.",
+      "fields": [
+        {
+          "name": "email",
+          "label": "E-post",
+          "type": "email",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "organisation",
+          "label": "Ühistu või ettevõte",
+          "half": true
+        },
+        {
+          "name": "newsletter",
+          "label": "Saatke mulle VOOLi uudiseid toetuste ja uute toodete kohta (mõni kord aastas)",
+          "type": "checkbox"
+        }
+      ],
+      "submit": "Saada PDF",
+      "thanks": "Aitäh! Sinu juhend:",
+      "download": {
+        "label": "Laadi juhend alla (PDF)",
+        "href": "/downloads/vool-uldkoosoleku-juhend.pdf"
+      },
+      "error": "Midagi läks valesti. Proovi uuesti või kirjuta info@vool.com.",
+      "consent": "Olen nõus, et VOOL töötleb minu andmeid juhendi saatmiseks (privaatsuspoliitika)."
+    },
+    {
+      "type": "cta",
+      "title": "Vajad koosolekuks arve?",
+      "lead": "Koostame pakkumise ja toetuse arvestuse koos paigalduspartneriga.",
+      "buttons": [
+        {
+          "label": "Küsi pakkumist",
+          "href": "/et/kortermajad/#form"
+        }
+      ]
+    }
+  ]
+}

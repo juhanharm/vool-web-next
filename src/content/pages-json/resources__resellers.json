@@ -1,0 +1,209 @@
+{
+  "path": "/resources/resellers/",
+  "title": "Become a VOOL reseller or installer",
+  "description": "Sell a complete EV charging system: charger, load management and software. See stock and your prices and order online.",
+  "image": "/img/wall-dark.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "dark": true,
+      "eyebrow": "Partners",
+      "title": "Sell a charging system your customers do not call you back about",
+      "lead": "Charger, load management and software from one maker, with a 5-year warranty and support from the team that built it.",
+      "image": "/img/wall-dark.webp",
+      "alt": "VOOL charger on a dark wall",
+      "cta": [
+        {
+          "label": "Become a partner",
+          "href": "#form"
+        },
+        {
+          "label": "Reseller login",
+          "href": "https://shop.vool.com/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "What you sell",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Charger",
+          "points": [
+            "Up to 22 kW, 6.5 m cable",
+            "5-year warranty",
+            "Dynamic phase switching",
+            "Wall or VOOL pole",
+            "Made in Estonia"
+          ]
+        },
+        {
+          "title": "LMC",
+          "points": [
+            "Dynamic load management",
+            "Automatic phase switching",
+            "Load management on several levels",
+            "Mobile internet, WiFi, Ethernet, Bluetooth"
+          ]
+        },
+        {
+          "title": "Software",
+          "points": [
+            "Smart charging app for drivers",
+            "Portal for apartments, offices, fleets and public charging",
+            "Remote access to the sites you install"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "Installation in four moves",
+      "items": [
+        {
+          "title": "Install the casing",
+          "text": "On a wall or a VOOL pole."
+        },
+        {
+          "title": "Insert the controller",
+          "text": "Now, or later if the customer only wants the space prepared."
+        },
+        {
+          "title": "Attach the front panel",
+          "text": "It clicks on."
+        },
+        {
+          "title": "Add the LMC",
+          "text": "For load management and automatic phase switching."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Sales toolkit",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Datasheets and manuals",
+          "text": "For chargers, LMCs and accessories, in several languages.",
+          "href": "/resources/product-manuals/",
+          "more": "Product manuals"
+        },
+        {
+          "title": "Tender specification text",
+          "text": "Ready text for designers and public tenders.",
+          "href": "/solutions/developers/#spec",
+          "more": "Specification text"
+        },
+        {
+          "title": "Live demo for customer meetings",
+          "text": "Show how many cars fit on a customer’s main fuse.",
+          "href": "/live-demo/",
+          "more": "Live demo"
+        },
+        {
+          "title": "Comparison page",
+          "text": "VOOL load management against ordinary load balancing, point by point.",
+          "href": "/compare/",
+          "more": "Compare"
+        },
+        {
+          "title": "Guide for the general meeting",
+          "text": "Hand it to apartment associations before they vote.",
+          "href": "/knowledge/general-meeting/",
+          "more": "The guide"
+        },
+        {
+          "title": "Warranty that covers your demo units",
+          "text": "Five years, counted from your sale to the end customer.",
+          "href": "/support/warranty/",
+          "more": "Warranty and support"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "What partners get",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Stock and prices online",
+          "text": "Log in to see what is in stock and your own prices, and place orders.",
+          "href": "https://shop.vool.com/",
+          "more": "Reseller login"
+        },
+        {
+          "title": "Tools for installers",
+          "text": "Set up sites in the VOOL App and keep remote access for support."
+        },
+        {
+          "title": "Leads from us",
+          "text": "We do not install. Customers who contact VOOL are sent to partners on our where-to-buy page.",
+          "href": "/where-to-buy/",
+          "more": "See the partner list"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "form": "reseller",
+      "title": "Become a VOOL partner",
+      "intro": "Tell us about your company. We reply within 1–2 working days.",
+      "fields": [
+        {
+          "name": "company",
+          "label": "Company",
+          "required": true
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "partner_type",
+          "label": "You are",
+          "type": "select",
+          "options": [
+            "Installer",
+            "Wholesaler",
+            "Energy company",
+            "Other"
+          ],
+          "half": true
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea"
+        }
+      ],
+      "submit": "Send",
+      "thanks": "Thank you! We will be in touch soon.",
+      "error": "Something went wrong. Please try again or write to info@vool.com.",
+      "consent": "I agree that VOOL processes my data to answer this enquiry (privacy policy)."
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "path": "/knowledge/general-meeting/",
+  "title": "How to get EV charging approved at the general meeting | VOOL",
+  "description": "A guide for apartment association boards: what to prepare, a draft resolution, answers to owners’ questions and what the law says in Estonia and the EU.",
+  "image": "/img/apartments.webp",
+  "alternates": {
+    "en": "/knowledge/general-meeting/",
+    "et": "/et/uldkoosolek/"
+  },
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Guide for apartment associations",
+      "title": "How to get EV charging approved at the general meeting",
+      "lead": "One neighbour wants a charger. The board needs a decision that works for the whole building. Here is what to prepare, what to vote on and what the law says.",
+      "image": "/img/apartments.webp",
+      "alt": "VOOL charger at an apartment building",
+      "cta": [
+        {
+          "label": "Get a quote for the meeting",
+          "href": "/apartment-buildings/#form"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "Before the meeting",
+      "items": [
+        {
+          "title": "Count",
+          "text": "Parking spaces, the size of the main fuse, and how many owners want a charger now or within three years."
+        },
+        {
+          "title": "Get one quote",
+          "text": "Ask for the shared part (cabling, load management) and the price of one charger as separate lines."
+        },
+        {
+          "title": "Agree the cost split",
+          "text": "The usual split: the association pays for the shared part, each driver pays for their own charger and electricity."
+        },
+        {
+          "title": "Check the grant",
+          "text": "In Estonia, KIK covers part of the cost for associations outside Tallinn and Tartu city."
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "A resolution you can put on the agenda",
+      "paragraphs": [
+        "Owners vote more easily on a specific proposal with a cost ceiling. Adapt this text to your building:"
+      ],
+      "box": {
+        "title": "Draft resolution",
+        "text": "To build shared EV charging infrastructure with dynamic load management in the building’s car park for up to ___ parking spaces, at a cost of up to € ___, financed from ___ (grant applied for: ___). Each owner pays for the charger at their own parking space and for the electricity they use. The board is authorised to apply for the grant and to sign the contracts."
+      }
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What owners ask, and the short answers",
+      "cols": 2,
+      "items": [
+        {
+          "title": "“I don’t have an electric car. Why should I pay?”",
+          "text": "You pay only your share of the shared part, if the meeting decides so. Chargers and electricity are paid by the people who charge, billed per user."
+        },
+        {
+          "title": "“Can our connection take it?”",
+          "text": "Load management measures the building and gives only the spare capacity to the cars. On one site, 45 chargers run on a 125 A connection."
+        },
+        {
+          "title": "“What if ten more people want one next year?”",
+          "text": "Spaces can be prepared now and chargers added one by one. Nothing has to be rebuilt."
+        },
+        {
+          "title": "“Who will run it?”",
+          "text": "The association can manage users and billing itself in the VOOL Portal, or hand it to an operator."
+        }
+      ]
+    },
+    {
+      "type": "demo",
+      "title": "Show the meeting what load management does",
+      "labels": {
+        "fuse": "Main fuse",
+        "cars": "Cars plugged in",
+        "time": "Time of day",
+        "play": "Play 24 hours",
+        "building": "Building",
+        "charging": "Charging",
+        "limit": "Fuse limit →",
+        "without": "Without load management, this connection fits",
+        "chargers": "chargers at 11 kW",
+        "with": "With VOOL, cars charging right now",
+        "each": "about {kw} kW per car now, or roughly {km} km of range in 8 hours",
+        "note": "Simplified simulation with an example load curve. Without load management, 16 A per phase is reserved for each charger at the building’s peak. With VOOL, the spare current on each phase is shared and each car is moved to the freest phase (minimum 6 A)."
+      }
+    },
+    {
+      "type": "cost",
+      "title": "What charging at home costs a driver",
+      "lead": "A number owners can compare with what they pay for fuel today.",
+      "note": "Example values for Estonia; enter your own. The electricity price should include energy, network fees and taxes. Assumes 18 kWh/100 km and 6.5 l/100 km.",
+      "labels": {
+        "km": "Kilometres per year",
+        "elec": "Electricity price, ct/kWh (all-in)",
+        "diesel": "Diesel price, €/l",
+        "ev": "Electric car, charged at home",
+        "ice": "Diesel car",
+        "save": "Difference",
+        "perYear": "per year"
+      }
+    },
+    {
+      "type": "prose",
+      "soft": true,
+      "title": "Estonia: what the law says",
+      "points": [
+        "<strong>The majority needed.</strong> Under the Apartment Ownership and Apartment Associations Act (KrtS) § 39, changes that modernise the common property can be decided at a general meeting when more than half of all votes are in favour and those owners hold more than half of the co-ownership shares. Ordinary management is decided by a simple majority (§ 35). Which rule applies depends on what is built, so check with the association’s lawyer.",
+        "<strong>New and rebuilt buildings.</strong> Where the building permit application or notice was filed after 10 March 2021, building the charging infrastructure is an obligation that starts with the developer.",
+        "<strong>Grant.</strong> KIK supports charging points for associations with at least 10 parking spaces whose permit was filed before that date. <a href=\"/apartment-buildings/\">Terms and example</a>."
+      ],
+      "sources": [
+        {
+          "label": "Ministry of Climate: legal obstacles to renovation (2026)",
+          "href": "https://kliimaministeerium.ee/sites/default/files/documents/2026-06/renoveerimise%20%C3%B5iguslikud%20takistused.PDF"
+        },
+        {
+          "label": "Pallo & Partnerid on KrtS § 39",
+          "href": "https://pallo.ee/energiatohususe-suurendamise-eesmargil-kuttesusteemi-vahetamine-ja-korteriuhistu-otsustamisprotsess/"
+        },
+        {
+          "label": "Enefit on the charging obligation",
+          "href": "https://www.enefit.ee/en/-/blogi/Kuum-kusimus-kas-korteriuhistul-on-kohustus-paigaldada-elektriautode-laadijaid"
+        },
+        {
+          "label": "KIK",
+          "href": "https://kik.ee/et/toetatavad-tegevused/elektriauto-laadimistaristu-toetus"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "EU: the “right to plug”",
+      "points": [
+        "The recast Energy Performance of Buildings Directive, (EU) 2024/1275, Article 14, tells member states to make installing charging points simpler and faster, in particular in co-owners’ associations.",
+        "Member states must remove barriers such as needing the co-owners’ consent for a private charging point for the owner’s own use. A request can be refused only on serious and legitimate grounds.",
+        "Countries had until May 2026 to write this into national law, and they have done it in different ways. Check the rules in your country before the meeting."
+      ],
+      "sources": [
+        {
+          "label": "EUR-Lex summary of Directive (EU) 2024/1275",
+          "href": "https://eur-lex.europa.eu/EN/legal-content/summary/energy-performance-of-buildings.html"
+        },
+        {
+          "label": "Transport & Environment: Right to Plug briefing",
+          "href": "https://transportenvironment.org/uploads/files/2025_01_TE_briefing_Right_to_Plug.pdf"
+        },
+        {
+          "label": "AVERE recommendation",
+          "href": "https://avere.org/blogpages/policy-details/2024/07/09/joint-recommendation-how-to-impactfully-implement-right-to-plug-in-the-eu-3"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "soft": true,
+      "title": "Please note",
+      "paragraphs": [
+        "This page is general information, not legal advice. Laws and grant terms change; the sources are linked above."
+      ]
+    },
+    {
+      "type": "form",
+      "form": "guide",
+      "title": "Get the guide as a PDF",
+      "intro": "To print for the board or send to owners before the meeting.",
+      "fields": [
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "organisation",
+          "label": "Association or company",
+          "half": true
+        },
+        {
+          "name": "newsletter",
+          "label": "Send me VOOL news about grants and new products (a few times a year)",
+          "type": "checkbox"
+        }
+      ],
+      "submit": "Send me the PDF",
+      "thanks": "Thank you! Your guide:",
+      "download": {
+        "label": "Download the guide (PDF)",
+        "href": "/downloads/vool-general-meeting-guide-en.pdf"
+      },
+      "error": "Something went wrong. Please try again or write to info@vool.com.",
+      "consent": "I agree that VOOL processes my data to send this guide (privacy policy)."
+    },
+    {
+      "type": "cta",
+      "title": "Need figures for your meeting?",
+      "lead": "We prepare the quote and the grant estimate with an installation partner.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/apartment-buildings/#form"
+        },
+        {
+          "label": "Case studies",
+          "href": "/case-studies/"
+        }
+      ]
+    }
+  ]
+}

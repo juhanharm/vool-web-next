@@ -8,8 +8,20 @@ export interface Imported {
   lang: Lang; path: string; slug: string;
 }
 
-const files = import.meta.glob<Imported>('./imported/*/*.json', { eager: true, import: 'default' });
-export const imported: Imported[] = Object.values(files);
+import { marked } from 'marked';
+const files = import.meta.glob<any>('./imported/*/*.json', { eager: true, import: 'default' });
+const BLOG_BASE: Record<string, string> = {};
+/** Posts written in the editor only need a title, date and text: the rest is filled in here. */
+function normalise(file: string, d: any): Imported {
+  const [, lang, name] = file.match(/imported\/([a-z]+)\/(.+)\.json$/)!;
+  const kind = d.kind || 'blog';
+  const slug = d.slug || name;
+  const body = d.markdown ? (marked.parse(d.markdown, { async: false }) as string) : (d.body || '');
+  return { seoTitle: '', description: '', date: '', readTime: '', image: '', ...d, kind, lang: d.lang || lang, slug, body, path: d.path || '' };
+}
+export const imported: Imported[] = Object.entries(files).map(([f, d]) => normalise(f, d));
+for (const p of imported) if (p.kind === 'blog' && p.path && !BLOG_BASE[p.lang]) BLOG_BASE[p.lang] = p.path.replace(/[^/]+\/$/, '');
+for (const p of imported) if (!p.path) p.path = `${BLOG_BASE[p.lang] || (p.lang === 'en' ? '/resources/blog/' : `/${p.lang}/blog/`)}${p.slug}/`;
 
 const MONTHS: Record<string, number> = {
   jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,

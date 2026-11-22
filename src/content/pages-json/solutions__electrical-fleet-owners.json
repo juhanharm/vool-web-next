@@ -1,0 +1,84 @@
+{
+  "path": "/solutions/electrical-fleet-owners/",
+  "title": "EV fleet charging – costs and status per vehicle | VOOL",
+  "description": "Charge company cars and fleets without upgrading the grid connection. Real-time overview and costs per vehicle.",
+  "image": "/img/fleet.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Fleets & businesses",
+      "title": "Electrify the fleet without rebuilding the depot",
+      "lead": "Hardware and software built by one team. Charge five vehicles or thousands, and see the cost of each one.",
+      "image": "/img/garage.webp",
+      "alt": "Depot with VOOL chargers",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "VOOL Portal",
+          "href": "/products/vool-portal/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What fleet managers get",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Status of every vehicle",
+          "text": "Charging, plugged in or on the road, with mileage and location, in real time."
+        },
+        {
+          "title": "Costs you can report",
+          "text": "Energy and cost in kWh and euros per vehicle or for the whole fleet, for any period."
+        },
+        {
+          "title": "Cheaper energy",
+          "text": "Vehicles charge when electricity prices are lowest, or at the times you set."
+        },
+        {
+          "title": "Any charger",
+          "text": "The platform supports any OCPP 1.6 or 2.0 charger, so existing chargers can stay."
+        },
+        {
+          "title": "No grid upgrade",
+          "text": "Load management shares the available power between vehicles."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "Customer stories",
+      "cols": 2,
+      "items": [
+        {
+          "title": "Omniva: 300 chargers for its courier fleet",
+          "text": "Over five years VOOL supplies Omniva with 300 chargers across Estonia.",
+          "href": "/resources/blog/vool-joins-omniva-on-their-journey-towards-electrifying-transportation/",
+          "more": "Read the story"
+        },
+        {
+          "title": "Hansabuss charges electric buses at its existing hubs",
+          "text": "The bus operator uses VOOL chargers at its Latvian hubs and at drivers’ homes, without major changes to the infrastructure.",
+          "href": "/solutions/usecases/hansabuss-saved-30-with-vool-on-their-fleet-charging-costs/",
+          "more": "Read the story"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Tell us about your fleet",
+      "lead": "Number of vehicles, where they park and your grid connection. We will propose a setup.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

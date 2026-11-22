@@ -4,7 +4,7 @@
  * Regulation: Commission Delegated Regulation (EU) 2025/656 amending AFIR (EU) 2023/1804.
  */
 import { company } from './ui';
-const contact = { label: 'Talk to us', href: '/resources/contact/' };
+const contact = { label: 'Get a quote', href: '/get-a-quote/' };
 const buy = { label: 'Where to buy', href: '/where-to-buy/' };
 
 export const productPages: Record<string, any> = {
@@ -154,6 +154,8 @@ export const productPages: Record<string, any> = {
         { title: '4G connectivity', text: 'Built into chargers and LMCs. From 1 January 2027: €2.50 per month or €24 per year per device, VAT included. New chargers get 30 days free.' },
         { title: 'ISO 15118', text: 'Plug & Charge with the new VOOL Charger, V2G by firmware update in Q1 2027.', href: '/afir/', more: 'AFIR and ISO 15118' },
         { title: 'DAEI in Lithuania', text: 'Get paid for the electricity you charge.', href: '/daei/', more: 'DAEI' },
+        { title: 'Solar and vehicle data', text: 'Charging on your own solar power and reading the car’s battery level. Returning at the end of 2026.' },
+        { title: 'All integrations', text: 'Protocols, typical setups and technical limits.', href: '/integrations/', more: 'Integrations' },
       ] },
       { type: 'cta', title: 'See it with your own site', buttons: [contact, { label: 'Log in', href: 'https://app.vool.com' }] },
     ],

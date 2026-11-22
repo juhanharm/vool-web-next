@@ -1,0 +1,154 @@
+{
+  "path": "/case-studies/",
+  "title": "Case studies – VOOL charging in offices, residences and fleets",
+  "description": "Real sites with numbers: 45 chargers on one 125 A connection, 300 chargers for Omniva, 40 chargers serving 100 users in one office building.",
+  "image": "/img/garage.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Case studies",
+      "title": "What VOOL does on real sites",
+      "lead": "Numbers from our customers and from sites built by our partners.",
+      "image": "/img/garage.webp",
+      "alt": "Car park with VOOL chargers"
+    },
+    {
+      "type": "stats",
+      "items": [
+        {
+          "value": "20,000+",
+          "label": "devices sold"
+        },
+        {
+          "value": "45",
+          "label": "chargers on one 125 A connection"
+        },
+        {
+          "value": "300",
+          "label": "chargers for Omniva’s courier fleet"
+        },
+        {
+          "value": "14",
+          "label": "countries with VOOL partners"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "Our customers",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Omniva: 300 chargers for couriers",
+          "text": "VOOL supplies Omniva with 300 chargers across Estonia over five years. The first 50 or so went to Tallinn, Tartu, Kuressaare and Rakvere.",
+          "href": "/resources/blog/vool-joins-omniva-on-their-journey-towards-electrifying-transportation/",
+          "more": "Read the story"
+        },
+        {
+          "title": "Hansabuss: electric buses at existing hubs",
+          "text": "The bus operator charges its electric fleet at its Latvian hubs and at drivers’ homes, without major changes to the infrastructure.",
+          "href": "/solutions/usecases/hansabuss-saved-30-with-vool-on-their-fleet-charging-costs/",
+          "more": "Read the story"
+        },
+        {
+          "title": "Alexela: turnkey charging for its customers",
+          "text": "The energy company offers VOOL chargers, load management and smart charging to private and business customers in Estonia and Latvia.",
+          "href": "/resources/blog/alexela-and-vool-partnership/",
+          "more": "Read the story"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "eyebrow": "Built by our partner AMP X VOLT, Luxembourg",
+      "title": "Partner sites",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Business campus, Hamm",
+          "text": "More than 100 chargers on multi-level load management. One tenant runs 45 chargers on a single 125 A connection.",
+          "href": "https://ampxvolt.eu/case-studies/headquarters-hamm",
+          "more": "AMP X VOLT case"
+        },
+        {
+          "title": "Office building, Mersch",
+          "text": "40 chargers shared by 11 companies. About 100 users charged 75 MWh in 3,000 sessions within six months.",
+          "href": "https://ampxvolt.eu/case-studies/office-building-mersch",
+          "more": "AMP X VOLT case"
+        },
+        {
+          "title": "Residence, Steinsel",
+          "text": "74 parking spaces. Owners ordered 19 chargers within three weeks of the shared installation.",
+          "href": "https://ampxvolt.eu/case-studies/residence-steinsel",
+          "more": "AMP X VOLT case"
+        },
+        {
+          "title": "Residence, Luxembourg City",
+          "text": "Two buildings. More than 20 private chargers ordered since the shared parts were installed.",
+          "href": "https://ampxvolt.eu/case-studies/residence-luxembourg-city",
+          "more": "AMP X VOLT case"
+        },
+        {
+          "title": "Production plant",
+          "text": "22 AC chargers for a new building at an industrial site in Luxembourg.",
+          "href": "https://ampxvolt.eu/case-studies/industrial-plant",
+          "more": "AMP X VOLT case"
+        }
+      ]
+    },
+    {
+      "type": "logos",
+      "title": "Charging on VOOL, installed by our Luxembourg partner AMP X VOLT",
+      "items": [
+        {
+          "name": "BALTHASAR Group",
+          "src": "/img/logos/partner/balthasar.png"
+        },
+        {
+          "name": "Goodyear",
+          "src": "/img/logos/partner/goodyear.png"
+        },
+        {
+          "name": "Fonds du Logement",
+          "src": "/img/logos/partner/fonds_du_logement.png"
+        },
+        {
+          "name": "BDO Luxembourg",
+          "src": "/img/logos/partner/bdo.png"
+        },
+        {
+          "name": "Brink’s",
+          "src": "/img/logos/partner/brinks.png"
+        },
+        {
+          "name": "Sales-Lentz",
+          "src": "/img/logos/partner/sales_lentz.png"
+        },
+        {
+          "name": "WISAG",
+          "src": "/img/logos/partner/wisag.png"
+        },
+        {
+          "name": "Energolux",
+          "src": "/img/logos/partner/energolux.png"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Want numbers like these for your site?",
+      "lead": "Tell us the number of parking spaces and the size of your main fuse.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Try the live demo",
+          "href": "/live-demo/"
+        }
+      ]
+    }
+  ]
+}

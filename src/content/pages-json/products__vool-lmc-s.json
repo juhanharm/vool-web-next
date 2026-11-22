@@ -1,0 +1,138 @@
+{
+  "path": "/products/vool-lmc-s/",
+  "title": "VOOL LMC S – load management for homes and small sites",
+  "description": "Load management for up to four chargers. Reads the meter’s P1 port or current clamps and is set up over Bluetooth in the VOOL App. From January 2027.",
+  "image": "/img/lmc-cabinet.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "New · VOOL LMC S",
+      "title": "Load management for the house, sized for the house",
+      "lead": "The LMC S protects the main fuse and lets the car use whatever the home leaves free. For sites with up to four chargers. Available from January 2027.",
+      "image": "/img/lmc-cabinet.webp",
+      "alt": "Load management controller in an electrical cabinet",
+      "cta": [
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        },
+        {
+          "label": "Compare with LMC Pro",
+          "href": "#compare"
+        }
+      ],
+      "facts": [
+        "Up to 4 chargers",
+        "P1 port or current clamps",
+        "Set up over Bluetooth"
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What you get",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Full charging power when the house is quiet",
+          "text": "The charger slows down when the stove and heating are on, and speeds up when they are off."
+        },
+        {
+          "title": "Works without internet",
+          "text": "Load management runs locally between the LMC S and the chargers."
+        },
+        {
+          "title": "Quick to install",
+          "text": "Connect to the meter’s P1 port, or use the current clamps included in the box. Chargers connect over CAN."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "title": "Setup",
+      "items": [
+        {
+          "title": "Mount",
+          "text": "In the electrical cabinet, next to the main fuse or the meter."
+        },
+        {
+          "title": "Measure",
+          "text": "Plug into the P1 port or clip the clamps on the incoming cables. The arrows point in the direction of energy flow."
+        },
+        {
+          "title": "Commission",
+          "text": "Open the VOOL App and set it up over Bluetooth. No Wi-Fi hotspot needed."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "soft": true,
+      "title": "LMC S or LMC Pro?",
+      "head": [
+        "",
+        "LMC S",
+        "LMC Pro"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Best for",
+            "Houses and small sites",
+            "Apartment buildings, offices, car parks"
+          ]
+        },
+        {
+          "cells": [
+            "Chargers",
+            "Up to 4",
+            "100+"
+          ]
+        },
+        {
+          "cells": [
+            "Measurement",
+            "P1 port or current clamps",
+            "Current clamps"
+          ]
+        },
+        {
+          "cells": [
+            "Several fuse levels",
+            "No",
+            "Yes"
+          ]
+        },
+        {
+          "cells": [
+            "Setup",
+            "Bluetooth, VOOL App",
+            "VOOL App"
+          ]
+        },
+        {
+          "cells": [
+            "Availability",
+            "From January 2027",
+            "Available now"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Need load management before January?",
+      "lead": "Order the LMC Pro. It does everything the LMC S does, and more.",
+      "buttons": [
+        {
+          "label": "VOOL LMC Pro",
+          "href": "/products/vool-lmc/"
+        },
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

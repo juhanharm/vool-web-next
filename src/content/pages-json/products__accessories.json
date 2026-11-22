@@ -1,0 +1,92 @@
+{
+  "path": "/products/accessories/",
+  "title": "Accessories and spare parts | VOOL",
+  "description": "Poles, cable holder, front panels, charge controller and measurement accessories for VOOL chargers and LMCs.",
+  "image": "/img/charger-finishes.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Accessories",
+      "title": "Poles, panels and parts",
+      "lead": "Everything that goes around the charger. Order through your reseller.",
+      "image": "/img/charger-finishes.webp",
+      "alt": "VOOL charger front panels",
+      "cta": [
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "For the charger",
+      "cols": 3,
+      "items": [
+        {
+          "title": "VOOL pole",
+          "text": "For parking spaces without a wall."
+        },
+        {
+          "title": "Cable holder",
+          "text": "A metal holder with a plastic insert that keeps the cable and plug off the ground."
+        },
+        {
+          "title": "Front panels",
+          "text": "Black, aluminium or wood."
+        },
+        {
+          "title": "Charge controller",
+          "text": "The orange controller is the same in every VOOL charger. Sold separately as a spare or as the ISO 15118 upgrade.",
+          "href": "/afir/",
+          "more": "ISO 15118 upgrade"
+        },
+        {
+          "title": "MID metering",
+          "text": "A certified meter for billing by the kWh, on the Commercial Pole and on the MID wall charger.",
+          "href": "/products/commercial-pole/",
+          "more": "Commercial Pole"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "For load management",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Current clamps",
+          "text": "For measuring the main connection and sub-boards with VOOL LMC."
+        },
+        {
+          "title": "LMC Pro with 4G",
+          "text": "For sites where no network cable reaches the switchboard.",
+          "href": "/products/vool-lmc/",
+          "more": "VOOL LMC"
+        },
+        {
+          "title": "LMC S",
+          "text": "For houses and small sites, from January 2027.",
+          "href": "/products/vool-lmc-s/",
+          "more": "VOOL LMC S"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Need a part or a price?",
+      "lead": "Resellers have stock and prices. For projects, ask us for a quote.",
+      "buttons": [
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        },
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

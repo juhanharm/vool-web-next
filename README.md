@@ -36,3 +36,17 @@ npm run build    # static site in dist/
 - Confirm the facts flagged in the hand-over (chargers per LMC, LMC S date, savings claim).
 - Add new product photos; connect Odoo for the forms; set the reseller shop address.
 - Launch checklist: redirects test, analytics, cookie notice, remove the robots block.
+
+## Editing the site without code (`/admin`)
+
+The site has an editor at `/admin/` ([Sveltia CMS](https://github.com/sveltia/sveltia-cms)). It saves changes as commits to this repository; the host rebuilds the site after each save.
+
+- **Pages**: every page is a JSON file in `src/content/pages-json/`. In the editor a page is a list of sections (banner, cards, table, questions, form …) that can be edited, reordered, added and removed.
+- **Blog and articles**: one list per language (`src/content/imported/<lang>/`). For a new post fill in the title, date, cover image and text. The web address is created from the title.
+- **Images** uploaded in the editor go to `public/media/uploads/`.
+- **Sign in**: with a GitHub account that can write to this repository ("Sign in with token" works without extra setup; a fine-grained token with *Contents: read and write* on this repository is enough).
+- **Not in the editor**: the menu and footer (`src/content/ui.ts`), the KIK and DAEI pages (`src/content/apartments.ts`, `daei.ts`) and the where-to-buy list (`partners.json`).
+
+After adding a new kind of section or field in code, run `python3 scripts/make_editor_config.py`.
+
+Analytics: set `PUBLIC_PLAUSIBLE_DOMAIN` (for example `vool.com`) at build time to load Plausible. Form submissions are sent as the event `Lead` with the form name.

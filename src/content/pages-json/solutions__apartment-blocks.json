@@ -1,0 +1,231 @@
+{
+  "path": "/solutions/apartment-blocks/",
+  "title": "EV charging for apartment buildings and offices | VOOL",
+  "description": "Charge more cars without upgrading the grid connection. Load management, billing per user and reports for the association.",
+  "image": "/img/apartments.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Apartments & offices",
+      "title": "Charging for the whole building, on the connection you have",
+      "lead": "VOOL shares the building’s spare capacity between the cars. The association or the company runs charging itself, and only the people who charge pay for it.",
+      "image": "/img/apartments.webp",
+      "alt": "VOOL charger at an apartment building",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/resources/contact/"
+        },
+        {
+          "label": "KIK grant in Estonia",
+          "href": "/apartment-buildings/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Why associations and property managers choose VOOL",
+      "cols": 3,
+      "items": [
+        {
+          "title": "No grid upgrade",
+          "text": "Automatic phase switching and load management make full use of the existing connection."
+        },
+        {
+          "title": "Fair costs",
+          "text": "Each driver pays for their own charging. Owners without an electric car pay nothing."
+        },
+        {
+          "title": "No separate operator",
+          "text": "The association manages users and billing in the VOOL Portal. We provide support and maintenance."
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "image": "/img/garage.webp",
+      "alt": "Car park with VOOL chargers",
+      "title": "Prepare now, expand later",
+      "text": "Mount casings on every parking space during the building work. Click in a charging controller when the owner of that space gets an electric car."
+    },
+    {
+      "type": "split",
+      "flip": true,
+      "soft": true,
+      "image": "/img/portal-screen.webp",
+      "alt": "Reports in the VOOL Portal",
+      "title": "Management that fits a board meeting",
+      "points": [
+        "Consumption reports per apartment",
+        "Automatic invoicing",
+        "Electricity use per charger",
+        "User authentication",
+        "Full charging session history",
+        "Smart charging built in"
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "Proof from real buildings",
+      "cols": 3,
+      "items": [
+        {
+          "title": "45 chargers on 125 A",
+          "text": "One tenant on a Luxembourg business campus runs 45 VOOL chargers on a single 125 A connection.",
+          "href": "/case-studies/",
+          "more": "Case studies"
+        },
+        {
+          "title": "19 chargers in three weeks",
+          "text": "In a 74-space residence, owners ordered 19 chargers within three weeks of the shared installation.",
+          "href": "/case-studies/",
+          "more": "Case studies"
+        },
+        {
+          "title": "Getting it through the meeting",
+          "text": "A draft resolution, answers to owners’ questions and what the law says.",
+          "href": "/knowledge/general-meeting/",
+          "more": "Guide for boards"
+        }
+      ]
+    },
+    {
+      "type": "cost",
+      "title": "What charging at home costs a driver",
+      "lead": "A number for the board to show owners.",
+      "note": "Example values for Estonia; enter your own. The electricity price should include energy, network fees and taxes. Assumes 18 kWh/100 km and 6.5 l/100 km.",
+      "labels": {
+        "km": "Kilometres per year",
+        "elec": "Electricity price, ct/kWh (all-in)",
+        "diesel": "Diesel price, €/l",
+        "ev": "Electric car, charged at home",
+        "ice": "Diesel car",
+        "save": "Difference",
+        "perYear": "per year"
+      }
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Who runs the charging? You choose.",
+      "cols": 3,
+      "items": [
+        {
+          "title": "The association runs it",
+          "text": "VOOL provides the platform, billing and support. The board sets the price and sees the reports. No separate operator is needed.",
+          "href": "/software/billing-and-payments/",
+          "more": "Billing and payments"
+        },
+        {
+          "title": "An operator runs it",
+          "text": "If the board wants no part in it, an operator partner owns or manages the chargers on VOOL.",
+          "href": "/get-a-quote/",
+          "more": "Ask us for an operator"
+        },
+        {
+          "title": "Each owner buys a charger",
+          "text": "The association builds the shared cabling and load management. Owners add their own charger when they need one.",
+          "href": "/knowledge/general-meeting/",
+          "more": "Guide for the general meeting"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "soft": true,
+      "title": "How a project runs",
+      "items": [
+        {
+          "title": "You send the basics",
+          "text": "Parking spaces, main fuse size and how many chargers you need now. A photo of the switchboard helps."
+        },
+        {
+          "title": "We size the system",
+          "text": "VOOL works out how many chargers your connection carries with load management, and what to prepare for later."
+        },
+        {
+          "title": "A partner quotes and installs",
+          "text": "VOOL does not install. A certified installation partner visits the site, quotes the work and builds it."
+        },
+        {
+          "title": "We set up the software",
+          "text": "Users, prices and billing are set up in the VOOL Portal. Drivers charge with the VOOL App or an RFID card."
+        },
+        {
+          "title": "Support for the life of the system",
+          "text": "Remote diagnostics, software updates and a 5-year warranty on the chargers."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "Who installs",
+      "lead": "VOOL makes the chargers, the load management and the software. Installation is done by local partners.",
+      "head": [
+        "Country",
+        "Site",
+        "Installation partner"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Estonia",
+            "Apartment buildings and offices",
+            "Elemeks, Diotech"
+          ]
+        },
+        {
+          "cells": [
+            "Estonia",
+            "Private homes",
+            "Hepa Elekter"
+          ]
+        },
+        {
+          "cells": [
+            "Finland",
+            "All sites",
+            "EV Lataus"
+          ]
+        },
+        {
+          "cells": [
+            "Other countries",
+            "All sites",
+            "See the partner list on the where-to-buy page"
+          ]
+        }
+      ],
+      "note": "Already have an electrician? Any qualified installer can install VOOL. The manuals are on our product manuals page."
+    },
+    {
+      "type": "cards",
+      "title": "Estonia: KIK pays part of the cost",
+      "cols": 1,
+      "items": [
+        {
+          "title": "€14,090 in grant for 10 charging points",
+          "text": "Apartment associations outside Tallinn and Tartu city can apply for KIK’s EV charging grant. Load management is required, and VOOL LMC covers it.",
+          "href": "/apartment-buildings/",
+          "more": "Grant terms and example"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Tell us about your building",
+      "lead": "Number of parking spaces, main fuse size and how many chargers you need now. We reply within 1–2 working days.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Brochure (PDF)",
+          "href": "/media/VOOL_apartments__offices_web_01.2024.pdf"
+        }
+      ]
+    }
+  ]
+}

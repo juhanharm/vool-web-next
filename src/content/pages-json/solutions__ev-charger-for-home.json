@@ -1,0 +1,96 @@
+{
+  "path": "/solutions/ev-charger-for-home/",
+  "title": "Home EV charger – charge when electricity is cheapest | VOOL",
+  "description": "A 22 kW smart charger for your house, with an app that follows electricity prices and saves up to 30% on charging.",
+  "image": "/img/home.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Homes",
+      "title": "Plug in at home. Pay less for every kilometre.",
+      "lead": "The VOOL Charger and the free app charge your car when electricity is cheapest, and have it ready when you leave.",
+      "image": "/img/home.webp",
+      "alt": "Family charging an electric car at home in winter",
+      "cta": [
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        },
+        {
+          "label": "VOOL Charger",
+          "href": "/products/vool-charger/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Made for everyday life",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Up to 30% cheaper",
+          "text": "The app checks prices for the next 24 hours and picks the cheapest hours."
+        },
+        {
+          "title": "Safe for your fuse box",
+          "text": "Add a VOOL LMC and the charger shares power with the heating, the stove and other appliances without tripping a fuse."
+        },
+        {
+          "title": "Built to last",
+          "text": "IP55, IK10 and −30 °C to +55 °C, with a 5-year warranty."
+        }
+      ]
+    },
+    {
+      "type": "night",
+      "title": "Plug in at six. Charging starts when prices drop.",
+      "text": "The car waits through the evening price peak and charges in the cheapest hours of the night. It is ready at the time you set.",
+      "note": "Example hourly prices in ct/kWh, not live data.",
+      "labels": {
+        "peak": "evening peak",
+        "charging": "Charging",
+        "waiting": "Waiting",
+        "ready": "car ready"
+      }
+    },
+    {
+      "type": "split",
+      "image": "/img/home-family.webp",
+      "alt": "Parent and child plugging in a car",
+      "title": "Set it once",
+      "text": "Tell the app when the car should be ready and how full. It handles the rest and shows what each session cost.",
+      "cta": [
+        {
+          "label": "VOOL App",
+          "href": "/products/vool-app/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Lithuania: get paid for charging at home",
+      "cols": 1,
+      "items": [
+        {
+          "title": "3.9 ct for every kWh",
+          "text": "With DAEI, VOOL pays you for the electricity you charge at home. The rate is fixed for 12 months.",
+          "href": "/daei/",
+          "more": "Join the waiting list"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Buy from a partner near you",
+      "lead": "VOOL does not install chargers itself. Our partners sell and install.",
+      "buttons": [
+        {
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

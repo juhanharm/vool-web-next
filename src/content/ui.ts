@@ -17,9 +17,14 @@ export const nav: Record<Lang, NavItem[]> = {
       { label: 'VOOL Portal', href: '/products/vool-portal/', note: 'Manage sites, users and billing' },
       { label: 'Software features', href: '/software/', note: 'Everything the platform does' },
       { label: 'Billing and payments', href: '/software/billing-and-payments/', note: 'How drivers pay and you get paid' },
+      { label: 'Integrations', href: '/integrations/', note: 'OCPP, Modbus, OCPI, roaming' },
+      { label: 'Accessories', href: '/products/accessories/', note: 'Poles, panels and parts' },
     ] },
     { label: 'Solutions', children: [
-      { label: 'Apartments & offices', href: '/solutions/apartment-blocks/' },
+      { label: 'Get a quote', href: '/get-a-quote/' },
+      { label: 'Apartment buildings', href: '/solutions/apartment-blocks/' },
+      { label: 'Offices and workplaces', href: '/solutions/workplace/' },
+      { label: 'Developers and designers', href: '/solutions/developers/' },
       { label: 'KIK grant (Estonia)', href: '/apartment-buildings/' },
       { label: 'Guide: the general meeting', href: '/knowledge/general-meeting/' },
       { label: 'Homes', href: '/solutions/ev-charger-for-home/' },
@@ -37,6 +42,7 @@ export const nav: Record<Lang, NavItem[]> = {
     { label: 'Partners', href: '/resources/resellers/' },
     { label: 'Support', children: [
       { label: 'Help Center', href: '/resources/help-center/' },
+      { label: 'Warranty and support', href: '/support/warranty/' },
       { label: 'Product manuals', href: '/resources/product-manuals/' },
       { label: 'FAQ', href: '/faq/' },
       { label: 'Blog', href: '/resources/blog/' },

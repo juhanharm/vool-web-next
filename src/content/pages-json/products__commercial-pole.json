@@ -1,0 +1,148 @@
+{
+  "path": "/products/commercial-pole/",
+  "title": "VOOL Commercial Pole – two 22 kW charging points with MID metering",
+  "description": "A public charging pole with two 22 kW charging points, display, QR code payment, RFID and an optional MID meter.",
+  "sections": [
+    {
+      "type": "hero",
+      "dark": true,
+      "eyebrow": "New · VOOL Commercial Pole",
+      "title": "Public charging in one pole: two charging points, payment and a certified meter",
+      "lead": "For shops, offices, car parks and other sites where drivers pay for charging. Two independent 22 kW charging points with a display, QR code payment and an optional MID meter.",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Billing and payments",
+          "href": "/software/billing-and-payments/"
+        }
+      ],
+      "facts": [
+        "2 × 22 kW",
+        "MID meter option",
+        "Display + QR payment"
+      ]
+    },
+    {
+      "type": "cards",
+      "title": "Built for sites where charging is billed",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Pay without an app",
+          "text": "The driver scans the QR code on the display, sees the price and pays. Regular users start with an RFID card."
+        },
+        {
+          "title": "Metering you can invoice from",
+          "text": "The MID version has a certified meter for each charging point, for billing by the kWh."
+        },
+        {
+          "title": "Shares the connection",
+          "text": "Works with VOOL LMC Pro or LMC S, or with another system over OCPP or Modbus."
+        },
+        {
+          "title": "Made for outdoors",
+          "text": "IK10 impact protection and IP54, on a 1.5 m aluminium pole."
+        },
+        {
+          "title": "Always connected",
+          "text": "Built-in mobile connectivity, so no network cable has to reach the car park."
+        },
+        {
+          "title": "Software included",
+          "text": "Pricing, payments, payouts and reports run on the VOOL platform. No fixed fee.",
+          "href": "/software/",
+          "more": "VOOL software"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "soft": true,
+      "title": "Specifications",
+      "rows": [
+        {
+          "cells": [
+            "Charging points",
+            "2, independent, up to 22 kW each"
+          ]
+        },
+        {
+          "cells": [
+            "Connectors",
+            "Type 2 sockets"
+          ]
+        },
+        {
+          "cells": [
+            "Metering",
+            "Integrated; MID-certified meter as an option"
+          ]
+        },
+        {
+          "cells": [
+            "User interface",
+            "Display with QR code, RFID/NFC reader"
+          ]
+        },
+        {
+          "cells": [
+            "Load management",
+            "VOOL LMC Pro or LMC S; OCPP or Modbus"
+          ]
+        },
+        {
+          "cells": [
+            "Connectivity",
+            "Mobile network"
+          ]
+        },
+        {
+          "cells": [
+            "Protection",
+            "IK10, IP54"
+          ]
+        },
+        {
+          "cells": [
+            "Pole",
+            "Aluminium, 1.5 m"
+          ]
+        }
+      ],
+      "note": "Specifications can change before deliveries start. Ask us for the current datasheet."
+    },
+    {
+      "type": "cards",
+      "title": "Related",
+      "cols": 2,
+      "items": [
+        {
+          "title": "AFIR and public charging",
+          "text": "What public AC charging points must offer: ad hoc payment, price before charging, ISO 15118.",
+          "href": "/afir/",
+          "more": "AFIR explained"
+        },
+        {
+          "title": "Public charging with VOOL",
+          "text": "Set your price, appear on the maps drivers use and get paid for every session.",
+          "href": "/solutions/public-charging/",
+          "more": "Public charging"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Planning a public or semi-public site?",
+      "lead": "Send us the location, the number of parking spaces and your grid connection. We reply with a proposal and delivery times.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        }
+      ]
+    }
+  ]
+}

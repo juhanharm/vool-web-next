@@ -23,7 +23,7 @@ interface Env {
   LEAD_WEBHOOK?: string;
 }
 
-type FormKind = 'apartment' | 'daei' | 'contact' | 'reseller';
+type FormKind = 'apartment' | 'daei' | 'contact' | 'reseller' | 'quote' | 'guide';
 
 const ROUTING: Record<FormKind, { notify: string[]; tag: string; title: (d: Record<string, string>) => string }> = {
   apartment: {
@@ -41,6 +41,16 @@ const ROUTING: Record<FormKind, { notify: string[]; tag: string; title: (d: Reco
     tag: 'Website contact form',
     title: (d) => `Website: ${d.topic || 'enquiry'} – ${d.company || d.name || d.email}`,
   },
+  quote: {
+    notify: ['info@vool.com'],
+    tag: 'Quote request',
+    title: (d) => `Quote: ${d.you_are || 'site'} – ${d.organisation || d.name || d.email} (${d.city || d.country || '?'})`,
+  },
+  guide: {
+    notify: ['info@vool.com'],
+    tag: 'Guide download',
+    title: (d) => `Guide download: ${d.organisation || d.email}`,
+  },
   reseller: {
     notify: ['info@vool.com'],
     tag: 'Partner application',
@@ -53,6 +63,8 @@ const REQUIRED: Record<FormKind, string[]> = {
   daei: ['email', 'charger_brand', 'consent'],
   contact: ['name', 'email', 'message', 'consent'],
   reseller: ['company', 'country', 'name', 'email', 'consent'],
+  quote: ['you_are', 'country', 'name', 'email', 'consent'],
+  guide: ['email', 'consent'],
 };
 
 const json = (body: unknown, status = 200) =>
@@ -72,7 +84,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   if (missing.length) return json({ ok: false, error: 'missing', fields: missing }, 422);
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) return json({ ok: false, error: 'email' }, 422);
 
-  const route = ROUTING[kind];
+  const base = ROUTING[kind];
+  // Apartment, property-manager and developer quotes also go to the apartment-buildings sales manager.
+  const toKen = kind === 'quote' && /Apartment|Property|Developer/i.test(data.you_are || '');
+  const route = { ...base, notify: toKen ? [...base.notify, 'ken.sarapuu@vool.com'] : base.notify };
   const description = Object.entries(data)
     .filter(([k]) => !['form', 'company_website', 'consent'].includes(k))
     .map(([k, v]) => `${k}: ${v}`)
