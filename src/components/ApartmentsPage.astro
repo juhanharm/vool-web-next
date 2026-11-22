@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import Steps from './Steps.astro';
+import LeadForm from './LeadForm.astro';
+import { apartments, KIK_URL } from '../content/apartments';
+
+interface Props { lang: 'et' | 'en' }
+const { lang } = Astro.props;
+const c = apartments[lang];
+---
+<Base lang={lang} title={c.meta.title} description={c.meta.description}
+  alternates={{ et: '/et/kortermajad/', en: '/apartment-buildings/' }}>
+
+  <section class="section hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">{c.hero.eyebrow}</span>
+        <h1>{c.hero.title}</h1>
+        <p class="lead">{c.hero.lead}</p>
+        <div class="btn-row"><a class="btn" href="#form">{c.hero.cta}</a></div>
+      </div>
+      <div class="stat-card">
+        <div class="big-number">{c.hero.stat}</div>
+        <p class="muted">{c.hero.statLabel}</p>
+        <p class="calc">{c.grant.example}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap">
+      <h2>{c.why.title}</h2>
+      <div class="grid c3" style="margin-top:32px">
+        {c.why.items.map((i) => (
+          <div class="card"><h3>{i.title}</h3><ul>{i.points.map((p) => <li>{p}</li>)}</ul></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid c2 grant">
+      <div>
+        <h2>{c.grant.title}</h2>
+        <ul class="checks">{c.grant.who.map((w) => <li>{w}</li>)}</ul>
+        <ul class="notes muted">{c.grant.notes.map((n) => <li>{n}</li>)}</ul>
+        <a class="more-link" href={KIK_URL} rel="noopener">{c.grant.link} ↗</a>
+      </div>
+      <div class="card">
+        <h3>{c.grant.tableTitle}</h3>
+        <table>
+          {c.grant.rows.map(([a, b]) => <tr><td>{a}</td><td>{b}</td></tr>)}
+        </table>
+        <div class="example">
+          <strong>{c.grant.exampleTitle}</strong>
+          <span>{c.grant.example}</span>
+        </div>
+        <p class="small muted">{c.grant.source}</p>
+      </div>
+    </div>
+  </section>
+
+  <Steps title={c.steps.title} steps={c.steps.items as any} soft />
+
+  <section class="section dark">
+    <div class="wrap form-wrap">
+      <LeadForm id="form" form="apartment" lang={lang} title={c.form.title} intro={c.form.intro}
+        fields={c.form.fields as any} submit={c.form.submit} thanks={c.form.thanks}
+        error={c.form.error} consent={c.form.consent} />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+  .stat-card { background: var(--soft); border-radius: var(--radius); padding: 36px; }
+  .calc { font-size: .9rem; color: var(--grey); border-top: 1px solid var(--line); padding-top: 14px; margin: 14px 0 0; }
+  .grant { align-items: start; gap: 48px; }
+  .checks { list-style: none; padding: 0; margin: 20px 0; }
+  .checks li { padding: 8px 0 8px 30px; position: relative; }
+  .checks li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .notes { padding-left: 1.1em; font-size: .92rem; }
+  .more-link { color: var(--orange); font-weight: 500; text-decoration: none; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; }
+  td { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+  td:last-child { text-align: right; font-weight: 600; white-space: nowrap; padding-left: 12px; }
+  .example { background: rgba(235,78,32,.08); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+  .example span { font-weight: 600; color: var(--orange); }
+  .form-wrap { max-width: 760px; }
+</style>

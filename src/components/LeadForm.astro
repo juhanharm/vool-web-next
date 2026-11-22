@@ -1,0 +1,106 @@
+---
+/**
+ * Lead / waitlist form. Posts to the Cloudflare Pages Function at /api/lead,
+ * which creates a lead in Odoo and notifies the right people (see functions/api/lead.ts).
+ */
+export interface Field {
+  name: string;
+  label: string;
+  type?: 'text' | 'email' | 'tel' | 'number' | 'textarea' | 'select' | 'checkbox';
+  required?: boolean;
+  options?: string[];
+  half?: boolean;
+}
+interface Props {
+  id?: string;
+  form: 'apartment' | 'daei';
+  lang: string;
+  title: string;
+  intro?: string;
+  fields: Field[];
+  submit: string;
+  thanks: string;
+  error: string;
+  consent: string;
+}
+const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, consent } = Astro.props;
+---
+<div class="form-card" id={id}>
+  <h2>{title}</h2>
+  {intro && <p class="muted">{intro}</p>}
+  <form method="post" action="/api/lead" data-lead-form>
+    <input type="hidden" name="form" value={form} />
+    <input type="hidden" name="lang" value={lang} />
+    <input type="text" name="company_website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <div class="fields">
+      {fields.map((f) => (
+        f.type === 'checkbox' ? (
+          <label class="check full"><input type="checkbox" name={f.name} value="yes" /> <span>{f.label}</span></label>
+        ) : (
+          <label class:list={[{ full: !f.half }]}>
+            <span>{f.label}{f.required && ' *'}</span>
+            {f.type === 'textarea' ? (
+              <textarea name={f.name} rows="3" required={f.required}></textarea>
+            ) : f.type === 'select' ? (
+              <select name={f.name} required={f.required}>
+                <option value="">–</option>
+                {f.options?.map((o) => <option value={o}>{o}</option>)}
+              </select>
+            ) : (
+              <input type={f.type ?? 'text'} name={f.name} required={f.required} min={f.type === 'number' ? 0 : undefined} />
+            )}
+          </label>
+        )
+      ))}
+      <label class="check full"><input type="checkbox" name="consent" value="yes" required /> <span>{consent}</span></label>
+    </div>
+    <button class="btn" type="submit">{submit}</button>
+    <p class="status ok" hidden>{thanks}</p>
+    <p class="status err" hidden>{error}</p>
+  </form>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-lead-form]').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      const ok = form.querySelector<HTMLElement>('.status.ok')!;
+      const err = form.querySelector<HTMLElement>('.status.err')!;
+      ok.hidden = err.hidden = true;
+      if (btn) btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.querySelector('.fields')!.setAttribute('hidden', '');
+        btn?.setAttribute('hidden', '');
+        ok.hidden = false;
+      } catch {
+        err.hidden = false;
+        if (btn) btn.disabled = false;
+      }
+    });
+  });
+</script>
+
+<style>
+  .form-card { background: #fff; border-radius: var(--radius); padding: 36px; box-shadow: 0 20px 60px rgba(0,0,0,.08); color: var(--ink); }
+  .form-card h2 { font-size: 1.6rem; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin: 20px 0 22px; }
+  .fields[hidden] { display: none; }
+  label { display: flex; flex-direction: column; gap: 6px; font-size: .88rem; font-weight: 500; }
+  label.full { grid-column: 1 / -1; }
+  input, select, textarea { font: inherit; font-weight: 400; padding: .7em .9em; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--orange); outline-offset: 1px; border-color: transparent; }
+  .check { flex-direction: row; align-items: flex-start; gap: 10px; font-weight: 400; color: var(--grey); }
+  .check input { margin-top: 4px; accent-color: var(--orange); }
+  .hp { position: absolute; left: -9999px; }
+  .status { margin: 16px 0 0; font-weight: 500; }
+  .status.ok { color: var(--green); }
+  .status.err { color: #b3261e; }
+  @media (max-width: 560px) { .fields { grid-template-columns: 1fr; } .form-card { padding: 24px; } }
+</style>

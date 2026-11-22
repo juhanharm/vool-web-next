@@ -1,0 +1,82 @@
+---
+import Base from '../layouts/Base.astro';
+import Steps from './Steps.astro';
+import Faq from './Faq.astro';
+import LeadForm from './LeadForm.astro';
+import { daei } from '../content/daei';
+
+interface Props { lang: 'lt' | 'en' }
+const { lang } = Astro.props;
+const c = daei[lang];
+const locale = lang === 'lt' ? 'lt-LT' : 'en-IE';
+---
+<Base lang={lang} title={c.meta.title} description={c.meta.description}
+  alternates={{ lt: '/lt/daei/', en: '/daei/' }}>
+
+  <section class="section dark hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">{c.hero.eyebrow}</span>
+        <h1>{c.hero.title}</h1>
+        <p class="lead">{c.hero.lead}</p>
+        <div class="rate">
+          <div class="big-number">{c.hero.rate}</div>
+          <div class="rate-label">{c.hero.rateLabel}</div>
+        </div>
+        <ul class="facts">{c.hero.facts.map((f) => <li>{f}</li>)}</ul>
+      </div>
+      <LeadForm id="waitlist" form="daei" lang={lang} title={c.form.title} intro={c.form.intro}
+        fields={c.form.fields as any} submit={c.form.submit} thanks={c.form.thanks}
+        error={c.form.error} consent={c.form.consent} />
+    </div>
+  </section>
+
+  <Steps title={c.steps.title} steps={c.steps.items as any} />
+
+  <section class="section soft">
+    <div class="wrap calc" data-locale={locale}>
+      <h2>{c.calc.title}</h2>
+      <label>
+        <span>{c.calc.kmLabel}: <strong data-km>20 000</strong></span>
+        <input type="range" min="5000" max="50000" step="1000" value="20000" data-range />
+      </label>
+      <div class="calc-out"><span class="big-number" data-eur>140 €</span> <span class="muted">{c.calc.result}</span></div>
+      <p class="small muted">{c.calc.note}</p>
+    </div>
+  </section>
+
+  <Faq title={c.faq.title} items={c.faq.items as any} />
+</Base>
+
+<script>
+  const box = document.querySelector<HTMLElement>('.calc');
+  if (box) {
+    const locale = box.dataset.locale || 'en';
+    const range = box.querySelector<HTMLInputElement>('[data-range]')!;
+    const km = box.querySelector('[data-km]')!;
+    const eur = box.querySelector('[data-eur]')!;
+    const fmt = new Intl.NumberFormat(locale);
+    const money = new Intl.NumberFormat(locale, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+    const update = () => {
+      const v = Number(range.value);
+      km.textContent = fmt.format(v);
+      eur.textContent = money.format((v / 100) * 18 * 0.039);
+    };
+    range.addEventListener('input', update);
+    update();
+  }
+</script>
+
+<style>
+  .hero { padding-top: 72px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+  .rate { display: flex; align-items: baseline; gap: 14px; margin: 28px 0 8px; }
+  .rate-label { color: #cfcfcf; }
+  .facts { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .facts li { border: 1px solid #4a4a4a; border-radius: 999px; padding: 6px 14px; font-size: .88rem; color: #e6e6e6; }
+  .calc { max-width: 720px; }
+  .calc label { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+  .calc input[type=range] { accent-color: var(--orange); width: 100%; }
+  .calc-out { display: flex; align-items: baseline; gap: 12px; }
+</style>

@@ -1,0 +1,23 @@
+---
+interface Props { title: string; items: { q: string; a: string }[] }
+const { title, items } = Astro.props;
+---
+<section class="section">
+  <div class="wrap faq">
+    <h2>{title}</h2>
+    {items.map((it) => (
+      <details>
+        <summary>{it.q}</summary>
+        <p class="muted">{it.a}</p>
+      </details>
+    ))}
+  </div>
+</section>
+<style>
+  .faq { max-width: 820px; }
+  details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  summary { cursor: pointer; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::after { content: '+'; color: var(--orange); font-size: 1.4rem; line-height: 1; }
+  details[open] summary::after { content: '–'; }
+  details p { margin: 12px 0 0; }
+</style>

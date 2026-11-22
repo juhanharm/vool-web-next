@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import { ui, langNames, RESELLER_URL, type Lang } from '../content/ui';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Links to the same page in other languages, e.g. { en: '/daei/', lt: '/lt/daei/' } */
+  alternates?: Partial<Record<Lang, string>>;
+}
+const { lang, title, description, alternates = {} } = Astro.props;
+const t = ui[lang];
+const home = lang === 'en' ? '/' : `/${lang}/`;
+const langs = (Object.keys(langNames) as Lang[]).map((l) => ({
+  code: l,
+  href: alternates[l] ?? (l === 'en' ? '/' : `/${l}/`),
+}));
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {Object.entries(alternates).map(([l, href]) => <link rel="alternate" hreflang={l} href={new URL(href, Astro.site)} />)}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap bar">
+        <a class="logo" href={home} aria-label="VOOL home">VOOL</a>
+        <nav class="nav" aria-label="Main">
+          {t.nav.map((n) => <a href={n.href}>{n.label}</a>)}
+        </nav>
+        <div class="right">
+          <div class="langs">
+            {langs.map((l) => <a href={l.href} class={l.code === lang ? 'on' : ''} hreflang={l.code}>{langNames[l.code]}</a>)}
+          </div>
+          <a class="btn ghost small-btn" href={RESELLER_URL}>{t.reseller}</a>
+          <a class="btn small-btn" href="https://app.vool.com">{t.login}</a>
+        </div>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="foot">
+      <div class="wrap foot-in">
+        <div>
+          <div class="logo">VOOL</div>
+          <p class="muted">{t.footer.tagline}</p>
+          <p class="muted small">{t.footer.company}</p>
+        </div>
+        <ul>
+          {t.footer.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .top { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; gap: 28px; height: 72px; }
+  .logo { font-weight: 600; font-size: 1.45rem; letter-spacing: .12em; text-decoration: none; color: var(--ink); }
+  .nav { display: flex; gap: 24px; flex: 1; }
+  .nav a { text-decoration: none; color: var(--grey); font-size: .95rem; }
+  .nav a:hover { color: var(--ink); }
+  .right { display: flex; align-items: center; gap: 10px; }
+  .langs { display: flex; gap: 2px; margin-right: 8px; }
+  .langs a { text-decoration: none; font-size: .8rem; font-weight: 500; color: var(--grey); padding: 4px 7px; border-radius: 6px; }
+  .langs a.on { color: var(--ink); background: var(--soft); }
+  .small-btn { padding: .55em 1.1em; font-size: .9rem; }
+  @media (max-width: 960px) { .nav { display: none; } .bar { justify-content: space-between; } .right .ghost { display: none; } }
+  .foot { background: var(--soft); padding: 56px 0; margin-top: 0; }
+  .foot-in { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .foot ul { list-style: none; padding: 0; margin: 0; }
+  .foot li { margin: .4em 0; }
+  .foot ul a { text-decoration: none; color: var(--grey); }
+</style>
