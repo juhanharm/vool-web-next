@@ -50,7 +50,7 @@ export const morePages: Record<string, any> = {
         { title: 'Residence, Luxembourg City', text: 'Two buildings. More than 20 private chargers ordered since the shared parts were installed.', href: AMPX + 'residence-luxembourg-city', more: 'AMP X VOLT case' },
         { title: 'Production plant', text: '22 AC chargers for a new building at an industrial site in Luxembourg.', href: AMPX + 'industrial-plant', more: 'AMP X VOLT case' },
       ] },
-      { type: 'logos', title: 'Clients of our Luxembourg partner AMP X VOLT', items: [
+      { type: 'logos', title: 'Charging on VOOL, installed by our Luxembourg partner AMP X VOLT', items: [
         { name: 'BALTHASAR Group', src: '/img/logos/partner/balthasar.png' }, { name: 'Goodyear', src: '/img/logos/partner/goodyear.png' }, { name: 'Fonds du Logement', src: '/img/logos/partner/fonds_du_logement.png' }, { name: 'BDO Luxembourg', src: '/img/logos/partner/bdo.png' }, { name: 'Brink’s', src: '/img/logos/partner/brinks.png' }, { name: 'Sales-Lentz', src: '/img/logos/partner/sales_lentz.png' }, { name: 'WISAG', src: '/img/logos/partner/wisag.png' }, { name: 'Energolux', src: '/img/logos/partner/energolux.png' } ] },
       { type: 'cta', title: 'Want numbers like these for your site?', lead: 'Tell us the number of parking spaces and the size of your main fuse.', buttons: [contact, { label: 'Try the live demo', href: '/live-demo/' }] },
     ],
