@@ -8,7 +8,7 @@ export interface Field {
   label: string;
   type?: 'text' | 'email' | 'tel' | 'number' | 'textarea' | 'select' | 'checkbox';
   required?: boolean;
-  options?: string[];
+  options?: (string | { value: string; label: string })[];
   half?: boolean;
 }
 interface Props {
@@ -45,7 +45,7 @@ const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, co
             ) : f.type === 'select' ? (
               <select name={f.name} required={f.required}>
                 <option value="">–</option>
-                {f.options?.map((o) => <option value={o}>{o}</option>)}
+                {f.options?.map((o) => typeof o === 'string' ? <option value={o}>{o}</option> : <option value={o.value}>{o.label}</option>)}
               </select>
             ) : (
               <input type={f.type ?? 'text'} name={f.name} required={f.required} min={f.type === 'number' ? 0 : undefined} />

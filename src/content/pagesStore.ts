@@ -32,7 +32,9 @@ const isText = (v: string) => /[A-Za-z]{2}/.test(v) && !/^(\/|https?:|#)/.test(v
 function translate(v: any, lang: string, key: string | null, miss: string[]): any {
   if (typeof v === 'string') { if (key && SKIP.has(key) || !isText(v)) return v; const t = dict[lang].get(v); if (!t) miss.push(v); return t ?? v; }
   if (Array.isArray(v)) return v.map((x) => translate(x, lang, key, miss));
-  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, translate(x, lang, k, miss)]));
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, k === 'options' && Array.isArray(x)
+    ? x.map((o: string) => { const t = dict[lang].get(o); if (!t) miss.push(o); return { value: o, label: t ?? o }; })
+    : translate(x, lang, k, miss)]));
   return v;
 }
 /** Pages that already exist in a language under their own address. */

@@ -1,7 +1,9 @@
 ---
 /** Home charger configurator: four choices, then a quote request routed to a partner (form kind "quote"). */
 interface Props { id?: string; title: string; lead?: string; thanks: string; error: string; consent: string; lang: string }
+import { tr } from '../content/pagesStore';
 const { id = 'configure', title, lead, thanks, error, consent, lang } = Astro.props;
+const T = (x: string) => tr(lang, x);
 const groups = [
   { name: 'front_panel', label: '1. Front panel', options: ['Black', 'Aluminium', 'Wood'] },
   { name: 'mounting', label: '2. Where it goes', options: ['On a wall', 'On a pole'] },
@@ -10,7 +12,7 @@ const groups = [
 ];
 ---
 <section class="section soft" id={id}>
-  <div class="wrap cfg">
+  <div class="wrap cfg" data-l-base={T('VOOL Charger, up to 22 kW, 6.5 m cable')} data-l-panel={T('Front panel')} data-l-mount={T('Mounting')} data-l-lm={T('VOOL LMC load management')} data-l-war={T('5-year warranty, VOOL App included')}>
     <div>
       <h2>{title}</h2>
       {lead && <p class="lead">{lead}</p>}
@@ -26,22 +28,22 @@ const groups = [
       <div class="fields">
         {groups.map((g) => (
           <fieldset>
-            <legend>{g.label}</legend>
-            <div class="opts">{g.options.map((o, i) => <label><input type="radio" name={g.name} value={o} checked={i === 0} /><span>{o}</span></label>)}</div>
+            <legend>{T(g.label)}</legend>
+            <div class="opts">{g.options.map((o, i) => <label><input type="radio" name={g.name} value={o} checked={i === 0} /><span>{T(o)}</span></label>)}</div>
           </fieldset>
         ))}
         <div class="row">
-          <label>Country *<input name="country" required /></label>
-          <label>City or town<input name="city" /></label>
+          <label>{T('Country')} *<input name="country" required /></label>
+          <label>{T('City or town')}<input name="city" /></label>
         </div>
         <div class="row">
-          <label>Name *<input name="name" required /></label>
-          <label>Email *<input name="email" type="email" required /></label>
+          <label>{T('Name')} *<input name="name" required /></label>
+          <label>{T('Email')} *<input name="email" type="email" required /></label>
         </div>
-        <label>Phone<input name="phone" type="tel" /></label>
+        <label>{T('Phone')}<input name="phone" type="tel" /></label>
         <label class="check"><input type="checkbox" name="consent" value="yes" required /> <span>{consent}</span></label>
       </div>
-      <button class="btn" type="submit">Get my price</button>
+      <button class="btn" type="submit">{T('Get my price')}</button>
       <p class="status ok" hidden>{thanks}</p>
       <p class="status err" hidden>{error}</p>
     </form>
@@ -54,8 +56,9 @@ const groups = [
     const form = root.querySelector('form')!;
     const draw = () => {
       const d = new FormData(form);
-      out.innerHTML = ['VOOL Charger, up to 22 kW, 6.5 m cable', `Front panel: ${d.get('front_panel')}`, `Mounting: ${String(d.get('mounting')).toLowerCase()}`,
-        String(d.get('load_management')).startsWith('Yes') ? 'VOOL LMC load management' : '', '5-year warranty, VOOL App included']
+      const L = root.dataset; const shown = (n: string) => form.querySelector<HTMLInputElement>(`input[name="${n}"]:checked`)?.nextElementSibling?.textContent ?? '';
+      out.innerHTML = [L.lBase, `${L.lPanel}: ${shown('front_panel')}`, `${L.lMount}: ${shown('mounting').toLowerCase()}`,
+        String(d.get('load_management')).startsWith('Yes') ? L.lLm : '', L.lWar]
         .filter(Boolean).map((t) => `<li>${t}</li>`).join('');
     };
     const pic = root.querySelector<HTMLImageElement>('[data-cfg-img]')!;
