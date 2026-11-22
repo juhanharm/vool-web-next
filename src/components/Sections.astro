@@ -5,6 +5,7 @@
  */
 import Steps from './Steps.astro';
 import Faq from './Faq.astro';
+import Configurator from './Configurator.astro';
 import LeadForm from './LeadForm.astro';
 import NightCharge from './NightCharge.astro';
 import CostCompare from './CostCompare.astro';
@@ -143,6 +144,8 @@ const { sections, lang } = Astro.props;
         </div>
       </section>
     )}
+
+    {s.type === 'configurator' && <Configurator id={s.id} title={s.title} lead={s.lead} thanks={s.thanks} error={s.error} consent={s.consent} lang={lang} />}
 
     {s.type === 'form' && (
       <section class="section dark">

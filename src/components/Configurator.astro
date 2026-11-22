@@ -1,0 +1,98 @@
+---
+/** Home charger configurator: four choices, then a quote request routed to a partner (form kind "quote"). */
+interface Props { id?: string; title: string; lead?: string; thanks: string; error: string; consent: string; lang: string }
+const { id = 'configure', title, lead, thanks, error, consent, lang } = Astro.props;
+const groups = [
+  { name: 'front_panel', label: '1. Front panel', options: ['Black', 'Aluminium', 'Wood'] },
+  { name: 'mounting', label: '2. Where it goes', options: ['On a wall', 'On a pole'] },
+  { name: 'load_management', label: '3. Protect the main fuse', options: ['Yes, add load management', 'No, not needed', 'Not sure'] },
+  { name: 'installation', label: '4. Installation', options: ['I need an installer', 'I have an installer'] },
+];
+---
+<section class="section soft" id={id}>
+  <div class="wrap cfg">
+    <div>
+      <h2>{title}</h2>
+      {lead && <p class="lead">{lead}</p>}
+      <ul class="summary" data-summary></ul>
+    </div>
+    <form method="post" action="/api/lead" data-lead-form class="card">
+      <input type="hidden" name="form" value="quote" />
+      <input type="hidden" name="lang" value={lang} />
+      <input type="hidden" name="you_are" value="Home owner" />
+      <input type="hidden" name="chargers_now" value="1" />
+      <input type="text" name="company_website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <div class="fields">
+        {groups.map((g) => (
+          <fieldset>
+            <legend>{g.label}</legend>
+            <div class="opts">{g.options.map((o, i) => <label><input type="radio" name={g.name} value={o} checked={i === 0} /><span>{o}</span></label>)}</div>
+          </fieldset>
+        ))}
+        <div class="row">
+          <label>Country *<input name="country" required /></label>
+          <label>City or town<input name="city" /></label>
+        </div>
+        <div class="row">
+          <label>Name *<input name="name" required /></label>
+          <label>Email *<input name="email" type="email" required /></label>
+        </div>
+        <label>Phone<input name="phone" type="tel" /></label>
+        <label class="check"><input type="checkbox" name="consent" value="yes" required /> <span>{consent}</span></label>
+      </div>
+      <button class="btn" type="submit">Get my price</button>
+      <p class="status ok" hidden>{thanks}</p>
+      <p class="status err" hidden>{error}</p>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.cfg').forEach((root) => {
+    const out = root.querySelector<HTMLElement>('[data-summary]')!;
+    const form = root.querySelector('form')!;
+    const draw = () => {
+      const d = new FormData(form);
+      out.innerHTML = ['VOOL Charger, up to 22 kW, 6.5 m cable', `Front panel: ${d.get('front_panel')}`, `Mounting: ${String(d.get('mounting')).toLowerCase()}`,
+        String(d.get('load_management')).startsWith('Yes') ? 'VOOL LMC load management' : '', '5-year warranty, VOOL App included']
+        .filter(Boolean).map((t) => `<li>${t}</li>`).join('');
+    };
+    form.addEventListener('change', draw); draw();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button')!; const ok = form.querySelector<HTMLElement>('.ok')!; const err = form.querySelector<HTMLElement>('.err')!;
+      ok.hidden = err.hidden = true; btn.disabled = true;
+      try {
+        const res = await fetch(form.action, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+        if (!res.ok) throw new Error(String(res.status));
+        form.querySelector('.fields')!.setAttribute('hidden', ''); btn.hidden = true; ok.hidden = false;
+        (window as any).plausible?.('Lead', { props: { form: 'configurator' } });
+      } catch { err.hidden = false; btn.disabled = false; }
+    });
+  });
+</script>
+
+<style>
+  .cfg { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+  .summary { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 10px; }
+  .summary li { padding-left: 26px; position: relative; }
+  .summary li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); }
+  form.card { padding: 32px; }
+  .fields { display: grid; gap: 18px; margin-bottom: 22px; }
+  .fields[hidden] { display: none; }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  legend { font-weight: 500; margin-bottom: 8px; font-size: .95rem; }
+  .opts { display: flex; flex-wrap: wrap; gap: 8px; }
+  .opts label { cursor: pointer; }
+  .opts input { position: absolute; opacity: 0; }
+  .opts span { display: block; padding: .55em 1.1em; border: 1px solid var(--line); border-radius: 999px; font-size: .92rem; background: #fff; }
+  .opts input:checked + span { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .opts input:focus-visible + span { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fields > label, .row label { display: flex; flex-direction: column; gap: 6px; font-size: .88rem; font-weight: 500; }
+  .fields input:not([type=radio]):not([type=checkbox]) { font: inherit; font-weight: 400; padding: .7em .9em; border: 1px solid var(--line); border-radius: 10px; }
+  .fields label.check { flex-direction: row; align-items: flex-start; gap: 10px; font-weight: 400; color: var(--grey); }
+  .hp { position: absolute; left: -9999px; }
+  .status { margin: 16px 0 0; font-weight: 500; } .status.ok { color: var(--green); } .status.err { color: #b3261e; }
+  @media (max-width: 860px) { .cfg { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; } }
+</style>

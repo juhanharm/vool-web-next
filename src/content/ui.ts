@@ -6,6 +6,7 @@ export interface NavItem { label: string; href?: string; children?: { label: str
 
 export const homeOf = (l: Lang) => (l === 'en' ? '/' : `/${l}/`);
 
+export const RESELLER_URL = 'https://shop.vool.com/';
 export const nav: Record<Lang, NavItem[]> = {
   en: [
     { label: 'Products', children: [
@@ -38,8 +39,16 @@ export const nav: Record<Lang, NavItem[]> = {
       { label: 'Compare', href: '/compare/', note: 'VOOL vs ordinary load balancing' },
       { label: 'AFIR and ISO 15118', href: '/afir/', note: 'What changes on 1 January 2027' },
     ] },
-    { label: 'Where to buy', href: '/where-to-buy/' },
-    { label: 'Partners', href: '/resources/resellers/' },
+    { label: 'Find an installer', href: '/where-to-buy/' },
+    { label: 'For installers', children: [
+      { label: 'Become a partner', href: '/resources/resellers/', note: 'Sell and install VOOL' },
+      { label: 'Wholesalers', href: '/where-to-buy/?type=wholesaler', note: 'Where to order stock' },
+      { label: 'Manuals and guides', href: '/resources/product-manuals/', note: 'Installation guides in nine languages' },
+      { label: 'Integrations', href: '/integrations/', note: 'OCPP, Modbus, OCPI' },
+      { label: 'Tender specification text', href: '/solutions/developers/#spec' },
+      { label: 'Asset bank', href: '/partners/asset-bank/', note: 'Logo, photos, brochures' },
+      { label: 'Reseller login', href: RESELLER_URL, note: 'Stock, prices and orders' },
+    ] },
     { label: 'Support', children: [
       { label: 'Help Center', href: '/resources/help-center/' },
       { label: 'Warranty and support', href: '/support/warranty/' },
@@ -89,4 +98,3 @@ export const company = {
 };
 
 /** Reseller shop in Odoo (planned – address to be confirmed). */
-export const RESELLER_URL = 'https://shop.vool.com/';

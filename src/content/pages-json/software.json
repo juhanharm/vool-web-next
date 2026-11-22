@@ -20,6 +20,11 @@
           "label": "Billing and payments",
           "href": "/software/billing-and-payments/"
         }
+      ],
+      "facts": [
+        "Free portal",
+        "No fee per charger",
+        "Any OCPP charger"
       ]
     },
     {

@@ -4,13 +4,15 @@ import countries from '../content/partners.json';
 import { RESELLER_URL } from '../content/ui';
 const total = countries.reduce((n, c) => n + c.partners.length, 0);
 ---
-<Base lang="en" title="Where to buy VOOL – resellers and installers" description="Find a VOOL reseller, energy company or installer near you.">
+<Base lang="en" title="Find a VOOL installer or reseller" description="Find a VOOL reseller, energy company or installer near you.">
   <section class="section">
     <div class="wrap">
-      <span class="eyebrow">Where to buy</span>
-      <h1>Find a partner near you</h1>
+      <span class="eyebrow">Find an installer</span>
+      <h1>Find an installer or reseller near you</h1>
       <p class="lead">VOOL is sold and installed by retailers, energy companies and installers in {countries.length} countries.</p>
+      <div id="map" class="map" aria-label="Map of countries with VOOL partners"></div>
       <div class="filters" role="group" aria-label="Filter partners">
+        <input type="search" placeholder="Search by name or country" aria-label="Search partners" data-search />
         <button class="on" data-filter="all">All</button>
         <button data-filter="installer">Installers</button>
         <button data-filter="wholesaler">Wholesalers</button>
@@ -46,12 +48,12 @@ const total = countries.reduce((n, c) => n + c.partners.length, 0);
 </Base>
 
 <script>
-  const state = { filter: 'all', country: '' };
+  const state = { filter: 'all', country: '', q: '' };
   const apply = () => {
     document.querySelectorAll<HTMLElement>('.country').forEach((c) => {
       let shown = 0;
       c.querySelectorAll<HTMLElement>('.partner').forEach((p) => {
-        const ok = state.filter === 'all' || p.dataset[state.filter] === 'true';
+        const ok = (state.filter === 'all' || p.dataset[state.filter] === 'true') && (!state.q || (p.textContent + ' ' + c.dataset.name).toLowerCase().includes(state.q));
         p.hidden = !ok; if (ok) shown++;
       });
       c.hidden = shown === 0 || (state.country !== '' && c.dataset.name !== state.country);
@@ -62,12 +64,37 @@ const total = countries.reduce((n, c) => n + c.partners.length, 0);
     document.querySelectorAll('[data-filter]').forEach((x) => x.classList.toggle('on', x === b));
     apply();
   }));
-  document.querySelector<HTMLSelectElement>('[data-country]')?.addEventListener('change', (e) => {
-    state.country = (e.target as HTMLSelectElement).value; apply();
-  });
+  const sel = document.querySelector<HTMLSelectElement>('[data-country]')!;
+  sel.addEventListener('change', () => { state.country = sel.value; apply(); });
+  document.querySelector<HTMLInputElement>('[data-search]')?.addEventListener('input', (e) => { state.q = (e.target as HTMLInputElement).value.trim().toLowerCase(); apply(); });
+  const type = new URLSearchParams(location.search).get('type');
+  if (type) document.querySelector<HTMLButtonElement>(`[data-filter="${type}"]`)?.click();
+
+  // Map: one marker per country, sized by the number of partners. The list below works without it.
+  const CENTRES: Record<string, [number, number]> = { Austria: [47.6, 14.1], Belgium: [50.6, 4.6], Croatia: [45.1, 15.2], 'Czech Republic': [49.8, 15.5], Denmark: [56.0, 9.5], Estonia: [58.7, 25.5], Finland: [62.0, 26.0], France: [46.6, 2.4], Germany: [51.0, 10.3], Greece: [39.0, 22.0], Hungary: [47.2, 19.4], Iceland: [64.9, -18.6], Ireland: [53.2, -8.0], Italy: [42.8, 12.5], Latvia: [56.9, 24.6], Lithuania: [55.3, 23.9], Luxembourg: [49.8, 6.1], Malta: [35.9, 14.4], Netherlands: [52.2, 5.3], Norway: [61.0, 9.0], Poland: [52.0, 19.3], Portugal: [39.6, -8.0], Slovakia: [48.7, 19.5], Slovenia: [46.1, 14.8], Spain: [40.2, -3.6], Sweden: [60.5, 15.5], Switzerland: [46.8, 8.2], 'United Kingdom': [53.5, -1.8] };
+  const mapEl = document.getElementById('map')!;
+  const css = document.createElement('link'); css.rel = 'stylesheet'; css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'; document.head.append(css);
+  const js = document.createElement('script'); js.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  js.onerror = () => { mapEl.hidden = true; };
+  js.onload = () => {
+    const L = (window as any).L;
+    const map = L.map(mapEl, { scrollWheelZoom: false }).setView([55, 12], 4);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 8, attribution: '© OpenStreetMap contributors' }).addTo(map);
+    document.querySelectorAll<HTMLElement>('.country').forEach((c) => {
+      const at = CENTRES[c.dataset.name!]; if (!at) return;
+      const n = c.querySelectorAll('.partner').length;
+      L.circleMarker(at, { radius: 8 + Math.min(14, Math.sqrt(n) * 3), color: '#eb4e20', fillColor: '#eb4e20', fillOpacity: 0.85, weight: 0 })
+        .addTo(map).bindTooltip(`${c.dataset.name}: ${n}`)
+        .on('click', () => { sel.value = c.dataset.name!; state.country = sel.value; apply(); c.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    });
+  };
+  document.head.append(js);
 </script>
 
 <style>
+  .map { height: 380px; border-radius: var(--radius); margin-top: 28px; background: var(--soft); z-index: 0; }
+  .map[hidden] { display: none; }
+  .filters input[type=search] { font: inherit; padding: .55em 1.1em; border-radius: 999px; border: 1px solid var(--line); min-width: 240px; }
   .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 28px 0 8px; }
   .filters button, .filters select { font: inherit; padding: .55em 1.1em; border-radius: 999px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
   .filters button.on { background: var(--ink); color: #fff; border-color: var(--ink); }

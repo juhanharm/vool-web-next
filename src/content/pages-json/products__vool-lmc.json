@@ -103,6 +103,10 @@
         {
           "label": "Where to buy",
           "href": "/where-to-buy/"
+        },
+        {
+          "label": "Manuals and datasheets",
+          "href": "/resources/product-manuals/"
         }
       ]
     }

@@ -112,6 +112,28 @@
       ]
     },
     {
+      "type": "links",
+      "title": "Guides",
+      "items": [
+        {
+          "label": "Charger Modbus manual",
+          "href": "https://support.vool.com/en/articles/12959952-charger-modbus-manual"
+        },
+        {
+          "label": "Installation guides and manuals",
+          "href": "/resources/product-manuals/"
+        },
+        {
+          "label": "Specification text for tenders",
+          "href": "/solutions/developers/#spec"
+        },
+        {
+          "label": "Help Center",
+          "href": "https://support.vool.com/en/"
+        }
+      ]
+    },
+    {
       "type": "faq",
       "title": "Good to know",
       "items": [

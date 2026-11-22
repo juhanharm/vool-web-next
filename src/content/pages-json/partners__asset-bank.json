@@ -1,0 +1,130 @@
+{
+  "path": "/partners/asset-bank/",
+  "title": "Asset bank for partners | VOOL",
+  "description": "VOOL logo, product photos, brochures and manuals for resellers and installers.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "For installers",
+      "title": "Asset bank",
+      "lead": "Logo, photos and documents you may use to sell and install VOOL. Need another format or a photo that is not here? Write to info@vool.com.",
+      "cta": [
+        {
+          "label": "Become a partner",
+          "href": "/resources/resellers/"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
+      "title": "Logo",
+      "items": [
+        {
+          "label": "VOOL logo (SVG)",
+          "href": "/logo.svg"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Product and site photos",
+      "items": [
+        {
+          "label": "VOOL Charger on a pole",
+          "href": "/img/charger-pole.webp"
+        },
+        {
+          "label": "VOOL Charger on a wall",
+          "href": "/img/charger-wall.webp"
+        },
+        {
+          "label": "Two chargers",
+          "href": "/img/charger-two.webp"
+        },
+        {
+          "label": "Front panel finishes",
+          "href": "/img/charger-finishes.webp"
+        },
+        {
+          "label": "VOOL LMC",
+          "href": "/img/lmc.webp"
+        },
+        {
+          "label": "LMC in a cabinet",
+          "href": "/img/lmc-cabinet.webp"
+        },
+        {
+          "label": "VOOL App",
+          "href": "/img/app-phone.webp"
+        },
+        {
+          "label": "VOOL Portal",
+          "href": "/img/portal-laptop.webp"
+        },
+        {
+          "label": "Underground car park",
+          "href": "/img/garage.webp"
+        },
+        {
+          "label": "Apartment building",
+          "href": "/img/apartments.webp"
+        },
+        {
+          "label": "Office",
+          "href": "/img/office.webp"
+        },
+        {
+          "label": "Home",
+          "href": "/img/home.webp"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
+      "title": "Documents",
+      "items": [
+        {
+          "label": "Brochure: apartments and offices (EN, PDF)",
+          "href": "/media/VOOL_apartments__offices_web_01.2024.pdf"
+        },
+        {
+          "label": "Brochure: kortermajad ja ärihooned (ET, PDF)",
+          "href": "/media/VOOL_kortermajad__arihooned_web_01.2024.pdf"
+        },
+        {
+          "label": "Charger user manual (PDF)",
+          "href": "/media/VOOL_user_manual_complete.pdf"
+        },
+        {
+          "label": "Guide for the general meeting (EN, PDF)",
+          "href": "/downloads/vool-general-meeting-guide-en.pdf"
+        },
+        {
+          "label": "Üldkoosoleku juhend (ET, PDF)",
+          "href": "/downloads/vool-uldkoosoleku-juhend.pdf"
+        },
+        {
+          "label": "Installation guides in nine languages",
+          "href": "/resources/product-manuals/"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Selling VOOL to a customer this week?",
+      "lead": "Use the live demo and the comparison page in the meeting.",
+      "buttons": [
+        {
+          "label": "Live demo",
+          "href": "/live-demo/"
+        },
+        {
+          "label": "Compare",
+          "href": "/compare/"
+        }
+      ]
+    }
+  ]
+}

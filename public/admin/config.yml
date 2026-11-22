@@ -716,6 +716,33 @@ collections:
         label: Consent
         required: false
         widget: text
+    - name: links
+      label: Link list
+      widget: object
+      summary: '{{title}}'
+      fields:
+      - name: title
+        label: Title
+        required: false
+        widget: string
+      - name: items
+        label: Items
+        required: false
+        widget: list
+        fields:
+        - name: label
+          label: Label
+          required: false
+          widget: string
+        - name: href
+          label: Link
+          required: false
+          widget: text
+        summary: '{{title}}{{label}}{{q}}{{name}}'
+      - name: soft
+        label: Grey background
+        required: false
+        widget: boolean
     - name: night
       label: Night charging example
       widget: object
@@ -755,33 +782,35 @@ collections:
           required: false
           widget: string
         collapsed: true
-    - name: links
-      label: Link list
+    - name: configurator
+      label: configurator
       widget: object
       summary: '{{title}}'
       fields:
-      - name: soft
-        label: Grey background
+      - name: id
+        label: Id
         required: false
-        widget: boolean
+        widget: string
       - name: title
         label: Title
         required: false
         widget: string
-      - name: items
-        label: Items
+      - name: lead
+        label: Intro text
         required: false
-        widget: list
-        fields:
-        - name: label
-          label: Label
-          required: false
-          widget: string
-        - name: href
-          label: Link
-          required: false
-          widget: text
-        summary: '{{title}}{{label}}{{q}}{{name}}'
+        widget: string
+      - name: thanks
+        label: Thanks
+        required: false
+        widget: string
+      - name: error
+        label: Error
+        required: false
+        widget: string
+      - name: consent
+        label: Consent
+        required: false
+        widget: text
 - name: posts_en
   label: Blog and articles (English)
   label_singular: Post

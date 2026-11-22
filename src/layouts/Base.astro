@@ -89,10 +89,10 @@ const legalPages = legal(lang);
 
 <style>
   .top { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  .bar { display: flex; align-items: center; gap: 28px; height: 72px; }
+  .bar { display: flex; align-items: center; gap: 18px; height: 72px; }
   .logo img { height: 20px; width: auto; }
-  .nav { display: flex; align-items: center; gap: 4px; flex: 1; }
-  .nav .link, .drop > button { font: inherit; font-weight: 400; background: none; border: 0; cursor: pointer; text-decoration: none; color: var(--ink); font-size: .93rem; padding: 10px 12px; border-radius: 8px; }
+  .nav { display: flex; align-items: center; gap: 0; flex: 1; }
+  .nav .link, .drop > button { font: inherit; font-weight: 400; background: none; border: 0; cursor: pointer; text-decoration: none; color: var(--ink); font-size: .9rem; padding: 10px 9px; border-radius: 8px; white-space: nowrap; }
   .nav .link:hover, .drop:hover > button { background: var(--soft); }
   .drop { position: relative; }
   .panel { display: none; position: absolute; top: 100%; left: 0; min-width: 280px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.1); }
@@ -106,7 +106,7 @@ const legalPages = legal(lang);
   .langs a.on { color: var(--ink); background: var(--soft); }
   .small-btn { padding: .55em 1.1em; font-size: .88rem; white-space: nowrap; }
   .menu-toggle, .burger { display: none; }
-  @media (max-width: 1100px) {
+  @media (max-width: 1220px) {
     .burger { display: flex; flex-direction: column; gap: 5px; margin-left: auto; cursor: pointer; padding: 10px; }
     .burger span { width: 24px; height: 2px; background: var(--ink); }
     .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; padding: 16px 24px 28px; border-bottom: 1px solid var(--line); max-height: calc(100vh - 72px); overflow: auto; }

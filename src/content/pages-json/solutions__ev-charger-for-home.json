@@ -13,12 +13,12 @@
       "alt": "Family charging an electric car at home in winter",
       "cta": [
         {
-          "label": "Where to buy",
-          "href": "/where-to-buy/"
+          "label": "Configure and get a price",
+          "href": "#configure"
         },
         {
-          "label": "VOOL Charger",
-          "href": "/products/vool-charger/"
+          "label": "Where to buy",
+          "href": "/where-to-buy/"
         }
       ]
     },
@@ -80,6 +80,15 @@
           "more": "Join the waiting list"
         }
       ]
+    },
+    {
+      "type": "configurator",
+      "id": "configure",
+      "title": "Build your home charger",
+      "lead": "Four choices. A partner near you sends the price with installation.",
+      "thanks": "Thank you! A VOOL partner will send you a quote.",
+      "error": "Something went wrong. Please try again or write to info@vool.com.",
+      "consent": "I agree that VOOL shares my request with an installation partner to prepare a quote (privacy policy)."
     },
     {
       "type": "cta",

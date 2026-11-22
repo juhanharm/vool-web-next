@@ -141,6 +141,10 @@
         {
           "label": "Get a quote",
           "href": "/get-a-quote/"
+        },
+        {
+          "label": "Manuals and datasheets",
+          "href": "/resources/product-manuals/"
         }
       ]
     }
