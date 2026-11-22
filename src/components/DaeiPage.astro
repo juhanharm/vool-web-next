@@ -31,7 +31,36 @@ const locale = lang === 'lt' ? 'lt-LT' : 'en-IE';
     </div>
   </section>
 
-  <Steps title={c.steps.title} steps={c.steps.items as any} />
+  <section class="section">
+    <div class="wrap">
+      <h2>{c.who.title}</h2>
+      <div class="grid c3" style="margin-top:28px">
+        {c.who.items.map((w) => <div class="card"><h3>{w.title}</h3><p class="muted">{w.text}</p></div>)}
+      </div>
+    </div>
+  </section>
+
+  <Steps title={c.steps.title} steps={c.steps.items as any} soft />
+
+  <section class="section">
+    <div class="wrap two">
+      <div>
+        <h2>{c.need.title}</h2>
+        <ul class="checks">{c.need.items.map((n) => <li>{n}</li>)}</ul>
+        <p class="small muted">{c.need.note}</p>
+        <h2 style="margin-top:48px">{c.table.title}</h2>
+        <table class="t">
+          <thead><tr>{c.table.head.map((h) => <th>{h}</th>)}</tr></thead>
+          <tbody>{c.table.rows.map((r) => <tr>{r.map((x) => <td>{x}</td>)}</tr>)}</tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>{c.terms.title}</h3>
+        <table class="t kv">{c.terms.rows.map(([k, v]) => <tr><th>{k}</th><td>{v}</td></tr>)}</table>
+        <p class="small muted">{c.terms.note}</p>
+      </div>
+    </div>
+  </section>
 
   <section class="section soft">
     <div class="wrap calc" data-locale={locale}>
@@ -75,6 +104,15 @@ const locale = lang === 'lt' ? 'lt-LT' : 'en-IE';
   .rate-label { color: #cfcfcf; }
   .facts { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
   .facts li { border: 1px solid #4a4a4a; border-radius: 999px; padding: 6px 14px; font-size: .88rem; color: #e6e6e6; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  @media (max-width: 900px) { .two { grid-template-columns: 1fr; gap: 32px; } }
+  .checks { list-style: none; padding: 0; margin: 18px 0; }
+  .checks li { padding: 7px 0 7px 30px; position: relative; }
+  .checks li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+  .t { width: 100%; border-collapse: collapse; margin: 14px 0; }
+  .t th, .t td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); font-weight: 300; font-size: .93rem; vertical-align: top; }
+  .t thead th { font-weight: 500; }
+  .t.kv th { width: 36%; color: var(--grey); }
   .calc { max-width: 720px; }
   .calc label { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
   .calc input[type=range] { accent-color: var(--orange); width: 100%; }
