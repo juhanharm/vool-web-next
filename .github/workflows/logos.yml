@@ -1,0 +1,32 @@
+name: Fetch customer logos
+
+# Downloads the logo files listed below into public/img/logos/ and commits them.
+on:
+  push:
+    paths: [".github/workflows/logos.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        run: |
+          mkdir -p public/img/logos/partner && : > logos.log
+          get() { curl -sSL --fail -A "Mozilla/5.0" -o "$1" "$2" && echo "ok $1 $(stat -c%s "$1")" >> logos.log || echo "FAILED $1 $2" >> logos.log; }
+          get public/img/logos/alexela.svg https://www.alexela.ee/themes/public/img/logo-alexela.svg
+          for n in balthasar goodyear fonds_du_logement bdo brinks sales_lentz wisag energolux; do
+            get public/img/logos/partner/$n.png https://ampxvolt.eu/logos/clients/$n.png
+          done
+          cat logos.log
+      - name: Commit
+        run: |
+          git config user.name "vool-web-bot"
+          git config user.email "actions@github.com"
+          git add -A public/img/logos logos.log
+          git commit -m "Add customer logos" || echo "No changes"
+          git push
