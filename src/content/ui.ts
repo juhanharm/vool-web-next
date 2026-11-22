@@ -17,10 +17,16 @@ export const nav: Record<Lang, NavItem[]> = {
     { label: 'Solutions', children: [
       { label: 'Apartments & offices', href: '/solutions/apartment-blocks/' },
       { label: 'KIK grant (Estonia)', href: '/apartment-buildings/' },
+      { label: 'Guide: the general meeting', href: '/knowledge/general-meeting/' },
       { label: 'Homes', href: '/solutions/ev-charger-for-home/' },
       { label: 'Fleets', href: '/solutions/electrical-fleet-owners/' },
       { label: 'Public charging', href: '/solutions/public-charging/' },
       { label: 'DAEI income (Lithuania)', href: '/daei/' },
+    ] },
+    { label: 'Why VOOL', children: [
+      { label: 'Case studies', href: '/case-studies/', note: 'Real sites with numbers' },
+      { label: 'Live demo', href: '/live-demo/', note: 'Load management simulator' },
+      { label: 'Compare', href: '/compare/', note: 'VOOL vs ordinary load balancing' },
     ] },
     { label: 'Where to buy', href: '/where-to-buy/' },
     { label: 'Partners', href: '/resources/resellers/' },
@@ -35,6 +41,7 @@ export const nav: Record<Lang, NavItem[]> = {
   ],
   et: [
     { label: 'Kortermajad ja KIK toetus', href: '/et/kortermajad/' },
+    { label: 'Üldkoosoleku juhend', href: '/et/uldkoosolek/' },
     { label: 'Tooted', href: '/products/vool-charger/' },
     { label: 'Kust osta', href: '/where-to-buy/' },
   ],

@@ -22,6 +22,10 @@ Status on 22.11.2026. "Built" = in this repo and passing the link check. Old URL
 | `/resources/help-center/`, `/resources/product-manuals/` | Route to support and manuals | Help Center |
 | `/resources/contact/` | One contact page | Contact form → Odoo lead |
 | `/about-us/our-story-new/` | Who is behind VOOL | Partners / contact |
+| `/case-studies/` | Proof: our customers and partner sites, with numbers | Talk to us, live demo |
+| `/live-demo/` | Load management simulator | Send real numbers |
+| `/compare/` | VOOL vs ordinary load balancing | Send the other quote |
+| `/knowledge/general-meeting/` (ET: `/et/uldkoosolek/`) | Help a board get charging approved: draft resolution, owners' questions, law in Estonia and the EU | Quote for the meeting |
 | `/faq/`, 5 legal pages | Moved as they are | – |
 | `/resources/blog/` + 44 posts, 3 use cases | Moved as they are | – |
 

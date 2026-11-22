@@ -4,13 +4,14 @@
  * URLs are the same as on the current site so search rankings are kept.
  */
 import { company, RESELLER_URL } from './ui';
+import { morePages, nightEn, costLabels, demoLabels } from './knowledge';
 
 const consent = 'I agree that VOOL processes my data to answer this enquiry (privacy policy).';
 const error = 'Something went wrong. Please try again or write to info@vool.com.';
 const buy = { label: 'Where to buy', href: '/where-to-buy/' };
 const contact = { label: 'Talk to us', href: '/resources/contact/' };
 
-export interface Page { title: string; description: string; image?: string; sections: any[] }
+export interface Page { title: string; description: string; image?: string; lang?: string; alternates?: Record<string, string>; sections: any[] }
 
 export const pages: Record<string, Page> = {
   '/': {
@@ -24,6 +25,11 @@ export const pages: Record<string, Page> = {
         image: '/img/hero-home.webp', alt: 'VOOL charger on a pole next to a parked car',
         cta: [{ label: 'Find your solution', href: '#solutions' }, buy],
         facts: ['Up to 22 kW', '5-year warranty', 'Up to 30% lower charging costs'] },
+      { type: 'stats', items: [
+        { value: '20,000+', label: 'devices sold' }, { value: '100+', label: 'chargers managed by one LMC Pro' },
+        { value: '45', label: 'chargers on one 125 A connection' }, { value: '14', label: 'countries with VOOL partners' } ] },
+      { type: 'logos', title: 'Used by', items: [
+        { name: 'Omniva', src: '/img/logos/omniva.webp' }, { name: 'Hansabuss', src: '/img/logos/hansabuss.webp' }, { name: 'Europcar', src: '/img/logos/europcar.webp' } ] },
       { type: 'cards', id: 'solutions', eyebrow: 'Solutions', title: 'Where do you need charging?', cols: 4, items: [
         { title: 'Apartments & offices', image: '/img/apartments.webp', text: 'Shared charging with load management and fair billing per user.', href: '/solutions/apartment-blocks/' },
         { title: 'Homes', image: '/img/home.webp', text: 'Charge when electricity is cheapest, controlled from your phone.', href: '/solutions/ev-charger-for-home/' },
@@ -43,11 +49,12 @@ export const pages: Record<string, Page> = {
       { type: 'split', soft: true, image: '/img/garage.webp', alt: 'Underground car park with VOOL chargers',
         eyebrow: 'Why VOOL', title: 'The expensive part of charging is the grid. We make it go further.',
         text: 'Most buildings have more capacity than they use. VOOL measures the load in real time and gives the spare capacity to the cars, moving each one to the least loaded phase.',
-        points: ['More chargers without a bigger grid connection', 'Fuses stay safe while the building runs as usual', 'Add chargers later: mount the casing now, click in the controller when needed'] },
+        points: ['On one campus, 45 chargers run on a single 125 A connection', 'Fuses stay safe while the building runs as usual', 'Add chargers later: mount the casing now, click in the controller when needed'],
+        cta: [{ label: 'Try the live demo', href: '/live-demo/' }, { label: 'Compare', href: '/compare/' }] },
       { type: 'cards', eyebrow: 'Customers', title: 'Used by companies that run charging every day', cols: 3, items: [
-        { title: 'Alexela', text: 'Offers VOOL charging to private and business customers in Estonia and Latvia.', href: '/resources/blog/alexela-and-vool-partnership/', more: 'Read the story' },
-        { title: 'Hansabuss', text: 'Charges its electric buses at existing hubs without upgrading the grid connection.', href: '/solutions/usecases/hansabuss-saved-30-with-vool-on-their-fleet-charging-costs/', more: 'Read the story' },
-        { title: 'Resellers and installers', text: 'Partners in 14 countries sell and install VOOL.', href: '/where-to-buy/', more: 'Find one near you' },
+        { title: 'Omniva: 300 chargers', text: 'VOOL supplies chargers for Omniva’s courier fleet across Estonia over five years.', href: '/resources/blog/vool-joins-omniva-on-their-journey-towards-electrifying-transportation/', more: 'Read the story' },
+        { title: 'Office building: 40 chargers, 100 users', text: 'Eleven companies share the chargers. 75 MWh charged in 3,000 sessions within six months.', href: '/case-studies/', more: 'All case studies' },
+        { title: 'Residence: 19 chargers in three weeks', text: 'After the shared installation in a 74-space car park, owners ordered 19 chargers within three weeks.', href: '/case-studies/', more: 'All case studies' },
       ] },
       { type: 'cta', title: 'Ready to plan your charging?', lead: 'Tell us about your site, or buy from a partner near you.',
         buttons: [contact, buy, { label: 'Reseller login', href: RESELLER_URL }] },
@@ -105,12 +112,13 @@ export const pages: Record<string, Page> = {
       ] },
       { type: 'split', soft: true, image: '/img/lmc-cabinet.webp', alt: 'VOOL LMC mounted in an electrical cabinet',
         title: 'One controller for the whole site',
-        text: 'A single LMC manages all the VOOL chargers on a site, from a private house to a large car park. It supports load management at several levels of the electrical installation.',
+        text: 'One LMC Pro manages more than 100 chargers and supports load management at several levels of the electrical installation. On a business campus in Luxembourg, one tenant runs 45 VOOL chargers on a single 125 A connection.',
         points: ['Dynamic load management', 'Automatic phase switching', 'Mobile internet, WiFi, Ethernet and Bluetooth'] },
       { type: 'cards', title: 'Two models', cols: 2, items: [
-        { title: 'LMC Pro', text: 'For apartment buildings, offices and car parks with many chargers. Available now.' },
+        { title: 'LMC Pro', text: 'For apartment buildings, offices and car parks. Manages 100+ chargers. Available now.' },
         { title: 'LMC S', text: 'For houses and small sites. Current clamps are included in the box and setup is done over Bluetooth in the VOOL App. Available from January 2027.' },
       ] },
+      { type: 'demo', soft: true, title: 'Try it: how many cars fit on your connection?', labels: demoLabels.en },
       { type: 'cta', title: 'Planning a larger installation?', lead: 'Send us the number of parking spaces and the size of the main fuse. We will tell you what fits.', buttons: [contact, buy] },
     ],
   },
@@ -129,6 +137,7 @@ export const pages: Record<string, Page> = {
         { title: 'Connect your charger', text: 'Link your VOOL Charger, or any OCPP-compliant charger, to the app.' },
         { title: 'Save while charging', text: 'Turn on Smart Charging or set a recurring schedule. Or start and stop by hand.' },
       ] },
+      nightEn,
       { type: 'split', image: '/img/app-insights.webp', alt: 'Charging statistics in the VOOL App',
         title: 'See what charging really costs',
         text: 'Price forecasts for the next 24 hours, energy used and money saved per session, and your full charging history.',
@@ -185,6 +194,12 @@ export const pages: Record<string, Page> = {
         title: 'Management that fits a board meeting', points: [
           'Consumption reports per apartment', 'Automatic invoicing', 'Electricity use per charger',
           'User authentication', 'Full charging session history', 'Smart charging built in'] },
+      { type: 'cards', title: 'Proof from real buildings', cols: 3, items: [
+        { title: '45 chargers on 125 A', text: 'One tenant on a Luxembourg business campus runs 45 VOOL chargers on a single 125 A connection.', href: '/case-studies/', more: 'Case studies' },
+        { title: '19 chargers in three weeks', text: 'In a 74-space residence, owners ordered 19 chargers within three weeks of the shared installation.', href: '/case-studies/', more: 'Case studies' },
+        { title: 'Getting it through the meeting', text: 'A draft resolution, answers to owners’ questions and what the law says.', href: '/knowledge/general-meeting/', more: 'Guide for boards' },
+      ] },
+      { type: 'cost', title: 'What charging at home costs a driver', lead: 'A number for the board to show owners.', note: 'Example values for Estonia; enter your own. The electricity price should include energy, network fees and taxes. Assumes 18 kWh/100 km and 6.5 l/100 km.', labels: costLabels.en },
       { type: 'cards', title: 'Estonia: KIK pays part of the cost', cols: 1, items: [
         { title: '€14,090 in grant for 10 charging points', text: 'Apartment associations outside Tallinn and Tartu city can apply for KIK’s EV charging grant. Load management is required, and VOOL LMC covers it.', href: '/apartment-buildings/', more: 'Grant terms and example' },
       ] },
@@ -206,6 +221,7 @@ export const pages: Record<string, Page> = {
         { title: 'Safe for your fuse box', text: 'Add a VOOL LMC and the charger shares power with the heating, the stove and other appliances without tripping a fuse.' },
         { title: 'Built to last', text: 'IP55, IK10 and −30 °C to +55 °C, with a 5-year warranty.' },
       ] },
+      nightEn,
       { type: 'split', image: '/img/home-family.webp', alt: 'Parent and child plugging in a car',
         title: 'Set it once', text: 'Tell the app when the car should be ready and how full. It handles the rest and shows what each session cost.',
         cta: [{ label: 'VOOL App', href: '/products/vool-app/' }] },
@@ -231,7 +247,8 @@ export const pages: Record<string, Page> = {
         { title: 'Any charger', text: 'The platform supports any OCPP 1.6 or 2.0 charger, so existing chargers can stay.' },
         { title: 'No grid upgrade', text: 'Load management shares the available power between vehicles.' },
       ] },
-      { type: 'cards', title: 'Customer story', cols: 1, items: [
+      { type: 'cards', title: 'Customer stories', cols: 2, items: [
+        { title: 'Omniva: 300 chargers for its courier fleet', text: 'Over five years VOOL supplies Omniva with 300 chargers across Estonia.', href: '/resources/blog/vool-joins-omniva-on-their-journey-towards-electrifying-transportation/', more: 'Read the story' },
         { title: 'Hansabuss charges electric buses at its existing hubs', text: 'The bus operator uses VOOL chargers at its Latvian hubs and at drivers’ homes, without major changes to the infrastructure.', href: '/solutions/usecases/hansabuss-saved-30-with-vool-on-their-fleet-charging-costs/', more: 'Read the story' },
       ] },
       { type: 'cta', title: 'Tell us about your fleet', lead: 'Number of vehicles, where they park and your grid connection. We will propose a setup.', buttons: [contact] },
@@ -396,6 +413,8 @@ export const pages: Record<string, Page> = {
     ],
   },
 };
+
+Object.assign(pages, morePages);
 
 /** Old URLs that now point to a merged page (also written to public/_redirects). */
 export const redirects: Record<string, string> = {

@@ -24,13 +24,13 @@ export function getStaticPaths() {
 }
 
 const { kind, page, item, lang: blogLang } = Astro.props as { kind: string; page?: any; item?: Imported; lang?: Lang };
-const lang: Lang = kind === 'page' ? 'en' : kind === 'item' ? item!.lang : blogLang!;
+const lang: Lang = kind === 'page' ? (page.lang ?? 'en') : kind === 'item' ? item!.lang : blogLang!;
 const list = kind === 'blog' ? posts(lang) : [];
 const idx = blogIndex(lang);
 ---
 {kind === 'page' && (
-  <Base lang="en" title={page.title} description={page.description} image={page.image}>
-    <Sections sections={page.sections} lang="en" />
+  <Base lang={lang} title={page.title} description={page.description} image={page.image} alternates={page.alternates}>
+    <Sections sections={page.sections} lang={lang} />
   </Base>
 )}
 

@@ -1,0 +1,91 @@
+---
+/** Simplified simulation of dynamic load management with phase switching. Not live data. */
+interface Props { labels: Record<string, string> }
+const { labels: L } = Astro.props;
+---
+<div class="demo" data-demo>
+  <div class="controls">
+    <label>{L.fuse}: <strong data-o="fuse"></strong> A<input type="range" data-i="fuse" min="63" max="250" step="1" value="125" /></label>
+    <label>{L.cars}: <strong data-o="cars"></strong><input type="range" data-i="cars" min="1" max="60" step="1" value="45" /></label>
+    <label>{L.time}: <strong data-o="time"></strong><input type="range" data-i="time" min="0" max="23" step="1" value="1" /></label>
+    <button type="button" class="btn ghost" data-play>{L.play}</button>
+  </div>
+  <div class="phases">
+    {['L1', 'L2', 'L3'].map((p, i) => (
+      <div class="phase">
+        <span class="name">{p}</span>
+        <div class="track"><i class="b" data-b={i}></i><i class="c" data-c={i}></i></div>
+        <span class="amps" data-a={i}></span>
+      </div>
+    ))}
+    <p class="legend small"><i class="dot b"></i>{L.building}<i class="dot c"></i>{L.charging}<span class="limit">{L.limit}</span></p>
+  </div>
+  <div class="result">
+    <div><span class="muted small">{L.without}</span><div class="big-number grey" data-o="static"></div><span class="small muted">{L.chargers}</span></div>
+    <div><span class="muted small">{L.with}</span><div class="big-number" data-o="dyn"></div><span class="small muted" data-o="each" data-t={L.each}></span></div>
+  </div>
+  <p class="small muted">{L.note}</p>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-demo]').forEach((box) => {
+    const i = (k: string) => box.querySelector<HTMLInputElement>(`[data-i="${k}"]`)!;
+    const o = (k: string) => box.querySelector<HTMLElement>(`[data-o="${k}"]`)!;
+    // Building load per phase (A) as a share of the main fuse, by hour. Evening peak, uneven phases.
+    const shape = [.18,.16,.15,.15,.16,.2,.28,.36,.34,.3,.28,.29,.3,.29,.28,.31,.38,.47,.54,.56,.5,.4,.3,.22];
+    const skew = [1.12, 0.94, 0.82];
+    const each = o('each'); const tmpl = each.dataset.t || '';
+    const update = () => {
+      const fuse = +i('fuse').value, cars = +i('cars').value, hour = +i('time').value;
+      o('fuse').textContent = String(fuse); o('cars').textContent = String(cars);
+      o('time').textContent = String(hour).padStart(2, '0') + ':00';
+      const build = skew.map((s) => Math.min(fuse * 0.95, fuse * shape[hour] * s));
+      const peak = skew.map((s) => fuse * Math.max(...shape) * s);
+      // Without load management every charger needs 16 A reserved on all three phases at the building's peak.
+      const stat = Math.max(0, Math.floor((fuse - Math.max(...peak)) / 16));
+      // With VOOL: spare current on each phase is shared; a car needs at least 6 A on one phase and is moved to the freest phase.
+      const spare = build.map((b) => Math.max(0, fuse - b));
+      const slots = spare.map((s) => Math.floor(s / 6));
+      const can = Math.min(cars, slots.reduce((a, b) => a + b, 0));
+      const used = [0, 0, 0]; let left = can;
+      while (left > 0) { let k = 0; for (let p = 1; p < 3; p++) if (spare[p] - used[p] > spare[k] - used[k]) k = p; used[k] += 6; left--; }
+      // hand out what is left of the spare current evenly on each phase
+      const charge = used.map((u, p) => (u > 0 ? spare[p] : 0));
+      let totalKw = charge.reduce((a, c) => a + c * 0.23, 0);
+      const scale = totalKw > can * 22 ? (can * 22) / totalKw : 1;   // a car takes at most 22 kW
+      charge.forEach((c, p) => (charge[p] = c * scale)); totalKw *= scale;
+      const perCar = can ? totalKw / can : 0;
+      [0, 1, 2].forEach((p) => {
+        (box.querySelector(`[data-b="${p}"]`) as HTMLElement).style.width = `${(build[p] / fuse) * 100}%`;
+        (box.querySelector(`[data-c="${p}"]`) as HTMLElement).style.width = `${(charge[p] / fuse) * 100}%`;
+        (box.querySelector(`[data-a="${p}"]`) as HTMLElement).textContent = `${Math.round(build[p] + charge[p])} / ${fuse} A`;
+      });
+      o('static').textContent = String(stat); o('dyn').textContent = String(can);
+      each.textContent = tmpl.replace('{kw}', perCar.toFixed(1)).replace('{km}', String(Math.round((perCar * 8) / 0.18 / 5) * 5));
+    };
+    box.querySelectorAll('input').forEach((el) => el.addEventListener('input', update));
+    let timer: number | undefined;
+    box.querySelector('[data-play]')!.addEventListener('click', () => {
+      if (timer) { clearInterval(timer); timer = undefined; return; }
+      timer = window.setInterval(() => { const t = i('time'); t.value = String((+t.value + 1) % 24); update(); }, 700);
+    });
+    update();
+  });
+</script>
+<style>
+  .demo { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; }
+  .controls { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 20px; align-items: end; }
+  .controls label { display: flex; flex-direction: column; gap: 8px; font-size: .9rem; }
+  .controls input { accent-color: var(--orange); width: 100%; }
+  @media (max-width: 800px) { .controls { grid-template-columns: 1fr; } }
+  .phases { margin: 28px 0; }
+  .phase { display: grid; grid-template-columns: 32px 1fr 110px; gap: 12px; align-items: center; margin-bottom: 12px; }
+  .track { height: 26px; background: var(--soft); border-radius: 6px; overflow: hidden; display: flex; border-right: 3px solid var(--ink); }
+  .track i { display: block; height: 100%; transition: width .3s; }
+  .b { background: #9a9a9a; } .c { background: var(--orange); }
+  .amps { font-size: .85rem; text-align: right; color: var(--grey); }
+  .legend { display: flex; gap: 8px; align-items: center; color: var(--grey); }
+  .dot { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin: 0 4px 0 12px; }
+  .limit { margin-left: auto; }
+  .result { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; background: var(--soft); border-radius: 14px; padding: 24px; margin-bottom: 12px; }
+  .big-number.grey { color: var(--grey); }
+</style>

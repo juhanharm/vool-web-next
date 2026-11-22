@@ -1,0 +1,56 @@
+---
+/** Yearly cost of charging at home vs diesel. Defaults are example values; the visitor can change them. */
+interface Props { title: string; lead?: string; locale?: string; note: string;
+  labels: { km: string; elec: string; diesel: string; ev: string; ice: string; save: string; perYear: string } }
+const { title, lead, locale = 'en-IE', note, labels } = Astro.props;
+---
+<section class="section">
+  <div class="wrap cost" data-cost data-locale={locale}>
+    <div>
+      <h2>{title}</h2>
+      {lead && <p class="muted">{lead}</p>}
+      <label>{labels.km}<input type="number" data-km value="15000" min="1000" step="1000" /></label>
+      <label>{labels.elec}<input type="number" data-elec value="18" min="1" step="0.5" /></label>
+      <label>{labels.diesel}<input type="number" data-diesel value="1.50" min="0.5" step="0.05" /></label>
+      <p class="small muted">{note}</p>
+    </div>
+    <div class="out">
+      <div class="row"><span>{labels.ev}</span><strong data-ev></strong><div class="track"><i data-evbar class="ev"></i></div></div>
+      <div class="row"><span>{labels.ice}</span><strong data-ice></strong><div class="track"><i data-icebar></i></div></div>
+      <p class="save">{labels.save} <span class="big-number" data-save></span> <span class="muted">{labels.perYear}</span></p>
+    </div>
+  </div>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-cost]').forEach((box) => {
+    const q = (s: string) => box.querySelector<HTMLElement>(s)!;
+    const num = (s: string) => Number((q(s) as HTMLInputElement).value) || 0;
+    const money = new Intl.NumberFormat(box.dataset.locale, { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+    const update = () => {
+      const km = num('[data-km]');
+      const ev = (km / 100) * 18 * (num('[data-elec]') / 100);   // 18 kWh / 100 km
+      const ice = (km / 100) * 6.5 * num('[data-diesel]');       // 6.5 l / 100 km
+      q('[data-ev]').textContent = money.format(ev);
+      q('[data-ice]').textContent = money.format(ice);
+      q('[data-save]').textContent = money.format(Math.max(0, ice - ev));
+      const m = Math.max(ev, ice, 1);
+      q('[data-evbar]').style.width = `${(ev / m) * 100}%`;
+      q('[data-icebar]').style.width = `${(ice / m) * 100}%`;
+    };
+    box.querySelectorAll('input').forEach((i) => i.addEventListener('input', update));
+    update();
+  });
+</script>
+<style>
+  .cost { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 860px) { .cost { grid-template-columns: 1fr; gap: 28px; } }
+  label { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+  input { font: inherit; width: 110px; padding: .45em .6em; border: 1px solid var(--line); border-radius: 8px; text-align: right; }
+  .out { background: var(--soft); border-radius: var(--radius); padding: 32px; }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin-bottom: 18px; }
+  .row strong { font-size: 1.2rem; }
+  .track { grid-column: 1 / -1; height: 14px; background: #fff; border-radius: 999px; overflow: hidden; }
+  .track i { display: block; height: 100%; background: var(--grey); border-radius: 999px; transition: width .2s; }
+  .track i.ev { background: var(--orange); }
+  .save { margin: 24px 0 0; }
+</style>

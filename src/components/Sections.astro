@@ -6,6 +6,9 @@
 import Steps from './Steps.astro';
 import Faq from './Faq.astro';
 import LeadForm from './LeadForm.astro';
+import NightCharge from './NightCharge.astro';
+import CostCompare from './CostCompare.astro';
+import LoadDemo from './LoadDemo.astro';
 
 interface Props { sections: any[]; lang: string }
 const { sections, lang } = Astro.props;
@@ -63,6 +66,50 @@ const { sections, lang } = Astro.props;
       </section>
     )}
 
+    {s.type === 'stats' && (
+      <section class="stats"><div class="wrap stats-in">
+        {s.items.map((x: any) => <div><div class="big-number">{x.value}</div><p>{x.label}</p></div>)}
+      </div></section>
+    )}
+
+    {s.type === 'logos' && (
+      <section class="section logos"><div class="wrap">
+        <p class="eyebrow">{s.title}</p>
+        <div class="logo-row">{s.items.map((l: any) => <img src={l.src} alt={l.name} loading="lazy" />)}</div>
+      </div></section>
+    )}
+
+    {s.type === 'night' && <NightCharge title={s.title} text={s.text} note={s.note} labels={s.labels} />}
+    {s.type === 'cost' && <CostCompare title={s.title} lead={s.lead} note={s.note} labels={s.labels} locale={s.locale} />}
+
+    {s.type === 'demo' && (
+      <section class:list={['section', { soft: s.soft }]} id={s.id}><div class="wrap">
+        <h2>{s.title}</h2>{s.lead && <p class="lead" style="margin-bottom:28px">{s.lead}</p>}
+        <LoadDemo labels={s.labels} />
+      </div></section>
+    )}
+
+    {s.type === 'table' && (
+      <section class:list={['section', { soft: s.soft }]}><div class="wrap">
+        <h2>{s.title}</h2>{s.lead && <p class="lead">{s.lead}</p>}
+        <div class="cmp-wrap"><table class="cmp">
+          <thead><tr>{s.head.map((h: string, j: number) => <th class:list={[{ us: j === s.head.length - 1 }]}>{h}</th>)}</tr></thead>
+          <tbody>{s.rows.map((r: string[]) => <tr>{r.map((c, j) => j === 0 ? <th>{c}</th> : <td class:list={[{ us: j === r.length - 1 }]}>{c}</td>)}</tr>)}</tbody>
+        </table></div>
+        {s.note && <p class="small muted">{s.note}</p>}
+      </div></section>
+    )}
+
+    {s.type === 'prose' && (
+      <section class:list={['section', { soft: s.soft }]} id={s.id}><div class="wrap prose">
+        <h2>{s.title}</h2>
+        {s.paragraphs?.map((t: string) => <p set:html={t} />)}
+        {s.points && <ul>{s.points.map((t: string) => <li set:html={t} />)}</ul>}
+        {s.box && <blockquote><strong>{s.box.title}</strong><br /><span set:html={s.box.text} /></blockquote>}
+        {s.sources && <p class="small muted">{s.sourcesLabel ?? 'Sources'}: {s.sources.map((x: any, j: number) => <>{j > 0 && ' · '}<a href={x.href} rel="noopener">{x.label}</a></>)}</p>}
+      </div></section>
+    )}
+
     {s.type === 'steps' && <Steps title={s.title} steps={s.items} soft={s.soft} />}
 
     {s.type === 'specs' && (
@@ -109,6 +156,21 @@ const { sections, lang } = Astro.props;
 ))}
 
 <style>
+  .stats { background: var(--ink); color: #fff; padding: 36px 0; }
+  .stats-in { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .stats .big-number { font-size: clamp(2rem, 4vw, 3rem); }
+  .stats p { margin: 6px 0 0; color: #cfcfcf; font-size: .92rem; }
+  @media (max-width: 760px) { .stats-in { grid-template-columns: 1fr 1fr; } }
+  .logos { padding: 48px 0; }
+  .logo-row { display: flex; flex-wrap: wrap; gap: 28px 64px; align-items: center; margin-top: 12px; }
+  .logo-row img { height: 34px; width: auto; opacity: .75; }
+  .cmp-wrap { overflow-x: auto; margin: 28px 0 12px; }
+  .cmp { border-collapse: collapse; width: 100%; min-width: 760px; background: #fff; border-radius: 14px; overflow: hidden; }
+  .cmp th, .cmp td { padding: 14px 16px; border-bottom: 1px solid var(--line); text-align: left; font-weight: 300; font-size: .93rem; vertical-align: top; }
+  .cmp thead th { font-weight: 500; background: var(--soft); }
+  .cmp tbody th { font-weight: 400; width: 26%; }
+  .cmp .us { background: rgba(235,78,32,.07); font-weight: 400; }
+  .cmp thead .us { background: var(--orange); color: #fff; }
   .hero { padding: 72px 0 80px; }
   .hero.dark { background: var(--ink); color: #fff; }
   .hero.dark .lead { color: #cfcfcf; }
