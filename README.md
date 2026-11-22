@@ -59,3 +59,13 @@ The site has 15 languages (`src/content/ui.ts` → `langNames`). English pages a
 - A page gets a `/<lang>/…` version automatically once **every** string on it has a translation; until then links in that language point to the English page. The menu, footer, language switcher and `hreflang` tags follow automatically.
 - Translations are written in `scripts/i18n/batch_*.py` (14 segments of 10 strings per language) and compiled with `python3 scripts/i18n/build.py`.
 - To translate more pages: add their strings to `strings.json` (append only, never reorder), add the translations, rebuild.
+
+## Form submissions
+
+`functions/api/lead.ts` receives every form. Set these in Cloudflare Pages → Settings → Variables and Secrets:
+
+- `SLACK_WEBHOOK_URL` (secret): a Slack incoming-webhook address. Each submission is posted to that channel. This is the only one required.
+- `ODOO_URL`, `ODOO_DB`, `ODOO_USER_ID`, `ODOO_API_KEY`: optional; when set, a CRM lead is also created in Odoo.
+- `LEAD_WEBHOOK`: optional extra JSON webhook.
+
+With none set, the form shows its error message instead of a false "thank you".

@@ -10,7 +10,9 @@
  *   ODOO_DB         Odoo database name
  *   ODOO_USER_ID    numeric uid of the API user
  *   ODOO_API_KEY    API key of that user (secret)
+ *   SLACK_WEBHOOK_URL  Slack incoming-webhook address (secret): every submission is posted to that channel
  *   LEAD_WEBHOOK    optional URL that receives the lead as JSON
+ * The Odoo variables are optional: leave them unset to use Slack only.
  */
 
 type PagesFunction<E> = (ctx: { request: Request; env: E }) => Promise<Response>;
@@ -21,6 +23,7 @@ interface Env {
   ODOO_USER_ID?: string;
   ODOO_API_KEY?: string;
   LEAD_WEBHOOK?: string;
+  SLACK_WEBHOOK_URL?: string;
 }
 
 type FormKind = 'apartment' | 'daei' | 'contact' | 'reseller' | 'quote' | 'guide';
@@ -126,6 +129,19 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     results.odooLeadId = out.result;
   }
 
+  // Slack: one message per submission, in the channel behind the webhook.
+  if (env.SLACK_WEBHOOK_URL) {
+    const esc = (v: string) => v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const LABELS: Record<string, string> = { you_are: 'Who', organisation: 'Organisation', association: 'Association', company: 'Company', name: 'Name', email: 'Email', phone: 'Phone', country: 'Country', city: 'City', address: 'Address', parking_spaces: 'Parking spaces', chargers_now: 'Chargers needed', main_fuse: 'Main fuse', front_panel: 'Front panel', mounting: 'Mounting', load_management: 'Load management', installation: 'Installation', has_installer: 'Has an installer', partner_type: 'Partner type', charger_brand: 'Charger brand', topic: 'Topic', newsletter: 'Wants news', message: 'Message', lang: 'Language' };
+    const lines = Object.entries(data)
+      .filter(([k, v]) => v && !['form', 'company_website', 'consent'].includes(k))
+      .map(([k, v]) => `*${LABELS[k] ?? k}:* ${esc(v)}`);
+    const text = `:incoming_envelope: *${esc(route.title(data))}*\n_${route.tag} · for ${route.notify.join(', ')}_\n${lines.join('\n')}\n_From ${esc(request.headers.get('referer') || 'vool.com')}_`;
+    const res = await fetch(env.SLACK_WEBHOOK_URL, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ text }) });
+    if (!res.ok) return json({ ok: false, error: 'slack' }, 502);
+    results.slack = true;
+  }
+
   if (env.LEAD_WEBHOOK) {
     await fetch(env.LEAD_WEBHOOK, {
       method: 'POST',
@@ -134,6 +150,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     });
     results.webhook = true;
   }
+
+  // Never tell a visitor "thank you" when the enquiry went nowhere.
+  if (!Object.keys(results).length) return json({ ok: false, error: 'not configured' }, 503);
 
   // Plain HTML form posts (no JavaScript) are redirected back with a flag.
   if (!(request.headers.get('accept') || '').includes('application/json')) {
