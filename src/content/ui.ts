@@ -38,10 +38,13 @@ export const nav: Record<Lang, NavItem[]> = {
       { label: 'Live demo', href: '/live-demo/', note: 'Load management simulator' },
       { label: 'Compare', href: '/compare/', note: 'VOOL vs ordinary load balancing' },
       { label: 'AFIR and ISO 15118', href: '/afir/', note: 'What changes on 1 January 2027' },
+      { label: 'Pricing', href: '/pricing/', note: 'Hardware, installation, software' },
     ] },
     { label: 'Find an installer', href: '/where-to-buy/' },
     { label: 'For installers', children: [
       { label: 'Become a partner', href: '/resources/resellers/', note: 'Sell and install VOOL' },
+      { label: 'Distributor programme', href: '/partners/distributor-programme/', note: 'For distributors and wholesalers' },
+      { label: 'Installer guide', href: '/partners/installers/', note: 'Buy, install, commission' },
       { label: 'Wholesalers', href: '/where-to-buy/?type=wholesaler', note: 'Where to order stock' },
       { label: 'Manuals and guides', href: '/resources/product-manuals/', note: 'Installation guides in nine languages' },
       { label: 'Integrations', href: '/integrations/', note: 'OCPP, Modbus, OCPI' },

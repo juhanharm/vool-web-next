@@ -1,0 +1,162 @@
+{
+  "path": "/markets/portugal/",
+  "title": "EV charging in Portugal | VOOL",
+  "description": "VOOL chargers and load management in Portugal: local partners, grants and rules, and datasheets.",
+  "image": "/img/apartments.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "VOOL in Portugal",
+      "title": "EV charging for buildings in Portugal, on the connection they already have",
+      "lead": "Chargers, load management and billing from one maker. Sold and installed by 4 partners in Portugal.",
+      "image": "/img/apartments.webp",
+      "alt": "Apartment building with VOOL chargers",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Partners in Portugal",
+          "href": "#partners"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "Grants and rules in Portugal",
+      "paragraphs": [
+        "The Fundo Ambiental supports chargers in multi-family condominiums."
+      ],
+      "points": [
+        "The incentive is 80% of the charger price, up to €800, plus 80% of the installation, up to €1,000, per parking space.",
+        "Up to 10 chargers per condominium, one per resident.",
+        "The 2026 round was fully taken on the day it opened, 11 June 2026. Prepare the quote and documents before the next round opens."
+      ],
+      "sources": [
+        {
+          "label": "Portuguese Government: incentive announcement",
+          "href": "https://portugal.gov.pt/gc25/comunicacao/noticias/veiculos-com-emissoes-reduzidas-apoio-a-aquisicoes-abre-dia-29-de-dezembro"
+        },
+        {
+          "label": "DECO Proteste: incentives in 2026",
+          "href": "https://www.deco.proteste.pt/auto/automoveis/noticias/carros-eletricos-apoios-a-compra-e-condicoes/incentivo-do-governo"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What VOOL does for you",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Apartment buildings",
+          "text": "Many chargers on the existing main fuse, with each resident paying for their own charging.",
+          "href": "/solutions/apartment-blocks/",
+          "more": "Apartment buildings"
+        },
+        {
+          "title": "Offices and fleets",
+          "text": "Employees pay for private charging; company cars are reported separately.",
+          "href": "/solutions/workplace/",
+          "more": "Workplaces"
+        },
+        {
+          "title": "Developers",
+          "text": "Design charging into new buildings and size the connection smaller.",
+          "href": "/solutions/developers/",
+          "more": "Developers"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "partners",
+      "title": "Partners in Portugal",
+      "cols": 3,
+      "items": [
+        {
+          "title": "IBCharge",
+          "text": "Installer · Wholesaler",
+          "href": "https://www.ibcharge.pt/",
+          "more": "Website"
+        },
+        {
+          "title": "Socilux",
+          "text": "Wholesaler"
+        },
+        {
+          "title": "IBFlock",
+          "text": "Installer",
+          "href": "https://ibflock.pt",
+          "more": "Website"
+        },
+        {
+          "title": "UCharge",
+          "text": "Installer",
+          "href": "https://ucharge.pt",
+          "more": "Website"
+        },
+        {
+          "title": "Sell or install VOOL in Portugal",
+          "text": "We are adding partners in this market.",
+          "href": "/partners/distributor-programme/",
+          "more": "Partner programme"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
+      "title": "Documents",
+      "items": [
+        {
+          "label": "Datasheet: VOOL Charger (Portuguese, PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-pt.pdf"
+        },
+        {
+          "label": "Datasheet: VOOL LMC (Portuguese, PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-pt.pdf"
+        },
+        {
+          "label": "All manuals and datasheets",
+          "href": "/resources/product-manuals/"
+        },
+        {
+          "label": "Guide for the general meeting",
+          "href": "/knowledge/general-meeting/"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Does VOOL install?",
+          "a": "No. Local partners sell and install. VOOL makes the hardware and software and supports the partners."
+        },
+        {
+          "q": "What about chargers installed from 2027?",
+          "a": "From 1 January 2027 newly installed chargers in the EU must support ISO 15118-20. The new VOOL Charger does."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Planning charging in Portugal?",
+      "lead": "Send us the parking spaces and the main fuse size. We reply within one working day.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Find an installer",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

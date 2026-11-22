@@ -1,0 +1,187 @@
+{
+  "path": "/markets/finland/",
+  "title": "EV charging in Finland | VOOL",
+  "description": "VOOL chargers and load management in Finland: local partners, grants and rules, and datasheets.",
+  "image": "/img/apartments.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "VOOL in Finland",
+      "title": "EV charging for buildings in Finland, on the connection they already have",
+      "lead": "Chargers, load management and billing from one maker. Sold and installed by 10 partners in Finland.",
+      "image": "/img/apartments.webp",
+      "alt": "Apartment building with VOOL chargers",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Partners in Finland",
+          "href": "#partners"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "Grants and rules in Finland",
+      "paragraphs": [
+        "Finland has supported charging readiness in housing companies for several years through the state charging infrastructure grant (latausinfra-avustus). The terms and the budget are set each year."
+      ],
+      "points": [
+        "The grant has been aimed at housing companies and their parking companies that build charging readiness for at least five parking spaces.",
+        "It has covered changes to the property’s electrical system, such as switchboards and cabling.",
+        "Check the current call and its conditions before the general meeting decides. Your installer can help with the application."
+      ],
+      "sources": []
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What VOOL does for you",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Apartment buildings",
+          "text": "Many chargers on the existing main fuse, with each resident paying for their own charging.",
+          "href": "/solutions/apartment-blocks/",
+          "more": "Apartment buildings"
+        },
+        {
+          "title": "Offices and fleets",
+          "text": "Employees pay for private charging; company cars are reported separately.",
+          "href": "/solutions/workplace/",
+          "more": "Workplaces"
+        },
+        {
+          "title": "Developers",
+          "text": "Design charging into new buildings and size the connection smaller.",
+          "href": "/solutions/developers/",
+          "more": "Developers"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "partners",
+      "title": "Partners in Finland",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Ahlsell Oy",
+          "text": "Wholesaler",
+          "href": "https://www.ahlsell.fi/search?parameters.SearchPhrase=vool",
+          "more": "Website"
+        },
+        {
+          "title": "EV Lataus",
+          "text": "Installer",
+          "href": "https://www.evlataus.fi/collections/latausasemat/products/vool-latausasema-type-2-6-5m",
+          "more": "Website"
+        },
+        {
+          "title": "Kotilaturi Finland Oy",
+          "text": "Installer",
+          "href": "https://www.kotilaturi.fi/tuote/sahkoauton-latausasema-vool-22kw-kuormanhallinta-porssisahko/",
+          "more": "Website"
+        },
+        {
+          "title": "Laturiin",
+          "text": "Installer",
+          "href": "https://www.laturiin.fi/tuote/vool/",
+          "more": "Website"
+        },
+        {
+          "title": "LaturiX",
+          "text": "",
+          "href": "http://www.laturix.fi",
+          "more": "Website"
+        },
+        {
+          "title": "Onninen Oy",
+          "text": "Wholesaler",
+          "href": "https://www.onninen.fi/search?term=vool",
+          "more": "Website"
+        },
+        {
+          "title": "Sähköasennus Ranta-Virta Oy",
+          "text": "Installer"
+        },
+        {
+          "title": "Sähkö Uusimaa",
+          "text": "Installer",
+          "href": "https://sahkouusimaa.fi",
+          "more": "Website"
+        },
+        {
+          "title": "Tykotec",
+          "text": "Installer",
+          "href": "https://tykotec.fi",
+          "more": "Website"
+        },
+        {
+          "title": "Sell or install VOOL in Finland",
+          "text": "We are adding partners in this market.",
+          "href": "/partners/distributor-programme/",
+          "more": "Partner programme"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
+      "title": "Documents",
+      "items": [
+        {
+          "label": "Datasheet: VOOL Charger (Finnish, PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-fi.pdf"
+        },
+        {
+          "label": "Datasheet: VOOL LMC (Finnish, PDF)",
+          "href": "/downloads/datasheets/vool-lmc-datasheet-fi.pdf"
+        },
+        {
+          "label": "All manuals and datasheets",
+          "href": "/resources/product-manuals/"
+        },
+        {
+          "label": "Guide for the general meeting",
+          "href": "/knowledge/general-meeting/"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Where can I buy VOOL in Finland?",
+          "a": "From electrical wholesalers and installers; see the partner list on this page."
+        },
+        {
+          "q": "Does VOOL install?",
+          "a": "No. Local partners sell and install. VOOL makes the hardware and software and supports the partners."
+        },
+        {
+          "q": "What about chargers installed from 2027?",
+          "a": "From 1 January 2027 newly installed chargers in the EU must support ISO 15118-20. The new VOOL Charger does."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Planning charging in Finland?",
+      "lead": "Send us the parking spaces and the main fuse size. We reply within one working day.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Find an installer",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

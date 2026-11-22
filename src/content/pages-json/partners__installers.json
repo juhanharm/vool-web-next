@@ -1,0 +1,210 @@
+{
+  "path": "/partners/installers/",
+  "title": "Install VOOL: a guide for installers",
+  "description": "How to buy, install and commission VOOL chargers and load management, the limits to know before you quote, and how to get listed.",
+  "image": "/img/product-modular.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "For installers",
+      "title": "Fewer cables, a smaller main fuse, faster jobs",
+      "lead": "VOOL lets you put many chargers on the connection the building already has. Here is how to buy, install and commission it.",
+      "image": "/img/product-modular.webp",
+      "alt": "VOOL Charger opened: casing, charge controller and front panel",
+      "cta": [
+        {
+          "label": "Manuals",
+          "href": "/resources/product-manuals/"
+        },
+        {
+          "label": "Get listed",
+          "href": "#form"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What it changes on site",
+      "cols": 3,
+      "items": [
+        {
+          "title": "No grid upgrade to quote",
+          "text": "The LMC measures the building load and shares the spare capacity. One site runs 45 chargers on a 125 A connection.",
+          "href": "/live-demo/",
+          "more": "Show the customer"
+        },
+        {
+          "title": "Three parts, in this order",
+          "text": "Mount the casing and connect the cables. Click in the charge controller. Attach the front panel."
+        },
+        {
+          "title": "Prepare now, finish later",
+          "text": "Install the casings and cabling for every space. Add the controller when the owner orders charging."
+        },
+        {
+          "title": "Phases balance themselves",
+          "text": "Chargers switch single-phase cars to the least loaded phase."
+        },
+        {
+          "title": "Works offline",
+          "text": "Load management runs locally between the LMC and the chargers."
+        },
+        {
+          "title": "You keep remote access",
+          "text": "After handover you can still see the sites you set up, so most questions are answered without a visit."
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "title": "From order to handover",
+      "items": [
+        {
+          "title": "Buy",
+          "text": "From a wholesaler in your country, or ask us who stocks VOOL near you."
+        },
+        {
+          "title": "Install",
+          "text": "Follow the installation guide. Chargers connect to the LMC over CAN in a daisy chain, or over the local network."
+        },
+        {
+          "title": "Commission",
+          "text": "Set up the LMC and chargers in the VOOL App over Bluetooth: fuse sizes, phase order, network."
+        },
+        {
+          "title": "Hand over",
+          "text": "Transfer the site to the owner in the app. They add users and prices in the VOOL Portal."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "soft": true,
+      "title": "Know before you quote",
+      "items": [
+        {
+          "q": "Which earthing systems are supported?",
+          "a": "TN systems. On IT systems, common in parts of Norway, charging works but load management does not."
+        },
+        {
+          "q": "Does the phase order matter?",
+          "a": "Yes. Connect the LMC and the chargers with the same phase order (L1 to L1 and so on), because chargers switch phases based on the free capacity the LMC measures. The order can be corrected in the app afterwards."
+        },
+        {
+          "q": "Can I daisy-chain Ethernet through the charger?",
+          "a": "No. Both ports support CAN daisy-chaining, but only one port can be used for Ethernet."
+        },
+        {
+          "q": "The LMC has a SIM. Is it online out of the box?",
+          "a": "No. Mobile data is switched on in the VOOL App over Bluetooth during commissioning."
+        },
+        {
+          "q": "The charger does not detect the car after installation.",
+          "a": "Check that the CP connector on the small cover of the orange charge controller is fully seated. It is the most common cause."
+        },
+        {
+          "q": "Is the back cable channel with entry from below a correct installation?",
+          "a": "Yes. Water and snow do not enter through the vent openings."
+        },
+        {
+          "q": "What about chargers installed from 1 January 2027?",
+          "a": "They must support ISO 15118-20. Order the new VOOL Charger, available from mid-December 2026."
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "title": "Documents",
+      "items": [
+        {
+          "label": "Installation guides in nine languages",
+          "href": "/resources/product-manuals/"
+        },
+        {
+          "label": "Datasheet: VOOL Charger (PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-en.pdf"
+        },
+        {
+          "label": "Datasheet: VOOL LMC Pro (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-pro-datasheet-en.pdf"
+        },
+        {
+          "label": "Datasheet: VOOL LMC S (PDF)",
+          "href": "/downloads/datasheets/vool-lmc-s-datasheet-en.pdf"
+        },
+        {
+          "label": "Charger Modbus manual",
+          "href": "https://support.vool.com/en/articles/12959952-charger-modbus-manual"
+        },
+        {
+          "label": "Tender specification text",
+          "href": "/solutions/developers/#spec"
+        },
+        {
+          "label": "Asset bank: logo and photos",
+          "href": "/partners/asset-bank/"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "form": "reseller",
+      "title": "Get listed as a VOOL installer",
+      "intro": "Installers who have commissioned VOOL sites are listed on our installer finder. Tell us where you work.",
+      "fields": [
+        {
+          "name": "company",
+          "label": "Company",
+          "required": true
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "partner_type",
+          "label": "You are",
+          "type": "select",
+          "options": [
+            "Distributor or wholesaler",
+            "Installer",
+            "Energy company",
+            "Charging operator",
+            "Other"
+          ],
+          "half": true
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "message",
+          "label": "Markets you cover and what you sell today",
+          "type": "textarea"
+        }
+      ],
+      "submit": "Send",
+      "thanks": "Thank you! We will be in touch soon.",
+      "error": "Something went wrong. Please try again or write to info@vool.com.",
+      "consent": "I agree that VOOL processes my data to answer this enquiry (privacy policy)."
+    }
+  ]
+}

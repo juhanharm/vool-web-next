@@ -136,6 +136,28 @@
       ]
     },
     {
+      "type": "cards",
+      "title": "Partners at scale",
+      "lead": "Counted from devices on the VOOL platform, November 2026.",
+      "cols": 3,
+      "items": [
+        {
+          "title": "1,346 chargers on 345 sites – Lithuania",
+          "text": "Installed by Įkrautas, with 314 load management controllers."
+        },
+        {
+          "title": "850+ chargers on about 500 sites – Switzerland",
+          "text": "Installed by Partino across Switzerland."
+        },
+        {
+          "title": "469 chargers on 323 sites – Estonia",
+          "text": "Installed by Alexela for its private and business customers.",
+          "href": "/resources/blog/alexela-and-vool-partnership/",
+          "more": "Read the story"
+        }
+      ]
+    },
+    {
       "type": "cta",
       "title": "Want numbers like these for your site?",
       "lead": "Tell us the number of parking spaces and the size of your main fuse.",

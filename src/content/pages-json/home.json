@@ -231,6 +231,45 @@
       ]
     },
     {
+      "type": "links",
+      "soft": true,
+      "title": "VOOL in your country",
+      "items": [
+        {
+          "label": "Estonia: KIK grant",
+          "href": "/apartment-buildings/"
+        },
+        {
+          "label": "Lithuania: DAEI income",
+          "href": "/daei/"
+        },
+        {
+          "label": "Finland",
+          "href": "/markets/finland/"
+        },
+        {
+          "label": "Sweden",
+          "href": "/markets/sweden/"
+        },
+        {
+          "label": "Germany",
+          "href": "/markets/germany/"
+        },
+        {
+          "label": "Poland",
+          "href": "/markets/poland/"
+        },
+        {
+          "label": "Portugal",
+          "href": "/markets/portugal/"
+        },
+        {
+          "label": "All partners",
+          "href": "/where-to-buy/"
+        }
+      ]
+    },
+    {
       "type": "cta",
       "title": "Ready to plan your charging?",
       "lead": "Tell us about your site, or buy from a partner near you.",

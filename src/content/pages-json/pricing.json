@@ -1,0 +1,151 @@
+{
+  "path": "/pricing/",
+  "title": "What EV charging with VOOL costs",
+  "description": "The three parts of the cost: hardware, installation and software. What is free, what is charged, and which grants reduce the bill.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Pricing",
+      "title": "Three parts: hardware, installation and software",
+      "lead": "Hardware is bought once from a reseller. Installation is quoted by a local partner. The software is free until VOOL collects money for you.",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Billing and payments",
+          "href": "/software/billing-and-payments/"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "soft": true,
+      "title": "Who you pay, and for what",
+      "head": [
+        "Part",
+        "What it covers",
+        "How it is priced"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Hardware",
+            "Chargers, LMC, poles and accessories",
+            "Once, from your reseller or installer. Ask for a quote."
+          ]
+        },
+        {
+          "cells": [
+            "Installation",
+            "Cabling, switchboard work, commissioning",
+            "Quoted by an installation partner after a site visit"
+          ]
+        },
+        {
+          "cells": [
+            "VOOL App and Portal",
+            "Smart charging, users, RFID, pricing rules, reports",
+            "Free"
+          ]
+        },
+        {
+          "cells": [
+            "Managed billing and public charging",
+            "VOOL bills drivers and pays you monthly",
+            "8% of billed sessions"
+          ]
+        },
+        {
+          "cells": [
+            "Roaming",
+            "Drivers using other providers’ apps and cards",
+            "12% of billed sessions"
+          ]
+        },
+        {
+          "cells": [
+            "4G connectivity",
+            "Mobile data for a charger or LMC, from 1 January 2027",
+            "€2.50 a month or €24 a year per device, incl. VAT. Not needed with Wi-Fi or cable."
+          ]
+        }
+      ],
+      "note": "No fixed monthly fee and no fee per charger for the software."
+    },
+    {
+      "type": "cards",
+      "title": "What lowers the bill",
+      "cols": 3,
+      "items": [
+        {
+          "title": "No grid upgrade",
+          "text": "Load management usually removes the largest cost of a shared installation: a bigger connection.",
+          "href": "/live-demo/",
+          "more": "Try the live demo"
+        },
+        {
+          "title": "Estonia: KIK grant",
+          "text": "A 10-point installation in an apartment building gets €14,090 in grant.",
+          "href": "/apartment-buildings/",
+          "more": "KIK grant"
+        },
+        {
+          "title": "Lithuania: DAEI income",
+          "text": "Get paid for every kWh you charge at home.",
+          "href": "/daei/",
+          "more": "DAEI"
+        },
+        {
+          "title": "Sweden, Portugal and others",
+          "text": "Grants for housing associations and condominiums.",
+          "href": "/markets/sweden/",
+          "more": "Country pages"
+        },
+        {
+          "title": "Build in stages",
+          "text": "Shared cabling and the LMC first. Each owner adds a charger when they need one.",
+          "href": "/knowledge/general-meeting/",
+          "more": "Guide for the general meeting"
+        },
+        {
+          "title": "Charging in cheap hours",
+          "text": "The VOOL App follows Nord Pool prices.",
+          "href": "/products/vool-app/",
+          "more": "VOOL App"
+        }
+      ]
+    },
+    {
+      "type": "cost",
+      "title": "What charging costs a driver",
+      "lead": "Compare electricity with diesel for your own mileage.",
+      "labels": {
+        "km": "Kilometres per year",
+        "elec": "Electricity price, ct/kWh (all-in)",
+        "diesel": "Diesel price, €/l",
+        "ev": "Electric car, charged at home",
+        "ice": "Diesel car",
+        "save": "Difference",
+        "perYear": "per year"
+      },
+      "locale": "en"
+    },
+    {
+      "type": "cta",
+      "title": "Want a number for your site?",
+      "lead": "Send the parking spaces, the main fuse size and the country. We reply within one working day with a sized proposal.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Find an installer",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

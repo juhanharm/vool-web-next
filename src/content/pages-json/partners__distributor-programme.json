@@ -1,0 +1,234 @@
+{
+  "path": "/partners/distributor-programme/",
+  "title": "VOOL distributor programme",
+  "description": "What VOOL offers distributors and wholesalers: the product range, warranty, support, marketing material and how to start.",
+  "image": "/img/product-finishes.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "dark": true,
+      "eyebrow": "For distributors and wholesalers",
+      "title": "A charging system your installers can sell to whole buildings, not one socket at a time",
+      "lead": "Charger, load management and software from one maker in Estonia. More than 20,000 devices sold through partners in 15 countries.",
+      "image": "/img/product-finishes.webp",
+      "alt": "VOOL Charger in black, aluminium and wood",
+      "cta": [
+        {
+          "label": "Apply",
+          "href": "#form"
+        },
+        {
+          "label": "Datasheets",
+          "href": "/resources/product-manuals/"
+        }
+      ],
+      "facts": [
+        "20,000+ devices sold",
+        "15 countries",
+        "5-year warranty"
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Why distributors add VOOL",
+      "cols": 3,
+      "items": [
+        {
+          "title": "It wins the big jobs",
+          "text": "One LMC Pro manages more than 100 chargers at several fuse levels. That is the argument that wins apartment buildings, offices and car parks.",
+          "href": "/compare/",
+          "more": "VOOL vs ordinary load balancing"
+        },
+        {
+          "title": "One range, few part numbers",
+          "text": "One 22 kW charger in three finishes, on a wall or a pole, with the same controller in every unit. LMC Pro for buildings, LMC S for houses.",
+          "href": "/products/accessories/",
+          "more": "Range and accessories"
+        },
+        {
+          "title": "Ready for 2027",
+          "text": "The new charger supports ISO 15118-20, which AFIR requires for chargers installed from 1 January 2027.",
+          "href": "/afir/",
+          "more": "AFIR and ISO 15118"
+        },
+        {
+          "title": "Software with no fixed fee",
+          "text": "The portal is free. Site owners pay only a share of billed sessions, so the software never blocks a hardware sale.",
+          "href": "/software/billing-and-payments/",
+          "more": "Billing and payments"
+        },
+        {
+          "title": "Few returns",
+          "text": "The charger is modular. A faulty controller is swapped in minutes, without removing the casing or cabling.",
+          "href": "/support/warranty/",
+          "more": "Warranty and support"
+        },
+        {
+          "title": "Open protocols",
+          "text": "OCPP, Modbus TCP and OCPI. Your customers are not locked to one operator.",
+          "href": "/integrations/",
+          "more": "Integrations"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "What you get, and what we ask",
+      "head": [
+        "",
+        "VOOL provides",
+        "The distributor provides"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Products",
+            "The full range, shipped from Estonia",
+            "Local stock of the main items"
+          ]
+        },
+        {
+          "cells": [
+            "Prices",
+            "A partner price list and an online login for stock, prices and orders",
+            "Sales to installers and projects in the agreed market"
+          ]
+        },
+        {
+          "cells": [
+            "Warranty",
+            "5 years on chargers, counted from your sale to the end customer; demo units included",
+            "First contact for your installers"
+          ]
+        },
+        {
+          "cells": [
+            "Support",
+            "Remote diagnostics, second-line support and software updates",
+            "First-line support in the local language"
+          ]
+        },
+        {
+          "cells": [
+            "Marketing",
+            "Datasheets in eight languages, photos, tender text, live demo, leads from vool.com",
+            "Local campaigns, events and training days"
+          ]
+        },
+        {
+          "cells": [
+            "Listing",
+            "A place on the installer and reseller finder",
+            "Up-to-date contact details"
+          ]
+        }
+      ],
+      "note": "Price lists, minimum order and delivery terms are agreed per market."
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "Partners at scale",
+      "lead": "Counted from devices on the VOOL platform, November 2026.",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Lithuania: 1,346 chargers by one installer",
+          "text": "Įkrautas has commissioned 1,346 VOOL chargers and 314 load management controllers on 345 sites."
+        },
+        {
+          "title": "Switzerland: more than 850 chargers",
+          "text": "Partino has commissioned more than 850 VOOL chargers on about 500 sites."
+        },
+        {
+          "title": "Luxembourg: 45 chargers on 125 A",
+          "text": "AMP X VOLT builds campuses and residences on VOOL, including more than 100 chargers on one campus.",
+          "href": "/case-studies/",
+          "more": "Case studies"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "title": "How to start",
+      "items": [
+        {
+          "title": "Apply",
+          "text": "Send the form. We reply within 1–2 working days."
+        },
+        {
+          "title": "Call and demo",
+          "text": "We walk through the range, the software and your market."
+        },
+        {
+          "title": "Price list and terms",
+          "text": "You receive the partner price list and delivery terms for your market."
+        },
+        {
+          "title": "First order and training",
+          "text": "Demo units, installer training online and your listing on vool.com."
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "form": "reseller",
+      "title": "Apply to become a partner",
+      "intro": "Tell us about your company. We reply within 1–2 working days.",
+      "fields": [
+        {
+          "name": "company",
+          "label": "Company",
+          "required": true
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "partner_type",
+          "label": "You are",
+          "type": "select",
+          "options": [
+            "Distributor or wholesaler",
+            "Installer",
+            "Energy company",
+            "Charging operator",
+            "Other"
+          ],
+          "half": true
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "required": true,
+          "half": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "half": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "message",
+          "label": "Markets you cover and what you sell today",
+          "type": "textarea"
+        }
+      ],
+      "submit": "Send",
+      "thanks": "Thank you! We will be in touch soon.",
+      "error": "Something went wrong. Please try again or write to info@vool.com.",
+      "consent": "I agree that VOOL processes my data to answer this enquiry (privacy policy)."
+    }
+  ]
+}

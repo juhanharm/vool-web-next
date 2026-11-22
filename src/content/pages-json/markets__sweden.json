@@ -1,0 +1,154 @@
+{
+  "path": "/markets/sweden/",
+  "title": "EV charging in Sweden | VOOL",
+  "description": "VOOL chargers and load management in Sweden: local partners, grants and rules, and datasheets.",
+  "image": "/img/apartments.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "VOOL in Sweden",
+      "title": "EV charging for buildings in Sweden, on the connection they already have",
+      "lead": "Chargers, load management and billing from one maker. Sold and installed by 3 partners in Sweden.",
+      "image": "/img/apartments.webp",
+      "alt": "Apartment building with VOOL chargers",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Partners in Sweden",
+          "href": "#partners"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "Grants and rules in Sweden",
+      "paragraphs": [
+        "The Swedish Environmental Protection Agency (Naturvårdsverket) runs the Ladda bilen grant for charging points for residents, employees and guests."
+      ],
+      "points": [
+        "Housing associations (bostadsrättsföreningar), joint property associations and other associations can apply for chargers the association owns.",
+        "The grant covers material and labour for new charging points, including the electrical work.",
+        "Applications are open all year. New rules apply from 1 February 2026: companies must apply before installation starts."
+      ],
+      "sources": [
+        {
+          "label": "Naturvårdsverket: Ladda bilen",
+          "href": "https://www.naturvardsverket.se/bidrag/ladda-bilen/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What VOOL does for you",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Apartment buildings",
+          "text": "Many chargers on the existing main fuse, with each resident paying for their own charging.",
+          "href": "/solutions/apartment-blocks/",
+          "more": "Apartment buildings"
+        },
+        {
+          "title": "Offices and fleets",
+          "text": "Employees pay for private charging; company cars are reported separately.",
+          "href": "/solutions/workplace/",
+          "more": "Workplaces"
+        },
+        {
+          "title": "Developers",
+          "text": "Design charging into new buildings and size the connection smaller.",
+          "href": "/solutions/developers/",
+          "more": "Developers"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "partners",
+      "title": "Partners in Sweden",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Laddexperten",
+          "text": "Installer",
+          "href": "https://www.laddexperten.se/",
+          "more": "Website"
+        },
+        {
+          "title": "PayNCharge",
+          "text": "Installer",
+          "href": "https://www.payncharge.se/",
+          "more": "Website"
+        },
+        {
+          "title": "VP SalesTech",
+          "text": "Installer",
+          "href": "https://vpsalestech.se",
+          "more": "Website"
+        },
+        {
+          "title": "Sell or install VOOL in Sweden",
+          "text": "We are adding partners in this market.",
+          "href": "/partners/distributor-programme/",
+          "more": "Partner programme"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
+      "title": "Documents",
+      "items": [
+        {
+          "label": "Datasheet: VOOL Charger (English, PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-en.pdf"
+        },
+        {
+          "label": "Datasheet: VOOL LMC Pro (English, PDF)",
+          "href": "/downloads/datasheets/vool-lmc-pro-datasheet-en.pdf"
+        },
+        {
+          "label": "All manuals and datasheets",
+          "href": "/resources/product-manuals/"
+        },
+        {
+          "label": "Guide for the general meeting",
+          "href": "/knowledge/general-meeting/"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Does VOOL install?",
+          "a": "No. Local partners sell and install. VOOL makes the hardware and software and supports the partners."
+        },
+        {
+          "q": "What about chargers installed from 2027?",
+          "a": "From 1 January 2027 newly installed chargers in the EU must support ISO 15118-20. The new VOOL Charger does."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Planning charging in Sweden?",
+      "lead": "Send us the parking spaces and the main fuse size. We reply within one working day.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Find an installer",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

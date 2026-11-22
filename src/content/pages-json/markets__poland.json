@@ -1,0 +1,176 @@
+{
+  "path": "/markets/poland/",
+  "title": "EV charging in Poland | VOOL",
+  "description": "VOOL chargers and load management in Poland: local partners, grants and rules, and datasheets.",
+  "image": "/img/apartments.webp",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "VOOL in Poland",
+      "title": "EV charging for buildings in Poland, on the connection they already have",
+      "lead": "Chargers, load management and billing from one maker. Sold and installed by 16 partners in Poland.",
+      "image": "/img/apartments.webp",
+      "alt": "Apartment building with VOOL chargers",
+      "cta": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Partners in Poland",
+          "href": "#partners"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "title": "Grants and rules in Poland",
+      "paragraphs": [
+        "Poland has no nationwide grant for chargers in apartment buildings at the moment. Regional programmes sometimes include charging, so ask your installer what applies locally."
+      ],
+      "points": [
+        "Without a grant, the cost of the grid connection decides the project. Load management lets a housing community add chargers without paying for a larger connection.",
+        "Each resident pays for their own charging through VOOL, so the community does not issue invoices."
+      ],
+      "sources": []
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "title": "What VOOL does for you",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Apartment buildings",
+          "text": "Many chargers on the existing main fuse, with each resident paying for their own charging.",
+          "href": "/solutions/apartment-blocks/",
+          "more": "Apartment buildings"
+        },
+        {
+          "title": "Offices and fleets",
+          "text": "Employees pay for private charging; company cars are reported separately.",
+          "href": "/solutions/workplace/",
+          "more": "Workplaces"
+        },
+        {
+          "title": "Developers",
+          "text": "Design charging into new buildings and size the connection smaller.",
+          "href": "/solutions/developers/",
+          "more": "Developers"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "id": "partners",
+      "title": "Partners in Poland",
+      "cols": 3,
+      "items": [
+        {
+          "title": "ACEV Jakub Banasiak",
+          "text": "Installer",
+          "href": "http://www.acev.pl",
+          "more": "Website"
+        },
+        {
+          "title": "Elektryka Od A do Z Michał Bąk",
+          "text": "Installer",
+          "href": "https://sklep.ladujev.pl/",
+          "more": "Website"
+        },
+        {
+          "title": "eSparks.pl",
+          "text": "Installer",
+          "href": "https://esparks.pl/kontakt",
+          "more": "Website"
+        },
+        {
+          "title": "Evelutions",
+          "text": "Installer",
+          "href": "http://Evelutions.com.pl",
+          "more": "Website"
+        },
+        {
+          "title": "EVLOP Sp. z o.o.",
+          "text": "Installer"
+        },
+        {
+          "title": "Firma Handlowo - Usługowa \"BATLAMP 2\" Michał SZUBARTOWSKI",
+          "text": "Installer"
+        },
+        {
+          "title": "GreenKick Sp. z o.o.",
+          "text": "Installer"
+        },
+        {
+          "title": "Greto Polska Sp. z o.o.",
+          "text": "Wholesaler",
+          "href": "https://greto.com.pl",
+          "more": "Website"
+        },
+        {
+          "title": "GRUPA INSTA sp. z o.o.",
+          "text": "Installer"
+        },
+        {
+          "title": "Sell or install VOOL in Poland",
+          "text": "We are adding partners in this market.",
+          "href": "/partners/distributor-programme/",
+          "more": "Partner programme"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "soft": true,
+      "title": "Documents",
+      "items": [
+        {
+          "label": "Datasheet: VOOL Charger (English, PDF)",
+          "href": "/downloads/datasheets/vool-charger-datasheet-en.pdf"
+        },
+        {
+          "label": "Datasheet: VOOL LMC Pro (English, PDF)",
+          "href": "/downloads/datasheets/vool-lmc-pro-datasheet-en.pdf"
+        },
+        {
+          "label": "All manuals and datasheets",
+          "href": "/resources/product-manuals/"
+        },
+        {
+          "label": "Guide for the general meeting",
+          "href": "/knowledge/general-meeting/"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Does VOOL install?",
+          "a": "No. Local partners sell and install. VOOL makes the hardware and software and supports the partners."
+        },
+        {
+          "q": "What about chargers installed from 2027?",
+          "a": "From 1 January 2027 newly installed chargers in the EU must support ISO 15118-20. The new VOOL Charger does."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Planning charging in Poland?",
+      "lead": "Send us the parking spaces and the main fuse size. We reply within one working day.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Find an installer",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

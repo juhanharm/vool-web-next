@@ -237,6 +237,10 @@ collections:
         label: Small label above the title
         required: false
         widget: string
+      - name: lead
+        label: Intro text
+        required: false
+        widget: string
       - name: id
         label: Id
         required: false
@@ -395,12 +399,16 @@ collections:
         - name: q
           label: Question
           required: false
-          widget: string
+          widget: text
         - name: a
           label: Answer
           required: false
           widget: text
         summary: '{{title}}{{label}}{{q}}{{name}}'
+      - name: soft
+        label: Grey background
+        required: false
+        widget: boolean
     - name: stats
       label: Big numbers
       widget: object
@@ -721,6 +729,10 @@ collections:
       widget: object
       summary: '{{title}}'
       fields:
+      - name: soft
+        label: Grey background
+        required: false
+        widget: boolean
       - name: title
         label: Title
         required: false
@@ -739,10 +751,6 @@ collections:
           required: false
           widget: text
         summary: '{{title}}{{label}}{{q}}{{name}}'
-      - name: soft
-        label: Grey background
-        required: false
-        widget: boolean
     - name: night
       label: Night charging example
       widget: object
@@ -782,6 +790,10 @@ collections:
           required: false
           widget: string
         collapsed: true
+      - name: soft
+        label: Grey background
+        required: false
+        widget: boolean
     - name: configurator
       label: configurator
       widget: object
