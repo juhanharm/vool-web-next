@@ -458,6 +458,13 @@ Object.assign(pages, morePages, productPages, commercialPages);
 
 /** Old URLs that now point to a merged page (also written to public/_redirects). */
 export const redirects: Record<string, string> = {
+  '/et/kkk/': '/et/faq/',
+  '/fi/ukk/': '/fi/faq/',
+  '/standard-installation-conditions/': '/where-to-buy/',
+  '/et/standardpaigalduse-tingimused/': '/where-to-buy/',
+  '/fi/vakioasennuksen-edellytykset/': '/where-to-buy/',
+  '/solutions/usecases/charging-your-ev-cost-effectively-at-home/': '/solutions/ev-charger-for-home/',
+  '/fi/ratkaisut/kayttotilanteet/lataa-sahkoautosi-kustannustehokkaasti-kotona/': '/fi/solutions/ev-charger-for-home/',
   '/get-in-touch/': '/resources/contact/',
   '/about-us/contact/': '/resources/contact/',
   '/about-us/game-changers/': '/about-us/our-story-new/',

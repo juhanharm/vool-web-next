@@ -1,0 +1,189 @@
+{
+  "path": "/faq/",
+  "title": "FAQ",
+  "description": "Installation guides, manuals and answers to common questions.",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Support",
+      "title": "FAQ",
+      "lead": "Step-by-step guides and answers, written by the team that builds VOOL. Chat with support from any article.",
+      "cta": [
+        {
+          "label": "Open the Help Center",
+          "href": "https://support.vool.com/en/"
+        },
+        {
+          "label": "Contact",
+          "href": "/resources/contact/"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Billing and payments",
+      "items": [
+        {
+          "q": "Do I need a payment terminal?",
+          "a": "No. Drivers pay in the VOOL App or through a QR code payment page."
+        },
+        {
+          "q": "Can residents and guests have different prices?",
+          "a": "Yes. Pricing rules are set per access group."
+        },
+        {
+          "q": "What do I need to enter?",
+          "a": "Your electricity cost and the price you want to charge. The Portal shows what you receive per kWh after fees."
+        },
+        {
+          "q": "Who handles VAT and invoices to drivers?",
+          "a": "VOOL issues the invoices to drivers. Ask us how VAT applies to your organisation."
+        },
+        {
+          "q": "Can I manage billing myself instead?",
+          "a": "Yes. The Portal’s reports show consumption per user, and you can invoice from those yourself at no cost."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Workplace charging",
+      "items": [
+        {
+          "q": "Can employees pay for private charging themselves?",
+          "a": "Yes. They pay by card in the VOOL App, VOOL invoices them and transfers the money to the company monthly."
+        },
+        {
+          "q": "We rent our office. Who should own the chargers?",
+          "a": "Either the landlord or the tenant can. Access groups let one installation serve several companies in the same building."
+        },
+        {
+          "q": "We already have chargers from another maker.",
+          "a": "Chargers that support OCPP 1.6 or 2.0 can be added to the VOOL Portal."
+        }
+      ],
+      "soft": true
+    },
+    {
+      "type": "faq",
+      "title": "Fleets",
+      "items": [
+        {
+          "q": "How do we reimburse drivers who charge at home?",
+          "a": "The driver’s charger reports each session. You get the kWh per driver and reimburse at the rate you agree. In some countries, Germany for example, reimbursement must be by the exact kWh."
+        },
+        {
+          "q": "Do all vehicles need to be the same make?",
+          "a": "No. VOOL charges any electric vehicle with a Type 2 connection."
+        },
+        {
+          "q": "Our depot connection is small.",
+          "a": "Send us the main fuse size and the number of vehicles. With load management most depots charge overnight without an upgrade."
+        },
+        {
+          "q": "Can drivers also use public chargers?",
+          "a": "Yes, at VOOL public chargers with the VOOL App. Roaming with other networks is being added."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "AFIR and ISO 15118",
+      "items": [
+        {
+          "q": "Can I still install the current VOOL charger in December 2026?",
+          "a": "Yes. The ISO 15118-20 requirement applies to charging points installed or renovated from 1 January 2027."
+        },
+        {
+          "q": "Do I have to replace chargers that are already installed?",
+          "a": "No. Chargers installed before the deadline can stay. An upgrade is your choice."
+        },
+        {
+          "q": "Does the rule apply to a private home?",
+          "a": "From 1 January 2027 it covers newly installed private AC charging points too."
+        },
+        {
+          "q": "What is Plug & Charge?",
+          "a": "The car and the charger identify each other over the charging cable, so charging and billing start without an app or a card."
+        },
+        {
+          "q": "When does V2G work?",
+          "a": "The new charger gets bidirectional charging by firmware update in the first quarter of 2027. Your car and your grid operator’s rules also have to allow it."
+        }
+      ],
+      "soft": true
+    },
+    {
+      "type": "faq",
+      "title": "Integrations",
+      "items": [
+        {
+          "q": "Does load management need the internet?",
+          "a": "No. The LMC and the chargers talk locally. The internet is needed for the app, billing and remote support."
+        },
+        {
+          "q": "Which earthing systems does the LMC support?",
+          "a": "IT earthing systems, common in parts of Norway, are not supported for load management. Charging itself works normally."
+        },
+        {
+          "q": "How are chargers connected to the LMC?",
+          "a": "Over CAN in a daisy chain, or over the local network."
+        },
+        {
+          "q": "Is Modbus write access on by default?",
+          "a": "No. It is enabled on the LMC when you need it."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "For installers",
+      "items": [
+        {
+          "q": "Which earthing systems are supported?",
+          "a": "TN systems. On IT systems, common in parts of Norway, charging works but load management does not."
+        },
+        {
+          "q": "Does the phase order matter?",
+          "a": "Yes. Connect the LMC and the chargers with the same phase order (L1 to L1 and so on), because chargers switch phases based on the free capacity the LMC measures. The order can be corrected in the app afterwards."
+        },
+        {
+          "q": "Can I daisy-chain Ethernet through the charger?",
+          "a": "No. Both ports support CAN daisy-chaining, but only one port can be used for Ethernet."
+        },
+        {
+          "q": "The LMC has a SIM. Is it online out of the box?",
+          "a": "No. Mobile data is switched on in the VOOL App over Bluetooth during commissioning."
+        },
+        {
+          "q": "The charger does not detect the car after installation.",
+          "a": "Check that the CP connector on the small cover of the orange charge controller is fully seated. It is the most common cause."
+        },
+        {
+          "q": "Is the back cable channel with entry from below a correct installation?",
+          "a": "Yes. Water and snow do not enter through the vent openings."
+        },
+        {
+          "q": "What about chargers installed from 1 January 2027?",
+          "a": "They must support ISO 15118-20. Order the new VOOL Charger, available from mid-December 2026."
+        }
+      ],
+      "soft": true
+    },
+    {
+      "type": "cta",
+      "title": "Ready to plan your charging?",
+      "lead": "Tell us about your site, or buy from a partner near you.",
+      "buttons": [
+        {
+          "label": "Get a quote",
+          "href": "/get-a-quote/"
+        },
+        {
+          "label": "Find an installer",
+          "href": "/where-to-buy/"
+        }
+      ]
+    }
+  ]
+}

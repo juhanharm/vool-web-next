@@ -25,7 +25,7 @@ export const apartments = {
     grant: {
       title: 'KIK toetus lühidalt',
       who: [
-        'Äriregistrisse kantud korteriühistu (v.a Tallinna ja Tartu linnas)',
+        'Äriregistrisse kantud korteriühistu väljaspool Tallinna, Tartut ja Tallinna linnapiirkonda (nt Maardu, Viimsi ning osa Saue, Rae, Harku, Jõelähtme ja Saku vallast)',
         'Kinnistul vähemalt 10 parkimiskohta',
         'Ehitusluba või -teatis esitatud enne 10.03.2021',
         'Ühe taotlusega 4–20 laadimispunkti',
@@ -36,6 +36,7 @@ export const apartments = {
         ['Projekteerimine ja ehitus (2–10 punkti)', '757 € / punkt'],
         ['Projekteerimine ja ehitus (11–20 punkti)', '370 € / punkt'],
         ['Laadija soetamine', '615 € / laadija'],
+        ['Kahe laadimispunktiga laadija, vähemalt 22 kW (nt VOOL Commercial Pole)', '1612 € / laadija'],
         ['Dünaamiline koormusjaotus (VOOL LMC)', '370 €'],
         ['Võimsuse suurendamine', '199 € / amper'],
       ],
@@ -46,7 +47,7 @@ export const apartments = {
       ],
       exampleTitle: 'Näide: 10 laadimispunkti',
       example: '10 × 757 € + 10 × 615 € + 370 € = 14 090 €',
-      source: '*Tingimused seisuga november 2026. Täpsed tingimused kik.ee lehel ja taristuministri 31.07.2025 määruses nr 46.',
+      source: '*Tingimused seisuga november 2026. Täpsed tingimused kik.ee lehel ja taristuministri 31.07.2025 määruses nr 46 (muudetud 20.01.2026).',
       link: 'Toetuse tingimused kik.ee lehel',
     },
     steps: {
@@ -102,7 +103,7 @@ export const apartments = {
     grant: {
       title: 'The KIK grant in short',
       who: [
-        'Apartment associations in the Commercial Register (except Tallinn and Tartu city)',
+        'Apartment associations in the Commercial Register outside Tallinn, Tartu and the Tallinn urban area (for example Maardu, Viimsi and parts of Saue, Rae, Harku, Jõelähtme and Saku municipalities)',
         'At least 10 parking spaces on the property',
         'Building permit or notice filed before 10 March 2021',
         '4–20 charging points per application',
@@ -113,6 +114,7 @@ export const apartments = {
         ['Design and construction (2–10 points)', '€757 / point'],
         ['Design and construction (11–20 points)', '€370 / point'],
         ['Charger', '€615 / charger'],
+        ['Charger of 22 kW or more with two charging points (e.g. VOOL Commercial Pole)', '€1,612 / charger'],
         ['Dynamic load management (VOOL LMC)', '€370'],
         ['Extra grid capacity', '€199 / ampere'],
       ],
@@ -123,7 +125,7 @@ export const apartments = {
       ],
       exampleTitle: 'Example: 10 charging points',
       example: '10 × €757 + 10 × €615 + €370 = €14,090',
-      source: '*Conditions as of November 2026. See kik.ee and Infrastructure Minister’s regulation No. 46 of 31.07.2025.',
+      source: '*Conditions as of November 2026. See kik.ee and Infrastructure Minister’s regulation No. 46 of 31.07.2025 (amended 20.01.2026).',
       link: 'Grant conditions on kik.ee',
     },
     steps: {
