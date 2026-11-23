@@ -9,6 +9,7 @@ import Base from '../layouts/Base.astro';
 import Sections from '../components/Sections.astro';
 import { pages } from '../content/pagesStore';
 import { imported, posts, blogIndex, type Imported } from '../content/site';
+import { tr } from '../content/pagesStore';
 import { ui, langNames, type Lang } from '../content/ui';
 
 export function getStaticPaths() {
@@ -56,10 +57,11 @@ const idx = blogIndex(lang);
 )}
 
 {kind === 'blog' && (
-  <Base lang={lang} title={`${ui[lang].blog} | VOOL`} description={ui[lang].tagline}>
+  <Base lang={lang} title={`${tr(lang, 'News')} | VOOL`} description={ui[lang].tagline}>
     <section class="section">
       <div class="wrap">
-        <h1>{ui[lang].blog}</h1>
+        <span class="eyebrow">VOOL</span>
+        <h1>{tr(lang, 'News')}</h1>
         <div class="grid c3" style="margin-top:36px">
           {list.map((p) => (
             <a class="post-card" href={p.path}>

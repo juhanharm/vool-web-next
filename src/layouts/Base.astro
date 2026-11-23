@@ -15,9 +15,9 @@ interface Props {
 }
 const { lang, title, description, alternates = {}, image } = Astro.props;
 const t = uiFor(lang);
-const items = [...navFor(lang)];
 const blog = blogIndex(lang);
-if (lang !== 'en' && blog) items.push({ label: t.blog, href: blog });
+// "News" opens this language's own articles when it has any, otherwise the English ones.
+const items = navFor(lang).map((n) => (n.href && n.href.endsWith('/resources/blog/') ? { ...n, href: blog ?? '/resources/blog/' } : n));
 const langs = (Object.keys(langNames) as Lang[]).filter((l) => alternates[l] || hasHome(l)).map((l) => ({ code: l, href: alternates[l] ?? homeOf(l) }));
 const legalPages = legal(lang);
 const seen = new Set<string>();

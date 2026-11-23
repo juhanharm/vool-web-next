@@ -11,6 +11,12 @@ import LeadForm from './LeadForm.astro';
 import NightCharge from './NightCharge.astro';
 import CostCompare from './CostCompare.astro';
 import LoadDemo from './LoadDemo.astro';
+import { posts, blogIndex, dateKey } from '../content/site';
+
+// Latest articles for the "news" block: shown only while the newest one is less than a year old.
+const now = new Date();
+const yearAgo = (now.getFullYear() - 1) * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+const latest = (l: string) => { const p = posts(l as any); return p.length && dateKey(p[0].date) >= yearAgo ? p.slice(0, 3) : []; };
 
 interface Props { sections: any[]; lang: string }
 const { sections, lang } = Astro.props;
@@ -78,6 +84,21 @@ const { sections, lang } = Astro.props;
       <section class="section logos"><div class="wrap">
         <p class="eyebrow">{s.title}</p>
         <div class="logo-row">{s.items.map((l: any) => <img src={l.src} alt={l.name} loading="lazy" />)}</div>
+      </div></section>
+    )}
+
+    {s.type === 'news' && latest(lang).length > 0 && (
+      <section class="section soft"><div class="wrap">
+        <div class="news-head"><h2>{s.title}</h2><a class="btn ghost" href={blogIndex(lang as any)}>{s.more} →</a></div>
+        <div class="grid c3" style="margin-top:28px">
+          {latest(lang).map((p) => (
+            <a class="card has-img news-card" href={p.path}>
+              <div class="photo card-photo">{p.image && <img src={p.image} alt="" loading="lazy" />}</div>
+              <p class="small muted">{p.date}</p>
+              <h3>{p.title}</h3>
+            </a>
+          ))}
+        </div>
       </div></section>
     )}
 
@@ -210,6 +231,11 @@ const { sections, lang } = Astro.props;
   .linklist a { display: flex; justify-content: space-between; gap: 12px; padding: 16px 20px; background: #fff; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; }
   .linklist a:hover { border-color: var(--orange); }
   .linklist span { color: var(--orange); }
+  .news-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .news-head h2 { margin: 0; }
+  .news-card { text-decoration: none; display: block; }
+  .news-card p { margin-bottom: .3em; }
+  .news-card:hover h3 { color: var(--orange-text); }
   .cta { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; }
   .cta .btn.ghost { color: #fff; }
   .cta .btn-row { margin-top: 0; }

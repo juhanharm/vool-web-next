@@ -104,6 +104,11 @@
       ]
     },
     {
+      "type": "news",
+      "title": "Latest news",
+      "more": "All news"
+    },
+    {
       "type": "cards",
       "id": "products",
       "eyebrow": "Products",
