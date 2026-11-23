@@ -126,6 +126,10 @@ collections:
           name: value
           label: Text
           widget: string
+      - name: variant
+        label: Variant
+        required: false
+        widget: string
     - name: split
       label: Text with image
       widget: object
@@ -175,6 +179,10 @@ collections:
         summary: '{{title}}{{label}}{{q}}{{name}}'
       - name: eyebrow
         label: Small label above the title
+        required: false
+        widget: string
+      - name: variant
+        label: Variant
         required: false
         widget: string
       - name: flip
@@ -243,6 +251,10 @@ collections:
         widget: string
       - name: id
         label: Id
+        required: false
+        widget: string
+      - name: variant
+        label: Variant
         required: false
         widget: string
     - name: specs
@@ -317,6 +329,10 @@ collections:
           required: false
           widget: string
         summary: '{{title}}{{label}}{{q}}{{name}}'
+      - name: variant
+        label: Variant
+        required: false
+        widget: string
     - name: prose
       label: Text
       widget: object
@@ -724,6 +740,92 @@ collections:
         label: Consent
         required: false
         widget: text
+    - name: news
+      label: news
+      widget: object
+      summary: '{{title}}'
+      fields:
+      - name: title
+        label: Title
+        required: false
+        widget: string
+      - name: more
+        label: Link text
+        required: false
+        widget: string
+      - name: pins
+        label: Pins
+        required: false
+        widget: object
+        fields:
+        - name: et
+          label: Et
+          required: false
+          widget: object
+          fields:
+          - name: title
+            label: Title
+            required: false
+            widget: string
+          - name: text
+            label: Text
+            required: false
+            widget: text
+          - name: href
+            label: Link
+            required: false
+            widget: string
+          - name: more
+            label: Link text
+            required: false
+            widget: string
+          - name: image
+            label: Image
+            required: false
+            widget: image
+          collapsed: true
+        - name: lt
+          label: Lt
+          required: false
+          widget: object
+          fields:
+          - name: title
+            label: Title
+            required: false
+            widget: string
+          - name: text
+            label: Text
+            required: false
+            widget: text
+          - name: href
+            label: Link
+            required: false
+            widget: string
+          - name: more
+            label: Link text
+            required: false
+            widget: string
+          - name: image
+            label: Image
+            required: false
+            widget: image
+          collapsed: true
+        collapsed: true
+    - name: strip
+      label: strip
+      widget: object
+      summary: '{{title}}'
+      fields:
+      - name: items
+        label: Items
+        required: false
+        widget: list
+        fields:
+        - name: image
+          label: Image
+          required: false
+          widget: image
+        summary: '{{title}}{{label}}{{q}}{{name}}'
     - name: links
       label: Link list
       widget: object

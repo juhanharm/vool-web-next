@@ -27,7 +27,7 @@ for (const [file, data] of Object.entries(langFiles)) {
 }
 export const tr = (lang: string, s: string) => dict[lang]?.get(s) ?? s;
 
-const SKIP = new Set(['href', 'image', 'src', 'type', 'form', 'name', 'id', 'path', 'lang', 'cols', 'locale', 'file', 'alternates']);
+const SKIP = new Set(['href', 'image', 'src', 'type', 'form', 'name', 'id', 'path', 'lang', 'cols', 'locale', 'file', 'alternates', 'variant']);
 const isText = (v: string) => /[A-Za-z]{2}/.test(v) && !/^(\/|https?:|#)/.test(v);
 function translate(v: any, lang: string, key: string | null, miss: string[]): any {
   if (typeof v === 'string') { if (key && SKIP.has(key) || !isText(v)) return v; const t = dict[lang].get(v); if (!t) miss.push(v); return t ?? v; }

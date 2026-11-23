@@ -25,7 +25,8 @@
         "Up to 22 kW",
         "5-year warranty",
         "Up to 30% lower charging costs"
-      ]
+      ],
+      "variant": "full"
     },
     {
       "type": "stats",
@@ -71,27 +72,6 @@
       ]
     },
     {
-      "type": "news",
-      "title": "Latest news",
-      "more": "All news",
-      "pins": {
-        "et": {
-          "title": "Estonia: KIK grant for apartment associations",
-          "text": "A 10-point installation with VOOL chargers and load management gets €14,090 in grant. We help with the quote and the application.",
-          "href": "/apartment-buildings/",
-          "more": "See the grant",
-          "image": "/img/apartments.webp"
-        },
-        "lt": {
-          "title": "Lithuania: get paid for charging at home",
-          "text": "VOOL pays you 3.9 ct for every kWh you charge, through the DAEI system. Launching December 2026.",
-          "href": "/daei/",
-          "more": "Join the waiting list",
-          "image": "/img/site-family.webp"
-        }
-      }
-    },
-    {
       "type": "cards",
       "id": "solutions",
       "eyebrow": "Solutions",
@@ -122,7 +102,29 @@
           "text": "Open your chargers to visitors and get paid for every session.",
           "href": "/solutions/public-charging/"
         }
-      ]
+      ],
+      "variant": "photo"
+    },
+    {
+      "type": "news",
+      "title": "Latest news",
+      "more": "All news",
+      "pins": {
+        "et": {
+          "title": "Estonia: KIK grant for apartment associations",
+          "text": "A 10-point installation with VOOL chargers and load management gets €14,090 in grant. We help with the quote and the application.",
+          "href": "/apartment-buildings/",
+          "more": "See the grant",
+          "image": "/img/apartments.webp"
+        },
+        "lt": {
+          "title": "Lithuania: get paid for charging at home",
+          "text": "VOOL pays you 3.9 ct for every kWh you charge, through the DAEI system. Launching December 2026.",
+          "href": "/daei/",
+          "more": "Join the waiting list",
+          "image": "/img/site-family.webp"
+        }
+      }
     },
     {
       "type": "cards",
@@ -133,29 +135,30 @@
       "items": [
         {
           "title": "VOOL Charger",
-          "image": "/img/charger-finishes.webp",
+          "image": "/img/product-finishes.webp",
           "text": "Up to 22 kW with a 6.5 m cable. Black, aluminium or wood.",
           "href": "/products/vool-charger/"
         },
         {
           "title": "VOOL LMC",
-          "image": "/img/lmc-cabinet.webp",
+          "image": "/img/product-lmc.webp",
           "text": "Balances the load so fuses stay safe and every amp is used.",
           "href": "/products/vool-lmc/"
         },
         {
           "title": "VOOL App",
-          "image": "/img/app-hand.webp",
+          "image": "/img/app-phone.webp",
           "text": "Charges when prices are lowest. Free.",
           "href": "/products/vool-app/"
         },
         {
           "title": "VOOL Portal",
-          "image": "/img/portal-screen.webp",
+          "image": "/img/portal-laptop.webp",
           "text": "Users, billing and reports for every site in one place.",
           "href": "/products/vool-portal/"
         }
-      ]
+      ],
+      "variant": "showcase"
     },
     {
       "type": "split",
@@ -178,11 +181,58 @@
           "label": "Compare",
           "href": "/compare/"
         }
+      ],
+      "variant": "bleed"
+    },
+    {
+      "type": "strip",
+      "items": [
+        {
+          "image": "/img/site-family.webp"
+        },
+        {
+          "image": "/img/site-wall-dark.webp"
+        },
+        {
+          "image": "/img/site-street.webp"
+        },
+        {
+          "image": "/img/office2.webp"
+        },
+        {
+          "image": "/img/public.webp"
+        }
       ]
     },
     {
       "type": "cards",
-      "soft": true,
+      "eyebrow": "Customers",
+      "title": "Used by companies that run charging every day",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Omniva: 300 chargers",
+          "text": "VOOL supplies chargers for Omniva’s courier fleet across Estonia over five years.",
+          "href": "/resources/blog/vool-joins-omniva-on-their-journey-towards-electrifying-transportation/",
+          "more": "Read the story"
+        },
+        {
+          "title": "Office building: 40 chargers, 100 users",
+          "text": "Eleven companies share the chargers. 75 MWh charged in 3,000 sessions within six months.",
+          "href": "/case-studies/",
+          "more": "All case studies"
+        },
+        {
+          "title": "Residence: 19 chargers in three weeks",
+          "text": "After the shared installation in a 74-space car park, owners ordered 19 chargers within three weeks.",
+          "href": "/case-studies/",
+          "more": "All case studies"
+        }
+      ],
+      "variant": "proof"
+    },
+    {
+      "type": "cards",
       "eyebrow": "New",
       "title": "What’s new",
       "cols": 3,
@@ -223,33 +273,8 @@
           "href": "/software/billing-and-payments/",
           "more": "How it works"
         }
-      ]
-    },
-    {
-      "type": "cards",
-      "eyebrow": "Customers",
-      "title": "Used by companies that run charging every day",
-      "cols": 3,
-      "items": [
-        {
-          "title": "Omniva: 300 chargers",
-          "text": "VOOL supplies chargers for Omniva’s courier fleet across Estonia over five years.",
-          "href": "/resources/blog/vool-joins-omniva-on-their-journey-towards-electrifying-transportation/",
-          "more": "Read the story"
-        },
-        {
-          "title": "Office building: 40 chargers, 100 users",
-          "text": "Eleven companies share the chargers. 75 MWh charged in 3,000 sessions within six months.",
-          "href": "/case-studies/",
-          "more": "All case studies"
-        },
-        {
-          "title": "Residence: 19 chargers in three weeks",
-          "text": "After the shared installation in a 74-space car park, owners ordered 19 chargers within three weeks.",
-          "href": "/case-studies/",
-          "more": "All case studies"
-        }
-      ]
+      ],
+      "variant": "compact"
     },
     {
       "type": "links",
@@ -303,7 +328,8 @@
           "label": "Find an installer",
           "href": "/where-to-buy/"
         }
-      ]
+      ],
+      "variant": "orange"
     }
   ]
 }

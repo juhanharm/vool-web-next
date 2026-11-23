@@ -23,7 +23,22 @@ const { sections, lang } = Astro.props;
 ---
 {sections.map((s, i) => (
   <>
-    {s.type === 'hero' && (
+    {s.type === 'hero' && s.variant === 'full' && (
+      <section class="hero-full">
+        <img class="hero-bg" src={s.image} alt={s.alt ?? ''} loading="eager" fetchpriority="high" />
+        <div class="wrap">
+          <div class="hero-full-text">
+            {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
+            <h1>{s.title}</h1>
+            <p class="lead">{s.lead}</p>
+            {s.cta && <div class="btn-row">{s.cta.map((b: any, j: number) => <a class:list={['btn', { ghost: j > 0 }]} href={b.href}>{b.label}</a>)}</div>}
+            {s.facts && <ul class="facts">{s.facts.map((f: string) => <li>{f}</li>)}</ul>}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'hero' && s.variant !== 'full' && (
       <section class:list={['hero', { dark: s.dark }]}>
         <div class="wrap hero-grid">
           <div class="hero-text">
@@ -38,7 +53,69 @@ const { sections, lang } = Astro.props;
       </section>
     )}
 
-    {s.type === 'cards' && (
+    {s.type === 'cards' && s.variant === 'photo' && (
+      <section class="section" id={s.id}>
+        <div class="wrap">
+          {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
+          <h2>{s.title}</h2>
+          <div class="pcards">
+            {s.items.map((c: any) => (
+              <a class="pcard" href={c.href}>
+                <img src={c.image} alt="" loading="lazy" />
+                <div><h3>{c.title}</h3>{c.text && <p>{c.text}</p>}<span class="go" aria-hidden="true">→</span></div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'cards' && s.variant === 'showcase' && (
+      <section class="section" id={s.id}>
+        <div class="wrap">
+          {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
+          <h2>{s.title}</h2>
+          <div class="show">
+            {s.items.map((c: any, j: number) => (
+              <a class:list={['tile', { dark: j > 1, wide: j === 0 || j === 3 }]} href={c.href}>
+                <div class="tile-text"><h3>{c.title}</h3>{c.text && <p>{c.text}</p>}<span class="more">{c.more ?? tr(lang, 'Learn more')} →</span></div>
+                <img src={c.image} alt="" loading="lazy" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'cards' && s.variant === 'proof' && (
+      <section class="section dark proof" id={s.id}>
+        <div class="wrap">
+          {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
+          <h2>{s.title}</h2>
+          <div class="grid c3" style="margin-top:36px">
+            {s.items.map((c: any) => (
+              <a class="proof-card" href={c.href}><h3>{c.title}</h3>{c.text && <p>{c.text}</p>}<span class="more">{c.more ?? tr(lang, 'Learn more')} →</span></a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'cards' && s.variant === 'compact' && (
+      <section class="section" id={s.id}>
+        <div class="wrap">
+          {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
+          <h2>{s.title}</h2>
+          <ul class="linklist">{s.items.map((c: any) => <li><a href={c.href}>{c.title}<span>→</span></a></li>)}</ul>
+        </div>
+      </section>
+    )}
+
+    {s.type === 'strip' && (
+      <section class="strip" aria-hidden="true">{s.items.map((i: any) => <img src={i.image} alt="" loading="lazy" />)}</section>
+    )}
+
+    {s.type === 'cards' && !s.variant && (
       <section class:list={['section', { soft: s.soft }]} id={s.id}>
         <div class="wrap">
           {s.eyebrow && <span class="eyebrow">{s.eyebrow}</span>}
@@ -60,7 +137,7 @@ const { sections, lang } = Astro.props;
     )}
 
     {s.type === 'split' && (
-      <section class:list={['section', { soft: s.soft }]} id={s.id}>
+      <section class:list={['section', { soft: s.soft, bleed: s.variant === 'bleed' }]} id={s.id}>
         <div class:list={['wrap', 'split', { flip: s.flip }]}>
           <div class="photo"><img src={s.image} alt={s.alt ?? ''} loading="lazy" /></div>
           <div>
@@ -172,7 +249,7 @@ const { sections, lang } = Astro.props;
     {s.type === 'faq' && <Faq title={s.title} items={s.items} />}
 
     {s.type === 'cta' && (
-      <section class="section dark">
+      <section class:list={['section', 'dark', { orange: s.variant === 'orange' }]}>
         <div class="wrap cta">
           <div><h2>{s.title}</h2>{s.lead && <p class="lead">{s.lead}</p>}</div>
           <div class="btn-row">{s.buttons.map((b: any, j: number) => <a class:list={['btn', { ghost: j > 0 }]} href={b.href}>{b.label}</a>)}</div>
@@ -260,4 +337,68 @@ const { sections, lang } = Astro.props;
   .cta .btn.ghost { color: #fff; }
   .cta .btn-row { margin-top: 0; }
   @media (max-width: 860px) { .cta { grid-template-columns: 1fr; } }
+
+  /* --- visual home page, Nov 2026 --- */
+  .hero-full { position: relative; min-height: min(86vh, 880px); display: flex; align-items: center; color: #fff; background: #1b1d1f; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 45%; }
+  .hero-full::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,12,14,.86) 0%, rgba(10,12,14,.62) 38%, rgba(10,12,14,0) 72%); }
+  .hero-full .wrap { position: relative; z-index: 1; width: 100%; padding-top: 72px; padding-bottom: 72px; }
+  .hero-full-text { max-width: 760px; }
+  .hero-full h1 { font-size: clamp(2.5rem, 6.1vw, 5.9rem); line-height: 1.02; letter-spacing: -0.025em; }
+  .hero-full .lead { color: #e4e4e4; max-width: 33em; font-size: 1.2rem; }
+  .hero-full .eyebrow { color: #ff7a52; }
+  .hero-full .btn.ghost { color: #fff; }
+  .hero-full .btn { padding: 1em 1.8em; font-size: 1.02rem; }
+  .hero-full .facts li { border-color: rgba(255,255,255,.4); color: #fff; }
+  @media (max-width: 760px) { .hero-full { min-height: 82vh; align-items: flex-end; } .hero-full::after { background: linear-gradient(0deg, rgba(10,12,14,.92) 30%, rgba(10,12,14,.35) 75%, rgba(10,12,14,.1)); } .hero-bg { object-position: 70% 30%; } .hero-full .wrap { padding-top: 40px; padding-bottom: 36px; } .hero-full .lead { font-size: 1.05rem; } }
+  .pcards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+  .pcard { position: relative; aspect-ratio: 3 / 4.2; border-radius: 22px; overflow: hidden; color: #fff; text-decoration: none; display: flex; align-items: flex-end; background: var(--ink); }
+  .pcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .pcard:hover img { transform: scale(1.05); }
+  .pcard::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.25) 48%, rgba(0,0,0,0) 70%); }
+  .pcard > div { position: relative; z-index: 1; padding: 24px; width: 100%; }
+  .pcard h3 { font-size: 1.6rem; margin: 0 0 .3em; }
+  .pcard p { margin: 0; font-size: .95rem; color: #ececec; max-width: 22em; }
+  .pcard .go { position: absolute; right: 22px; top: -8px; width: 42px; height: 42px; border-radius: 50%; background: #fff; color: var(--ink); display: grid; place-items: center; font-size: 1.1rem; transform: translateY(-100%); }
+  @media (max-width: 1000px) { .pcards { grid-template-columns: 1fr 1fr; } .pcard { aspect-ratio: 4 / 4.4; } }
+  @media (max-width: 560px) { .pcards { grid-template-columns: 1fr; } .pcard { aspect-ratio: 4 / 3.4; } }
+  .show { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+  .tile { background: #f5f5f5; border-radius: 26px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; min-height: 520px; color: var(--ink); transition: transform .2s; }
+  .tile:hover { transform: translateY(-3px); }
+  .tile.wide { grid-column: span 2; }
+  .tile.dark { background: #000; color: #fff; }
+  .tile-text { padding: 36px 36px 0; }
+  .tile h3 { font-size: clamp(1.7rem, 2.6vw, 2.3rem); margin-bottom: .35em; }
+  .tile p { margin: 0 0 .8em; color: var(--grey); max-width: 28em; }
+  .tile.dark p { color: #c9c9c9; }
+  .tile .more { font-weight: 500; color: var(--orange-text); }
+  .tile.dark .more { color: #ff7a52; }
+  .tile img { flex: 1; min-height: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; margin-top: 12px; }
+  .tile.wide img { object-fit: cover; object-position: center; }
+  .tile.dark img { object-fit: contain; object-position: center; padding: 0 20px 20px; max-height: 380px; }
+  @media (max-width: 900px) { .show { grid-template-columns: 1fr; } .tile.wide { grid-column: auto; } .tile { min-height: 420px; } .tile-text { padding: 26px 24px 0; } }
+  .section.bleed { padding: 0; }
+  .section.bleed .split { max-width: none; padding: 0; gap: 0; grid-template-columns: 1.15fr 1fr; align-items: stretch; }
+  .section.bleed .photo { border-radius: 0; aspect-ratio: auto; min-height: 560px; }
+  .section.bleed .split > div:last-child { padding: 88px max(24px, calc((100vw - var(--max)) / 2)) 88px 64px; align-self: center; }
+  .section.bleed h2 { font-size: clamp(1.9rem, 3.4vw, 2.9rem); }
+  @media (max-width: 860px) { .section.bleed .split { grid-template-columns: 1fr; } .section.bleed .photo { min-height: 0; aspect-ratio: 16 / 10; } .section.bleed .split > div:last-child { padding: 40px 24px 56px; } }
+  .strip { display: grid; grid-template-columns: 1.3fr 1fr 1.5fr 1fr 1.3fr; gap: 6px; height: clamp(220px, 30vw, 440px); }
+  .strip img { width: 100%; height: 100%; object-fit: cover; min-width: 0; }
+  @media (max-width: 760px) { .strip { display: flex; overflow-x: auto; height: 240px; scroll-snap-type: x mandatory; } .strip img { flex: 0 0 72%; scroll-snap-align: center; } }
+  .proof h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); max-width: 18em; }
+  .proof-card { display: block; text-decoration: none; color: #fff; border-top: 2px solid #ff7a52; padding: 22px 0 0; }
+  .proof-card h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+  .proof-card p { color: #cfcfcf; }
+  .proof-card .more { color: #ff7a52; font-weight: 500; }
+  .section.dark.orange { background: var(--orange-btn); }
+  .section.dark.orange .lead { color: #fff; }
+  .section.dark.orange h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+  .section.dark.orange .btn:not(.ghost) { background: #fff; color: var(--ink); }
+  .section.dark.orange .btn:not(.ghost):hover { background: var(--cream-deep); }
+  .stats { padding: 56px 0; }
+  .stats .big-number { font-size: clamp(2.6rem, 5.6vw, 4.8rem); color: #ff7a52; }
+  .stats p { font-size: 1rem; }
+  .logos { background: var(--cream); }
+  @media (max-width: 760px) { .news-card { display: grid; } .pcards { grid-template-columns: 1fr 1fr; gap: 10px; } .pcard { aspect-ratio: 3 / 4; border-radius: 16px; } .pcard > div { padding: 14px; } .pcard h3 { font-size: 1.15rem; margin: 0; } .pcard p, .pcard .go { display: none; } .tile { min-height: 380px; } .tile.dark img { max-height: 260px; } .news { padding: 44px 0; } }
 </style>
