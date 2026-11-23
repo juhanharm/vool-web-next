@@ -87,18 +87,31 @@ const { sections, lang } = Astro.props;
       </div></section>
     )}
 
-    {s.type === 'news' && latest(lang).length > 0 && (
-      <section class="section soft"><div class="wrap">
-        <div class="news-head"><h2>{s.title}</h2><a class="btn ghost" href={blogIndex(lang as any)}>{s.more} →</a></div>
-        <div class="grid c3" style="margin-top:28px">
-          {latest(lang).map((p) => (
-            <a class="card has-img news-card" href={p.path}>
-              <div class="photo card-photo">{p.image && <img src={p.image} alt="" loading="lazy" />}</div>
-              <p class="small muted">{p.date}</p>
-              <h3>{p.title}</h3>
-            </a>
-          ))}
-        </div>
+    {s.type === 'news' && (s.pins?.[lang] || latest(lang).length > 0) && (
+      <section class="section soft news"><div class="wrap">
+        <div class="news-head"><h2>{s.title}</h2>{blogIndex(lang as any) && <a class="btn ghost" href={blogIndex(lang as any)}>{s.more} →</a>}</div>
+        {s.pins?.[lang] && (
+          <a class="card pin" href={s.pins[lang].href}>
+            <div class="photo"><img src={s.pins[lang].image} alt="" loading="lazy" /></div>
+            <div>
+              <span class="badge">{tr(lang, 'News')}</span>
+              <h3>{s.pins[lang].title}</h3>
+              <p class="muted">{s.pins[lang].text}</p>
+              <span class="btn">{s.pins[lang].more} →</span>
+            </div>
+          </a>
+        )}
+        {latest(lang).length > 0 && (
+          <div class="grid c3" style="margin-top:28px">
+            {latest(lang).map((p) => (
+              <a class="card has-img news-card" href={p.path}>
+                <div class="photo card-photo">{p.image && <img src={p.image} alt="" loading="lazy" />}</div>
+                <p class="small muted">{p.date}</p>
+                <h3>{p.title}</h3>
+              </a>
+            ))}
+          </div>
+        )}
       </div></section>
     )}
 
@@ -234,6 +247,13 @@ const { sections, lang } = Astro.props;
   .news-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .news-head h2 { margin: 0; }
   .news-card { text-decoration: none; display: block; }
+  .pin { display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; align-items: center; padding: 18px; margin-top: 28px; text-decoration: none; }
+  .pin .photo { aspect-ratio: 16 / 10; }
+  .pin h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin: .5em 0 .4em; }
+  .pin .btn { margin-top: .4em; }
+  .pin:hover { box-shadow: 0 14px 34px rgba(0,0,0,.08); }
+  @media (max-width: 760px) { .pin { grid-template-columns: 1fr; gap: 16px; } }
+  .news { padding: 64px 0; }
   .news-card p { margin-bottom: .3em; }
   .news-card:hover h3 { color: var(--orange-text); }
   .cta { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: center; }

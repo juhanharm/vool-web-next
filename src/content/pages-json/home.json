@@ -71,6 +71,27 @@
       ]
     },
     {
+      "type": "news",
+      "title": "Latest news",
+      "more": "All news",
+      "pins": {
+        "et": {
+          "title": "Estonia: KIK grant for apartment associations",
+          "text": "A 10-point installation with VOOL chargers and load management gets €14,090 in grant. We help with the quote and the application.",
+          "href": "/apartment-buildings/",
+          "more": "See the grant",
+          "image": "/img/apartments.webp"
+        },
+        "lt": {
+          "title": "Lithuania: get paid for charging at home",
+          "text": "VOOL pays you 3.9 ct for every kWh you charge, through the DAEI system. Launching December 2026.",
+          "href": "/daei/",
+          "more": "Join the waiting list",
+          "image": "/img/site-family.webp"
+        }
+      }
+    },
+    {
       "type": "cards",
       "id": "solutions",
       "eyebrow": "Solutions",
@@ -102,11 +123,6 @@
           "href": "/solutions/public-charging/"
         }
       ]
-    },
-    {
-      "type": "news",
-      "title": "Latest news",
-      "more": "All news"
     },
     {
       "type": "cards",

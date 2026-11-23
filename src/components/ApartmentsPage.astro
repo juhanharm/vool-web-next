@@ -7,6 +7,9 @@ import { apartments, KIK_URL } from '../content/apartments';
 interface Props { lang: 'et' | 'en' }
 const { lang } = Astro.props;
 const c = apartments[lang];
+const alt = lang === 'et'
+  ? { gallery: 'VOOLi laadijad kortermajade juures', garage: 'VOOLi laadijad kortermaja maa-aluses parklas', pole: 'VOOLi laadija postil kortermaja parklas', wall: 'Kaks VOOLi laadijat maja seinal', top: 'VOOLi laadijad kortermaja parkimiskohtadel, vaade ülalt' }
+  : { gallery: 'VOOL chargers at apartment buildings', garage: 'VOOL chargers in the underground car park of an apartment building', pole: 'VOOL charger on a pole in an apartment building car park', wall: 'Two VOOL chargers on a building wall', top: 'VOOL chargers at apartment parking spaces, seen from above' };
 ---
 <Base lang={lang} title={c.meta.title} description={c.meta.description}
   alternates={{ et: '/et/kortermajad/', en: '/apartment-buildings/' }}>
@@ -19,10 +22,13 @@ const c = apartments[lang];
         <p class="lead">{c.hero.lead}</p>
         <div class="btn-row"><a class="btn" href="#form">{c.hero.cta}</a></div>
       </div>
-      <div class="stat-card">
-        <div class="big-number">{c.hero.stat}</div>
-        <p class="muted">{c.hero.statLabel}</p>
-        <p class="calc">{c.grant.example}</p>
+      <div class="hero-visual">
+        <div class="photo"><img src="/img/garage.webp" alt={alt.garage} loading="eager" /></div>
+        <div class="stat-card">
+          <div class="big-number">{c.hero.stat}</div>
+          <p class="muted">{c.hero.statLabel}</p>
+          <p class="calc">{c.grant.example}</p>
+        </div>
       </div>
     </div>
   </section>
@@ -35,6 +41,14 @@ const c = apartments[lang];
           <div class="card"><h3>{i.title}</h3><ul>{i.points.map((p) => <li>{p}</li>)}</ul></div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="gallery" aria-label={alt.gallery}>
+    <div class="wrap gallery-in">
+      <div class="photo wide"><img src="/img/apartments.webp" alt={alt.pole} loading="lazy" /></div>
+      <div class="photo"><img src="/img/charger-two.webp" alt={alt.wall} loading="lazy" /></div>
+      <div class="photo"><img src="/img/site-top.webp" alt={alt.top} loading="lazy" /></div>
     </div>
   </section>
 
@@ -72,7 +86,17 @@ const c = apartments[lang];
 </Base>
 
 <style>
-  .hero-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 48px; align-items: center; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .hero-visual { position: relative; padding-bottom: 72px; }
+  .hero-visual .photo { aspect-ratio: 4 / 3; box-shadow: 0 30px 70px rgba(0,0,0,.14); }
+  .hero-visual .stat-card { position: absolute; left: -28px; bottom: 0; max-width: 400px; background: #fff; box-shadow: 0 18px 50px rgba(0,0,0,.16); padding: 26px 28px; }
+  .hero-visual .big-number { font-size: clamp(2.2rem, 4vw, 3.2rem); }
+  @media (max-width: 860px) { .hero-visual { padding-bottom: 0; } .hero-visual .stat-card { position: static; max-width: none; margin-top: 16px; box-shadow: none; background: var(--cream); } }
+  .gallery { padding: 0 0 8px; background: var(--cream); }
+  .gallery-in { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; padding-bottom: 72px; }
+  .gallery .photo { aspect-ratio: 3 / 4; }
+  .gallery .photo.wide { aspect-ratio: auto; }
+  @media (max-width: 760px) { .gallery-in { grid-template-columns: 1fr 1fr; padding-bottom: 48px; } .gallery .photo.wide { grid-column: 1 / -1; aspect-ratio: 16 / 10; } }
   @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
   .stat-card { background: var(--soft); border-radius: var(--radius); padding: 36px; }
   .calc { font-size: .9rem; color: var(--grey); border-top: 1px solid var(--line); padding-top: 14px; margin: 14px 0 0; }
