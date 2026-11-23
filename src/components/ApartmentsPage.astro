@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import Steps from './Steps.astro';
 import LeadForm from './LeadForm.astro';
 import { apartments, KIK_URL } from '../content/apartments';
+import { localize } from '../content/pagesStore';
 
 interface Props { lang: 'et' | 'en' }
 const { lang } = Astro.props;
@@ -10,6 +11,15 @@ const c = apartments[lang];
 const alt = lang === 'et'
   ? { gallery: 'VOOLi laadijad kortermajade juures', garage: 'VOOLi laadijad kortermaja maa-aluses parklas', pole: 'VOOLi laadija postil kortermaja parklas', wall: 'Kaks VOOLi laadijat maja seinal', top: 'VOOLi laadijad kortermaja parkimiskohtadel, vaade ülalt' }
   : { gallery: 'VOOL chargers at apartment buildings', garage: 'VOOL chargers in the underground car park of an apartment building', pole: 'VOOL charger on a pole in an apartment building car park', wall: 'Two VOOL chargers on a building wall', top: 'VOOL chargers at apartment parking spaces, seen from above' };
+const b = lang === 'et'
+  ? {
+      guide: { title: 'Üldkoosoleku juhend korteriühistule', text: 'Kuidas viia laadimise otsus üldkoosolekul läbi: mida hääletada, kuidas kulud jagada ja mida elanikele vastata.', download: 'Laadi juhend alla (PDF)', read: 'Loe juhendit', pdf: '/downloads/vool-uldkoosoleku-juhend.pdf', href: '/et/uldkoosolek/' },
+      product: { title: 'Laadija, mis sobib maja juurde', text: 'VOOL laadija annab kuni 22 kW, on 5-aastase garantiiga ning musta, alumiiniumist või puidust esipaneeliga. Seinale või postile.', specs: 'Tehnilised andmed' },
+    }
+  : {
+      guide: { title: 'Guide for the general meeting', text: 'How to get the charging decision passed: what to vote on, how to split the costs and what to answer residents.', download: 'Download the guide (PDF)', read: 'Read the guide', pdf: '/downloads/vool-general-meeting-guide-en.pdf', href: '/knowledge/general-meeting/' },
+      product: { title: 'A charger that suits the building', text: 'The VOOL Charger gives up to 22 kW, has a 5-year warranty and comes with a black, aluminium or wood front. On a wall or a pole.', specs: 'Technical data' },
+    };
 ---
 <Base lang={lang} title={c.meta.title} description={c.meta.description}
   alternates={{ et: '/et/kortermajad/', en: '/apartment-buildings/' }}>
@@ -44,11 +54,16 @@ const alt = lang === 'et'
     </div>
   </section>
 
-  <section class="gallery" aria-label={alt.gallery}>
-    <div class="wrap gallery-in">
-      <div class="photo wide"><img src="/img/apartments.webp" alt={alt.pole} loading="lazy" /></div>
-      <div class="photo"><img src="/img/charger-two.webp" alt={alt.wall} loading="lazy" /></div>
-      <div class="photo"><img src="/img/site-top.webp" alt={alt.top} loading="lazy" /></div>
+  <section class="section banners">
+    <div class="wrap">
+      <div class="banner">
+        <div class="banner-text">
+          <h2>{b.guide.title}</h2>
+          <p>{b.guide.text}</p>
+          <div class="btn-row"><a class="btn" href={b.guide.pdf} download>{b.guide.download}</a><a class="btn ghost" href={b.guide.href}>{b.guide.read}</a></div>
+        </div>
+        <div class="photo"><img src="/img/apartments.webp" alt={alt.pole} loading="lazy" /></div>
+      </div>
     </div>
   </section>
 
@@ -76,6 +91,19 @@ const alt = lang === 'et'
 
   <Steps title={c.steps.title} steps={c.steps.items as any} soft />
 
+  <section class="section banners">
+    <div class="wrap">
+      <div class="banner flip">
+        <div class="banner-text">
+          <h2>{b.product.title}</h2>
+          <p>{b.product.text}</p>
+          <div class="btn-row"><a class="btn" href={localize(lang, '/products/vool-charger/')}>{b.product.specs}</a><a class="btn ghost" href={localize(lang, '/products/vool-lmc/')}>VOOL LMC</a></div>
+        </div>
+        <div class="photo"><img src="/img/charger-two.webp" alt={alt.wall} loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section dark">
     <div class="wrap form-wrap">
       <LeadForm id="form" form="apartment" lang={lang} title={c.form.title} intro={c.form.intro}
@@ -92,12 +120,18 @@ const alt = lang === 'et'
   .hero-visual .stat-card { position: absolute; left: -28px; bottom: 0; max-width: 400px; background: #fff; box-shadow: 0 18px 50px rgba(0,0,0,.16); padding: 26px 28px; }
   .hero-visual .big-number { font-size: clamp(2.2rem, 4vw, 3.2rem); }
   @media (max-width: 860px) { .hero-visual { padding-bottom: 0; } .hero-visual .stat-card { position: static; max-width: none; margin-top: 16px; box-shadow: none; background: var(--cream); } }
-  .gallery { padding: 0 0 8px; background: var(--cream); }
-  .gallery-in { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; padding-bottom: 72px; }
-  .gallery .photo { aspect-ratio: 3 / 4; }
-  .gallery .photo.wide { aspect-ratio: auto; }
-  @media (max-width: 760px) { .gallery-in { grid-template-columns: 1fr 1fr; padding-bottom: 48px; } .gallery .photo.wide { grid-column: 1 / -1; aspect-ratio: 16 / 10; } }
   @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+  /* photo banners: coloured panel with the text, photo to the edge */
+  .banners { padding: 40px 0; }
+  .banner { display: grid; grid-template-columns: 1fr 1.1fr; background: var(--cream-deep); border-radius: 26px; overflow: hidden; min-height: 420px; }
+  .banner-text { padding: 56px; align-self: center; }
+  .banner-text h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+  .banner-text p { color: var(--grey); max-width: 34em; }
+  .banner .photo { border-radius: 0 0 0 120px; height: 100%; min-height: 300px; }
+  .banner.flip .banner-text { order: 2; }
+  .banner.flip .photo { border-radius: 0 0 120px 0; }
+  .banner.flip { background: var(--mint); }
+  @media (max-width: 860px) { .banner, .banner.flip { grid-template-columns: 1fr; } .banner .photo, .banner.flip .photo { order: -1; border-radius: 0; aspect-ratio: 16 / 10; min-height: 0; } .banner-text { padding: 28px 24px 32px; order: 0 !important; } }
   .stat-card { background: var(--soft); border-radius: var(--radius); padding: 36px; }
   .calc { font-size: .9rem; color: var(--grey); border-top: 1px solid var(--line); padding-top: 14px; margin: 14px 0 0; }
   .grant { align-items: start; gap: 48px; }
