@@ -13,10 +13,10 @@ import CostCompare from './CostCompare.astro';
 import LoadDemo from './LoadDemo.astro';
 import { posts, blogIndex, dateKey } from '../content/site';
 
-// Latest articles for the "news" block: shown only while the newest one is less than a year old.
+// Latest articles for the "news" block: only articles less than a year old.
 const now = new Date();
 const yearAgo = (now.getFullYear() - 1) * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
-const latest = (l: string) => { const p = posts(l as any); return p.length && dateKey(p[0].date) >= yearAgo ? p.slice(0, 3) : []; };
+const latest = (l: string) => posts(l as any).filter((p) => dateKey(p.date) >= yearAgo).slice(0, 3);
 
 interface Props { sections: any[]; lang: string }
 const { sections, lang } = Astro.props;
