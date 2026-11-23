@@ -9,8 +9,7 @@
       "eyebrow": "VOOL in Sweden",
       "title": "EV charging for buildings in Sweden, on the connection they already have",
       "lead": "Chargers, load management and billing from one maker. Sold and installed by 3 partners in Sweden.",
-      "image": "/img/apartments.webp",
-      "alt": "Apartment building with VOOL chargers",
+      "image": "/img/site-family.webp",
       "cta": [
         {
           "label": "Get a quote",
@@ -138,7 +137,7 @@
     {
       "type": "cta",
       "title": "Planning charging in Sweden?",
-      "lead": "Send us the parking spaces and the main fuse size. We reply within one working day.",
+      "lead": "Send us the parking spaces and the main fuse size. We reply within 1–2 working days.",
       "buttons": [
         {
           "label": "Get a quote",

@@ -29,12 +29,13 @@ const total = countries.reduce((n, c) => n + c.partners.length, 0);
               <div class="card partner" data-installer={String(p.installer)} data-wholesaler={String(p.wholesaler)}>
                 <h3>{p.name}</h3>
                 <p class="tags">{p.installer && <span class="badge">Installer</span>} {p.wholesaler && <span class="badge">Wholesaler</span>}</p>
-                {p.website && <a href={p.website} rel="noopener">{p.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')} ↗</a>}
+                {p.website && <a href={p.website} rel="noopener" aria-label={`${p.name} website`}>{p.website.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]} ↗</a>}
                 {p.phone && <a href={`tel:${p.phone.replace(/\s/g, '')}`}>{p.phone}</a>}
                 {p.email && <a href={`mailto:${p.email}`}>{p.email}</a>}
               </div>
             ))}
           </div>
+          {c.partners.length > 6 && <button class="more-btn" type="button" data-more>Show all {c.partners.length} in {c.country}</button>}
         </div>
       ))}
     </div>
@@ -57,6 +58,8 @@ const total = countries.reduce((n, c) => n + c.partners.length, 0);
         p.hidden = !ok; if (ok) shown++;
       });
       c.hidden = shown === 0 || (state.country !== '' && c.dataset.name !== state.country);
+      // With every country on screen, show six per country until asked for more.
+      c.classList.toggle('short', state.country === '' && !state.q && !c.dataset.all);
     });
   };
   document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((b) => b.addEventListener('click', () => {
@@ -64,10 +67,18 @@ const total = countries.reduce((n, c) => n + c.partners.length, 0);
     document.querySelectorAll('[data-filter]').forEach((x) => x.classList.toggle('on', x === b));
     apply();
   }));
+  document.querySelectorAll<HTMLButtonElement>('[data-more]').forEach((b) => b.addEventListener('click', () => { b.closest<HTMLElement>('.country')!.dataset.all = '1'; apply(); }));
   const sel = document.querySelector<HTMLSelectElement>('[data-country]')!;
   sel.addEventListener('change', () => { state.country = sel.value; apply(); });
   document.querySelector<HTMLInputElement>('[data-search]')?.addEventListener('input', (e) => { state.q = (e.target as HTMLInputElement).value.trim().toLowerCase(); apply(); });
+  // Start with the visitor's own country when we have partners there; "All countries" stays one click away.
+  const BY_LANG: Record<string, string> = { et: 'Estonia', lv: 'Latvia', lt: 'Lithuania', fi: 'Finland', sv: 'Sweden', nb: 'Norway', no: 'Norway', da: 'Denmark', de: 'Germany', pl: 'Poland', pt: 'Portugal', fr: 'France', it: 'Italy', es: 'Spain', sk: 'Slovakia', nl: 'Netherlands', is: 'Iceland', cs: 'Czech Republic' };
+  const BY_REGION: Record<string, string> = { EE: 'Estonia', LV: 'Latvia', LT: 'Lithuania', FI: 'Finland', SE: 'Sweden', NO: 'Norway', DK: 'Denmark', DE: 'Germany', AT: 'Austria', CH: 'Switzerland', PL: 'Poland', PT: 'Portugal', FR: 'France', IT: 'Italy', ES: 'Spain', SK: 'Slovakia', NL: 'Netherlands', BE: 'Belgium', LU: 'Luxembourg', IS: 'Iceland', CZ: 'Czech Republic', IE: 'Ireland', GB: 'United Kingdom' };
+  const [l, r] = (navigator.language || '').split('-');
+  const guess = BY_REGION[(r || '').toUpperCase()] || BY_LANG[l];
+  if (guess && [...sel.options].some((o) => o.value === guess)) { sel.value = guess; state.country = guess; apply(); }
   const type = new URLSearchParams(location.search).get('type');
+  apply();
   if (type) document.querySelector<HTMLButtonElement>(`[data-filter="${type}"]`)?.click();
 
   // Map: one marker per country, sized by the number of partners. The list below works without it.
@@ -94,16 +105,22 @@ const total = countries.reduce((n, c) => n + c.partners.length, 0);
 <style>
   .map { height: 380px; border-radius: var(--radius); margin-top: 28px; background: var(--soft); z-index: 0; }
   .map[hidden] { display: none; }
-  .filters input[type=search] { font: inherit; padding: .55em 1.1em; border-radius: 999px; border: 1px solid var(--line); min-width: 240px; }
+  .filters input[type=search] { font: inherit; font-size: 16px; padding: .55em 1.1em; border-radius: 999px; border: 1px solid var(--field); min-width: 240px; }
   .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 28px 0 8px; }
-  .filters button, .filters select { font: inherit; padding: .55em 1.1em; border-radius: 999px; border: 1px solid var(--line); background: #fff; cursor: pointer; }
+  .filters button, .filters select { font: inherit; padding: .55em 1.1em; border-radius: 999px; border: 1px solid var(--field); background: #fff; cursor: pointer; }
   .filters button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
   .country { margin-top: 44px; }
+  .country.short .partner:nth-child(n+7) { display: none; }
+  .more-btn { display: none; margin-top: 16px; font: inherit; font-weight: 500; padding: .7em 1.3em; min-height: 46px; border-radius: 999px; border: 1px solid var(--field); background: #fff; cursor: pointer; }
+  .country.short .more-btn { display: inline-block; }
+  .more-btn:hover { border-color: var(--ink); }
   .country[hidden], .partner[hidden] { display: none; }
   .country h2 { font-size: 1.5rem; margin-bottom: 16px; }
   .partner { display: flex; flex-direction: column; gap: 4px; padding: 22px; }
   .partner h3 { font-size: 1.1rem; margin: 0; }
-  .partner a { color: var(--grey); text-decoration: none; font-size: .9rem; word-break: break-word; }
+  .partner a { color: var(--grey); text-decoration: none; font-size: .92rem; word-break: break-word; padding: 7px 0; }
+  .partner a:first-of-type { color: var(--orange-text); font-weight: 500; }
+  @media (max-width: 760px) { .partner a { padding: 11px 0; } .filters button, .filters select, .filters input[type=search] { min-height: 46px; } }
   .partner a:hover { color: var(--orange); }
   .tags { margin: 2px 0 6px; min-height: 1.4em; }
 </style>

@@ -25,11 +25,20 @@ interface Props {
   consent: string;
 }
 const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, consent, download } = Astro.props;
+import { company } from '../content/ui';
+import { legal } from '../content/site';
+const AUTO: Record<string, string> = { name: 'name', organisation: 'organization', company: 'organization', email: 'email', phone: 'tel', city: 'address-level2', address: 'street-address', country: 'country-name' };
+// Country list in the page language; the value sent to VOOL stays in English.
+const ISO = ['EE','LV','LT','FI','SE','NO','DK','IS','DE','AT','CH','NL','BE','LU','FR','IT','ES','PT','PL','CZ','SK','HU','SI','HR','IE','GB','GR','RO','BG','MT','CY'];
+const en = new Intl.DisplayNames(['en'], { type: 'region' });
+const local = new Intl.DisplayNames([lang === 'no' ? 'nb' : lang], { type: 'region' });
+const countries = ISO.map((c) => ({ value: en.of(c)!, label: local.of(c)! })).sort((a, b) => a.label.localeCompare(b.label, lang));
+const privacy = [...legal(lang as any), ...legal('en')].find((p) => /privacy|privaat|privat|tietosuoja|datenschutz|prywatno/i.test(p.path + p.title));
 ---
 <div class="form-card" id={id}>
   <h2>{title}</h2>
   {intro && <p class="muted">{intro}</p>}
-  <form method="post" action="/api/lead" data-lead-form>
+  <form method="post" action="/api/lead" data-lead-form novalidate>
     <input type="hidden" name="form" value={form} />
     <input type="hidden" name="lang" value={lang} />
     <input type="text" name="company_website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -41,30 +50,48 @@ const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, co
           <label class:list={[{ full: !f.half }]}>
             <span>{f.label}{f.required && ' *'}</span>
             {f.type === 'textarea' ? (
-              <textarea name={f.name} rows="3" required={f.required}></textarea>
+              <textarea name={f.name} rows="3" required={f.required} autocomplete="off"></textarea>
+            ) : f.name === 'country' ? (
+              <select name="country" required={f.required} autocomplete="country-name">
+                <option value="">–</option>
+                {countries.map((o) => <option value={o.value}>{o.label}</option>)}
+              </select>
             ) : f.type === 'select' ? (
               <select name={f.name} required={f.required}>
                 <option value="">–</option>
                 {f.options?.map((o) => typeof o === 'string' ? <option value={o}>{o}</option> : <option value={o.value}>{o.label}</option>)}
               </select>
             ) : (
-              <input type={f.type ?? 'text'} name={f.name} required={f.required} min={f.type === 'number' ? 0 : undefined} />
+              <input type={f.type ?? 'text'} name={f.name} required={f.required} min={f.type === 'number' ? 0 : undefined} autocomplete={AUTO[f.name] ?? 'off'} inputmode={f.type === 'number' ? 'numeric' : undefined} />
             )}
           </label>
         )
       ))}
-      <label class="check full"><input type="checkbox" name="consent" value="yes" required /> <span>{consent}</span></label>
+      <label class="check full"><input type="checkbox" name="consent" value="yes" required /> <span>{consent}{privacy && <> <a href={privacy.path} target="_blank" rel="noopener">{privacy.title} ↗</a></>}</span></label>
     </div>
     <button class="btn" type="submit">{submit}</button>
     <p class="status ok" hidden>{thanks} {download && <a href={download.href} download>{download.label}</a>}</p>
-    <p class="status err" hidden>{error}</p>
+    <p class="status err" hidden role="alert">{error}</p>
   </form>
+  <p class="direct"><a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a><span aria-hidden="true"> · </span><a href={`mailto:${company.email}`}>{company.email}</a></p>
 </div>
 
 <script>
   document.querySelectorAll<HTMLFormElement>('[data-lead-form]').forEach((form) => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      // Inline messages instead of the browser's bubbles; the text comes from the browser, in the visitor's language.
+      form.querySelectorAll('.field-err').forEach((x) => x.remove());
+      const bad = [...form.querySelectorAll<HTMLInputElement>('input, select, textarea')].filter((f) => !f.checkValidity());
+      form.querySelectorAll('[aria-invalid]').forEach((f) => f.removeAttribute('aria-invalid'));
+      bad.forEach((f, i) => {
+        const m = document.createElement('small'); m.className = 'field-err'; m.id = `err-${f.name}`; m.textContent = f.validationMessage;
+        f.setAttribute('aria-invalid', 'true'); f.setAttribute('aria-describedby', m.id);
+        f.closest('label')!.append(m);
+        f.addEventListener('input', () => { if (f.checkValidity()) { m.remove(); f.removeAttribute('aria-invalid'); } });
+        if (i === 0) f.focus();
+      });
+      if (bad.length) return;
       const btn = form.querySelector('button');
       const ok = form.querySelector<HTMLElement>('.status.ok')!;
       const err = form.querySelector<HTMLElement>('.status.err')!;
@@ -94,12 +121,20 @@ const { id = 'form', form, lang, title, intro, fields, submit, thanks, error, co
   .form-card h2 { font-size: 1.6rem; }
   .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin: 20px 0 22px; }
   .fields[hidden] { display: none; }
-  label { display: flex; flex-direction: column; gap: 6px; font-size: .88rem; font-weight: 500; }
+  label { display: flex; flex-direction: column; gap: 6px; font-size: .88rem; font-weight: 500; min-width: 0; }
+  input:not([type=checkbox]), select, textarea { width: 100%; min-width: 0; }
   label.full { grid-column: 1 / -1; }
-  input, select, textarea { font: inherit; font-weight: 400; padding: .7em .9em; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); }
+  input, select, textarea { font: inherit; font-size: 16px; font-weight: 400; padding: .7em .9em; min-height: 48px; border: 1px solid var(--field); border-radius: 10px; background: #fff; color: var(--ink); }
   input:focus, select:focus, textarea:focus { outline: 2px solid var(--orange); outline-offset: 1px; border-color: transparent; }
   .check { flex-direction: row; align-items: flex-start; gap: 10px; font-weight: 400; color: var(--grey); }
-  .check input { margin-top: 4px; accent-color: var(--orange); }
+  .check input { margin-top: 2px; accent-color: var(--orange-btn); width: 22px; height: 22px; min-height: 0; flex: none; padding: 0; }
+  .check a { color: var(--orange-text); }
+  .check { flex-wrap: wrap; } .check span { flex: 1; }
+  :global(.field-err) { color: #b3261e; font-weight: 400; font-size: .84rem; flex-basis: 100%; }
+  :global([aria-invalid="true"]) { border-color: #b3261e !important; }
+  .direct { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--line); font-size: .95rem; }
+  .direct a { color: var(--ink); font-weight: 500; text-decoration: none; display: inline-block; padding: 6px 0; }
+  .direct a:hover { color: var(--orange-text); }
   .hp { position: absolute; left: -9999px; }
   .status { margin: 16px 0 0; font-weight: 500; }
   .status.ok { color: var(--green); }

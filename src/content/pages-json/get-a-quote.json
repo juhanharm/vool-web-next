@@ -6,7 +6,7 @@
     {
       "type": "hero",
       "eyebrow": "Get a quote",
-      "title": "Tell us about your site. We reply within one working day.",
+      "title": "Tell us about your site. We reply within 1–2 working days.",
       "lead": "You get a sized proposal: how many chargers fit on your connection, what hardware you need and who can install it.",
       "cta": [
         {
@@ -106,7 +106,7 @@
         }
       ],
       "submit": "Send",
-      "thanks": "Thank you! We will reply within one working day.",
+      "thanks": "Thank you! We reply within 1–2 working days.",
       "error": "Something went wrong. Please try again or write to info@vool.com.",
       "consent": "I agree that VOOL processes my data to answer this enquiry (privacy policy)."
     },

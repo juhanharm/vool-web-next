@@ -1,6 +1,11 @@
 @import '@fontsource/poppins/300.css';
 @import '@fontsource/poppins/400.css';
 @import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+/* Poppins and TWK Everett have no Cyrillic; Montserrat fills in for Russian only (unicode-range). */
+@import '@fontsource/montserrat/cyrillic-400.css';
+@import '@fontsource/montserrat/cyrillic-500.css';
+@import '@fontsource/montserrat/cyrillic-600.css';
 
 /* Same fonts as the current www.vool.com: TWK Everett for headings, Poppins for text. */
 @font-face { font-family: 'TWK Everett'; src: url('/fonts/TWKEverett-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
@@ -15,6 +20,12 @@
   --soft: #f4f4f4;
   --green: #386957;
   --white: #ffffff;
+  --cream: #fff7eb;
+  --cream-deep: #fff0db;
+  --mint: #d7f3e9;
+  --orange-btn: #d24319; /* brand orange darkened until white text passes 4.5:1 */
+  --orange-btn-hover: #b93a13;
+  --field: #8c8c8c;
   --radius: 18px;
   --max: 1180px;
 }
@@ -23,16 +34,16 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
   color: var(--ink);
   background: var(--white);
   line-height: 1.6;
   font-size: 16.5px;
-  font-weight: 300;
+  font-weight: 400;
 }
 img, svg { max-width: 100%; display: block; }
 a { color: inherit; }
-h1, h2, h3, h4 { font-family: 'TWK Everett', 'Poppins', sans-serif; line-height: 1.12; margin: 0 0 .5em; font-weight: 400; letter-spacing: -0.015em; }
+h1, h2, h3, h4 { font-family: 'TWK Everett', 'Montserrat', 'Poppins', sans-serif; line-height: 1.12; margin: 0 0 .5em; font-weight: 400; letter-spacing: -0.015em; }
 h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
 h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
 h3 { font-size: 1.2rem; }
@@ -52,9 +63,9 @@ p { margin: 0 0 1em; }
   display: inline-flex; align-items: center; gap: .5em;
   padding: .85em 1.5em; border-radius: 999px; border: 0;
   font: inherit; font-weight: 500; text-decoration: none; cursor: pointer;
-  background: var(--orange); color: var(--white); transition: background .15s;
+  background: var(--orange-btn); color: var(--white); transition: background .15s;
 }
-.btn:hover { background: var(--orange-dark); }
+.btn:hover { background: var(--orange-btn-hover); }
 .btn.ghost { background: transparent; color: inherit; box-shadow: inset 0 0 0 1.5px currentColor; }
 .btn.ghost:hover { background: rgba(0,0,0,.05); }
 .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 1.6em; }
@@ -130,3 +141,18 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 .photo:has(img[src*="/product-"]) { background: #f4f4f4; }
 .photo img[src*="/product-"] { object-fit: contain; }
 .hero.dark .photo:has(img[src*="/product-"]) { box-shadow: none; }
+
+/* --- Design review, 23 Nov 2026 --- */
+h1, h2, h3, .card, .lead { overflow-wrap: break-word; hyphens: auto; }
+.grid > *, .hero-grid > *, .split > * { min-width: 0; }
+/* hyphenate headlines only where long compound words need it */
+html:not(:is([lang="de"], [lang="fi"], [lang="et"], [lang="sv"], [lang="no"])) :is(h1, h2, .lead) { hyphens: manual; }
+html[lang="en"] h3, html[lang="en"] .card { hyphens: manual; }
+@media (max-width: 480px) { html:is([lang="ru"], [lang="de"], [lang="fi"]) .hero h1 { font-size: 2rem; } }
+strong, b { font-weight: 600; }
+/* brand creams and greens: soft sections without product renders, badges */
+.section.soft:not(:has(img[src*="/product-"])) { background: var(--cream); }
+.section.soft:not(:has(img[src*="/product-"])) .card { border-color: transparent; }
+.badge { background: var(--mint); color: var(--green); }
+.card a.more { padding: 9px 0; margin-top: 0; }
+@media (max-width: 760px) { .btn { min-height: 46px; } }

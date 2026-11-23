@@ -91,7 +91,7 @@
         },
         {
           "title": "Fleets",
-          "image": "/img/garage.webp",
+          "image": "/img/charger-two.webp",
           "text": "Costs and status per vehicle, for five cars or thousands.",
           "href": "/solutions/electrical-fleet-owners/"
         },
@@ -100,51 +100,6 @@
           "image": "/img/public.webp",
           "text": "Open your chargers to visitors and get paid for every session.",
           "href": "/solutions/public-charging/"
-        }
-      ]
-    },
-    {
-      "type": "cards",
-      "soft": true,
-      "eyebrow": "New",
-      "title": "What’s new",
-      "cols": 3,
-      "items": [
-        {
-          "title": "Estonia: KIK grant for apartment associations",
-          "text": "A 10-point installation with VOOL chargers and load management gets €14,090 in grant. We help with the quote and the application.",
-          "href": "/apartment-buildings/",
-          "more": "See the grant"
-        },
-        {
-          "title": "Lithuania: get paid for charging at home",
-          "text": "VOOL pays you 3.9 ct for every kWh you charge, through the DAEI system. Launching December 2026.",
-          "href": "/daei/",
-          "more": "Join the waiting list"
-        },
-        {
-          "title": "VOOL Charger with ISO 15118-20",
-          "text": "Meets the AFIR rule for chargers installed from 1 January 2027. Plug & Charge now, V2G by update.",
-          "href": "/afir/",
-          "more": "AFIR and the new charger"
-        },
-        {
-          "title": "VOOL LMC S",
-          "text": "Load management for houses and small sites with up to four chargers. From January 2027.",
-          "href": "/products/vool-lmc-s/",
-          "more": "LMC S"
-        },
-        {
-          "title": "VOOL Commercial Pole",
-          "text": "Two 22 kW charging points with display, QR payment and an optional MID meter.",
-          "href": "/products/commercial-pole/",
-          "more": "Commercial Pole"
-        },
-        {
-          "title": "Billing and payments",
-          "text": "Drivers pay, you get paid monthly. No fixed fee and no fee per charger.",
-          "href": "/software/billing-and-payments/",
-          "more": "How it works"
         }
       ]
     },
@@ -201,6 +156,51 @@
         {
           "label": "Compare",
           "href": "/compare/"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "soft": true,
+      "eyebrow": "New",
+      "title": "What’s new",
+      "cols": 3,
+      "items": [
+        {
+          "title": "Estonia: KIK grant for apartment associations",
+          "text": "A 10-point installation with VOOL chargers and load management gets €14,090 in grant. We help with the quote and the application.",
+          "href": "/apartment-buildings/",
+          "more": "See the grant"
+        },
+        {
+          "title": "Lithuania: get paid for charging at home",
+          "text": "VOOL pays you 3.9 ct for every kWh you charge, through the DAEI system. Launching December 2026.",
+          "href": "/daei/",
+          "more": "Join the waiting list"
+        },
+        {
+          "title": "VOOL Charger with ISO 15118-20",
+          "text": "Meets the AFIR rule for chargers installed from 1 January 2027. Plug & Charge now, V2G by update.",
+          "href": "/afir/",
+          "more": "AFIR and the new charger"
+        },
+        {
+          "title": "VOOL LMC S",
+          "text": "Load management for houses and small sites with up to four chargers. From January 2027.",
+          "href": "/products/vool-lmc-s/",
+          "more": "LMC S"
+        },
+        {
+          "title": "VOOL Commercial Pole",
+          "text": "Two 22 kW charging points with display, QR payment and an optional MID meter.",
+          "href": "/products/commercial-pole/",
+          "more": "Commercial Pole"
+        },
+        {
+          "title": "Billing and payments",
+          "text": "Drivers pay, you get paid monthly. No fixed fee and no fee per charger.",
+          "href": "/software/billing-and-payments/",
+          "more": "How it works"
         }
       ]
     },

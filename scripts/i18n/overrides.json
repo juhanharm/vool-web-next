@@ -1,0 +1,86 @@
+{
+ "de": {
+  "328": "Erzählen Sie uns von Ihrem Standort. Wir antworten innerhalb von 1–2 Werktagen.",
+  "349": "Vielen Dank! Wir antworten innerhalb von 1–2 Werktagen.",
+  "551": "Nennen Sie uns die Zahl der Stellplätze und die Größe der Hauptsicherung. Wir antworten innerhalb von 1–2 Werktagen.",
+  "827": "Nennen Sie uns die Zahl der Stellplätze, die Größe der Hauptsicherung und das Land. Wir antworten innerhalb von 1–2 Werktagen."
+ },
+ "es": {
+  "328": "Cuéntanos cómo es tu instalación. Respondemos en 1–2 días laborables.",
+  "349": "¡Gracias! Respondemos en 1–2 días laborables.",
+  "551": "Envíanos el número de plazas de aparcamiento y el amperaje del fusible general. Respondemos en 1–2 días laborables.",
+  "827": "Envíanos las plazas de aparcamiento, el amperaje del fusible general y el país. Respondemos en 1–2 días laborables."
+ },
+ "et": {
+  "328": "Räägi meile oma objektist. Vastame 1–2 tööpäeva jooksul.",
+  "349": "Aitäh! Vastame 1–2 tööpäeva jooksul.",
+  "551": "Saada meile parkimiskohtade arv ja peakaitsme suurus. Vastame 1–2 tööpäeva jooksul.",
+  "827": "Saada parkimiskohtade arv, peakaitsme suurus ja riik. Vastame 1–2 tööpäeva jooksul."
+ },
+ "fi": {
+  "328": "Kerro meille kohteestasi. Vastaamme 1–2 arkipäivän kuluessa.",
+  "349": "Kiitos! Vastaamme 1–2 arkipäivän kuluessa.",
+  "551": "Lähetä meille autopaikkojen määrä ja pääsulakkeen koko. Vastaamme 1–2 arkipäivän kuluessa.",
+  "827": "Lähetä autopaikkojen määrä, pääsulakkeen koko ja maa. Vastaamme 1–2 arkipäivän kuluessa."
+ },
+ "fr": {
+  "328": "Parlez-nous de votre site. Nous répondons sous 1 à 2 jours ouvrés.",
+  "349": "Merci ! Nous répondons sous 1 à 2 jours ouvrés.",
+  "551": "Envoyez-nous le nombre de places de parking et le calibre du fusible principal. Nous répondons sous 1 à 2 jours ouvrés.",
+  "827": "Envoyez-nous le nombre de places de parking, le calibre du fusible principal et le pays. Nous répondons sous 1 à 2 jours ouvrés."
+ },
+ "it": {
+  "328": "Parlaci del tuo sito. Rispondiamo entro 1–2 giorni lavorativi.",
+  "349": "Grazie! Rispondiamo entro 1–2 giorni lavorativi.",
+  "551": "Mandaci il numero di posti auto e la taglia del fusibile principale. Rispondiamo entro 1–2 giorni lavorativi.",
+  "827": "Mandaci i posti auto, la taglia del fusibile principale e il paese. Rispondiamo entro 1–2 giorni lavorativi."
+ },
+ "lt": {
+  "328": "Papasakokite apie savo objektą. Atsakome per 1–2 darbo dienas.",
+  "349": "Ačiū! Atsakome per 1–2 darbo dienas.",
+  "551": "Atsiųskite mums stovėjimo vietų skaičių ir įvadinio saugiklio dydį. Atsakome per 1–2 darbo dienas.",
+  "827": "Atsiųskite stovėjimo vietų skaičių, įvadinio saugiklio dydį ir šalį. Atsakome per 1–2 darbo dienas."
+ },
+ "lv": {
+  "328": "Pastāstiet par savu objektu. Atbildēsim 1–2 darba dienu laikā.",
+  "349": "Paldies! Atbildēsim 1–2 darba dienu laikā.",
+  "551": "Atsūtiet stāvvietu skaitu un galvenā drošinātāja lielumu. Atbildēsim 1–2 darba dienu laikā.",
+  "827": "Atsūtiet stāvvietu skaitu, galvenā drošinātāja lielumu un valsti. Atbildēsim 1–2 darba dienu laikā."
+ },
+ "no": {
+  "328": "Fortell oss om anlegget ditt. Vi svarer innen 1–2 virkedager.",
+  "349": "Takk! Vi svarer innen 1–2 virkedager.",
+  "551": "Send oss antall parkeringsplasser og størrelsen på hovedsikringen. Vi svarer innen 1–2 virkedager.",
+  "827": "Send oss antall parkeringsplasser, størrelsen på hovedsikringen og landet. Vi svarer innen 1–2 virkedager."
+ },
+ "pl": {
+  "328": "Opowiedz nam o swoim obiekcie. Odpowiadamy w ciągu 1–2 dni roboczych.",
+  "349": "Dziękujemy! Odpowiadamy w ciągu 1–2 dni roboczych.",
+  "551": "Podaj nam liczbę miejsc parkingowych i wartość zabezpieczenia głównego. Odpowiadamy w ciągu 1–2 dni roboczych.",
+  "827": "Podaj liczbę miejsc parkingowych, wartość zabezpieczenia głównego i kraj. Odpowiadamy w ciągu 1–2 dni roboczych."
+ },
+ "pt": {
+  "328": "Fale-nos do seu local. Respondemos em 1–2 dias úteis.",
+  "349": "Obrigado! Respondemos em 1–2 dias úteis.",
+  "551": "Envie-nos o número de lugares de estacionamento e o calibre do fusível principal. Respondemos em 1–2 dias úteis.",
+  "827": "Envie o número de lugares de estacionamento, o calibre do fusível principal e o país. Respondemos em 1–2 dias úteis."
+ },
+ "ru": {
+  "328": "Расскажите о своём объекте. Мы ответим в течение 1–2 рабочих дней.",
+  "349": "Спасибо! Мы ответим в течение 1–2 рабочих дней.",
+  "551": "Пришлите нам число парковочных мест и номинал главного предохранителя. Мы ответим в течение 1–2 рабочих дней.",
+  "827": "Пришлите число парковочных мест, номинал главного предохранителя и страну. Мы ответим в течение 1–2 рабочих дней."
+ },
+ "sk": {
+  "328": "Povedzte nám o svojom objekte. Odpovieme do 1–2 pracovných dní.",
+  "349": "Ďakujeme! Odpovieme do 1–2 pracovných dní.",
+  "551": "Pošlite nám počet parkovacích miest a veľkosť hlavného ističa. Odpovieme do 1–2 pracovných dní.",
+  "827": "Pošlite počet parkovacích miest, veľkosť hlavného ističa a krajinu. Odpovieme do 1–2 pracovných dní."
+ },
+ "sv": {
+  "328": "Berätta om din anläggning. Vi svarar inom 1–2 arbetsdagar.",
+  "349": "Tack! Vi svarar inom 1–2 arbetsdagar.",
+  "551": "Skicka antalet parkeringsplatser och huvudsäkringens storlek. Vi svarar inom 1–2 arbetsdagar.",
+  "827": "Skicka antalet parkeringsplatser, huvudsäkringens storlek och land. Vi svarar inom 1–2 arbetsdagar."
+ }
+}

@@ -14,5 +14,7 @@ for f in sorted(glob.glob('scripts/i18n/batch_*.py')):
         if all(os.path.exists(c) for c in done):
             for c, d0 in zip(chunks, done):
                 a, b = json.load(open(c)), json.load(open(d0)); assert len(a) == len(b), (lang, d0); flat += b
+        for i, v in json.load(open('scripts/i18n/overrides.json')).get(lang, {}).items():
+            if int(i) < len(flat): flat[int(i)] = v  # later wording changes, see overrides.json
         json.dump({'ui': d['ui'], 'strings': flat}, open(f'src/content/i18n/{lang}.json', 'w'), ensure_ascii=False, indent=0)
         print(lang, len(flat))

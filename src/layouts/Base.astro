@@ -20,11 +20,16 @@ const blog = blogIndex(lang);
 if (lang !== 'en' && blog) items.push({ label: t.blog, href: blog });
 const langs = (Object.keys(langNames) as Lang[]).filter((l) => alternates[l] || hasHome(l)).map((l) => ({ code: l, href: alternates[l] ?? homeOf(l) }));
 const legalPages = legal(lang);
+const seen = new Set<string>();
+const footCols = items.filter((n) => n.children).map((n) => ({ label: n.label, children: n.children!.filter((c) => !seen.has(c.href) && seen.add(c.href)) })).filter((n) => n.children.length);
+/** Legal page titles come from the old site, some in capitals. */
+const tidy = (s: string) => (s === s.toUpperCase() ? s.charAt(0) + s.slice(1).toLowerCase().replace(/vool/g, 'VOOL') : s).replace(/&/g, ' & ').replace(/\s+/g, ' ');
 ---
 <!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
+    <script is:inline>document.documentElement.className="js"</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -39,15 +44,14 @@ const legalPages = legal(lang);
   </head>
   <body>
     <a class="skip" href="#main">{t.skip}</a>
-    <header class="top">
+    <header class="top" data-top>
       <div class="wrap bar">
         <a class="logo" href={homeOf(lang)} aria-label="VOOL"><img src="/logo.svg" alt="VOOL" width="76" height="20" /></a>
-        <input type="checkbox" id="menu" class="menu-toggle" aria-label="Menu" />
-        <label for="menu" class="burger" aria-hidden="true"><span></span><span></span><span></span></label>
-        <nav class="nav" aria-label="Main">
+        <button type="button" class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav" data-burger><span></span><span></span><span></span></button>
+        <nav class="nav" id="nav" aria-label="Main">
           {items.map((n) => n.children ? (
             <div class="drop">
-              <button type="button">{n.label}</button>
+              <button type="button" aria-expanded="false">{n.label}</button>
               <div class="panel">
                 {n.children.map((c) => <a href={c.href}><strong>{c.label}</strong>{c.note && <span>{c.note}</span>}</a>)}
               </div>
@@ -64,6 +68,7 @@ const legalPages = legal(lang);
         </nav>
       </div>
     </header>
+    <script is:inline>(()=>{const d=document,h=d.querySelector("[data-top]"),bar=h.querySelector(".bar"),b=h.querySelector("[data-burger]");const drops=()=>h.querySelectorAll(".drop.open").forEach(e=>{e.classList.remove("open");e.firstElementChild.setAttribute("aria-expanded","false")});const close=()=>{h.classList.remove("menu-open");b.setAttribute("aria-expanded","false");d.body.classList.remove("menu-lock")};const fit=()=>{const open=h.classList.contains("menu-open");h.classList.remove("compact");const n=h.querySelector(".nav");const c=innerWidth<1000||bar.scrollWidth>bar.clientWidth+1||n.scrollWidth>n.clientWidth+1;h.classList.toggle("compact",c);if(!c&&open)close()};b.addEventListener("click",()=>{const o=!h.classList.contains("menu-open");h.classList.toggle("menu-open",o);b.setAttribute("aria-expanded",String(o));d.body.classList.toggle("menu-lock",o);if(!o)drops()});h.querySelectorAll(".drop>button").forEach(x=>x.addEventListener("click",()=>{const p=x.parentElement,o=!p.classList.contains("open");drops();p.classList.toggle("open",o);x.setAttribute("aria-expanded",String(o))}));d.addEventListener("keydown",e=>{if(e.key==="Escape"){drops();if(h.classList.contains("menu-open")){close();b.focus()}}});d.addEventListener("click",e=>{if(!e.target.closest(".drop"))drops()});fit();addEventListener("resize",fit);d.fonts&&d.fonts.ready.then(fit)})()</script>
     <main id="main"><slot /></main>
     <a class="sticky-cta btn" href={localize(lang, '/get-a-quote/')} data-sticky hidden>{t.quote}</a>
     <footer class="foot">
@@ -75,16 +80,16 @@ const legalPages = legal(lang);
             <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a> · <a href={`mailto:${company.email}`}>{company.email}</a></p>
           <p class="small"><a href={company.linkedin}>LinkedIn</a> · <a href={company.instagram}>Instagram</a></p>
         </div>
-        {items.filter((n) => n.children).map((n) => (
+        {footCols.map((n) => (
           <div>
-            <h4>{n.label}</h4>
-            <ul>{n.children!.map((c) => <li><a href={c.href}>{c.label}</a></li>)}</ul>
+            <h3>{n.label}</h3>
+            <ul>{n.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}</ul>
           </div>
         ))}
         {legalPages.length > 0 && (
           <div>
-            <h4>{t.legal}</h4>
-            <ul>{legalPages.map((p) => <li><a href={p.path}>{p.title.length > 44 ? p.title.slice(0, 42) + '…' : p.title}</a></li>)}</ul>
+            <h3>{t.legal}</h3>
+            <ul>{legalPages.map((p) => <li><a href={p.path}>{tidy(p.title)}</a></li>)}</ul>
           </div>
         )}
       </div>
@@ -96,14 +101,16 @@ const legalPages = legal(lang);
 
 <style>
   .top { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  .bar { display: flex; align-items: center; gap: 18px; height: 72px; }
+  .bar { display: flex; align-items: center; gap: 18px; height: 72px; max-width: 1480px; }
+  .panel strong { font-weight: 500; }
+  .nav > *, .right > * { flex-shrink: 0; }
   .logo img { height: 20px; width: auto; }
-  .nav { display: flex; align-items: center; gap: 0; flex: 1; }
+  .nav { display: flex; align-items: center; gap: 0; flex: 1; min-width: 0; }
   .nav .link, .drop > button { font: inherit; font-weight: 400; background: none; border: 0; cursor: pointer; text-decoration: none; color: var(--ink); font-size: .88rem; padding: 10px 7px; border-radius: 8px; white-space: nowrap; }
   .nav .link:hover, .drop:hover > button { background: var(--soft); }
   .drop { position: relative; }
   .panel { display: none; position: absolute; top: 100%; left: 0; min-width: 280px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 8px; box-shadow: 0 18px 40px rgba(0,0,0,.1); }
-  .drop:hover .panel, .drop:focus-within .panel { display: block; }
+  .top:not(.compact) .drop:hover .panel, .drop.open .panel { display: block; }
   .panel a { display: flex; flex-direction: column; padding: 10px 12px; border-radius: 8px; text-decoration: none; }
   .panel a:hover { background: var(--soft); }
   .panel span { font-size: .82rem; color: var(--grey); }
@@ -116,29 +123,43 @@ const legalPages = legal(lang);
   .foot-langs { display: flex; flex-wrap: wrap; gap: 6px 16px; padding-top: 22px; margin-top: 28px; border-top: 1px solid var(--line); font-size: .86rem; color: var(--grey); }
   .foot-langs a { color: var(--grey); text-decoration: none; }
   .foot-langs a.on, .foot-langs a:hover { color: var(--ink); text-decoration: underline; }
-  @media (max-width: 1240px) { .langs { margin: 8px 0; } .lang-list { position: static; box-shadow: none; margin-top: 8px; } }
   .lang-list { position: absolute; right: 0; top: 100%; margin-top: 6px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; min-width: 250px; box-shadow: 0 16px 40px rgba(0,0,0,.12); z-index: 80; }
   .lang-list a { text-decoration: none; font-size: .9rem; color: var(--ink); padding: 7px 10px; border-radius: 8px; }
   .lang-list a:hover, .lang-list a.on { background: var(--soft); }
   .small-btn { padding: .55em 1.1em; font-size: .88rem; white-space: nowrap; }
-  .menu-toggle, .burger { display: none; }
-  @media (max-width: 1240px) {
-    .burger { display: flex; flex-direction: column; gap: 5px; margin-left: auto; cursor: pointer; padding: 10px; }
-    .burger span { width: 24px; height: 2px; background: var(--ink); }
-    .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; padding: 16px 24px 28px; border-bottom: 1px solid var(--line); max-height: calc(100vh - 72px); overflow: auto; }
-    .menu-toggle:checked ~ .nav { display: flex; }
-    .panel { display: block; position: static; border: 0; box-shadow: none; padding: 0 0 8px 12px; min-width: 0; }
-    .panel span { display: none; }
-    .right { margin: 16px 0 0; flex-wrap: wrap; }
-  }
-  .foot { background: var(--soft); padding: 64px 0; }
+  .burger { display: none; flex-direction: column; justify-content: center; gap: 5px; margin-left: auto; cursor: pointer; width: 48px; height: 48px; padding: 12px; background: none; border: 0; border-radius: 10px; }
+  .burger span { width: 24px; height: 2px; background: var(--ink); transition: transform .2s, opacity .2s; }
+  .menu-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-open .burger span:nth-child(2) { opacity: 0; }
+  .menu-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .drop > button::after { content: ''; display: inline-block; width: 6px; height: 6px; margin-left: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-3px) rotate(45deg); opacity: .6; }
+  .drop.open > button::after { transform: translateY(1px) rotate(225deg); }
+  /* The header collapses to a menu button when the links no longer fit (set by the script in the layout). */
+  .compact .burger { display: flex; }
+  .compact .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; padding: 16px 24px 28px; border-bottom: 1px solid var(--line); height: calc(100dvh - 72px); overflow: auto; overscroll-behavior: contain; }
+  .compact.menu-open .nav { display: flex; }
+  .compact .nav .link, .compact .drop > button { display: flex; justify-content: space-between; align-items: center; width: 100%; min-height: 50px; font-size: 1.05rem; padding: 10px 4px; border-bottom: 1px solid var(--soft); border-radius: 0; text-align: left; }
+  .compact .panel { position: static; border: 0; box-shadow: none; padding: 4px 0 10px 12px; min-width: 0; }
+  .compact .panel a { padding: 11px 8px; }
+  .compact .panel span { display: none; }
+  .compact .right { order: -1; margin: 0 0 14px; flex-wrap: wrap; }
+  .compact .right .btn { flex: 1; justify-content: center; padding: .8em 1em; }
+  .compact .langs { order: 3; flex-basis: 100%; margin: 6px 0 0; }
+  .compact .langs summary { justify-content: center; padding: 11px 12px; }
+  .compact .lang-list { position: static; box-shadow: none; margin-top: 8px; }
+  :global(body.menu-lock) { overflow: hidden; }
+  :global(html:not(.js)) .bar { height: auto; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+  :global(html:not(.js)) .nav { flex-wrap: wrap; }
+  :global(html:not(.js)) .drop:focus-within .panel { display: block; }
+  .foot { background: var(--cream); padding: 64px 0; }
   .foot-in { display: flex; flex-wrap: wrap; gap: 40px 56px; }
   .foot-in > div { flex: 1 1 150px; }
   .foot-in > .about { flex: 2 1 300px; }
-  .foot h4 { font-size: 1rem; margin-bottom: .8em; }
+  .foot h3 { font-size: 1rem; margin-bottom: .8em; }
   .foot ul { list-style: none; padding: 0; margin: 0; }
   .foot li { margin: .45em 0; }
   .foot a { text-decoration: none; color: var(--grey); font-size: .92rem; }
   .foot a:hover { color: var(--ink); }
   .about img { height: 20px; width: auto; margin-bottom: 14px; }
+  @media (max-width: 760px) { .foot li { margin: 0; } .foot li a, .foot-langs a { display: inline-block; padding: 11px 0; } .foot-langs { gap: 0 18px; } }
 </style>
