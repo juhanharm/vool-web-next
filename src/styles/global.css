@@ -6,6 +6,10 @@
 @import '@fontsource/montserrat/cyrillic-400.css';
 @import '@fontsource/montserrat/cyrillic-500.css';
 @import '@fontsource/montserrat/cyrillic-600.css';
+/* Greek: neither brand font has Greek letters; Manrope fills in (unicode-range). */
+@import '@fontsource/manrope/greek-400.css';
+@import '@fontsource/manrope/greek-500.css';
+@import '@fontsource/manrope/greek-600.css';
 
 /* Same fonts as the current www.vool.com: TWK Everett for headings, Poppins for text. */
 @font-face { font-family: 'TWK Everett'; src: url('/fonts/TWKEverett-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
@@ -34,7 +38,7 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  font-family: 'Poppins', 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-family: 'Poppins', 'Montserrat', 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   color: var(--ink);
   background: var(--white);
   line-height: 1.6;
@@ -43,7 +47,7 @@ body {
 }
 img, svg { max-width: 100%; display: block; }
 a { color: inherit; }
-h1, h2, h3, h4 { font-family: 'TWK Everett', 'Montserrat', 'Poppins', sans-serif; line-height: 1.12; margin: 0 0 .5em; font-weight: 400; letter-spacing: -0.015em; }
+h1, h2, h3, h4 { font-family: 'TWK Everett', 'Montserrat', 'Manrope', 'Poppins', sans-serif; line-height: 1.12; margin: 0 0 .5em; font-weight: 400; letter-spacing: -0.015em; }
 h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
 h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); }
 h3 { font-size: 1.2rem; }
@@ -146,9 +150,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 h1, h2, h3, .card, .lead { overflow-wrap: break-word; hyphens: auto; }
 .grid > *, .hero-grid > *, .split > * { min-width: 0; }
 /* hyphenate headlines only where long compound words need it */
-html:not(:is([lang="de"], [lang="fi"], [lang="et"], [lang="sv"], [lang="no"])) :is(h1, h2, .lead) { hyphens: manual; }
+html:not(:is([lang="de"], [lang="fi"], [lang="et"], [lang="sv"], [lang="no"], [lang="hu"])) :is(h1, h2, .lead) { hyphens: manual; }
 html[lang="en"] h3, html[lang="en"] .card { hyphens: manual; }
-@media (max-width: 480px) { html:is([lang="ru"], [lang="de"], [lang="fi"]) .hero h1 { font-size: 2rem; } }
+@media (max-width: 480px) { html:is([lang="ru"], [lang="de"], [lang="fi"], [lang="hu"], [lang="el"]) .hero h1 { font-size: 2rem; } }
 strong, b { font-weight: 600; }
 /* brand creams and greens: soft sections without product renders, badges */
 .section.soft:not(:has(img[src*="/product-"])) { background: var(--cream); }

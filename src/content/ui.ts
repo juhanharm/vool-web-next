@@ -1,5 +1,5 @@
-export type Lang = 'en' | 'et' | 'lt' | 'lv' | 'fi' | 'sv' | 'no' | 'pl' | 'pt' | 'de' | 'fr' | 'it' | 'sk' | 'es' | 'ru';
-export const langNames: Record<Lang, string> = { en: 'English', et: 'Eesti', lt: 'Lietuvių', lv: 'Latviešu', fi: 'Suomi', sv: 'Svenska', no: 'Norsk', pl: 'Polski', pt: 'Português', de: 'Deutsch', fr: 'Français', it: 'Italiano', sk: 'Slovenčina', es: 'Español', ru: 'Русский' };
+export type Lang = 'en' | 'et' | 'lt' | 'lv' | 'fi' | 'sv' | 'no' | 'pl' | 'pt' | 'de' | 'fr' | 'it' | 'sk' | 'es' | 'ru' | 'hu' | 'el' | 'tr' | 'cs';
+export const langNames: Record<Lang, string> = { en: 'English', et: 'Eesti', lt: 'Lietuvių', lv: 'Latviešu', fi: 'Suomi', sv: 'Svenska', no: 'Norsk', pl: 'Polski', pt: 'Português', de: 'Deutsch', fr: 'Français', it: 'Italiano', sk: 'Slovenčina', es: 'Español', ru: 'Русский', hu: 'Magyar', el: 'Ελληνικά', tr: 'Türkçe', cs: 'Čeština' };
 /** Languages planned next (pages not translated yet): pl, de, pt. */
 
 export interface NavItem { label: string; href?: string; children?: { label: string; href: string; note?: string }[] }
